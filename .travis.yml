@@ -1,0 +1,19 @@
+language: csharp
+mono:
+  - latest
+
+solution: PCLExt.FileStorage.sln
+
+before_install:
+  - git submodule update --init --recursive
+  
+install:
+  - nuget restore PCLExt.FileStorage.sln
+  
+script:
+  - xbuild /p:Configuration=Release PCLExt.FileStorage.sln
+  - xbuild /p:Configuration=Debug PCLExt.FileStorage.sln
+
+notifications:
+  email:
+    on_success: always

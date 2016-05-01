@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{0B02DE9A-C3C5-4DB9-B87F-6B05C3566946}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PCLStorage</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>PCLStorage</AssemblyName>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;__UNIFIED__;MAC;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <CreatePackage>false</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <Profiling>false</Profiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants>__UNIFIED__;MAC;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <UseRefCounting>false</UseRefCounting>
+    <UseSGen>false</UseSGen>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <CreatePackage>false</CreatePackage>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <DocumentationFile>bin\Release\PCLStorage.xml</DocumentationFile>
+    <Profiling>false</Profiling>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.Mac" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\PCLExt.FileStorage\AwaitExtensions.cs">
+      <Link>AwaitExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage\FileStorage.cs">
+      <Link>FileStorage.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage\FileSystem.cs">
+      <Link>FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage\PortablePath.cs">
+      <Link>PortablePath.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage\Requires.cs">
+      <Link>Requires.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\DesktopFileSystem.cs">
+      <Link>DesktopFileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\FileSystemFolder.cs">
+      <Link>FileSystemFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\FileSystemFile.cs">
+      <Link>FileSystemFile.cs</Link>
+    </Compile>
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
+      <Link>Properties\CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
+      <Project>{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}</Project>
+      <Name>PCLExt.FileStorage.Abstractions</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
