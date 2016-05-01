@@ -41,11 +41,11 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AwaitExtensions.cs" />
-    <Compile Include="Exceptions.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="PortablePath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requires.cs" />
+    <Compile Include="Exceptions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
@@ -54,4 +54,7 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
 </Project>

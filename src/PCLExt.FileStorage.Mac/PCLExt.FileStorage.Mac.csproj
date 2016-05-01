@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{0B02DE9A-C3C5-4DB9-B87F-6B05C3566946}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PCLStorage</RootNamespace>
+    <RootNamespace>PCLExt.Common</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>PCLStorage</AssemblyName>
+    <AssemblyName>PCLExt.Common</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -42,7 +42,7 @@
     <CreatePackage>false</CreatePackage>
     <EnableCodeSigning>false</EnableCodeSigning>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <DocumentationFile>bin\Release\PCLStorage.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\PCLExt.Common.xml</DocumentationFile>
     <Profiling>false</Profiling>
   </PropertyGroup>
   <ItemGroup>
@@ -53,9 +53,6 @@
   <ItemGroup>
     <Compile Include="..\PCLExt.FileStorage\AwaitExtensions.cs">
       <Link>AwaitExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage\FileStorage.cs">
-      <Link>FileStorage.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage\FileSystem.cs">
       <Link>FileSystem.cs</Link>
