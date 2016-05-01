@@ -16,32 +16,28 @@ namespace PCLExt.FileStorage
     /// </summary>
     public static class FileSystem
     {
-        private static readonly Lazy<IFileSystem> _instance = new Lazy<IFileSystem>(CreateInstance, System.Threading.LazyThreadSafetyMode.PublicationOnly);
+		private static IFileSystem _fileSystem;
 
-        private static IFileSystem CreateInstance()
-        {
-#if COMMON
-            return new DesktopFileSystem();
-#else
-            return null;
+		/// <summary>
+		/// The implementation of <see cref="IFileSystem"/> for the current platform.
+		/// </summary>
+		public static IFileSystem Current
+		{
+			get
+			{
+#if DESKTOP || ANDROID || __IOS__ || MAC
+				if(_fileSystem == null)
+				_fileSystem = new DesktopFileSystem();
+
+				return _fileSystem;
 #endif
-        }
 
-        /// <summary>
-        /// The implementation of <see cref="IFileSystem"/> for the current platform.
-        /// </summary>
-        public static IFileSystem Current
-        {
-            get
-            {
-                var ret = _instance.Value;
-                if (ret == null)
-                    throw NotImplementedInReferenceAssembly();
-                
-                return ret;
-            }
-        }
+				throw NotImplementedInReferenceAssembly();
+			}
+		}
 
-        internal static Exception NotImplementedInReferenceAssembly() => new NotImplementedException("This functionality is not implemented in the portable version of this assembly.  You should reference the PCLStorage NuGet package from your main application project in order to reference the platform-specific implementation.");
+        internal static Exception NotImplementedInReferenceAssembly() =>
+			new NotImplementedException(@"This functionality is not implemented in the portable version of this assembly.
+You should reference the PCLExt.FileStorage NuGet package from your main application project in order to reference the platform-specific implementation.");
     }
 }

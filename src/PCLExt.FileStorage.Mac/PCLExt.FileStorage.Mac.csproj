@@ -79,7 +79,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Exceptions\" />
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>

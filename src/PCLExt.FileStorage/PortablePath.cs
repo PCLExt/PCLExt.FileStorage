@@ -21,11 +21,11 @@ namespace PCLExt.FileStorage
         {
             get
             {
-#if PORTABLE
-                throw FileSystem.NotImplementedInReferenceAssembly();
-#else
-                return System.IO.Path.DirectorySeparatorChar;
+#if DESKTOP || ANDROID || __IOS__ || MAC
+				return System.IO.Path.DirectorySeparatorChar;
 #endif
+
+				throw FileSystem.NotImplementedInReferenceAssembly();
             }
         }
 
@@ -36,11 +36,11 @@ namespace PCLExt.FileStorage
         /// <returns>A combined path.</returns>
         public static string Combine(params string[] paths)
         {
-#if PORTABLE
-            throw FileSystem.NotImplementedInReferenceAssembly();
-#else
-            return System.IO.Path.Combine(paths);
+#if DESKTOP || ANDROID || __IOS__ || MAC
+			return System.IO.Path.Combine(paths);
 #endif
+
+			throw FileSystem.NotImplementedInReferenceAssembly();
         }
     }
 }

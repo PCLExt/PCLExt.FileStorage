@@ -63,6 +63,9 @@
       <Link>Requires.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\PCLExt.FileStorage\FileSystem.cs">
+      <Link>FileSystem.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
