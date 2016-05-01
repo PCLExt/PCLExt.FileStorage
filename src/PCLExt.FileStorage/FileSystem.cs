@@ -12,36 +12,34 @@ using System;
 namespace PCLExt.FileStorage
 {
     /// <summary>
-    /// Provides access to an implementation of <see cref="IFileSystem"/> for the current platform
+    /// Provides access to an implementation of <see cref="IFileSystem"/> for the current platform.
     /// </summary>
     public static class FileSystem
     {
-        static readonly Lazy<IFileSystem> _fileSystem = new Lazy<IFileSystem>(CreateFileSystem, System.Threading.LazyThreadSafetyMode.PublicationOnly);
+        private static readonly Lazy<IFileSystem> _instance = new Lazy<IFileSystem>(CreateInstance, System.Threading.LazyThreadSafetyMode.PublicationOnly);
+
+        private static IFileSystem CreateInstance()
+        {
+#if COMMON
+            return new DesktopFileSystem();
+#else
+            return null;
+#endif
+        }
 
         /// <summary>
-        /// The implementation of <see cref="IFileSystem"/> for the current platform
+        /// The implementation of <see cref="IFileSystem"/> for the current platform.
         /// </summary>
         public static IFileSystem Current
         {
             get
             {
-                var ret = _fileSystem.Value;
+                var ret = _instance.Value;
                 if (ret == null)
                     throw NotImplementedInReferenceAssembly();
                 
                 return ret;
             }
-        }
-
-        static IFileSystem CreateFileSystem()
-        {
-#if NETFX_CORE
-			return new WinRTFileSystem();
-#elif FILE_SYSTEM
-            return new DesktopFileSystem();
-#else
-            return null;
-#endif
         }
 
         internal static Exception NotImplementedInReferenceAssembly() => new NotImplementedException("This functionality is not implemented in the portable version of this assembly.  You should reference the PCLStorage NuGet package from your main application project in order to reference the platform-specific implementation.");

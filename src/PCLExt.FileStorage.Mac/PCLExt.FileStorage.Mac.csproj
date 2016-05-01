@@ -6,9 +6,9 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{0B02DE9A-C3C5-4DB9-B87F-6B05C3566946}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>PCLExt.Common</RootNamespace>
+    <RootNamespace>PCLExt.FileStorage</RootNamespace>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
-    <AssemblyName>PCLExt.Common</AssemblyName>
+    <AssemblyName>PCLExt.FileStorage</AssemblyName>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug</OutputPath>
-    <DefineConstants>DEBUG;__UNIFIED__;MAC;</DefineConstants>
+    <DefineConstants>DEBUG;__UNIFIED__;MAC;COMMON;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -32,7 +32,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DefineConstants>__UNIFIED__;MAC;</DefineConstants>
+    <DefineConstants>__UNIFIED__;MAC;COMMON;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
@@ -42,7 +42,7 @@
     <CreatePackage>false</CreatePackage>
     <EnableCodeSigning>false</EnableCodeSigning>
     <EnablePackageSigning>false</EnablePackageSigning>
-    <DocumentationFile>bin\Release\PCLExt.Common.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\PCLExt.FileStorage.xml</DocumentationFile>
     <Profiling>false</Profiling>
   </PropertyGroup>
   <ItemGroup>

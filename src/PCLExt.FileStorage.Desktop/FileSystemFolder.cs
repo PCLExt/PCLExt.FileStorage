@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 namespace PCLExt.FileStorage
 {
     /// <summary>
-    /// Represents a folder in the <see cref="DesktopFileSystem"/>
+    /// Represents a folder in the <see cref="DesktopFileSystem"/>.
     /// </summary>
     [DebuggerDisplay("Name = {_name}")]
     public class FileSystemFolder : IFolder
@@ -28,10 +28,10 @@ namespace PCLExt.FileStorage
         private readonly bool _canDelete;
 
         /// <summary>
-        /// Creates a new <see cref="FileSystemFolder" /> corresponding to a specified path
+        /// Creates a new <see cref="FileSystemFolder" /> corresponding to a specified path.
         /// </summary>
-        /// <param name="path">The folder path</param>
-        /// <param name="canDelete">Specifies whether the folder can be deleted (via <see cref="DeleteAsync"/>)</param>
+        /// <param name="path">The folder path.</param>
+        /// <param name="canDelete">Specifies whether the folder can be deleted (via <see cref="DeleteAsync"/>).</param>
         public FileSystemFolder(string path, bool canDelete = false) { _name = System.IO.Path.GetFileName(path); _path = path; _canDelete = canDelete; }
 
         /// <summary>
@@ -40,15 +40,15 @@ namespace PCLExt.FileStorage
         public string Name => _name;
 
         /// <summary>
-        /// The "full path" of the folder, which should uniquely identify it within a given <see cref="IFileSystem"/>
+        /// The "full path" of the folder, which should uniquely identify it within a given <see cref="IFileSystem"/>.
         /// </summary>
         public string Path => _path;
 
         /// <summary>
-        /// Creates a file in this folder
+        /// Creates a file in this folder.
         /// </summary>
-        /// <param name="desiredName">The name of the file to create</param>
-        /// <param name="option">Specifies how to behave if the specified file already exists</param>
+        /// <param name="desiredName">The name of the file to create.</param>
+        /// <param name="option">Specifies how to behave if the specified file already exists.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The newly created file</returns>
         public async Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken)
@@ -83,14 +83,14 @@ namespace PCLExt.FileStorage
                     throw new IOException("File already exists: " + newPath);
                 else if (option == CreationCollisionOption.OpenIfExists)
                 {
-                    //	No operation
+                    //	No operation.
                 }
                 else
                     throw new ArgumentException("Unrecognized CreationCollisionOption: " + option);
             }
             else
             {
-                //	Create file
+                //	Create file.
                 InternalCreateFile(newPath);
             }
 
@@ -103,11 +103,11 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Gets a file in this folder
+        /// Gets a file in this folder.
         /// </summary>
-        /// <param name="name">The name of the file to get</param>
+        /// <param name="name">The name of the file to get.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>The requested file, or null if it does not exist</returns>
+        /// <returns>The requested file, or null if it does not exist.</returns>
         public async Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -119,9 +119,9 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Gets a list of the files in this folder
+        /// Gets a list of the files in this folder.
         /// </summary>
-        /// <returns>A list of the files in the folder</returns>
+        /// <returns>A list of the files in the folder.</returns>
         public async Task<IList<IFile>> GetFilesAsync(CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -131,10 +131,10 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Creates a subfolder in this folder
+        /// Creates a subfolder in this folder.
         /// </summary>
-        /// <param name="desiredName">The name of the folder to create</param>
-        /// <param name="option">Specifies how to behave if the specified folder already exists</param>
+        /// <param name="desiredName">The name of the folder to create.</param>
+        /// <param name="option">Specifies how to behave if the specified folder already exists.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The newly created folder</returns>
         public async Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken)
@@ -168,7 +168,7 @@ namespace PCLExt.FileStorage
                 
                 else if (option == CreationCollisionOption.OpenIfExists)
                 {
-                    //	No operation
+                    //	No operation.
                 }
                 else
                     throw new ArgumentException("Unrecognized CreationCollisionOption: " + option);
@@ -180,11 +180,11 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Gets a subfolder in this folder
+        /// Gets a subfolder in this folder.
         /// </summary>
-        /// <param name="name">The name of the folder to get</param>
+        /// <param name="name">The name of the folder to get.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>The requested folder, or null if it does not exist</returns>
+        /// <returns>The requested folder, or null if it does not exist.</returns>
         public async Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(name, "name");
@@ -198,9 +198,9 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Gets a list of subfolders in this folder
+        /// Gets a list of subfolders in this folder.
         /// </summary>
-        /// <returns>A list of subfolders in the folder</returns>
+        /// <returns>A list of subfolders in the folder.</returns>
         public async Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -233,9 +233,9 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Deletes this folder and all of its contents
+        /// Deletes this folder and all of its contents.
         /// </summary>
-        /// <returns>A task which will complete after the folder is deleted</returns>
+        /// <returns>A task which will complete after the folder is deleted.</returns>
         public async Task DeleteAsync(CancellationToken cancellationToken)
         {
             if (!_canDelete)

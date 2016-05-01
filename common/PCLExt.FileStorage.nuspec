@@ -2,17 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>PCLExt.FileStorage</id>
-        <version>1.0.0</version>
+        <version>1.0.2</version>
         <title>PCL Extension - File Storage API</title>
-        <authors>Daniel Plaisted, Aragas</authors>
+        <authors>Daniel Plaisted,Aragas</authors>
         <owners>Aragas</owners>
         <licenseUrl>https://github.com/Aragas/PCLExt.FileStorage/blob/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/Aragas/PCLExt.FileStorage</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/Aragas/PCLExt.FileStorage/master/common/sushi_64.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>PCL Extension provides file system related implementations for PCL, .NET, Xamarin.iOS, Xamarin.Android and Xamarin.Mac. This makes it easier to create cross-platform .NET libraries and apps.</description>
-        <summary>PCL Extension provides file system related implementations for PCL platform</summary>
-        <tags>io storage file portable pcl mac android ios xamarin monoandroid monodroid monotouch</tags>
+        <description>PCL Extension provides file system implementations for PCL, .NET, Xamarin.iOS, Xamarin.Android and Xamarin.Mac. This makes it easier to create cross-platform .NET libraries and apps.</description>
+        <summary>PCL Extension provides file system implementations for PCL platform</summary>
+        <tags>io storage file system portable pcl android mac ios xamarin monoandroid monotouch</tags>
         <dependencies>
             <group />
             <group targetFramework=".NETFramework4.5" />
@@ -41,7 +41,7 @@
         <file src="..\src\PCLExt.FileStorage.iOS\bin\Release\PCLExt.FileStorage.xml" target="lib\portable-Xamarin.iOS+Xamarin.Mac\PCLExt.FileStorage.xml" />
         <file src="..\src\PCLExt.FileStorage.Mac\bin\Release\PCLExt.FileStorage.Abstractions.dll" target="lib\Xamarin.Mac\PCLExt.FileStorage.Abstractions.dll" />
         <file src="..\src\PCLExt.FileStorage.Mac\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\Xamarin.Mac\PCLExt.FileStorage.Abstractions.xml" />
-        <file src="..\src\PCLExt.FileStorage.Mac\bin\Release\PCLStorage.dll" target="lib\Xamarin.Mac\PCLStorage.dll" />
-        <file src="..\src\PCLExt.FileStorage.Mac\bin\Release\PCLStorage.xml" target="lib\Xamarin.Mac\PCLStorage.xml" />
+        <file src="..\src\PCLExt.FileStorage.Mac\bin\Release\PCLExt.FileStorage.dll" target="lib\Xamarin.Mac\PCLExt.FileStorage.dll" />
+        <file src="..\src\PCLExt.FileStorage.Mac\bin\Release\PCLExt.FileStorage.xml" target="lib\Xamarin.Mac\PCLExt.FileStorage.xml" />
     </files>
 </package>

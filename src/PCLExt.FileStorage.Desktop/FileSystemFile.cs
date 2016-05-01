@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace PCLExt.FileStorage
 {
     /// <summary>
-    /// Represents a file in the <see cref="DesktopFileSystem"/>
+    /// Represents a file in the <see cref="DesktopFileSystem"/>.
     /// </summary>
     [DebuggerDisplay("Name = {_name}")]
     public class FileSystemFile : IFile
@@ -25,7 +25,7 @@ namespace PCLExt.FileStorage
         private string _path;
 
         /// <summary>
-        /// Creates a new <see cref="FileSystemFile"/> corresponding to the specified path
+        /// Creates a new <see cref="FileSystemFile"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
         public FileSystemFile(string path)
@@ -40,16 +40,16 @@ namespace PCLExt.FileStorage
         public string Name => _name;
 
         /// <summary>
-        /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>
+        /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>.
         /// </summary>
         public string Path => _path;
 
         /// <summary>
-        /// Opens the file
+        /// Opens the file.
         /// </summary>
-        /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>
+        /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file</returns>
+        /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file.</returns>
         public async Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -63,7 +63,7 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
-        /// Deletes the file
+        /// Deletes the file.
         /// </summary>
         /// <returns>A task which will complete after the file is deleted.</returns>
         public async Task DeleteAsync(CancellationToken cancellationToken)

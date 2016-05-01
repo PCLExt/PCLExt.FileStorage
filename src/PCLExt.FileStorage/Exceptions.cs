@@ -10,7 +10,7 @@
 using System;
 using System.IO;
 
-namespace PCLExt.FileStorage.Exceptions
+namespace PCLExt.FileStorage
 {
     /// <exclude/>
     public class FileNotFoundException
