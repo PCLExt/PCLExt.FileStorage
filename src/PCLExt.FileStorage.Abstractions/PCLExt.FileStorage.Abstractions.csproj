@@ -34,7 +34,7 @@
     <DocumentationFile>bin\Release\PCLExt.FileStorage.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
+    <Compile Include="$(SolutionDir)\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ExistenceCheckResult.cs" />

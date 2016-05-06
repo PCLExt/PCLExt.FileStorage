@@ -51,38 +51,41 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PCLExt.FileStorage\AwaitExtensions.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\AwaitExtensions.cs">
       <Link>AwaitExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\FileSystem.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\FileSystem.cs">
       <Link>FileSystem.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\PortablePath.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\PortablePath.cs">
       <Link>PortablePath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\Requires.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Requires.cs">
       <Link>Requires.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Desktop\DesktopFileSystem.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage.Desktop\DesktopFileSystem.cs">
       <Link>DesktopFileSystem.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Desktop\FileSystemFolder.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage.Desktop\FileSystemFolder.cs">
       <Link>FileSystemFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Desktop\FileSystemFile.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage.Desktop\FileSystemFile.cs">
       <Link>FileSystemFile.cs</Link>
     </Compile>
-    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
+    <Compile Include="$(SolutionDir)\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Storage.cs">
+      <Link>Storage.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
+    <ProjectReference Include="$(SolutionDir)\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}</Project>
       <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>

@@ -42,20 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
+    <Compile Include="$(SolutionDir)\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\AwaitExtensions.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\AwaitExtensions.cs">
       <Link>AwaitExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\FileSystem.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\FileSystem.cs">
       <Link>FileSystem.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\PortablePath.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\PortablePath.cs">
       <Link>PortablePath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage\Requires.cs">
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Requires.cs">
       <Link>Requires.cs</Link>
+    </Compile>
+    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Storage.cs">
+      <Link>Storage.cs</Link>
     </Compile>
     <Compile Include="DesktopFileSystem.cs" />
     <Compile Include="FileSystemFile.cs" />
@@ -63,7 +66,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
+    <ProjectReference Include="$(SolutionDir)\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}</Project>
       <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
