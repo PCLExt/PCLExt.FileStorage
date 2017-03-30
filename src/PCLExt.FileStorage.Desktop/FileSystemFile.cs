@@ -18,11 +18,18 @@ namespace PCLExt.FileStorage
     /// <summary>
     /// Represents a file in the <see cref="DesktopFileSystem"/>.
     /// </summary>
-    [DebuggerDisplay("Name = {_name}")]
+    [DebuggerDisplay("Name = {Name}")]
     public class FileSystemFile : IFile
     {
-        private string _name;
-        private string _path;
+        /// <summary>
+        /// The name of the file
+        /// </summary>
+        public string Name { get; private set; }
+
+        /// <summary>
+        /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>.
+        /// </summary>
+        public string Path { get; private set; }
 
         /// <summary>
         /// Creates a new <see cref="FileSystemFile"/> corresponding to the specified path.
@@ -30,19 +37,24 @@ namespace PCLExt.FileStorage
         /// <param name="path">The file path</param>
         public FileSystemFile(string path)
         {
-            _name = System.IO.Path.GetFileName(path);
-            _path = path;
+            Name = System.IO.Path.GetFileName(path);
+            Path = path;
         }
 
         /// <summary>
-        /// The name of the file
+        /// Opens the file.
         /// </summary>
-        public string Name => _name;
-
-        /// <summary>
-        /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>.
-        /// </summary>
-        public string Path => _path;
+        /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode.</param>
+        /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file.</returns>
+        public Stream Open(FileAccess fileAccess)
+        {
+            if (fileAccess == FileAccess.Read)
+                return File.OpenRead(Path);
+            else if (fileAccess == FileAccess.ReadAndWrite)
+                return File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite);
+            else
+                throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}");
+        }
 
         /// <summary>
         /// Opens the file.
@@ -59,7 +71,19 @@ namespace PCLExt.FileStorage
             else if (fileAccess == FileAccess.ReadAndWrite)
                 return File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite);
             else
-                throw new ArgumentException("Unrecognized FileAccess value: " + fileAccess);
+                throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}");
+        }
+
+        /// <summary>
+        /// Deletes the file.
+        /// </summary>
+        /// <returns>A task which will complete after the file is deleted.</returns>
+        public void Delete()
+        {
+            if (!File.Exists(Path))
+                throw new FileNotFoundException($"File does not exist: {Path}");
+
+            File.Delete(Path);
         }
 
         /// <summary>
@@ -71,9 +95,24 @@ namespace PCLExt.FileStorage
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             if (!File.Exists(Path))
-                throw new FileNotFoundException("File does not exist: " + Path);
-            
+                throw new FileNotFoundException($"File does not exist: {Path}");
+
             File.Delete(Path);
+        }
+
+        /// <summary>
+        /// Renames a file without changing its location.
+        /// </summary>
+        /// <param name="newName">The new leaf name of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <returns>
+        /// A task which will complete after the file is renamed.
+        /// </returns>
+        public void Rename(string newName, NameCollisionOption collisionOption)
+        {
+            Requires.NotNullOrEmpty(newName, "newName");
+
+            Move(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName), collisionOption);
         }
 
         /// <summary>
@@ -89,7 +128,53 @@ namespace PCLExt.FileStorage
         {
             Requires.NotNullOrEmpty(newName, "newName");
 
-            await MoveAsync(PortablePath.Combine(System.IO.Path.GetDirectoryName(_path), newName), collisionOption, cancellationToken);
+            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+
+            await MoveAsync(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName), collisionOption, cancellationToken);
+        }
+
+        /// <summary>
+        /// Moves a file.
+        /// </summary>
+        /// <param name="newPath">The new full path of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <returns>
+        /// A task which will complete after the file is moved.
+        /// </returns>
+        public void Move(string newPath, NameCollisionOption collisionOption)
+        {
+            Requires.NotNullOrEmpty(newPath, "newPath");
+
+            var newDirectory = System.IO.Path.GetDirectoryName(newPath);
+            var newName = System.IO.Path.GetFileName(newPath);
+
+            for (var counter = 1; ; counter++)
+            {
+                var candidateName = newName;
+                if (counter > 1)
+                    candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
+
+                var candidatePath = System.IO.Path.Combine(newDirectory, candidateName);
+
+                if (File.Exists(candidatePath))
+                {
+                    switch (collisionOption)
+                    {
+                        case NameCollisionOption.FailIfExists:
+                            throw new IOException("File already exists.");
+                        case NameCollisionOption.GenerateUniqueName:
+                            continue; // try again with a new name.
+                        case NameCollisionOption.ReplaceExisting:
+                            File.Delete(candidatePath);
+                            break;
+                    }
+                }
+
+                File.Move(Path, candidatePath);
+                Path = candidatePath;
+                Name = candidateName;
+                return;
+            }
         }
 
         /// <summary>
@@ -116,8 +201,8 @@ namespace PCLExt.FileStorage
                 var candidateName = newName;
                 if (counter > 1)
                     candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
-                
-                var candidatePath = PortablePath.Combine(newDirectory, candidateName);
+
+                var candidatePath = System.IO.Path.Combine(newDirectory, candidateName);
 
                 if (File.Exists(candidatePath))
                 {
@@ -133,59 +218,103 @@ namespace PCLExt.FileStorage
                     }
                 }
 
-                File.Move(_path, candidatePath);
-                _path = candidatePath;
-                _name = candidateName;
+                File.Move(Path, candidatePath);
+                Path = candidatePath;
+                Name = candidateName;
                 return;
             }
         }
 
-		/// <summary>
-		/// Copies a file.
-		/// </summary>
-		/// <param name="newPath">The new full path of the file.</param>
-		/// <param name="collisionOption">How to deal with collisions with existing files.</param>
-		/// <param name="cancellationToken">The cancellation token.</param>
-		/// <returns>
-		/// A task which will complete after the file is copied.
-		/// </returns>
-		public async Task CopyAsync(string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
-		{
-			Requires.NotNullOrEmpty(newPath, "newPath");
+        /// <summary>
+        /// Copies a file.
+        /// </summary>
+        /// <param name="newPath">The new full path of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <returns>
+        /// A task which will complete after the file is copied.
+        /// </returns>
+        public void Copy(string newPath, NameCollisionOption collisionOption)
+        {
+            Requires.NotNullOrEmpty(newPath, "newPath");
 
-			await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-
-			var newDirectory = System.IO.Path.GetDirectoryName(newPath);
+            var newDirectory = System.IO.Path.GetDirectoryName(newPath);
             var newName = System.IO.Path.GetFileName(newPath);
 
-			for (var counter = 1; ; counter++)
-			{
-				cancellationToken.ThrowIfCancellationRequested();
+            for (var counter = 1; ; counter++)
+            {
                 var candidateName = newName;
-				if (counter > 1)
-				    candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
+                if (counter > 1)
+                    candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
 
-                var candidatePath = PortablePath.Combine(newDirectory, candidateName);
+                var candidatePath = System.IO.Path.Combine(newDirectory, candidateName);
 
-				if (File.Exists(candidatePath))
-				{
-					switch (collisionOption)
-					{
-						case NameCollisionOption.FailIfExists:
-							throw new IOException("File already exists.");
-						case NameCollisionOption.GenerateUniqueName:
-							continue; // try again with a new name.
-						case NameCollisionOption.ReplaceExisting:
-							File.Delete(candidatePath);
-							break;
-					}
-				}
+                if (File.Exists(candidatePath))
+                {
+                    switch (collisionOption)
+                    {
+                        case NameCollisionOption.FailIfExists:
+                            throw new IOException("File already exists.");
+                        case NameCollisionOption.GenerateUniqueName:
+                            continue; // try again with a new name.
+                        case NameCollisionOption.ReplaceExisting:
+                            File.Delete(candidatePath);
+                            break;
+                    }
+                }
 
-				File.Copy(_path, candidatePath);
-				_path = candidatePath;
-				_name = candidateName;
-				return;
-			}
-		}
+                File.Copy(Path, candidatePath);
+                Path = candidatePath;
+                Name = candidateName;
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Copies a file.
+        /// </summary>
+        /// <param name="newPath">The new full path of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>
+        /// A task which will complete after the file is copied.
+        /// </returns>
+        public async Task CopyAsync(string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
+        {
+            Requires.NotNullOrEmpty(newPath, "newPath");
+
+            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+
+            var newDirectory = System.IO.Path.GetDirectoryName(newPath);
+            var newName = System.IO.Path.GetFileName(newPath);
+
+            for (var counter = 1; ; counter++)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                var candidateName = newName;
+                if (counter > 1)
+                    candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
+
+                var candidatePath = System.IO.Path.Combine(newDirectory, candidateName);
+
+                if (File.Exists(candidatePath))
+                {
+                    switch (collisionOption)
+                    {
+                        case NameCollisionOption.FailIfExists:
+                            throw new IOException("File already exists.");
+                        case NameCollisionOption.GenerateUniqueName:
+                            continue; // try again with a new name.
+                        case NameCollisionOption.ReplaceExisting:
+                            File.Delete(candidatePath);
+                            break;
+                    }
+                }
+
+                File.Copy(Path, candidatePath);
+                Path = candidatePath;
+                Name = candidateName;
+                return;
+            }
+        }
     }
 }

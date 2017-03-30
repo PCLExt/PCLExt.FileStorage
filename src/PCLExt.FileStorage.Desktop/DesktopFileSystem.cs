@@ -93,13 +93,28 @@ namespace PCLExt.FileStorage
 			}
 		}
 
-		/// <summary>
-		/// Gets a file, given its path.  Returns null if the file does not exist.
-		/// </summary>
-		/// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
-		/// <param name="cancellationToken">The cancellation token.</param>
-		/// <returns>A file for the given path, or null if it does not exist.</returns>
-		public async Task<IFile> GetFileFromPathAsync(string path, CancellationToken cancellationToken)
+        /// <summary>
+        /// Gets a file, given its path.  Returns null if the file does not exist.
+        /// </summary>
+        /// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
+        /// <returns>A file for the given path, or null if it does not exist.</returns>
+        public IFile GetFileFromPath(string path)
+        {
+            Requires.NotNullOrEmpty(path, "path");
+
+            if (System.IO.File.Exists(path))
+                return new FileSystemFile(path);
+
+            return null;
+        }
+
+        /// <summary>
+        /// Gets a file, given its path.  Returns null if the file does not exist.
+        /// </summary>
+        /// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A file for the given path, or null if it does not exist.</returns>
+        public async Task<IFile> GetFileFromPathAsync(string path, CancellationToken cancellationToken)
 		{
 			Requires.NotNullOrEmpty(path, "path");
 
@@ -110,21 +125,36 @@ namespace PCLExt.FileStorage
 			return null;
 		}
 
-		/// <summary>
-		/// Gets a folder, given its path.  Returns null if the folder does not exist.
-		/// </summary>
-		/// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
-		/// <param name="cancellationToken">The cancellation token.</param>
-		/// <returns>A folder for the specified path, or null if it does not exist.</returns>
-		public async Task<IFolder> GetFolderFromPathAsync(string path, CancellationToken cancellationToken)
-		{
-			Requires.NotNullOrEmpty(path, "path");
+        /// <summary>
+        /// Gets a folder, given its path.  Returns null if the folder does not exist.
+        /// </summary>
+        /// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
+        /// <returns>A folder for the specified path, or null if it does not exist.</returns>
+        public IFolder GetFolderFromPath(string path)
+        {
+            Requires.NotNullOrEmpty(path, "path");
 
-			await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-			if (System.IO.Directory.Exists(path))
-				return new FileSystemFolder(path, true);
+            if (System.IO.Directory.Exists(path))
+                return new FileSystemFolder(path, true);
 
-			return null;
-		}
-	}
+            return null;
+        }
+
+        /// <summary>
+        /// Gets a folder, given its path.  Returns null if the folder does not exist.
+        /// </summary>
+        /// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A folder for the specified path, or null if it does not exist.</returns>
+        public async Task<IFolder> GetFolderFromPathAsync(string path, CancellationToken cancellationToken)
+        {
+            Requires.NotNullOrEmpty(path, "path");
+
+            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            if (System.IO.Directory.Exists(path))
+                return new FileSystemFolder(path, true);
+
+            return null;
+        }
+    }
 }

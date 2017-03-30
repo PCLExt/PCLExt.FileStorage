@@ -55,9 +55,24 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="desiredName">The name of the file to create</param>
         /// <param name="option">Specifies how to behave if the specified file already exists</param>
+        /// <returns>The newly created file</returns>
+        IFile CreateFile(string desiredName, CreationCollisionOption option);
+
+        /// <summary>
+        /// Creates a file in this folder
+        /// </summary>
+        /// <param name="desiredName">The name of the file to create</param>
+        /// <param name="option">Specifies how to behave if the specified file already exists</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The newly created file</returns>
         Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets a file in this folder
+        /// </summary>
+        /// <param name="name">The name of the file to get</param>
+        /// <returns>The requested file, or null if it does not exist</returns>
+        IFile GetFile(string name);
 
         /// <summary>
         /// Gets a file in this folder
@@ -70,9 +85,23 @@ namespace PCLExt.FileStorage
         /// <summary>
         /// Gets a list of the files in this folder
         /// </summary>
+        /// <returns>A list of the files in the folder</returns>
+        IList<IFile> GetFiles();
+
+        /// <summary>
+        /// Gets a list of the files in this folder
+        /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A list of the files in the folder</returns>
         Task<IList<IFile>> GetFilesAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Creates a subfolder in this folder
+        /// </summary>
+        /// <param name="desiredName">The name of the folder to create</param>
+        /// <param name="option">Specifies how to behave if the specified folder already exists</param>
+        /// <returns>The newly created folder</returns>
+        IFolder CreateFolder(string desiredName, CreationCollisionOption option);
 
         /// <summary>
         /// Creates a subfolder in this folder
@@ -87,9 +116,22 @@ namespace PCLExt.FileStorage
         /// Gets a subfolder in this folder
         /// </summary>
         /// <param name="name">The name of the folder to get</param>
+        /// <returns>The requested folder, or null if it does not exist</returns>
+        IFolder GetFolder(string name);
+
+        /// <summary>
+        /// Gets a subfolder in this folder
+        /// </summary>
+        /// <param name="name">The name of the folder to get</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The requested folder, or null if it does not exist</returns>
         Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Gets a list of subfolders in this folder
+        /// </summary>
+        /// <returns>A list of subfolders in the folder</returns>
+        IList<IFolder> GetFolders();
 
         /// <summary>
         /// Gets a list of subfolders in this folder
@@ -102,6 +144,13 @@ namespace PCLExt.FileStorage
         /// Checks whether a folder or file exists at the given location.
         /// </summary>
         /// <param name="name">The name of the file or folder to check for.</param>
+        /// <returns>A task whose result is the result of the existence check.</returns>
+        ExistenceCheckResult CheckExists(string name);
+
+        /// <summary>
+        /// Checks whether a folder or file exists at the given location.
+        /// </summary>
+        /// <param name="name">The name of the file or folder to check for.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task whose result is the result of the existence check.</returns>
         Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
@@ -109,8 +158,31 @@ namespace PCLExt.FileStorage
         /// <summary>
         /// Deletes this folder and all of its contents
         /// </summary>
+        /// <returns>A task which will complete after the folder is deleted</returns>
+        void Delete();
+
+        /// <summary>
+        /// Deletes this folder and all of its contents
+        /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the folder is deleted</returns>
         Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
+        /// </summary>
+        /// <param name="folder">The folder in which content will be moved</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <returns>The folder with moved content.</returns>
+        IFolder Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting);
+
+        /// <summary>
+        /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
+        /// </summary>
+        /// <param name="folder">The folder in which content will be moved</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The folder with moved content.</returns>
+        Task<IFolder> MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

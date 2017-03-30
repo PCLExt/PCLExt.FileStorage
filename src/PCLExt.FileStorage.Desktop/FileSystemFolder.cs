@@ -20,11 +20,9 @@ namespace PCLExt.FileStorage
     /// <summary>
     /// Represents a folder in the <see cref="DesktopFileSystem"/>.
     /// </summary>
-    [DebuggerDisplay("Name = {_name}")]
+    [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
     public class FileSystemFolder : IFolder
     {
-        private readonly string _name;
-        private readonly string _path;
         private readonly bool _canDelete;
 
         /// <summary>
@@ -32,17 +30,67 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="path">The folder path.</param>
         /// <param name="canDelete">Specifies whether the folder can be deleted (via <see cref="DeleteAsync"/>).</param>
-        public FileSystemFolder(string path, bool canDelete = false) { _name = System.IO.Path.GetFileName(path); _path = path; _canDelete = canDelete; }
+        public FileSystemFolder(string path, bool canDelete = false) { Name = System.IO.Path.GetFileName(path); Path = path; _canDelete = canDelete; }
 
         /// <summary>
         /// The name of the folder
         /// </summary>
-        public string Name => _name;
+        public string Name { get; }
 
         /// <summary>
         /// The "full path" of the folder, which should uniquely identify it within a given <see cref="IFileSystem"/>.
         /// </summary>
-        public string Path => _path;
+        public string Path { get; }
+
+        /// <summary>
+        /// Creates a file in this folder.
+        /// </summary>
+        /// <param name="desiredName">The name of the file to create.</param>
+        /// <param name="option">Specifies how to behave if the specified file already exists.</param>
+        /// <returns>The newly created file</returns>
+        public IFile CreateFile(string desiredName, CreationCollisionOption option)
+        {
+            Requires.NotNullOrEmpty(desiredName, nameof(desiredName));
+
+            EnsureExists();
+
+            var nameToUse = desiredName;
+            var newPath = System.IO.Path.Combine(Path, nameToUse);
+            if (File.Exists(newPath))
+            {
+                if (option == CreationCollisionOption.GenerateUniqueName)
+                {
+                    var desiredRoot = System.IO.Path.GetFileNameWithoutExtension(desiredName);
+                    var desiredExtension = System.IO.Path.GetExtension(desiredName);
+                    for (var num = 2; File.Exists(newPath); num++)
+                    {
+                        nameToUse = $"{desiredRoot} ({num}){desiredExtension}";
+                        newPath = System.IO.Path.Combine(Path, nameToUse);
+                    }
+                    InternalCreateFile(newPath);
+                }
+                else if (option == CreationCollisionOption.ReplaceExisting)
+                {
+                    File.Delete(newPath);
+                    InternalCreateFile(newPath);
+                }
+                else if (option == CreationCollisionOption.FailIfExists)
+                    throw new IOException($"File already exists: {newPath}");
+                else if (option == CreationCollisionOption.OpenIfExists)
+                {
+                    //	No operation.
+                }
+                else
+                    throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
+            }
+            else
+            {
+                //	Create file.
+                InternalCreateFile(newPath);
+            }
+
+            return new FileSystemFile(newPath);
+        }
 
         /// <summary>
         /// Creates a file in this folder.
@@ -53,7 +101,7 @@ namespace PCLExt.FileStorage
         /// <returns>The newly created file</returns>
         public async Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken)
         {
-            Requires.NotNullOrEmpty(desiredName, "desiredName");
+            Requires.NotNullOrEmpty(desiredName, nameof(desiredName));
 
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
             EnsureExists();
@@ -69,7 +117,7 @@ namespace PCLExt.FileStorage
                     for (var num = 2; File.Exists(newPath); num++)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
-                        nameToUse = desiredRoot + " (" + num + ")" + desiredExtension;
+                        nameToUse = $"{desiredRoot} ({num}){desiredExtension}";
                         newPath = System.IO.Path.Combine(Path, nameToUse);
                     }
                     InternalCreateFile(newPath);
@@ -80,13 +128,13 @@ namespace PCLExt.FileStorage
                     InternalCreateFile(newPath);
                 }
                 else if (option == CreationCollisionOption.FailIfExists)
-                    throw new IOException("File already exists: " + newPath);
+                    throw new IOException($"File already exists: {newPath}");
                 else if (option == CreationCollisionOption.OpenIfExists)
                 {
                     //	No operation.
                 }
                 else
-                    throw new ArgumentException("Unrecognized CreationCollisionOption: " + option);
+                    throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
             }
             else
             {
@@ -108,14 +156,38 @@ namespace PCLExt.FileStorage
         /// <param name="name">The name of the file to get.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The requested file, or null if it does not exist.</returns>
+        public IFile GetFile(string name)
+        {
+            var path = System.IO.Path.Combine(Path, name);
+            if (!File.Exists(path))
+                throw new FileNotFoundException($"File does not exist: {path}");
+            return new FileSystemFile(path);
+        }
+
+        /// <summary>
+        /// Gets a file in this folder.
+        /// </summary>
+        /// <param name="name">The name of the file to get.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The requested file, or null if it does not exist.</returns>
         public async Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             var path = System.IO.Path.Combine(Path, name);
             if (!File.Exists(path))
-                throw new FileNotFoundException("File does not exist: " + path);
+                throw new FileNotFoundException($"File does not exist: {path}");
             return new FileSystemFile(path);
+        }
+
+        /// <summary>
+        /// Gets a list of the files in this folder.
+        /// </summary>
+        /// <returns>A list of the files in the folder.</returns>
+        public IList<IFile> GetFiles()
+        {
+            EnsureExists();
+            return Directory.GetFiles(Path).Select(f => new FileSystemFile(f)).ToList<IFile>().AsReadOnly();
         }
 
         /// <summary>
@@ -137,9 +209,55 @@ namespace PCLExt.FileStorage
         /// <param name="option">Specifies how to behave if the specified folder already exists.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The newly created folder</returns>
+        public IFolder CreateFolder(string desiredName, CreationCollisionOption option)
+        {
+            Requires.NotNullOrEmpty(desiredName, nameof(desiredName));
+
+            EnsureExists();
+            var nameToUse = desiredName;
+            var newPath = System.IO.Path.Combine(Path, nameToUse);
+            if (Directory.Exists(newPath))
+            {
+                if (option == CreationCollisionOption.GenerateUniqueName)
+                {
+                    for (var num = 2; Directory.Exists(newPath); num++)
+                    {
+                        nameToUse = $"{desiredName} ({num})";
+                        newPath = System.IO.Path.Combine(Path, nameToUse);
+                    }
+                    Directory.CreateDirectory(newPath);
+                }
+                else if (option == CreationCollisionOption.ReplaceExisting)
+                {
+                    Directory.Delete(newPath, true);
+                    Directory.CreateDirectory(newPath);
+                }
+                else if (option == CreationCollisionOption.FailIfExists)
+                    throw new IOException($"Directory already exists: {newPath}");
+                
+                else if (option == CreationCollisionOption.OpenIfExists)
+                {
+                    //	No operation.
+                }
+                else
+                    throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
+            }
+            else
+                Directory.CreateDirectory(newPath);
+            
+            return new FileSystemFolder(newPath, true);
+        }
+
+        /// <summary>
+        /// Creates a subfolder in this folder.
+        /// </summary>
+        /// <param name="desiredName">The name of the folder to create.</param>
+        /// <param name="option">Specifies how to behave if the specified folder already exists.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The newly created folder</returns>
         public async Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken)
         {
-            Requires.NotNullOrEmpty(desiredName, "desiredName");
+            Requires.NotNullOrEmpty(desiredName, nameof(desiredName));
 
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
@@ -153,7 +271,7 @@ namespace PCLExt.FileStorage
                     for (var num = 2; Directory.Exists(newPath); num++)
                     {
                         cancellationToken.ThrowIfCancellationRequested();
-                        nameToUse = desiredName + " (" + num + ")";
+                        nameToUse = $"{desiredName} ({num})";
                         newPath = System.IO.Path.Combine(Path, nameToUse);
                     }
                     Directory.CreateDirectory(newPath);
@@ -164,19 +282,34 @@ namespace PCLExt.FileStorage
                     Directory.CreateDirectory(newPath);
                 }
                 else if (option == CreationCollisionOption.FailIfExists)
-                    throw new IOException("Directory already exists: " + newPath);
-                
+                    throw new IOException($"Directory already exists: {newPath}");
+
                 else if (option == CreationCollisionOption.OpenIfExists)
                 {
                     //	No operation.
                 }
                 else
-                    throw new ArgumentException("Unrecognized CreationCollisionOption: " + option);
+                    throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
             }
             else
                 Directory.CreateDirectory(newPath);
-            
+
             return new FileSystemFolder(newPath, true);
+        }
+
+        /// <summary>
+        /// Gets a subfolder in this folder.
+        /// </summary>
+        /// <param name="name">The name of the folder to get.</param>
+        /// <returns>The requested folder, or null if it does not exist.</returns>
+        public IFolder GetFolder(string name)
+        {
+            Requires.NotNullOrEmpty(name, nameof(name));
+
+            var path = System.IO.Path.Combine(Path, name);
+            if (!Directory.Exists(path))
+                throw new DirectoryNotFoundException($"Directory does not exist: {path}");
+            return new FileSystemFolder(path, true);
         }
 
         /// <summary>
@@ -187,14 +320,24 @@ namespace PCLExt.FileStorage
         /// <returns>The requested folder, or null if it does not exist.</returns>
         public async Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken)
         {
-            Requires.NotNullOrEmpty(name, "name");
+            Requires.NotNullOrEmpty(name, nameof(name));
 
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             var path = System.IO.Path.Combine(Path, name);
             if (!Directory.Exists(path))
-                throw new DirectoryNotFoundException("Directory does not exist: " + path);
+                throw new DirectoryNotFoundException($"Directory does not exist: {path}");
             return new FileSystemFolder(path, true);
+        }
+
+        /// <summary>
+        /// Gets a list of subfolders in this folder.
+        /// </summary>
+        /// <returns>A list of subfolders in the folder.</returns>
+        public IList<IFolder> GetFolders()
+        {
+            EnsureExists();
+            return Directory.GetDirectories(Path).Select(d => new FileSystemFolder(d, true)).ToList<IFolder>().AsReadOnly();
         }
 
         /// <summary>
@@ -213,6 +356,26 @@ namespace PCLExt.FileStorage
         /// Checks whether a folder or file exists at the given location.
         /// </summary>
         /// <param name="name">The name of the file or folder to check for.</param>
+        /// <returns>
+        /// A task whose result is the result of the existence check.
+        /// </returns>
+        public ExistenceCheckResult CheckExists(string name)
+        {
+            Requires.NotNullOrEmpty(name, "name");
+
+            var checkPath = System.IO.Path.Combine(Path, name);
+            if (File.Exists(checkPath))
+                return ExistenceCheckResult.FileExists;
+            else if (Directory.Exists(checkPath))
+                return ExistenceCheckResult.FolderExists;
+            else
+                return ExistenceCheckResult.NotFound;
+        }
+
+        /// <summary>
+        /// Checks whether a folder or file exists at the given location.
+        /// </summary>
+        /// <param name="name">The name of the file or folder to check for.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>
         /// A task whose result is the result of the existence check.
@@ -223,7 +386,7 @@ namespace PCLExt.FileStorage
 
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
-            var checkPath = PortablePath.Combine(Path, name);
+            var checkPath = System.IO.Path.Combine(Path, name);
             if (File.Exists(checkPath))
                 return ExistenceCheckResult.FileExists;
             else if (Directory.Exists(checkPath))
@@ -236,15 +399,104 @@ namespace PCLExt.FileStorage
         /// Deletes this folder and all of its contents.
         /// </summary>
         /// <returns>A task which will complete after the folder is deleted.</returns>
+        public void Delete()
+        {
+            if (!_canDelete)
+                throw new IOException("Cannot delete root storage folder.");
+
+            EnsureExists();
+            Directory.Delete(Path, true);
+        }
+
+        /// <summary>
+        /// Deletes this folder and all of its contents.
+        /// </summary>
+        /// <returns>A task which will complete after the folder is deleted.</returns>
         public async Task DeleteAsync(CancellationToken cancellationToken)
         {
             if (!_canDelete)
                 throw new IOException("Cannot delete root storage folder.");
-            
+
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
             Directory.Delete(Path, true);
+        }
+
+        /// <summary>
+        /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
+        /// </summary>
+        /// <param name="folderPath">The folder path in which content will be moved</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <returns>The folder with moved content.</returns>
+        public IFolder Move(string folderPath, NameCollisionOption option)
+        {
+            Directory.CreateDirectory(folderPath);
+            return Move(new FileSystemFolder(folderPath, true), option);
+        }
+
+        /// <summary>
+        /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
+        /// </summary>
+        /// <param name="folderPath">The folder path in which content will be moved</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The folder with moved content.</returns>
+        public async Task<IFolder> MoveAsync(string folderPath, NameCollisionOption option, CancellationToken cancellationToken)
+        {
+            Directory.CreateDirectory(folderPath);
+            return await MoveAsync(new FileSystemFolder(folderPath, true), option, cancellationToken);
+        }
+
+        /// <summary>
+        /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
+        /// </summary>
+        /// <param name="folder">The folder in which content will be moved</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <returns>The folder with moved content.</returns>
+        public IFolder Move(IFolder folder, NameCollisionOption option)
+        {
+            Requires.NotNull(folder, nameof(folder));
+
+            EnsureExists();
+
+            var files = GetFiles();
+            foreach (var file in files)
+                file.Move(System.IO.Path.Combine(folder.Path, file.Name), option);
+
+            var folders = GetFolders();
+            foreach (var nFolder in folders)
+                nFolder.Move(folder.CreateFolder(nFolder.Name, CreationCollisionOption.OpenIfExists), option);
+
+            Delete();
+            return folder;
+        }
+
+        /// <summary>
+        /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
+        /// </summary>
+        /// <param name="folder">The folder in which content will be moved</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The folder with moved content.</returns>
+        public async Task<IFolder> MoveAsync(IFolder folder, NameCollisionOption option, CancellationToken cancellationToken)
+        {
+            Requires.NotNull(folder, nameof(folder));
+
+            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+
+            EnsureExists();
+
+            var files = await GetFilesAsync(cancellationToken);
+            foreach (var file in files)
+                await file.MoveAsync(System.IO.Path.Combine(folder.Path, file.Name), option, cancellationToken);
+
+            var folders = await GetFoldersAsync(cancellationToken);
+            foreach (var nFolder in folders)
+                await nFolder.MoveAsync(await folder.CreateFolderAsync(nFolder.Name, CreationCollisionOption.OpenIfExists, cancellationToken), option, cancellationToken);
+
+            await DeleteAsync(cancellationToken);
+            return folder;
         }
 
         void EnsureExists()

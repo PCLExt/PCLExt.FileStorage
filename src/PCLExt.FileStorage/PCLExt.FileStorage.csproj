@@ -46,7 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requires.cs" />
     <Compile Include="Exceptions.cs" />
-    <Compile Include="Storage.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(SolutionDir)\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">

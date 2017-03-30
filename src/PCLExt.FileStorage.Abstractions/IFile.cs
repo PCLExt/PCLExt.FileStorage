@@ -46,9 +46,24 @@ namespace PCLExt.FileStorage
         /// Opens the file
         /// </summary>
         /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>
+        /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file</returns>
+        Stream Open(FileAccess fileAccess);
+
+        /// <summary>
+        /// Opens the file
+        /// </summary>
+        /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file</returns>
         Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Deletes the file
+        /// </summary>
+        /// <returns>
+        /// A task which will complete after the file is deleted.
+        /// </returns>
+        void Delete();
 
         /// <summary>
         /// Deletes the file
@@ -64,11 +79,28 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="newName">The new leaf name of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>
+        /// A task which will complete after the file is renamed.
+        /// </returns>
+        void Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists);
+
+        /// <summary>
+        /// Renames a file without changing its location.
+        /// </summary>
+        /// <param name="newName">The new leaf name of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <returns>
         /// A task which will complete after the file is renamed.
         /// </returns>
         Task RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Moves a file.
+        /// </summary>
+        /// <param name="newPath">The new full path of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        void Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
 
         /// <summary>
         /// Moves a file.
@@ -84,8 +116,16 @@ namespace PCLExt.FileStorage
 		/// </summary>
 		/// <param name="newPath">The new full path of the file.</param>
 		/// <param name="collisionOption">How to deal with collisions with existing files.</param>
-		/// <param name="cancellationToken">The cancellation token.</param>
 		/// <returns>A task which will complete after the file is moved.</returns>
-		Task CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+		void Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
+
+        /// <summary>
+        /// Copies a file.
+        /// </summary>
+        /// <param name="newPath">The new full path of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        Task CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

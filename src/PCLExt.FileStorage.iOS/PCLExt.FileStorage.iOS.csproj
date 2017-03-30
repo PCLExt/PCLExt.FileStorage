@@ -64,9 +64,6 @@
     <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Requires.cs">
       <Link>Requires.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Storage.cs">
-      <Link>Storage.cs</Link>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\FileSystem.cs">
       <Link>FileSystem.cs</Link>
