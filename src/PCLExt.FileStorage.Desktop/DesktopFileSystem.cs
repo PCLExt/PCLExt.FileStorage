@@ -7,9 +7,6 @@
 // Which is released under the MS-PL license.
 //-----------------------------------------------------------------------
 
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace PCLExt.FileStorage
 {
 	/// <summary>
@@ -24,14 +21,12 @@ namespace PCLExt.FileStorage
 		static string MacHomeDirectory => ((Foundation.NSString)ObjCRuntime.Runtime.GetNSObject(NSHomeDirectory())).ToString();
 #endif
 
-		/// <summary>
-		/// A folder representing storage which is where the app is running.
-		/// </summary>
-		public IFolder BaseStorage
+        /// <inheritdoc />
+        public IFolder BaseStorage
 		{
 			get
 			{
-#if ANDROID || __IOS__ || OSX
+#if ANDROID || __IOS__
 				var storage = "";
 				return null;
 #elif DESKTOP || MAC
@@ -41,17 +36,15 @@ namespace PCLExt.FileStorage
 			}
 		}
 
-		/// <summary>
-		/// A folder representing storage which is local to the current device.
-		/// </summary>
-		public IFolder LocalStorage
+        /// <inheritdoc />
+        public IFolder LocalStorage
 		{
 			get
 			{
 #if ANDROID
 				var storage = Android.App.Application.Context.GetExternalFilesDir(null)?.ParentFile?.AbsolutePath;
 				if(string.IsNullOrEmpty(storage))
-				return null;
+				    return null;
 #elif __IOS__
 				var documents = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
 				var storage = System.IO.Path.Combine(documents, "..", "Library");
@@ -73,17 +66,15 @@ namespace PCLExt.FileStorage
 			}
 		}
 
-		/// <summary>
-		/// A folder representing storage which may be synced with other devices for the same user.
-		/// </summary>
-		public IFolder RoamingStorage
+        /// <inheritdoc />
+        public IFolder RoamingStorage
 		{
 			get
 			{
 #if ANDROID 
 				var storage = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
 
-#elif __IOS__ || OSX || MAC
+#elif __IOS__ || MAC
 				var storage = "";
 				return null;
 #elif DESKTOP
@@ -93,68 +84,20 @@ namespace PCLExt.FileStorage
 			}
 		}
 
-        /// <summary>
-        /// Gets a file, given its path.  Returns null if the file does not exist.
-        /// </summary>
-        /// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
-        /// <returns>A file for the given path, or null if it does not exist.</returns>
-        public IFile GetFileFromPath(string path)
+	    /// <inheritdoc />
+	    public IFolder SpecialStorage
         {
-            Requires.NotNullOrEmpty(path, "path");
+            get
+            {
+#if DESKTOP || MAC
+				return BaseStorage;
 
-            if (System.IO.File.Exists(path))
-                return new FileSystemFile(path);
+#elif ANDROID || __IOS__
+                return LocalStorage;
+#endif
 
-            return null;
-        }
-
-        /// <summary>
-        /// Gets a file, given its path.  Returns null if the file does not exist.
-        /// </summary>
-        /// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>A file for the given path, or null if it does not exist.</returns>
-        public async Task<IFile> GetFileFromPathAsync(string path, CancellationToken cancellationToken)
-		{
-			Requires.NotNullOrEmpty(path, "path");
-
-			await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-			if (System.IO.File.Exists(path))
-				return new FileSystemFile(path);
-
-			return null;
-		}
-
-        /// <summary>
-        /// Gets a folder, given its path.  Returns null if the folder does not exist.
-        /// </summary>
-        /// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
-        /// <returns>A folder for the specified path, or null if it does not exist.</returns>
-        public IFolder GetFolderFromPath(string path)
-        {
-            Requires.NotNullOrEmpty(path, "path");
-
-            if (System.IO.Directory.Exists(path))
-                return new FileSystemFolder(path, true);
-
-            return null;
-        }
-
-        /// <summary>
-        /// Gets a folder, given its path.  Returns null if the folder does not exist.
-        /// </summary>
-        /// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>A folder for the specified path, or null if it does not exist.</returns>
-        public async Task<IFolder> GetFolderFromPathAsync(string path, CancellationToken cancellationToken)
-        {
-            Requires.NotNullOrEmpty(path, "path");
-
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-            if (System.IO.Directory.Exists(path))
-                return new FileSystemFolder(path, true);
-
-            return null;
+                return null;
+            }
         }
     }
 }

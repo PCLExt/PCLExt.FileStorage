@@ -41,6 +41,8 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="AwaitExtensions.cs" />
+    <Compile Include="BaseFile.cs" />
+    <Compile Include="BaseFolder.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="PortablePath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

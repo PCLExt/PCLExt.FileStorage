@@ -29,13 +29,10 @@ namespace PCLExt.FileStorage
         /// <returns>The value of the parameter.</returns>
         /// <exception cref="ArgumentNullException">Thrown if <paramref name="value"/> is <c>null</c></exception>
         [DebuggerStepThrough]
-        public static T NotNull<T>(T value, string parameterName)
-            where T : class // ensures value-types aren't passed to a null checking method
+        public static T NotNull<T>(T value, string parameterName) where T : class // ensures value-types aren't passed to a null checking method
         {
             if (value == null)
-            {
                 throw new ArgumentNullException(parameterName);
-            }
 
             return value;
         }
@@ -53,24 +50,17 @@ namespace PCLExt.FileStorage
             // Consider the perfomance when changing the code to delegate to NotNull.
             // In general do not chain call to another function, check first and return as earlier as possible. 
             if (value == null)
-            {
                 throw new ArgumentNullException(parameterName);
-            }
 
             if (value.Length == 0 || value[0] == '\0')
-            {
                 throw new ArgumentException(Format(Argument_EmptyString, parameterName), parameterName);
-            }
         }
 
         /// <summary>
         /// Helper method that formats string arguments.
         /// </summary>
         /// <returns>The formatted string.</returns>
-        private static string Format(string format, params object[] arguments)
-        {
-            return string.Format(CultureInfo.CurrentCulture, format, arguments);
-        }
+        private static string Format(string format, params object[] arguments) => string.Format(CultureInfo.CurrentCulture, format, arguments);
     }
 }
 

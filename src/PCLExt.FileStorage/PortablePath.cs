@@ -21,8 +21,8 @@ namespace PCLExt.FileStorage
         {
             get
             {
-#if DESKTOP || ANDROID || __IOS__ || MAC
-				return System.IO.Path.DirectorySeparatorChar;
+#if DESKTOP || MAC || ANDROID || __IOS__
+                return System.IO.Path.DirectorySeparatorChar;
 #endif
 
 				throw FileSystem.NotImplementedInReferenceAssembly();
@@ -36,11 +36,94 @@ namespace PCLExt.FileStorage
         /// <returns>A combined path.</returns>
         public static string Combine(params string[] paths)
         {
-#if DESKTOP || ANDROID || __IOS__ || MAC
-			return System.IO.Path.Combine(paths);
+#if DESKTOP || MAC || ANDROID || __IOS__
+            return System.IO.Path.Combine(paths);
 #endif
 
 			throw FileSystem.NotImplementedInReferenceAssembly();
+        }
+
+        /// <summary>
+        /// Returns the extension for the specified path string.
+        /// </summary>
+        /// <param name="path">The path string from which to get the extension.</param>
+        /// <returns>
+        /// A <see cref="string" /> containing the extension of the specified 
+        /// <paramref name="path" /> (including the "."), or an empty 
+        /// <see cref="string" /> if <paramref name="path" /> does not have 
+        /// extension information.
+        /// </returns>
+        /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
+        public static string GetExtension(string path)
+        {
+#if DESKTOP || MAC || ANDROID || __IOS__
+            return System.IO.Path.GetExtension(path);
+#endif
+
+            throw FileSystem.NotImplementedInReferenceAssembly();
+        }
+
+        /// <summary>
+        /// Returns the filename for the specified path string.
+        /// </summary>
+        /// <param name="path">The path string from which to obtain the file name and extension.</param>
+        /// <returns>
+        /// <para>
+        /// A <see cref="string" /> consisting of the characters after the last 
+        /// directory character in path. 
+        /// </para>
+        /// <para>
+        /// If the last character of <paramref name="path" /> is a directory or 
+        /// volume separator character, an empty <see cref="string" /> is returned.
+        /// </para>
+        /// </returns>
+        /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
+        public static string GetFileName(string path)
+        {
+#if DESKTOP || MAC || ANDROID || __IOS__
+            return System.IO.Path.GetFileName(path);
+#endif
+
+            throw FileSystem.NotImplementedInReferenceAssembly();
+        }
+
+        /// <summary>
+        /// Returns the filename without extension for the specified path string.
+        /// </summary>
+        /// <param name="path">The path of the file.</param>
+        /// <returns>
+        /// A <see cref="string" /> containing the <see cref="string" /> returned 
+        /// by <see cref="GetFileName" />, minus the last period (.) and all 
+        /// characters following it.
+        /// </returns>
+        /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
+        public static string GetFileNameWithoutExtension(string path)
+        {
+#if DESKTOP || MAC || ANDROID || __IOS__
+            return System.IO.Path.GetFileNameWithoutExtension(path);
+#endif
+
+            throw FileSystem.NotImplementedInReferenceAssembly();
+        }
+
+        /// <summary>
+        /// Determines whether a path string includes an extension.
+        /// </summary>
+        /// <param name="path">The path to search for an extension.</param>
+        /// <returns>
+        /// <see langword="true" />. if the characters that follow the last 
+        /// directory separator or volume separator in the <paramref name="path" /> 
+        /// include a period (.) followed by one or more characters; 
+        /// otherwise, <see langword="false" />.
+        /// </returns>
+        /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
+        public static bool HasExtension(string path)
+        {
+#if DESKTOP || MAC || ANDROID || __IOS__
+            return System.IO.Path.HasExtension(path);
+#endif
+
+            throw FileSystem.NotImplementedInReferenceAssembly();
         }
     }
 }

@@ -7,9 +7,6 @@
 // Which is released under the MS-PL license.
 //-----------------------------------------------------------------------
 
-using System.Threading;
-using System.Threading.Tasks;
-
 namespace PCLExt.FileStorage
 {
     /// <summary>
@@ -29,35 +26,9 @@ namespace PCLExt.FileStorage
         /// A folder representing storage which may be synced with other devices for the same user.
         /// </summary>
         IFolder RoamingStorage { get; }
-
         /// <summary>
-        /// Gets a file, given its path.  Returns null if the file does not exist.
+        /// Depending on OS, it will return BaseStorage on Desktop platforms and LocalStorage on Mobile platforms.
         /// </summary>
-        /// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
-        /// <returns>A file for the given path, or null if it does not exist.</returns>
-        IFile GetFileFromPath(string path);
-
-        /// <summary>
-        /// Gets a file, given its path.  Returns null if the file does not exist.
-        /// </summary>
-        /// <param name="path">The path to a file, as returned from the <see cref="IFile.Path"/> property.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>A file for the given path, or null if it does not exist.</returns>
-        Task<IFile> GetFileFromPathAsync(string path, CancellationToken cancellationToken = default(CancellationToken));
-
-        /// <summary>
-        /// Gets a folder, given its path.  Returns null if the folder does not exist.
-        /// </summary>
-        /// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
-        /// <returns>A folder for the specified path, or null if it does not exist.</returns>
-        IFolder GetFolderFromPath(string path);
-
-        /// <summary>
-        /// Gets a folder, given its path.  Returns null if the folder does not exist.
-        /// </summary>
-        /// <param name="path">The path to a folder, as returned from the <see cref="IFolder.Path"/> property.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>A folder for the specified path, or null if it does not exist.</returns>
-        Task<IFolder> GetFolderFromPathAsync(string path, CancellationToken cancellationToken = default(CancellationToken));
+        IFolder SpecialStorage { get; }
     }
 }

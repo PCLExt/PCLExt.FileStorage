@@ -48,7 +48,6 @@ namespace PCLExt.FileStorage
         /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>
         /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file</returns>
         Stream Open(FileAccess fileAccess);
-
         /// <summary>
         /// Opens the file
         /// </summary>
@@ -64,7 +63,6 @@ namespace PCLExt.FileStorage
         /// A task which will complete after the file is deleted.
         /// </returns>
         void Delete();
-
         /// <summary>
         /// Deletes the file
         /// </summary>
@@ -83,7 +81,6 @@ namespace PCLExt.FileStorage
         /// A task which will complete after the file is renamed.
         /// </returns>
         void Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists);
-
         /// <summary>
         /// Renames a file without changing its location.
         /// </summary>
@@ -101,7 +98,6 @@ namespace PCLExt.FileStorage
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
         void Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
-
         /// <summary>
         /// Moves a file.
         /// </summary>
@@ -118,7 +114,6 @@ namespace PCLExt.FileStorage
 		/// <param name="collisionOption">How to deal with collisions with existing files.</param>
 		/// <returns>A task which will complete after the file is moved.</returns>
 		void Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
-
         /// <summary>
         /// Copies a file.
         /// </summary>

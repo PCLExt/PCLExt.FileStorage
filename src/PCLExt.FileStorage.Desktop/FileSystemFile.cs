@@ -18,17 +18,12 @@ namespace PCLExt.FileStorage
     /// <summary>
     /// Represents a file in the <see cref="DesktopFileSystem"/>.
     /// </summary>
-    [DebuggerDisplay("Name = {Name}")]
+    [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
     public class FileSystemFile : IFile
     {
-        /// <summary>
-        /// The name of the file
-        /// </summary>
+        /// <inheritdoc />
         public string Name { get; private set; }
-
-        /// <summary>
-        /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>.
-        /// </summary>
+        /// <inheritdoc />
         public string Path { get; private set; }
 
         /// <summary>
@@ -41,11 +36,7 @@ namespace PCLExt.FileStorage
             Path = path;
         }
 
-        /// <summary>
-        /// Opens the file.
-        /// </summary>
-        /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode.</param>
-        /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file.</returns>
+        /// <inheritdoc />
         public Stream Open(FileAccess fileAccess)
         {
             if (fileAccess == FileAccess.Read)
@@ -55,13 +46,7 @@ namespace PCLExt.FileStorage
             else
                 throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}");
         }
-
-        /// <summary>
-        /// Opens the file.
-        /// </summary>
-        /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file.</returns>
+        /// <inheritdoc />
         public async Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -74,10 +59,7 @@ namespace PCLExt.FileStorage
                 throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}");
         }
 
-        /// <summary>
-        /// Deletes the file.
-        /// </summary>
-        /// <returns>A task which will complete after the file is deleted.</returns>
+        /// <inheritdoc />
         public void Delete()
         {
             if (!File.Exists(Path))
@@ -85,11 +67,7 @@ namespace PCLExt.FileStorage
 
             File.Delete(Path);
         }
-
-        /// <summary>
-        /// Deletes the file.
-        /// </summary>
-        /// <returns>A task which will complete after the file is deleted.</returns>
+        /// <inheritdoc />
         public async Task DeleteAsync(CancellationToken cancellationToken)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -100,30 +78,14 @@ namespace PCLExt.FileStorage
             File.Delete(Path);
         }
 
-        /// <summary>
-        /// Renames a file without changing its location.
-        /// </summary>
-        /// <param name="newName">The new leaf name of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <returns>
-        /// A task which will complete after the file is renamed.
-        /// </returns>
+        /// <inheritdoc />
         public void Rename(string newName, NameCollisionOption collisionOption)
         {
             Requires.NotNullOrEmpty(newName, "newName");
 
             Move(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName), collisionOption);
         }
-
-        /// <summary>
-        /// Renames a file without changing its location.
-        /// </summary>
-        /// <param name="newName">The new leaf name of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>
-        /// A task which will complete after the file is renamed.
-        /// </returns>
+        /// <inheritdoc />
         public async Task RenameAsync(string newName, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newName, "newName");
@@ -133,14 +95,7 @@ namespace PCLExt.FileStorage
             await MoveAsync(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName), collisionOption, cancellationToken);
         }
 
-        /// <summary>
-        /// Moves a file.
-        /// </summary>
-        /// <param name="newPath">The new full path of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <returns>
-        /// A task which will complete after the file is moved.
-        /// </returns>
+        /// <inheritdoc />
         public void Move(string newPath, NameCollisionOption collisionOption)
         {
             Requires.NotNullOrEmpty(newPath, "newPath");
@@ -176,16 +131,7 @@ namespace PCLExt.FileStorage
                 return;
             }
         }
-
-        /// <summary>
-        /// Moves a file.
-        /// </summary>
-        /// <param name="newPath">The new full path of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>
-        /// A task which will complete after the file is moved.
-        /// </returns>
+        /// <inheritdoc />
         public async Task MoveAsync(string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, "newPath");
@@ -225,14 +171,7 @@ namespace PCLExt.FileStorage
             }
         }
 
-        /// <summary>
-        /// Copies a file.
-        /// </summary>
-        /// <param name="newPath">The new full path of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <returns>
-        /// A task which will complete after the file is copied.
-        /// </returns>
+        /// <inheritdoc />
         public void Copy(string newPath, NameCollisionOption collisionOption)
         {
             Requires.NotNullOrEmpty(newPath, "newPath");
@@ -268,16 +207,7 @@ namespace PCLExt.FileStorage
                 return;
             }
         }
-
-        /// <summary>
-        /// Copies a file.
-        /// </summary>
-        /// <param name="newPath">The new full path of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>
-        /// A task which will complete after the file is copied.
-        /// </returns>
+        /// <inheritdoc />
         public async Task CopyAsync(string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, "newPath");
