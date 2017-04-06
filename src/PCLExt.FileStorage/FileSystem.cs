@@ -62,6 +62,11 @@ You should reference the PCLExt.FileStorage NuGet package from your main applica
         /// </summary>
         public static IFolder RoamingStorage => Current.RoamingStorage;
 
+        /// <summary>
+        /// A folder representing storage which may be synced with other devices for the same user.
+        /// </summary>
+        public static IFolder SpecialStorage => Current.SpecialStorage;
+
 
 
 
