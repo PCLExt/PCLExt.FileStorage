@@ -86,7 +86,7 @@ namespace PCLExt.FileStorage
         /// <param name="searchPattern"></param>
         /// <param name="searchOption"></param>
         /// <returns>A list of the files in the folder</returns>
-        IList<IFile> GetFiles(string searchPattern = "", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly);
+        IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly);
 
         /// <summary>
         /// Gets a list of the files in this folder
@@ -95,7 +95,7 @@ namespace PCLExt.FileStorage
         /// <param name="searchOption"></param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A list of the files in the folder</returns>
-        Task<IList<IFile>> GetFilesAsync(string searchPattern = "", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Creates a subfolder in this folder

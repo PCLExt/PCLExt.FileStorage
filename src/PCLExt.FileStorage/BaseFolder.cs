@@ -33,9 +33,9 @@ namespace PCLExt.FileStorage
         public Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default(CancellationToken)) => _folder.GetFileAsync(name, cancellationToken);
 
         /// <inheritdoc />
-        public IList<IFile> GetFiles(string searchPattern = "", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly) => _folder.GetFiles(searchPattern, searchOption);
+        public IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly) => _folder.GetFiles(searchPattern, searchOption);
         /// <inheritdoc />
-        public Task<IList<IFile>> GetFilesAsync(string searchPattern = "", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken)) => _folder.GetFilesAsync(searchPattern, searchOption, cancellationToken);
+        public Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken)) => _folder.GetFilesAsync(searchPattern, searchOption, cancellationToken);
 
         /// <inheritdoc />
         public IFile CreateFile(string desiredName, CreationCollisionOption option) => _folder.CreateFile(desiredName, option);

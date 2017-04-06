@@ -152,13 +152,13 @@ namespace PCLExt.FileStorage
         }
 
         /// <inheritdoc />
-        public IList<IFile> GetFiles(string searchPattern = "", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly)
+        public IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly)
         {
             EnsureExists();
             return Directory.GetFiles(Path, searchPattern, (SearchOption) searchOption).Select(f => new FileSystemFile(f)).ToList<IFile>().AsReadOnly();
         }
         /// <inheritdoc />
-        public async Task<IList<IFile>> GetFilesAsync(string searchPattern = "", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken))
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
