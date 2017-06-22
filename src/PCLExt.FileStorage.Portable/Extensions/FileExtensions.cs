@@ -11,7 +11,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace PCLExt.FileStorage
+namespace PCLExt.FileStorage.Extensions
 {
     /// <summary>
     /// Provides extension methods for the <see cref="IFile"/> class

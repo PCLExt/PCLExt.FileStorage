@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PCLExt.FileStorage
+namespace PCLExt.FileStorage.Extensions
 {
     /// <summary>
     /// Extensions for use internally by PCLStorage for awaiting.

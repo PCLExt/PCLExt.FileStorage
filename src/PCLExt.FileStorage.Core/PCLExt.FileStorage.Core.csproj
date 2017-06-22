@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <RootNamespace>PCLExt.FileStorage</RootNamespace>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>PCLExt.FileStorage</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;CORE</DefineConstants>
+    <DocumentationFile>bin\Release\netstandard1.3\PCLExt.FileStorage.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;CORE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFile.cs" Link="BaseFile.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFolder.cs" Link="BaseFolder.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\CreationCollisionOption.cs" Link="CreationCollisionOption.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\ExistenceCheckResult.cs" Link="ExistenceCheckResult.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\FolderSearchOption.cs" Link="FolderSearchOption.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFile.cs" Link="IFile.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFolder.cs" Link="IFolder.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\NameCollisionOption.cs" Link="NameCollisionOption.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\DirectoryNotFoundException.cs" Link="Exceptions\DirectoryNotFoundException.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\ExceptionsHelper.cs" Link="Exceptions\ExceptionsHelper.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FileNotFoundException.cs" Link="Exceptions\FileNotFoundException.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Extensions\AwaitExtensions.cs" Link="Extensions\AwaitExtensions.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Extensions\FileExtensions.cs" Link="Extensions\FileExtensions.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Extensions\FolderExtensions.cs" Link="Extensions\FolderExtensions.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Files\FileFromPath.cs" Link="Files\FileFromPath.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\ApplicationFolder.cs" Link="Folders\ApplicationFolder.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\FolderFromPath.cs" Link="Folders\FolderFromPath.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\LocalFolder.cs" Link="Folders\LocalFolder.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\RoamingFolder.cs" Link="Folders\RoamingFolder.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Requires.cs" Link="Requires.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Files\" />
+    <Folder Include="Folders\" />
+  </ItemGroup>
+
+</Project>

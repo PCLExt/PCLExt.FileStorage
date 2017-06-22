@@ -21,11 +21,6 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="folder"></param>
         protected BaseFolder(IFolder folder) { _folder = folder; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path"></param>
-        protected BaseFolder(string path) : this(FileSystem.GetFolderFromPath(path)) { }
 
         /// <inheritdoc />
         public IFile GetFile(string name) => _folder.GetFile(name);

@@ -12,6 +12,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using PCLExt.FileStorage.Extensions;
 
 namespace PCLExt.FileStorage
 {
@@ -19,7 +20,7 @@ namespace PCLExt.FileStorage
     /// Represents a file in the <see cref="DesktopFileSystem"/>.
     /// </summary>
     [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
-    public class FileSystemFile : IFile
+    internal class NET4FileImplementation : IFile
     {
         /// <inheritdoc />
         public string Name { get; private set; }
@@ -30,7 +31,7 @@ namespace PCLExt.FileStorage
         /// Creates a new <see cref="FileSystemFile"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
-        public FileSystemFile(string path)
+        public NET4FileImplementation(string path)
         {
             Name = System.IO.Path.GetFileName(path);
             Path = path;

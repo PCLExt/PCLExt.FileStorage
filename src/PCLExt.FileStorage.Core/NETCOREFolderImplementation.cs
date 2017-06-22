@@ -15,13 +15,15 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
+using PCLExt.FileStorage.Extensions;
+
 namespace PCLExt.FileStorage
 {
     /// <summary>
     /// Represents a folder in the <see cref="DesktopFileSystem"/>.
     /// </summary>
     [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
-    public class FileSystemFolder : IFolder
+    internal class NETCOREFolderImplementation : IFolder
     {
         private readonly bool _canDelete;
 
@@ -35,7 +37,7 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="path">The folder path.</param>
         /// <param name="canDelete">Specifies whether the folder can be deleted (via <see cref="DeleteAsync"/>).</param>
-        public FileSystemFolder(string path, bool canDelete = false) { Name = System.IO.Path.GetFileName(path); Path = path; _canDelete = canDelete; }
+        public NETCOREFolderImplementation(string path, bool canDelete = false) { Name = System.IO.Path.GetFileName(path); Path = path; _canDelete = canDelete; }
 
         /// <inheritdoc />
         public IFile CreateFile(string desiredName, CreationCollisionOption option)
@@ -79,7 +81,7 @@ namespace PCLExt.FileStorage
                 InternalCreateFile(newPath);
             }
 
-            return new FileSystemFile(newPath);
+            return new NETCOREFileImplementation(newPath);
         }
         /// <inheritdoc />
         public async Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken))
@@ -125,7 +127,7 @@ namespace PCLExt.FileStorage
                 InternalCreateFile(newPath);
             }
 
-            return new FileSystemFile(newPath);
+            return new NETCOREFileImplementation(newPath);
         }
         void InternalCreateFile(string path)
         {
@@ -138,7 +140,7 @@ namespace PCLExt.FileStorage
             var path = System.IO.Path.Combine(Path, name);
             if (!File.Exists(path))
                 throw new FileNotFoundException($"File does not exist: {path}");
-            return new FileSystemFile(path);
+            return new NETCOREFileImplementation(path);
         }
         /// <inheritdoc />
         public async Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default(CancellationToken))
@@ -148,14 +150,14 @@ namespace PCLExt.FileStorage
             var path = System.IO.Path.Combine(Path, name);
             if (!File.Exists(path))
                 throw new FileNotFoundException($"File does not exist: {path}");
-            return new FileSystemFile(path);
+            return new NETCOREFileImplementation(path);
         }
 
         /// <inheritdoc />
         public IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly)
         {
             EnsureExists();
-            return Directory.GetFiles(Path, searchPattern, (SearchOption) searchOption).Select(f => new FileSystemFile(f)).ToList<IFile>().AsReadOnly();
+            return Directory.GetFiles(Path, searchPattern, (SearchOption) searchOption).Select(f => new NETCOREFileImplementation(f)).ToList<IFile>().AsReadOnly();
         }
         /// <inheritdoc />
         public async Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken))
@@ -163,7 +165,7 @@ namespace PCLExt.FileStorage
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
-            return Directory.GetFiles(Path, searchPattern, (SearchOption) searchOption).Select(f => new FileSystemFile(f)).ToList<IFile>().AsReadOnly();
+            return Directory.GetFiles(Path, searchPattern, (SearchOption) searchOption).Select(f => new NETCOREFileImplementation(f)).ToList<IFile>().AsReadOnly();
         }
 
         /// <inheritdoc />
@@ -203,7 +205,7 @@ namespace PCLExt.FileStorage
             else
                 Directory.CreateDirectory(newPath);
             
-            return new FileSystemFolder(newPath, true);
+            return new NETCOREFolderImplementation(newPath, true);
         }
         /// <inheritdoc />
         public async Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken))
@@ -245,7 +247,7 @@ namespace PCLExt.FileStorage
             else
                 Directory.CreateDirectory(newPath);
 
-            return new FileSystemFolder(newPath, true);
+            return new NETCOREFolderImplementation(newPath, true);
         }
 
         /// <inheritdoc />
@@ -256,7 +258,7 @@ namespace PCLExt.FileStorage
             var path = System.IO.Path.Combine(Path, name);
             if (!Directory.Exists(path))
                 throw new DirectoryNotFoundException($"Directory does not exist: {path}");
-            return new FileSystemFolder(path, true);
+            return new NETCOREFolderImplementation(path, true);
         }
         /// <inheritdoc />
         public async Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default(CancellationToken))
@@ -268,14 +270,14 @@ namespace PCLExt.FileStorage
             var path = System.IO.Path.Combine(Path, name);
             if (!Directory.Exists(path))
                 throw new DirectoryNotFoundException($"Directory does not exist: {path}");
-            return new FileSystemFolder(path, true);
+            return new NETCOREFolderImplementation(path, true);
         }
 
         /// <inheritdoc />
         public IList<IFolder> GetFolders()
         {
             EnsureExists();
-            return Directory.GetDirectories(Path).Select(d => new FileSystemFolder(d, true)).ToList<IFolder>().AsReadOnly();
+            return Directory.GetDirectories(Path).Select(d => new NETCOREFolderImplementation(d, true)).ToList<IFolder>().AsReadOnly();
         }
         /// <inheritdoc />
         public async Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default(CancellationToken))
@@ -283,7 +285,7 @@ namespace PCLExt.FileStorage
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
-            return Directory.GetDirectories(Path).Select(d => new FileSystemFolder(d, true)).ToList<IFolder>().AsReadOnly();
+            return Directory.GetDirectories(Path).Select(d => new NETCOREFolderImplementation(d, true)).ToList<IFolder>().AsReadOnly();
         }
 
         /// <inheritdoc />

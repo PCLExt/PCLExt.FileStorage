@@ -1,4 +1,4 @@
-﻿//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 // <copyright company="Daniel Plaisted">
 //     Copyright (c) Daniel Plaisted. All rights reserved.
 // </copyright>
@@ -8,30 +8,14 @@
 //-----------------------------------------------------------------------
 
 using System;
-using System.IO;
 
-namespace PCLExt.FileStorage
+namespace PCLExt.FileStorage.Exceptions
 {
-    /// <exclude/>
-    public class FileNotFoundException
-#if PORTABLE
-        : IOException
-#else
-        : System.IO.FileNotFoundException
-#endif
-    {
-        /// <exclude/>
-        public FileNotFoundException(string message) : base(message) { }
-
-        /// <exclude/>
-        public FileNotFoundException(string message, Exception innerException) : base(message, innerException) { }
-    }
-
     /// <exclude/>
     public class DirectoryNotFoundException
 #if PORTABLE
-        : IOException
-#elif NETFX_CORE
+        : System.IO.IOException
+#elif CORE
         : System.IO.FileNotFoundException
 #else
         : System.IO.DirectoryNotFoundException

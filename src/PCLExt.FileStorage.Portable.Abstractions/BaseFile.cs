@@ -21,11 +21,6 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="file"></param>
         public BaseFile(IFile file) { _file = file; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="path"></param>
-        public BaseFile(string path) : this(FileSystem.GetFileFromPath(path)) { }
 
         /// <inheritdoc />
         public Stream Open(FileAccess fileAccess) => _file.Open(fileAccess);

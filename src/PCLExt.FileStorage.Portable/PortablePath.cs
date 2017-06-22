@@ -7,6 +7,8 @@
 // Which is released under the MS-PL license.
 //-----------------------------------------------------------------------
 
+using PCLExt.FileStorage.Exceptions;
+
 namespace PCLExt.FileStorage
 {
     /// <summary>
@@ -25,7 +27,7 @@ namespace PCLExt.FileStorage
                 return System.IO.Path.DirectorySeparatorChar;
 #endif
 
-				throw FileSystem.NotImplementedInReferenceAssembly();
+				throw ExceptionsHelper.NotImplementedInReferenceAssembly();
             }
         }
 
@@ -40,7 +42,7 @@ namespace PCLExt.FileStorage
             return System.IO.Path.Combine(paths);
 #endif
 
-			throw FileSystem.NotImplementedInReferenceAssembly();
+			throw ExceptionsHelper.NotImplementedInReferenceAssembly();
         }
 
         /// <summary>
@@ -60,7 +62,7 @@ namespace PCLExt.FileStorage
             return System.IO.Path.GetExtension(path);
 #endif
 
-            throw FileSystem.NotImplementedInReferenceAssembly();
+            throw ExceptionsHelper.NotImplementedInReferenceAssembly();
         }
 
         /// <summary>
@@ -84,7 +86,7 @@ namespace PCLExt.FileStorage
             return System.IO.Path.GetFileName(path);
 #endif
 
-            throw FileSystem.NotImplementedInReferenceAssembly();
+            throw ExceptionsHelper.NotImplementedInReferenceAssembly();
         }
 
         /// <summary>
@@ -103,7 +105,7 @@ namespace PCLExt.FileStorage
             return System.IO.Path.GetFileNameWithoutExtension(path);
 #endif
 
-            throw FileSystem.NotImplementedInReferenceAssembly();
+            throw ExceptionsHelper.NotImplementedInReferenceAssembly();
         }
 
         /// <summary>
@@ -123,7 +125,7 @@ namespace PCLExt.FileStorage
             return System.IO.Path.HasExtension(path);
 #endif
 
-            throw FileSystem.NotImplementedInReferenceAssembly();
+            throw ExceptionsHelper.NotImplementedInReferenceAssembly();
         }
     }
 }

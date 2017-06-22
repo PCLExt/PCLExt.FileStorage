@@ -51,34 +51,76 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\AwaitExtensions.cs">
-      <Link>AwaitExtensions.cs</Link>
-    </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\FileSystem.cs">
-      <Link>FileSystem.cs</Link>
-    </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\PortablePath.cs">
-      <Link>PortablePath.cs</Link>
-    </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\Requires.cs">
-      <Link>Requires.cs</Link>
-    </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\BaseFolder.cs">
-      <Link>BaseFolder.cs</Link>
-    </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage\BaseFile.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFile.cs">
       <Link>BaseFile.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage.Desktop\DesktopFileSystem.cs">
-      <Link>DesktopFileSystem.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFolder.cs">
+      <Link>BaseFolder.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage.Desktop\FileSystemFolder.cs">
-      <Link>FileSystemFolder.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\CreationCollisionOption.cs">
+      <Link>CreationCollisionOption.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\src\PCLExt.FileStorage.Desktop\FileSystemFile.cs">
-      <Link>FileSystemFile.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\ExistenceCheckResult.cs">
+      <Link>ExistenceCheckResult.cs</Link>
     </Compile>
-    <Compile Include="$(SolutionDir)\common\CommonAssemblyInfo.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\FolderSearchOption.cs">
+      <Link>FolderSearchOption.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFile.cs">
+      <Link>IFile.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFolder.cs">
+      <Link>IFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\NameCollisionOption.cs">
+      <Link>NameCollisionOption.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\exceptions\DirectoryNotFoundException.cs">
+      <Link>Exceptions\DirectoryNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\exceptions\ExceptionsHelper.cs">
+      <Link>Exceptions\ExceptionsHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\exceptions\FileNotFoundException.cs">
+      <Link>Exceptions\FileNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\extensions\AwaitExtensions.cs">
+      <Link>Extensions\AwaitExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\extensions\FileExtensions.cs">
+      <Link>Extensions\FileExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\extensions\FolderExtensions.cs">
+      <Link>Extensions\FolderExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\files\FileFromPath.cs">
+      <Link>Files\FileFromPath.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\folders\ApplicationFolder.cs">
+      <Link>Folders\ApplicationFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\folders\FolderFromPath.cs">
+      <Link>Folders\FolderFromPath.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\folders\LocalFolder.cs">
+      <Link>Folders\LocalFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\pclext.filestorage.portable\folders\RoamingFolder.cs">
+      <Link>Folders\RoamingFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\NET4FileImplementation.cs">
+      <Link>NET4FileImplementation.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\NET4FolderImplementation.cs">
+      <Link>NET4FolderImplementation.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable\PortablePath.cs">
+      <Link>PortablePath.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Requires.cs">
+      <Link>Requires.cs</Link>
+    </Compile>
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,7 +128,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="$(SolutionDir)\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
+    <ProjectReference Include="..\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj">
       <Project>{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}</Project>
       <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
