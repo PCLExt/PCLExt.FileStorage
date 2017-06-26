@@ -15,8 +15,10 @@ namespace PCLExt.FileStorage
         public string Name => _file.Name;
         /// <inheritdoc />
         public string Path => _file.Path;
+        /*
         /// <inheritdoc />
         public long Size => _file.Size;
+        */
 
         /// <summary>
         /// Shows if the file actually exist. Controversial property.
