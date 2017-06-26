@@ -51,29 +51,11 @@
     <Reference Include="Xamarin.Mac" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFile.cs">
-      <Link>BaseFile.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\DefaultFileImplementation.cs">
+      <Link>DefaultFileImplementation.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFolder.cs">
-      <Link>BaseFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\CreationCollisionOption.cs">
-      <Link>CreationCollisionOption.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\ExistenceCheckResult.cs">
-      <Link>ExistenceCheckResult.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\FolderSearchOption.cs">
-      <Link>FolderSearchOption.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFile.cs">
-      <Link>IFile.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFolder.cs">
-      <Link>IFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\NameCollisionOption.cs">
-      <Link>NameCollisionOption.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Desktop\DefaultFolderImplementation.cs">
+      <Link>DefaultFolderImplementation.cs</Link>
     </Compile>
     <Compile Include="..\pclext.filestorage.portable\exceptions\DirectoryNotFoundException.cs">
       <Link>Exceptions\DirectoryNotFoundException.cs</Link>
@@ -102,17 +84,11 @@
     <Compile Include="..\pclext.filestorage.portable\folders\FolderFromPath.cs">
       <Link>Folders\FolderFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\folders\LocalFolder.cs">
-      <Link>Folders\LocalFolder.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\LocalStorageFolder.cs">
+      <Link>Folders\LocalStorageFolder.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\folders\RoamingFolder.cs">
-      <Link>Folders\RoamingFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Desktop\NET4FileImplementation.cs">
-      <Link>NET4FileImplementation.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Desktop\NET4FolderImplementation.cs">
-      <Link>NET4FolderImplementation.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\RoamingStorageFolder.cs">
+      <Link>Folders\RoamingStorageFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable\PortablePath.cs">
       <Link>PortablePath.cs</Link>

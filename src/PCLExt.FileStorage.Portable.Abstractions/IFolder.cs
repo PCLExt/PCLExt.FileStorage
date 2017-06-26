@@ -23,7 +23,7 @@ namespace PCLExt.FileStorage
         /// </summary>
         string Name { get; }
         /// <summary>
-        /// The "full path" of the folder, which should uniquely identify it within a given <see cref="IFileSystem"/>
+        /// The "full path" of the folder
         /// </summary>
         string Path { get; }
 

@@ -12,26 +12,31 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+
 using PCLExt.FileStorage.Extensions;
 
 namespace PCLExt.FileStorage
 {
     /// <summary>
-    /// Represents a file in the <see cref="DesktopFileSystem"/>.
+    /// Represents a file
     /// </summary>
     [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
-    internal class NET4FileImplementation : IFile
+    internal class DefaultFileImplementation : IFile
     {
         /// <inheritdoc />
         public string Name { get; private set; }
         /// <inheritdoc />
         public string Path { get; private set; }
+        /*
+        /// <inheritdoc />
+        public long Size => new FileInfo(Path).Length;
+        */
 
         /// <summary>
-        /// Creates a new <see cref="FileSystemFile"/> corresponding to the specified path.
+        /// Creates a new <see cref="IFile"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
-        public NET4FileImplementation(string path)
+        public DefaultFileImplementation(string path)
         {
             Name = System.IO.Path.GetFileName(path);
             Path = path;

@@ -33,35 +33,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFile.cs">
-      <Link>BaseFile.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFolder.cs">
-      <Link>BaseFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\CreationCollisionOption.cs">
-      <Link>CreationCollisionOption.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\ExistenceCheckResult.cs">
-      <Link>ExistenceCheckResult.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\FolderSearchOption.cs">
-      <Link>FolderSearchOption.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFile.cs">
-      <Link>IFile.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFolder.cs">
-      <Link>IFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\NameCollisionOption.cs">
-      <Link>NameCollisionOption.cs</Link>
     </Compile>
     <Compile Include="..\pclext.filestorage.portable\exceptions\DirectoryNotFoundException.cs">
       <Link>Exceptions\DirectoryNotFoundException.cs</Link>
@@ -90,11 +65,11 @@
     <Compile Include="..\pclext.filestorage.portable\folders\FolderFromPath.cs">
       <Link>Folders\FolderFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\folders\LocalFolder.cs">
-      <Link>Folders\LocalFolder.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\LocalStorageFolder.cs">
+      <Link>Folders\LocalStorageFolder.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\folders\RoamingFolder.cs">
-      <Link>Folders\RoamingFolder.cs</Link>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\RoamingStorageFolder.cs">
+      <Link>Folders\RoamingStorageFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable\PortablePath.cs">
       <Link>PortablePath.cs</Link>
@@ -102,8 +77,8 @@
     <Compile Include="..\PCLExt.FileStorage.Portable\Requires.cs">
       <Link>Requires.cs</Link>
     </Compile>
-    <Compile Include="NET4FileImplementation.cs" />
-    <Compile Include="NET4FolderImplementation.cs" />
+    <Compile Include="DefaultFileImplementation.cs" />
+    <Compile Include="DefaultFolderImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

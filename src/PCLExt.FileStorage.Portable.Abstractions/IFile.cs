@@ -38,9 +38,16 @@ namespace PCLExt.FileStorage
        /// </summary>
         string Name { get; }
         /// <summary>
-        /// The "full path" of the file, which should uniquely identify it within a given <see cref="IFileSystem"/>
+        /// The "full path" of the file
         /// </summary>
         string Path { get; }
+
+        /*
+        /// <summary>
+        /// Size of the file.
+        /// </summary>
+        long Size { get; }
+        */
 
         /// <summary>
         /// Opens the file
@@ -86,6 +93,7 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="newName">The new leaf name of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>
         /// A task which will complete after the file is renamed.
         /// </returns>

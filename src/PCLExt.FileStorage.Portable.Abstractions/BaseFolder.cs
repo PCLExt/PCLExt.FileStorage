@@ -17,7 +17,7 @@ namespace PCLExt.FileStorage
         public string Path => _folder.Path;
 
         /// <summary>
-        /// 
+        /// Wraps an <see cref="IFolder"/>
         /// </summary>
         /// <param name="folder"></param>
         protected BaseFolder(IFolder folder) { _folder = folder; }

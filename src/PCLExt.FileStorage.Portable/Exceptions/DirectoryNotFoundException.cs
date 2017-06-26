@@ -15,7 +15,7 @@ namespace PCLExt.FileStorage.Exceptions
     public class DirectoryNotFoundException
 #if PORTABLE
         : System.IO.IOException
-#elif CORE
+#elif NETSTANDARD2_0
         : System.IO.FileNotFoundException
 #else
         : System.IO.DirectoryNotFoundException

@@ -45,8 +45,8 @@
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Files\FileFromPath.cs" />
     <Compile Include="Folders\FolderFromPath.cs" />
-    <Compile Include="Folders\RoamingFolder.cs" />
-    <Compile Include="Folders\LocalFolder.cs" />
+    <Compile Include="Folders\RoamingStorageFolder.cs" />
+    <Compile Include="Folders\LocalStorageFolder.cs" />
     <Compile Include="Folders\ApplicationFolder.cs" />
     <Compile Include="Extensions\AwaitExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />

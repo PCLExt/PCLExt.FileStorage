@@ -1,27 +1,25 @@
 ﻿namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
-    /// A folder representing storage which is where the app is running.
+    /// A folder where the app is running.
     /// </summary>
     public class ApplicationFolder : BaseFolder
     {
         /// <summary>
-        /// 
+        /// Returns the folder where the app is running.
         /// </summary>
-#if DESKTOP || ANDROID || __IOS__ || MAC
+#if DESKTOP || ANDROID || __IOS__ || MAC || NETSTANDARD2_0
         public ApplicationFolder() : base(GetApplicationFolder()) { }
         private static IFolder GetApplicationFolder()
         {
 #if ANDROID || __IOS__
-				var storage = "";
-				return null;
+            return null;
 #elif DESKTOP || MAC
-            var storage = System.AppDomain.CurrentDomain.BaseDirectory;
+            return new DefaultFolderImplementation(System.AppDomain.CurrentDomain.BaseDirectory);
+#elif NETSTANDARD2_0
+            return new DefaultFolderImplementation(System.AppContext.BaseDirectory);
 #endif
-            return new NET4FolderImplementation(storage);
         }
-#elif CORE
-        public ApplicationFolder() : base(new NETCOREFolderImplementation(System.AppContext.BaseDirectory)) { }
 #else
         public ApplicationFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
