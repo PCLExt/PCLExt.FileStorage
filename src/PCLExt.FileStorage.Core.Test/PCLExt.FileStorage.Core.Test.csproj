@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FilesTest.cs" Link="FilesTest.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FoldersTest.cs" Link="FoldersTest.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\StandardFoldersTest.cs" Link="StandardFoldersTest.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\TestFolder.cs" Link="TestFolder.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170923-02" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta3" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0-beta3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj" />
+    <ProjectReference Include="..\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

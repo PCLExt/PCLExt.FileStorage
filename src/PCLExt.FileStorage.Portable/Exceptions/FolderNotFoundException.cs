@@ -12,7 +12,7 @@ using System;
 namespace PCLExt.FileStorage.Exceptions
 {
     /// <exclude/>
-    public class DirectoryNotFoundException
+    public class FolderNotFoundException
 #if PORTABLE
         : System.IO.IOException
 #elif NETSTANDARD2_0
@@ -22,9 +22,9 @@ namespace PCLExt.FileStorage.Exceptions
 #endif
     {
         /// <exclude/>
-        public DirectoryNotFoundException(string message) : base(message) { }
+        public FolderNotFoundException(string message) : base(message) { }
 
         /// <exclude/>
-        public DirectoryNotFoundException(string message, Exception innerException) : base(message, innerException) { }
+        public FolderNotFoundException(string message, Exception innerException) : base(message, innerException) { }
     }
 }

@@ -4,9 +4,7 @@ using System.Threading.Tasks;
 
 namespace PCLExt.FileStorage
 {
-    /// <summary>
-    /// Represents an abstract file system folder
-    /// </summary>
+    /// <inheritdoc />
     public abstract class BaseFolder : IFolder
     {
         private readonly IFolder _folder;
@@ -15,6 +13,8 @@ namespace PCLExt.FileStorage
         public string Name => _folder.Name;
         /// <inheritdoc />
         public string Path => _folder.Path;
+        /// <inheritdoc />
+        public bool Exists => _folder != null;
 
         /// <summary>
         /// Wraps an <see cref="IFolder"/>
@@ -63,8 +63,18 @@ namespace PCLExt.FileStorage
         public Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken)) => _folder.DeleteAsync(cancellationToken);
 
         /// <inheritdoc />
-        public IFolder Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => _folder.Move(folder, option);
+        public IFolder Rename(string newName) => _folder.Rename(newName);
         /// <inheritdoc />
-        public Task<IFolder> MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = new CancellationToken()) => _folder.MoveAsync(folder, option, cancellationToken);
+        public Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default(CancellationToken)) => _folder.RenameAsync(newName, cancellationToken);
+
+        /// <inheritdoc />
+        public void Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => _folder.Move(folder, option);
+        /// <inheritdoc />
+        public Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = new CancellationToken()) => _folder.MoveAsync(folder, option, cancellationToken);
+
+        /// <inheritdoc />
+        public void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => _folder.Copy(folder, option);
+        /// <inheritdoc />
+        public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = new CancellationToken()) => _folder.CopyAsync(folder, option, cancellationToken);
     }
 }

@@ -38,14 +38,23 @@
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\exceptions\DirectoryNotFoundException.cs">
-      <Link>Exceptions\DirectoryNotFoundException.cs</Link>
-    </Compile>
     <Compile Include="..\pclext.filestorage.portable\exceptions\ExceptionsHelper.cs">
       <Link>Exceptions\ExceptionsHelper.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FileExistException.cs">
+      <Link>Exceptions\FileExistException.cs</Link>
+    </Compile>
     <Compile Include="..\pclext.filestorage.portable\exceptions\FileNotFoundException.cs">
       <Link>Exceptions\FileNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FolderExistException.cs">
+      <Link>Exceptions\FolderExistException.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FolderNotFoundException.cs">
+      <Link>Exceptions\FolderNotFoundException.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\RootFolderDeletionException.cs">
+      <Link>Exceptions\RootFolderDeletionException.cs</Link>
     </Compile>
     <Compile Include="..\pclext.filestorage.portable\extensions\AwaitExtensions.cs">
       <Link>Extensions\AwaitExtensions.cs</Link>
@@ -84,7 +93,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj">
       <Project>{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}</Project>
-      <Name>PCLExt.FileStorage.Abstractions</Name>
+      <Name>PCLExt.FileStorage.Portable.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

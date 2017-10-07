@@ -42,12 +42,15 @@ namespace PCLExt.FileStorage
         /// </summary>
         string Path { get; }
 
-        /*
+        /// <summary>
+        /// Shows if the file actually exist. Controversial property.
+        /// </summary>
+        bool Exists { get; }
+
         /// <summary>
         /// Size of the file.
         /// </summary>
         long Size { get; }
-        */
 
         /// <summary>
         /// Opens the file
@@ -80,24 +83,77 @@ namespace PCLExt.FileStorage
         Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-        /// Renames a file without changing its location.
+        /// 
         /// </summary>
-        /// <param name="newName">The new leaf name of the file.</param>
+        /// <param name="bytes"></param>
+        void WriteAllBytes(byte[] bytes);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        byte[] ReadAllBytes();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Renames a file without changing its directory.
+        /// </summary>
+        /// <param name="newName">The new name of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <returns>
         /// A task which will complete after the file is renamed.
         /// </returns>
-        void Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists);
+        IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists);
         /// <summary>
-        /// Renames a file without changing its location.
+        /// Renames a file without changing its directory.
         /// </summary>
-        /// <param name="newName">The new leaf name of the file.</param>
+        /// <param name="newName">The new name of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>
         /// A task which will complete after the file is renamed.
         /// </returns>
-        Task RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Moves a file.
+        /// </summary>
+        /// <param name="newFile">The file to move to.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        void Move(IFile newFile);
+        /// <summary>
+        /// Moves a file.
+        /// </summary>
+        /// <param name="newFile">The file to move to.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Copies a file. Overwriting a file of the same name is allowed.
+        /// </summary>
+        /// <param name="newFile">The file to copy to.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        void Copy(IFile newFile);
+        /// <summary>
+        /// Copies a file. Overwriting a file of the same name is allowed.
+        /// </summary>
+        /// <param name="newFile">The file to copy to.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Moves a file.
@@ -105,7 +161,7 @@ namespace PCLExt.FileStorage
         /// <param name="newPath">The new full path of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        void Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
+        IFile Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
         /// <summary>
         /// Moves a file.
         /// </summary>
@@ -113,22 +169,22 @@ namespace PCLExt.FileStorage
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        Task MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
-		/// Copies a file.
+		/// Copies a file. Overwriting a file of the same name is allowed.
 		/// </summary>
 		/// <param name="newPath">The new full path of the file.</param>
 		/// <param name="collisionOption">How to deal with collisions with existing files.</param>
 		/// <returns>A task which will complete after the file is moved.</returns>
-		void Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
+		IFile Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
         /// <summary>
-        /// Copies a file.
+        /// Copies a file. Overwriting a file of the same name is allowed.
         /// </summary>
         /// <param name="newPath">The new full path of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        Task CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

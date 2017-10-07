@@ -18,7 +18,7 @@ namespace PCLExt.FileStorage
     /// </summary>
     internal static class Requires
     {
-        private const string Argument_EmptyString = "'{0}' cannot be an empty string (\"\") or start with the null character.";
+        private const string ArgumentEmptyString = "'{0}' cannot be an empty string (\"\") or start with the null character.";
 
         /// <summary>
         /// Throws an exception if the specified parameter's value is null.
@@ -53,14 +53,8 @@ namespace PCLExt.FileStorage
                 throw new ArgumentNullException(parameterName);
 
             if (value.Length == 0 || value[0] == '\0')
-                throw new ArgumentException(Format(Argument_EmptyString, parameterName), parameterName);
+                throw new ArgumentException(string.Format(CultureInfo.CurrentCulture, ArgumentEmptyString, parameterName), parameterName);
         }
-
-        /// <summary>
-        /// Helper method that formats string arguments.
-        /// </summary>
-        /// <returns>The formatted string.</returns>
-        private static string Format(string format, params object[] arguments) => string.Format(CultureInfo.CurrentCulture, format, arguments);
     }
 }
 

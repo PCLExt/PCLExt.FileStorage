@@ -28,6 +28,11 @@ namespace PCLExt.FileStorage
         string Path { get; }
 
         /// <summary>
+        /// Shows if the folder actually exist. Controversial property.
+        /// </summary>
+        bool Exists { get; }
+
+        /// <summary>
         /// Creates a file in this folder
         /// </summary>
         /// <param name="desiredName">The name of the file to create</param>
@@ -143,12 +148,26 @@ namespace PCLExt.FileStorage
         Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newName"></param>
+        /// <returns></returns>
+        IFolder Rename(string newName);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newName"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
         /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
         /// </summary>
         /// <param name="folder">The folder in which content will be moved</param>
         /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
         /// <returns>The folder with moved content.</returns>
-        IFolder Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting);
+        void Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting);
         /// <summary>
         /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
         /// </summary>
@@ -156,6 +175,20 @@ namespace PCLExt.FileStorage
         /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The folder with moved content.</returns>
-        Task<IFolder> MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Copies this folder and all of its contents to the given folder.
+        /// </summary>
+        /// <param name="folder">The folder in which content will be copied</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting);
+        /// <summary>
+        /// Copies this folder and all of its contents to the given folder.
+        /// </summary>
+        /// <param name="folder">The folder in which content will be copied</param>
+        /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
     }
 }

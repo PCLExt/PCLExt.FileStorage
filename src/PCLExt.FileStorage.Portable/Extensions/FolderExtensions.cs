@@ -188,6 +188,16 @@ namespace PCLExt.FileStorage.Extensions
         }
         internal static IFolder GetDataFolder(this IFolder baseFolder)
         {
+            // TODO
+            if(string.IsNullOrEmpty(CompanyName))
+                throw new Exception();
+
+            if (string.IsNullOrEmpty(ProductName))
+                throw new Exception();
+
+            if (string.IsNullOrEmpty(ProductVersion))
+                throw new Exception();
+
             return baseFolder
                 .CreateFolder(CompanyName, CreationCollisionOption.OpenIfExists)
                 .CreateFolder(ProductName, CreationCollisionOption.OpenIfExists)

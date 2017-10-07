@@ -40,8 +40,11 @@
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Exceptions\DirectoryNotFoundException.cs" />
+    <Compile Include="Exceptions\FolderNotFoundException.cs" />
+    <Compile Include="Exceptions\FileExistException.cs" />
     <Compile Include="Exceptions\FileNotFoundException.cs" />
+    <Compile Include="Exceptions\FolderExistException.cs" />
+    <Compile Include="Exceptions\RootFolderDeletionException.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Files\FileFromPath.cs" />
     <Compile Include="Folders\FolderFromPath.cs" />
@@ -58,7 +61,7 @@
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj">
       <Project>{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}</Project>
-      <Name>PCLExt.FileStorage.Abstractions</Name>
+      <Name>PCLExt.FileStorage.Portable.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

@@ -19,19 +19,14 @@
 
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Desktop\DefaultFileImplementation.cs" Link="DefaultFileImplementation.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Desktop\DefaultFolderImplementation.cs" Link="DefaultFolderImplementation.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFile.cs" Link="BaseFile.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\BaseFolder.cs" Link="BaseFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\CreationCollisionOption.cs" Link="CreationCollisionOption.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\ExistenceCheckResult.cs" Link="ExistenceCheckResult.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\FolderSearchOption.cs" Link="FolderSearchOption.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFile.cs" Link="IFile.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\IFolder.cs" Link="IFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable.Abstractions\NameCollisionOption.cs" Link="NameCollisionOption.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\DirectoryNotFoundException.cs" Link="Exceptions\DirectoryNotFoundException.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFileImplementation.cs" Link="DefaultFileImplementation.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFolderImplementation.cs" Link="DefaultFolderImplementation.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\ExceptionsHelper.cs" Link="Exceptions\ExceptionsHelper.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FileExistException.cs" Link="Exceptions\FileExistException.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FileNotFoundException.cs" Link="Exceptions\FileNotFoundException.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FolderExistException.cs" Link="Exceptions\FolderExistException.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FolderNotFoundException.cs" Link="Exceptions\FolderNotFoundException.cs" />
+    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\RootFolderDeletionException.cs" Link="Exceptions\RootFolderDeletionException.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable\Extensions\AwaitExtensions.cs" Link="Extensions\AwaitExtensions.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable\Extensions\FileExtensions.cs" Link="Extensions\FileExtensions.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable\Extensions\FolderExtensions.cs" Link="Extensions\FolderExtensions.cs" />
@@ -48,6 +43,10 @@
     <Folder Include="Extensions\" />
     <Folder Include="Files\" />
     <Folder Include="Folders\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
