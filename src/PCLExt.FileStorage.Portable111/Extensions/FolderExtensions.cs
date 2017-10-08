@@ -19,11 +19,7 @@ namespace PCLExt.FileStorage.Extensions
         {
             var folders = folderPath.Split(new[]
             {
-#if DESKTOP || ANDROID || __IOS__ || MAC || PORTABLE
                 PortablePath.DirectorySeparatorChar
-#elif NETSTANDARD2_0
-                System.IO.Path.DirectorySeparatorChar
-#endif
             }, StringSplitOptions.RemoveEmptyEntries);
 
             return GetFolderFromPath(folder, folders);
@@ -55,11 +51,7 @@ namespace PCLExt.FileStorage.Extensions
         {
             var foldersWithFile = filePath.Split(new[]
             {
-#if DESKTOP || ANDROID || __IOS__ || MAC || PORTABLE
                 PortablePath.DirectorySeparatorChar
-#elif NETSTANDARD2_0
-                System.IO.Path.DirectorySeparatorChar
-#endif
             }, StringSplitOptions.RemoveEmptyEntries);
 
             return GetFileFromPath(folder, foldersWithFile);

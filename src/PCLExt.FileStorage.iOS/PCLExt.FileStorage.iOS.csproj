@@ -56,52 +56,52 @@
     <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFolderImplementation.cs">
       <Link>DefaultFolderImplementation.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\exceptions\ExceptionsHelper.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\ExceptionsHelper.cs">
       <Link>Exceptions\ExceptionsHelper.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FileExistException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FileExistException.cs">
       <Link>Exceptions\FileExistException.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\exceptions\FileNotFoundException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FileNotFoundException.cs">
       <Link>Exceptions\FileNotFoundException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FolderExistException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FolderExistException.cs">
       <Link>Exceptions\FolderExistException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\FolderNotFoundException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FolderNotFoundException.cs">
       <Link>Exceptions\FolderNotFoundException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Exceptions\RootFolderDeletionException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\RootFolderDeletionException.cs">
       <Link>Exceptions\RootFolderDeletionException.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\extensions\AwaitExtensions.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\AwaitExtensions.cs">
       <Link>Extensions\AwaitExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\extensions\FileExtensions.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\FileExtensions.cs">
       <Link>Extensions\FileExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\extensions\FolderExtensions.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\FolderExtensions.cs">
       <Link>Extensions\FolderExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\files\FileFromPath.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Files\FileFromPath.cs">
       <Link>Files\FileFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\folders\ApplicationFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationFolder.cs">
       <Link>Folders\ApplicationFolder.cs</Link>
     </Compile>
-    <Compile Include="..\pclext.filestorage.portable\folders\FolderFromPath.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\FolderFromPath.cs">
       <Link>Folders\FolderFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\LocalStorageFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalStorageFolder.cs">
       <Link>Folders\LocalStorageFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Folders\RoamingStorageFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingStorageFolder.cs">
       <Link>Folders\RoamingStorageFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\PortablePath.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\PortablePath.cs">
       <Link>PortablePath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable\Requires.cs">
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Requires.cs">
       <Link>Requires.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -2,7 +2,7 @@
 using System.IO;
 
 using PCLExt.FileStorage.Exceptions;
-
+using PCLExt.FileStorage.Extensions;
 #if NUNIT
 
 using NUnit.Framework;
@@ -648,5 +648,13 @@ namespace PCLExt.FileStorage.Test
         }
 
         #endregion
+
+        [TestMethod]
+        public void FolderFromPath()
+        {
+            var folder = new TestFolder().GetFolderFromPath(Path.Combine(FolderName1, FolderName2));
+            Assert.IsTrue(folder.Exists);
+            Assert.IsTrue(folder.Path == Path.Combine(new TestFolder().Path, FolderName1, FolderName2));
+        }
     }
 }
