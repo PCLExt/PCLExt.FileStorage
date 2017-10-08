@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.iOS", "src\PCLExt.FileStorage.iOS\PCLExt.FileStorage.iOS.csproj", "{03DA3968-61A3-44D1-9F99-F55D31E07813}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core", "src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj", "{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Core", "src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj", "{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android.Test", "src\PCLExt.FileStorage.Android.Test\PCLExt.FileStorage.Android.Test.csproj", "{CB89F319-1C9D-4574-8874-25F592EC76CD}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.macOS", "src\PCLExt.FileStorage.macOS\PCLExt.FileStorage.macOS.csproj", "{0B02DE9A-C3C5-4DB9-B87F-6B05C3566946}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core.Test", "src\PCLExt.FileStorage.Core.Test\PCLExt.FileStorage.Core.Test.csproj", "{316FFBA8-57A8-4B4A-8352-F1E3361D8710}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Core.Test", "src\PCLExt.FileStorage.Core.Test\PCLExt.FileStorage.Core.Test.csproj", "{316FFBA8-57A8-4B4A-8352-F1E3361D8710}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX.Test", "src\PCLExt.FileStorage.NetFX.Test\PCLExt.FileStorage.NetFX.Test.csproj", "{119368DE-E6BD-4746-BCD8-BBFE458579CC}"
 EndProject
