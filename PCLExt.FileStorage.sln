@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable", "src\PCLExt.FileStorage.Portable\PCLExt.FileStorage.Portable.csproj", "{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable.Abstractions", "src\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj", "{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android", "src\PCLExt.FileStorage.Android\PCLExt.FileStorage.Android.csproj", "{8EFC0559-3C9C-4D0C-A5A5-579E58FFE621}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.iOS", "src\PCLExt.FileStorage.iOS\PCLExt.FileStorage.iOS.csproj", "{03DA3968-61A3-44D1-9F99-F55D31E07813}"
@@ -25,20 +21,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX.Test", "src\PCLExt.FileStorage.NetFX.Test\PCLExt.FileStorage.NetFX.Test.csproj", "{119368DE-E6BD-4746-BCD8-BBFE458579CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Standard.Abstractions", "src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable111", "src\PCLExt.FileStorage.Portable111\PCLExt.FileStorage.Portable111.csproj", "{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3F8D0494-6EE2-47FE-B263-F09A5EA3D0B3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8EFC0559-3C9C-4D0C-A5A5-579E58FFE621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8EFC0559-3C9C-4D0C-A5A5-579E58FFE621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EFC0559-3C9C-4D0C-A5A5-579E58FFE621}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,6 +67,14 @@ Global
 		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

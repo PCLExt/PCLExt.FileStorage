@@ -62,9 +62,9 @@
       <Project>{54dbaceb-b898-494b-ad88-2a407cb55a5a}</Project>
       <Name>PCLExt.FileStorage.NetFX</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PCLExt.FileStorage.Portable.Abstractions\PCLExt.FileStorage.Portable.Abstractions.csproj">
-      <Project>{3f8d0494-6ee2-47fe-b263-f09a5ea3d0b3}</Project>
-      <Name>PCLExt.FileStorage.Portable.Abstractions</Name>
+    <ProjectReference Include="..\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj">
+      <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
+      <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
