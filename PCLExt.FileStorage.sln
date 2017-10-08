@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.iOS", "src\PCLExt.FileStorage.iOS\PCLExt.FileStorage.iOS.csproj", "{03DA3968-61A3-44D1-9F99-F55D31E07813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Core", "src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj", "{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core", "src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj", "{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android.Test", "src\PCLExt.FileStorage.Android.Test\PCLExt.FileStorage.Android.Test.csproj", "{CB89F319-1C9D-4574-8874-25F592EC76CD}"
 EndProject
@@ -17,11 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.macOS", "src\PCLExt.FileStorage.macOS\PCLExt.FileStorage.macOS.csproj", "{0B02DE9A-C3C5-4DB9-B87F-6B05C3566946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Core.Test", "src\PCLExt.FileStorage.Core.Test\PCLExt.FileStorage.Core.Test.csproj", "{316FFBA8-57A8-4B4A-8352-F1E3361D8710}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core.Test", "src\PCLExt.FileStorage.Core.Test\PCLExt.FileStorage.Core.Test.csproj", "{316FFBA8-57A8-4B4A-8352-F1E3361D8710}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX.Test", "src\PCLExt.FileStorage.NetFX.Test\PCLExt.FileStorage.NetFX.Test.csproj", "{119368DE-E6BD-4746-BCD8-BBFE458579CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Standard.Abstractions", "src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Standard.Abstractions", "src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable111", "src\PCLExt.FileStorage.Portable111\PCLExt.FileStorage.Portable111.csproj", "{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}"
 EndProject
@@ -47,10 +47,9 @@ Global
 		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{12AB9E53-8A6F-4B3A-8E2F-202799854F91}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{12AB9E53-8A6F-4B3A-8E2F-202799854F91}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{12AB9E53-8A6F-4B3A-8E2F-202799854F91}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{12AB9E53-8A6F-4B3A-8E2F-202799854F91}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{12AB9E53-8A6F-4B3A-8E2F-202799854F91}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
 		{54DBACEB-B898-494B-AD88-2A407CB55A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{54DBACEB-B898-494B-AD88-2A407CB55A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54DBACEB-B898-494B-AD88-2A407CB55A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,11 +61,9 @@ Global
 		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Release|Any CPU.Build.0 = Release|Any CPU
 		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|Any CPU.ActiveCfg = Release|Any CPU
