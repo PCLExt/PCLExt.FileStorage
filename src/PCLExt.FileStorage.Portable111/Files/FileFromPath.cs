@@ -15,7 +15,10 @@
             Requires.NotNullOrEmpty(path, "path");
 
 #if DESKTOP || ANDROID || __IOS__ || MAC || NETSTANDARD2_0
-            return System.IO.File.Exists(path) ? new DefaultFileImplementation(path) : null;
+            if(System.IO.File.Exists(path))
+                return new DefaultFileImplementation(path);
+            else
+                throw new Exceptions.FileNotFoundException($"File does not exists on {path}");
 #endif
 
             throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();

@@ -18,13 +18,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 #endif
 
-#if __ANDROID__
+#if __ANDROID__ || __IOS__
     
-using RootFolder = PCLExt.FileStorage.Folders.LocalStorageFolder;
+using RootFolder = PCLExt.FileStorage.Folders.LocalRootFolder;
 
 #else
 
-using RootFolder = PCLExt.FileStorage.Folders.ApplicationFolder;
+using RootFolder = PCLExt.FileStorage.Folders.ApplicationRootFolder;
 
 #endif
 

@@ -7,7 +7,7 @@ using Xamarin.Android.NUnitLite;
 
 namespace PCLExt.FileStorage.Android.Test
 {
-    [Activity(Label = "PCLExt.FileStorage.Android.Test", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "PCLExt.FileStorage.Android.Test", MainLauncher = true)]
     public class MainActivity : TestSuiteActivity
     {
         protected override void OnCreate(Bundle bundle)

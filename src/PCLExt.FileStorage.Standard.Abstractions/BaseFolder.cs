@@ -76,5 +76,8 @@ namespace PCLExt.FileStorage
         public void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => _folder.Copy(folder, option);
         /// <inheritdoc />
         public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = new CancellationToken()) => _folder.CopyAsync(folder, option, cancellationToken);
+
+
+        public override string ToString() => Path;
     }
 }

@@ -60,6 +60,21 @@
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationRootFolder.cs">
+      <Link>Folders\ApplicationRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\DocumentsRootFolder.cs">
+      <Link>Folders\DocumentsRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalRootFolder.cs">
+      <Link>Folders\LocalRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingRootFolder.cs">
+      <Link>Folders\RoamingRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\TempRootFolder.cs">
+      <Link>Folders\TempRootFolder.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\AwaitExtensions.cs">
       <Link>Extensions\AwaitExtensions.cs</Link>
@@ -91,17 +106,8 @@
     <Compile Include="..\PCLExt.FileStorage.Portable111\Files\FileFromPath.cs">
       <Link>Files\FileFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationFolder.cs">
-      <Link>Folders\ApplicationFolder.cs</Link>
-    </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\FolderFromPath.cs">
       <Link>Folders\FolderFromPath.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalStorageFolder.cs">
-      <Link>Folders\LocalStorageFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingStorageFolder.cs">
-      <Link>Folders\RoamingStorageFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\PortablePath.cs">
       <Link>PortablePath.cs</Link>
@@ -117,11 +123,5 @@
       <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Files\" />
-    <Folder Include="Folders\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

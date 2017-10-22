@@ -180,20 +180,22 @@ namespace PCLExt.FileStorage.Extensions
         }
         internal static IFolder GetDataFolder(this IFolder baseFolder)
         {
-            // TODO
-            if(string.IsNullOrEmpty(CompanyName))
-                throw new Exception();
-
             if (string.IsNullOrEmpty(ProductName))
-                throw new Exception();
+                throw new Exception("Please specify Product Name in the executable assembly");
 
-            if (string.IsNullOrEmpty(ProductVersion))
-                throw new Exception();
+            IFolder folder = baseFolder;
 
-            return baseFolder
-                .CreateFolder(CompanyName, CreationCollisionOption.OpenIfExists)
-                .CreateFolder(ProductName, CreationCollisionOption.OpenIfExists)
-                .CreateFolder(ProductVersion, CreationCollisionOption.OpenIfExists);
+            if(!string.IsNullOrEmpty(CompanyName))
+                folder = folder.CreateFolder(CompanyName, CreationCollisionOption.OpenIfExists);
+
+            if (!string.IsNullOrEmpty(ProductName))
+                folder = folder.CreateFolder(ProductName, CreationCollisionOption.OpenIfExists);
+
+            // -- I will disable this for now.
+            //if (!string.IsNullOrEmpty(ProductVersion))
+            //    folder = folder.CreateFolder(ProductVersion, CreationCollisionOption.OpenIfExists);
+
+            return folder;
         }
 #endif
     }

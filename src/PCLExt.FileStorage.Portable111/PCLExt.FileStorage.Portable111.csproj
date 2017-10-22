@@ -51,10 +51,12 @@
     <Compile Include="Exceptions\RootFolderDeletionException.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Files\FileFromPath.cs" />
+    <Compile Include="Folders\DocumentsRootFolder.cs" />
     <Compile Include="Folders\FolderFromPath.cs" />
-    <Compile Include="Folders\RoamingStorageFolder.cs" />
-    <Compile Include="Folders\LocalStorageFolder.cs" />
-    <Compile Include="Folders\ApplicationFolder.cs" />
+    <Compile Include="Folders\TempRootFolder.cs" />
+    <Compile Include="Folders\RoamingRootFolder.cs" />
+    <Compile Include="Folders\LocalRootFolder.cs" />
+    <Compile Include="Folders\ApplicationRootFolder.cs" />
     <Compile Include="Extensions\AwaitExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />
     <Compile Include="PortablePath.cs" />

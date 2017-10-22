@@ -32,27 +32,57 @@ namespace PCLExt.FileStorage.Test
 
         [TestMethod]
         public void LocalStorageFolder() =>
-#if __ANDROID__
-            Assert.IsTrue(new LocalStorageFolder().Exists);
+#if __ANDROID__ || __IOS__
+            Assert.IsTrue(new LocalRootFolder().Exists);
 #else
-            Assert.IsTrue(new LocalStorageFolder().Exists);
+            Assert.IsTrue(new LocalRootFolder().Exists);
 #endif
 
 
         [TestMethod]
         public void RoamingStorageFolder() =>
-#if __ANDROID__
-            Assert.IsFalse(new RoamingStorageFolder().Exists);
+#if __ANDROID__ || __IOS__
+            Assert.IsFalse(new RoamingRootFolder().Exists);
 #else
-            Assert.IsTrue(new RoamingStorageFolder().Exists);
+            Assert.IsTrue(new RoamingRootFolder().Exists);
 #endif
 
         [TestMethod]
         public void ApplicationFolder() =>
 #if __ANDROID__
-            Assert.IsFalse(new ApplicationFolder().Exists);
+            Assert.IsFalse(new ApplicationRootFolder().Exists);
 #else
-            Assert.IsTrue(new ApplicationFolder().Exists);
+            Assert.IsTrue(new ApplicationRootFolder().Exists);
 #endif
+
+        [TestMethod]
+        public void DocumentsFolder() =>
+//#if __ANDROID__ || __IOS__
+//            Assert.IsFalse(new DocumentsRootFolder().Exists);
+//#else
+            Assert.IsTrue(new DocumentsRootFolder().Exists);
+//#endif
+
+        [TestMethod]
+        public void TempFolder() =>
+            Assert.IsTrue(new TempRootFolder().Exists);
+
+        [TestMethod]
+        public void TempFolderCreateTemp() =>
+            Assert.IsTrue(new TempRootFolder().CreateTempFile().Exists);
+
+        [TestMethod]
+        public void TempFolderCreateTempExtension() =>
+            Assert.IsTrue(new TempRootFolder().CreateTempFile("ps1").Exists);
+
+        [TestMethod]
+        public void TempFolderCreateTemp1()
+        {
+            var t1 = new DocumentsRootFolder();
+            var t2 = new ApplicationRootFolder();
+            var t3 = new LocalRootFolder();
+            var t4 = new RoamingRootFolder();
+            var t5 = new TempRootFolder();
+        }
     }
 }

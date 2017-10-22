@@ -4,10 +4,10 @@ namespace PCLExt.FileStorage.Test
 {
     internal class TestFolder : BaseFolder
     {
-#if __ANDROID__
-        public TestFolder() : base(new LocalStorageFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
+#if __ANDROID__ || __IOS__
+        public TestFolder() : base(new LocalRootFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
 #else
-        public TestFolder() : base(new ApplicationFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
+        public TestFolder() : base(new ApplicationRootFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
 #endif
     }
 }

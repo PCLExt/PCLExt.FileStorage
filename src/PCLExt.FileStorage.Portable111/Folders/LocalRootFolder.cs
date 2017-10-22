@@ -1,17 +1,17 @@
-﻿using System;
-
-using PCLExt.FileStorage.Extensions;
+﻿using PCLExt.FileStorage.Extensions;
 
 namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
     /// A folder representing storage which is local to the current device.
     /// </summary>
-    public class LocalStorageFolder : BaseFolder
+    public class LocalRootFolder : BaseFolder
     {
+        //public bool IsBackuping { get; }
+
 #if MAC
 		[System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.FoundationLibrary)]
-		static extern IntPtr NSHomeDirectory(); // Under the sandbox, need to read the HomeDirectory
+		static extern System.IntPtr NSHomeDirectory(); // Under the sandbox, need to read the HomeDirectory
 
 		static string MacHomeDirectory => ((Foundation.NSString) ObjCRuntime.Runtime.GetNSObject(NSHomeDirectory())).ToString();
 #endif
@@ -19,8 +19,8 @@ namespace PCLExt.FileStorage.Folders
         /// <summary>
         /// Creates a folder representing storage which is local to the current device
         /// </summary>
-#if DESKTOP || ANDROID || __IOS__ || MAC || NETSTANDARD2_0
-        public LocalStorageFolder() : base(GetLocalFolder()) { }
+#if !PORTABLE
+        public LocalRootFolder() : base(GetLocalFolder()) { }
         private static IFolder GetLocalFolder()
         {
 #if ANDROID
@@ -43,11 +43,14 @@ namespace PCLExt.FileStorage.Folders
             }
             return new DefaultFolderImplementation(storage);
 #elif DESKTOP || NETSTANDARD2_0
-            return new DefaultFolderImplementation(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)).GetDataFolder();
+            return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)).GetDataFolder();
+#elif WINDOWS_UWP
+            return null;
+            return new DefaultFolderImplementation(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
 #endif
         }
 #else
-        public LocalStorageFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public LocalRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }
