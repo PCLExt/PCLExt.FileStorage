@@ -14,7 +14,7 @@
         {
             Requires.NotNullOrEmpty(path, "path");
 
-#if DESKTOP || ANDROID || __IOS__ || MAC || NETSTANDARD2_0
+#if DESKTOP || ANDROID || __IOS__ || __MACOS__ || NETSTANDARD2_0
             return System.IO.Directory.Exists(path) ? new DefaultFolderImplementation(path, true) : null;
 #endif
 
