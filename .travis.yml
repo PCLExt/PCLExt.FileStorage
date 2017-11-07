@@ -1,7 +1,10 @@
+os: linux
+dist: trusty
+sudo: required
 language: csharp
 mono: latest
 dotnet: 2.0.0
-dist: trusty
+env: MONO_BASE_PATH=/usr/lib/mono/
 
 solution: PCLExt.FileStorage.sln
 
@@ -19,11 +22,11 @@ script:
   - dotnet restore test/PCLExt.FileStorage.NetFX.Test
   - dotnet build src/PCLExt.FileStorage.Standard.Abstractions
   - dotnet build src/PCLExt.FileStorage.Core
-  - FrameworkPathOverride=/usr/lib/mono/4.5/ dotnet build src/PCLExt.FileStorage.NetFX
+  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build src/PCLExt.FileStorage.NetFX
   - dotnet build test/PCLExt.FileStorage.Core.Test
-  - FrameworkPathOverride=/usr/lib/mono/4.5/ dotnet build test/PCLExt.FileStorage.NetFX.Test
+  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build test/PCLExt.FileStorage.NetFX.Test
   - dotnet test test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj
-  - FrameworkPathOverride=/usr/lib/mono/4.5/ dotnet test test/PCLExt.FileStorage.NetFX.Test/PCLExt.FileStorage.NetFX.Test.csproj
+  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet test test/PCLExt.FileStorage.NetFX.Test/PCLExt.FileStorage.NetFX.Test.csproj
 
 notifications:
   email:
