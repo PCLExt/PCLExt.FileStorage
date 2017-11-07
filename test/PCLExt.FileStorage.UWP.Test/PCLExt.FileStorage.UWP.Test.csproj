@@ -149,11 +149,11 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj">
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
       <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PCLExt.FileStorage.UWP\PCLExt.FileStorage.UWP.csproj">
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage.UWP\PCLExt.FileStorage.UWP.csproj">
       <Project>{d09beb59-933d-4446-90fa-c8760705e8e4}</Project>
       <Name>PCLExt.FileStorage.UWP</Name>
     </ProjectReference>
