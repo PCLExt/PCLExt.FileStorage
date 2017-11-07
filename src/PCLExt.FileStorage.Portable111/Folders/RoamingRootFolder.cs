@@ -18,7 +18,7 @@ namespace PCLExt.FileStorage.Folders
         {
 #if ANDROID || __IOS__
             return null;
-#elif DESKTOP || MAC || NETSTANDARD2_0
+#elif DESKTOP || __MACOS__ || NETSTANDARD2_0
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)).GetDataFolder();
 #elif WINDOWS_UWP
             return null;

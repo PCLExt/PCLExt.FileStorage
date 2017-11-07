@@ -9,7 +9,7 @@ namespace PCLExt.FileStorage.Folders
     {
         //public bool IsBackuping { get; }
 
-#if MAC
+#if __MACOS__
 		[System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.FoundationLibrary)]
 		static extern System.IntPtr NSHomeDirectory(); // Under the sandbox, need to read the HomeDirectory
 
@@ -30,7 +30,7 @@ namespace PCLExt.FileStorage.Folders
             var documents = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
             var storage = System.IO.Path.Combine(documents, "..", "Library");
             return new DefaultFolderImplementation(storage);
-#elif MAC
+#elif __MACOS__
             // (non-sandboxed) /Users/foo/Library/Application Support/ProcessName/
             // (sandboxed) /Users/foo/Library/Containers/<AppId>/Data/Library/Application Support/ProcessName/
             var name = System.IO.Path.GetFileNameWithoutExtension(System.Diagnostics.Process.GetCurrentProcess().ProcessName);

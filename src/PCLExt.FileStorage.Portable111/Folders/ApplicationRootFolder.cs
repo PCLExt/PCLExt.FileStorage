@@ -16,7 +16,7 @@
             return null;
 #elif __IOS__
             return new DefaultFolderImplementation(Foundation.NSBundle.MainBundle.BundlePath);
-#elif DESKTOP || MAC
+#elif DESKTOP || __MACOS__
             return new DefaultFolderImplementation(System.AppDomain.CurrentDomain.BaseDirectory);
 #elif NETSTANDARD2_0
             return new DefaultFolderImplementation(System.AppContext.BaseDirectory);

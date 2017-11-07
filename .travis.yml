@@ -1,6 +1,10 @@
+os: linux
+dist: trusty
+sudo: required
 language: csharp
-mono:
-  - latest
+mono: latest
+dotnet: 2.0.0
+env: MONO_BASE_PATH=/usr/lib/mono/
 
 solution: PCLExt.FileStorage.sln
 
@@ -11,8 +15,19 @@ install:
   - nuget restore PCLExt.FileStorage.sln
   
 script:
-  - xbuild /p:Configuration=Release PCLExt.FileStorage.sln
-  - xbuild /p:Configuration=Debug PCLExt.FileStorage.sln
+  - dotnet restore src/PCLExt.FileStorage.Standard.Abstractions
+  - dotnet restore src/PCLExt.FileStorage.Core
+  - dotnet restore src/PCLExt.FileStorage.NetFX
+  - dotnet restore test/PCLExt.FileStorage.Core.Test
+  - dotnet restore test/PCLExt.FileStorage.NetFX.Test
+  - dotnet build src/PCLExt.FileStorage.Standard.Abstractions
+  - dotnet build src/PCLExt.FileStorage.Core
+  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build src/PCLExt.FileStorage.NetFX
+  - dotnet build test/PCLExt.FileStorage.Core.Test
+  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build test/PCLExt.FileStorage.NetFX.Test
+  - dotnet test test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj
+  - nuget install NUnit.ConsoleRunner -Version 3.7.0 -OutputDirectory $PWD/packages
+  - mono packages/NUnit.ConsoleRunner.3.7.0/tools/nunit3-console.exe test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll
 
 notifications:
   email:
