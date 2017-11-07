@@ -15,5 +15,5 @@ build:
   project: PCLExt.FileStorage.sln
   verbosity: minimal
   
-  before_test:
+before_test:
 - cmd: xcopy C:\projects\pclext-filestorage\test\PCLExt.FileStorage.Core.Test\bin\Debug\netcoreapp2.0 C:\projects\pclext-filestorage\test\PCLExt.FileStorage.Core.Test\bin\Any CPU\Debug\netcoreapp2.0 /S /I
