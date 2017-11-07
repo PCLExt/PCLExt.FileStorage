@@ -1,6 +1,6 @@
 **Mono Latest:** | **.NET 4.5 & .NET Core:** | **NuGet**
 ------------ | ------------- | -------------
- | | [![Build status](https://ci.appveyor.com/api/projects/status/puku2ym0k1n7ryde?svg=true)](https://ci.appveyor.com/project/Aragas/pclext-filestorage) | [![nugetpkg](https://img.shields.io/badge/nuget-PCLExt.FileStorage-orange.svg)](https://www.nuget.org/packages/PCLExt.FileStorage)  
+ | [![Build Status](https://travis-ci.org/PCLExt/PCLExt.FileStorage.svg?branch=master)](https://travis-ci.org/PCLExt/PCLExt.FileStorage) | [![Build status](https://ci.appveyor.com/api/projects/status/puku2ym0k1n7ryde?svg=true)](https://ci.appveyor.com/project/Aragas/pclext-filestorage) | [![nugetpkg](https://img.shields.io/badge/nuget-PCLExt.FileStorage-orange.svg)](https://www.nuget.org/packages/PCLExt.FileStorage)  
 
 # PCLExt.FileStorage
 
