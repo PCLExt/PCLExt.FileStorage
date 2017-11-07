@@ -19,11 +19,11 @@ script:
   - dotnet restore test/PCLExt.FileStorage.NetFX.Test
   - dotnet build src/PCLExt.FileStorage.Standard.Abstractions
   - dotnet build src/PCLExt.FileStorage.Core
-  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build src/PCLExt.FileStorage.NetFX
+  - FrameworkPathOverride=/usr/lib/mono/4.5/ dotnet build src/PCLExt.FileStorage.NetFX
   - dotnet build test/PCLExt.FileStorage.Core.Test
-  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build test/PCLExt.FileStorage.NetFX.Test
+  - FrameworkPathOverride=/usr/lib/mono/4.5/ dotnet build test/PCLExt.FileStorage.NetFX.Test
   - dotnet run test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj
-  - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet run test/PCLExt.FileStorage.NetFX.Test/PCLExt.FileStorage.NetFX.Test.csproj
+  - FrameworkPathOverride=/usr/lib/mono/4.5/ dotnet run test/PCLExt.FileStorage.NetFX.Test/PCLExt.FileStorage.NetFX.Test.csproj
 
 notifications:
   email:
