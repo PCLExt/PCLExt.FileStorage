@@ -12,10 +12,18 @@ install:
   - nuget restore PCLExt.FileStorage.sln
   
 script:
-  - dotnet restore
-  - dotnet build
-  - xbuild /p:Configuration=Release PCLExt.FileStorage.sln
-  - xbuild /p:Configuration=Debug PCLExt.FileStorage.sln
+  - dotnet restore src/PCLExt.FileStorage.Standard.Abstractions
+  - dotnet restore src/PCLExt.FileStorage.Core
+  - dotnet restore src/PCLExt.FileStorage.NetFX
+  - dotnet restore test/PCLExt.FileStorage.Core.Test
+  - dotnet restore test/PCLExt.FileStorage.NetFX.Test
+  - dotnet build src/PCLExt.FileStorage.Standard.Abstractions
+  - dotnet build src/PCLExt.FileStorage.Core
+  - dotnet build src/PCLExt.FileStorage.NetFX
+  - dotnet build test/PCLExt.FileStorage.Core.Test
+  - dotnet build test/PCLExt.FileStorage.NetFX.Test
+  - dotnet run test/PCLExt.FileStorage.Core.Test/*.csproj
+  - dotnet run test/PCLExt.FileStorage.NetFX.Test/*.csproj
 
 notifications:
   email:
