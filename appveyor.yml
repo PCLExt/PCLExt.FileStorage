@@ -5,6 +5,10 @@ configuration:
 - Release
 platform: Any CPU
 
+environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: 7poiWT8gLPZOdo8fwSWeerKD+flRokWUY3Ke5s4TW9+vejCzcH8AXY4pwurPxb9D
+
 install:
 - git submodule update --init --recursive
 
@@ -14,3 +18,12 @@ before_build:
 build:
   project: PCLExt.FileStorage.sln
   verbosity: minimal
+
+after_test:
+- choco install codecov
+- nuget install NUnit.ConsoleRunner -Version 3.7.0 -OutputDirectory tools
+- nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
+- nuget install coveralls.io -Version 1.4.2 -OutputDirectory tools
+- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:".\tools\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage.xml
+- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage.xml -r %COVERALLS_REPO_TOKEN%
+- codecov -f coverage.xml
