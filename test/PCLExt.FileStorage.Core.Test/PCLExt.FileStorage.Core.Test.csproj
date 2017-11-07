@@ -5,6 +5,10 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
+    <OutputPath>bin\Any CPU\Debug\netcoreapp2.0\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
     <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FilesTest.cs" Link="FilesTest.cs" />
