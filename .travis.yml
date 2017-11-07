@@ -1,6 +1,7 @@
 language: csharp
-mono:
-  - latest
+mono: latest
+dotnet: 2.0
+dist: trusty
 
 solution: PCLExt.FileStorage.sln
 
@@ -11,6 +12,8 @@ install:
   - nuget restore PCLExt.FileStorage.sln
   
 script:
+  - dotnet restore
+  - dotnet build
   - xbuild /p:Configuration=Release PCLExt.FileStorage.sln
   - xbuild /p:Configuration=Debug PCLExt.FileStorage.sln
 
