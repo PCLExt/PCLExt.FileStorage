@@ -77,7 +77,7 @@ namespace PCLExt.FileStorage.Extensions
 
 
 
-#if DESKTOP || MAC || NETSTANDARD2_0
+#if DESKTOP || __MACOS__ || NETSTANDARD2_0
         // https://github.com/mono/mono/blob/master/mcs/class/System.Windows.Forms/System.Windows.Forms/Application.cs
         private static string CompanyName
         {

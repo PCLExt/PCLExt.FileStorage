@@ -5,6 +5,10 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.0|AnyCPU'">
+    <OutputPath>bin\Any CPU\Debug\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
     <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FilesTest.cs" Link="FilesTest.cs" />
@@ -14,14 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0-preview-20170923-02" />
-    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0-beta3" />
-    <PackageReference Include="MSTest.TestFramework" Version="1.2.0-beta3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
+    <PackageReference Include="NUnit" Version="3.8.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj" />
-    <ProjectReference Include="..\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj" />
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

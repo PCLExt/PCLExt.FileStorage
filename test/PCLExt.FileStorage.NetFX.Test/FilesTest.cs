@@ -1,27 +1,15 @@
 ﻿using System;
 using System.IO;
 
+using NUnit.Framework;
+
 using PCLExt.FileStorage.Exceptions;
-using PCLExt.FileStorage.Extensions;
+using PCLExt.FileStorage.Extensions; 
 
-#if NUNIT
-
-using NUnit.Framework;   
-
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-
-#else
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-#endif
 
 namespace PCLExt.FileStorage.Test
 {
-    [TestClass]
+    [TestFixture]
     public class FilesTest
     {
         private const string FileName1 = "TestFile1";
@@ -30,13 +18,13 @@ namespace PCLExt.FileStorage.Test
         private static IFolder TestFolder => new TestFolder();
 
 
-        [TestInitialize]
-        [TestCleanup]
+        [SetUp]
+        [TearDown]
         public void Clean() => TestFolder.Delete();
 
         #region Size
 
-        [TestMethod]
+        [Test]
         public void Size()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
@@ -54,7 +42,7 @@ namespace PCLExt.FileStorage.Test
 
         #region Create
 
-        [TestMethod]
+        [Test]
         public void CreateOpenIfExists()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
@@ -63,7 +51,7 @@ namespace PCLExt.FileStorage.Test
             file.Delete();
         }
 
-        [TestMethod]
+        [Test]
         public void CreateGenerateUniqueName()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -78,7 +66,7 @@ namespace PCLExt.FileStorage.Test
             file1.Delete();
         }
 
-        [TestMethod]
+        [Test]
         public void CreateReplaceExisting()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -92,7 +80,7 @@ namespace PCLExt.FileStorage.Test
             file.Delete();
         }
 
-        [TestMethod]
+        [Test]
         public void CreateFailIfExists()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -101,22 +89,20 @@ namespace PCLExt.FileStorage.Test
             file.Delete();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(FileExistException))]
+        [Test]
         public void CreateFailIfExistsTwice()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
             Assert.IsTrue(file.Exists);
 
-            var file1 = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
-            Assert.Fail();
+            Assert.That(() => TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
         }
 
         #endregion
 
         #region Delete
 
-        [TestMethod]
+        [Test]
         public void Delete()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -125,8 +111,7 @@ namespace PCLExt.FileStorage.Test
             Assert.IsFalse(file.Exists);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(Exceptions.FileNotFoundException))]
+        [Test]
         public void DeleteTwice()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -134,15 +119,14 @@ namespace PCLExt.FileStorage.Test
             file.Delete();
             Assert.IsFalse(file.Exists);
 
-            file.Delete();
-            Assert.Fail();
+            Assert.That(() => file.Delete(), Throws.TypeOf<Exceptions.FileNotFoundException>());
         }
 
         #endregion
 
         #region Open
 
-        [TestMethod]
+        [Test]
         public void OpenRead()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -160,18 +144,16 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(NotSupportedException))]
+        [Test]
         public void OpenReadTryWrite()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
             using (var stream = file.Open(FileAccess.Read))
-                stream.WriteByte(0);
-            Assert.Fail();
+                Assert.That(() => stream.WriteByte(0), Throws.TypeOf<NotSupportedException>());
         }
 
-        [TestMethod]
+        [Test]
         public void OpenReadWrite()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -192,21 +174,19 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [Test]
         public void OpenUnknown()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            using (var stream = file.Open((FileAccess)2)) { }
-            Assert.Fail();
+            Assert.That(() => file.Open((FileAccess) 2), Throws.ArgumentException);
         }
 
         #endregion
 
         #region Rename
 
-        [TestMethod]
+        [Test]
         public void Rename()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -231,7 +211,7 @@ namespace PCLExt.FileStorage.Test
 
         #region Copy
 
-        [TestMethod]
+        [Test]
         public void Copy()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -257,7 +237,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void CopySelf()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -279,7 +259,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void CopyGenerateUniqueName()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -299,7 +279,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void CopyReplaceExisting()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -317,7 +297,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void CopySelfReplaceExisting()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -335,69 +315,48 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(FileExistException))]
+        [Test]
         public void CopyFailIfExists()
         {
             var file1 = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
             var file2 = TestFolder.CreateFile(FileName2, CreationCollisionOption.FailIfExists);
 
-            try
-            {
-                var newFile = file1.Copy(file2.Path, NameCollisionOption.FailIfExists);
-                Assert.Fail();
-            }
-            finally
-            {
-                Assert.IsTrue(file1.Exists);
-                Assert.IsTrue(file2.Exists);
+            Assert.That(() => file1.Copy(file2.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
 
-                file1.Delete();
-                file2.Delete();
-            }
+            Assert.IsTrue(file1.Exists);
+            Assert.IsTrue(file2.Exists);
+
+            file1.Delete();
+            file2.Delete();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(FileExistException))]
+        [Test]
         public void CopySelfFailIfExists()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            try
-            {
-                var newFile = file.Copy(file.Path, NameCollisionOption.FailIfExists);
-                Assert.Fail();
-            }
-            finally
-            {
-                Assert.IsTrue(file.Exists);
+            Assert.That(() => file.Copy(file.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
 
-                file.Delete();
-            }
+            Assert.IsTrue(file.Exists);
+
+            file.Delete();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [Test]
         public void CopyUnknown()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            try
-            {
-                var newFile = file.Copy(file.Path, (NameCollisionOption) 3);
-                Assert.Fail();
-            }
-            finally
-            {
-                file.Delete();
-            }
+            Assert.That(() => file.Copy(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
+
+            file.Delete();
         }
 
         #endregion
 
         #region Move
 
-        [TestMethod]
+        [Test]
         public void Move()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -422,7 +381,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void MoveSelf()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -444,7 +403,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void MoveGenerateUniqueName()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -463,7 +422,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void MoveReplaceExisting()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -481,7 +440,7 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
+        [Test]
         public void MoveSelfReplaceExisting()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
@@ -500,43 +459,29 @@ namespace PCLExt.FileStorage.Test
             }
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(FileExistException))]
+        [Test]
         public void MoveFailIfExists()
         {
             var file = TestFolder.CreateFile("TestFile", CreationCollisionOption.FailIfExists);
 
-            try
-            {
-                var newFile = file.Move(file.Path, NameCollisionOption.FailIfExists);
-                Assert.Fail();
-            }
-            finally
-            {
-                file.Delete();
-            }
+            Assert.That(() => file.Move(file.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
+
+            file.Delete();
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
+        [Test]
         public void MoveUnknown()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            try
-            {
-                var newFile = file.Move(file.Path, (NameCollisionOption)3);
-                Assert.Fail();
-            }
-            finally
-            {
-                file.Delete();
-            }
+            Assert.That(() => file.Move(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
+
+            file.Delete();
         }
 
         #endregion
 
-        [TestMethod]
+        [Test]
         public void FileFromPath()
         {
             var file = new TestFolder().GetFileFromPath(Path.Combine("Folder1", FileName2));
