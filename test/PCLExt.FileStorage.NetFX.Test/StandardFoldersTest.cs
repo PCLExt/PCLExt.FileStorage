@@ -1,26 +1,14 @@
 ﻿using PCLExt.FileStorage.Folders;
 
-#if NUNIT
-
 using NUnit.Framework;
 
-using TestClass = NUnit.Framework.TestFixtureAttribute;
-using TestMethod = NUnit.Framework.TestAttribute;
-using TestInitialize = NUnit.Framework.SetUpAttribute;
-using TestCleanup = NUnit.Framework.TearDownAttribute;
-
-#else
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-#endif
 
 namespace PCLExt.FileStorage.Test
 {
-    [TestClass]
+    [TestFixture]
     public class StandardFoldersTest
     {
-        [TestMethod]
+        [Test]
         public void FolderFromPath()
         {
             var folder = new FolderFromPath(new TestFolder().Path);
@@ -30,7 +18,7 @@ namespace PCLExt.FileStorage.Test
             folder.Delete();
         }
 
-        [TestMethod]
+        [Test]
         public void LocalStorageFolder() =>
 #if __ANDROID__ || __IOS__
             Assert.IsTrue(new LocalRootFolder().Exists);
@@ -39,7 +27,7 @@ namespace PCLExt.FileStorage.Test
 #endif
 
 
-        [TestMethod]
+        [Test]
         public void RoamingStorageFolder() =>
 #if __ANDROID__ || __IOS__
             Assert.IsFalse(new RoamingRootFolder().Exists);
@@ -47,7 +35,7 @@ namespace PCLExt.FileStorage.Test
             Assert.IsTrue(new RoamingRootFolder().Exists);
 #endif
 
-        [TestMethod]
+        [Test]
         public void ApplicationFolder() =>
 #if __ANDROID__
             Assert.IsFalse(new ApplicationRootFolder().Exists);
@@ -55,7 +43,7 @@ namespace PCLExt.FileStorage.Test
             Assert.IsTrue(new ApplicationRootFolder().Exists);
 #endif
 
-        [TestMethod]
+        [Test]
         public void DocumentsFolder() =>
 //#if __ANDROID__ || __IOS__
 //            Assert.IsFalse(new DocumentsRootFolder().Exists);
@@ -63,19 +51,19 @@ namespace PCLExt.FileStorage.Test
             Assert.IsTrue(new DocumentsRootFolder().Exists);
 //#endif
 
-        [TestMethod]
+        [Test]
         public void TempFolder() =>
             Assert.IsTrue(new TempRootFolder().Exists);
 
-        [TestMethod]
+        [Test]
         public void TempFolderCreateTemp() =>
             Assert.IsTrue(new TempRootFolder().CreateTempFile().Exists);
 
-        [TestMethod]
+        [Test]
         public void TempFolderCreateTempExtension() =>
             Assert.IsTrue(new TempRootFolder().CreateTempFile("ps1").Exists);
 
-        [TestMethod]
+        [Test]
         public void TempFolderCreateTemp1()
         {
             var t1 = new DocumentsRootFolder();

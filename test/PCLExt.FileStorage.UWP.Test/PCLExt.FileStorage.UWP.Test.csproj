@@ -141,11 +141,8 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.1</Version>
     </PackageReference>
-    <PackageReference Include="MSTest.TestAdapter">
-      <Version>1.1.18</Version>
-    </PackageReference>
-    <PackageReference Include="MSTest.TestFramework">
-      <Version>1.1.18</Version>
+    <PackageReference Include="NUnit">
+      <Version>3.8.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
