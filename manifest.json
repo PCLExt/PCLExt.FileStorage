@@ -1,0 +1,319 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/projects/pclext-filestorage",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "README.md",
+      "output": {
+        ".html": {
+          "relative_path": "README.html",
+          "hash": "Pu5JENz1Bmjs3RXjTxFpog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Exceptions.FileExistException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Exceptions.FileExistException.html",
+          "hash": "ljveuQ57iclJfMMFV/q7bA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Exceptions.FileNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html",
+          "hash": "yJNa/gwsQNP6ui77hwnITg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Exceptions.FolderExistException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Exceptions.FolderExistException.html",
+          "hash": "tC0Swp0qR3OLXYcoO05nsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html",
+          "hash": "DqxOS0LSSvCL1ynRtOQTeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html",
+          "hash": "yJGkw6TrDGG/b22l/UssTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Exceptions.html",
+          "hash": "abMYv/0wUNMS3+Tj+20+QQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Extensions.FileExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Extensions.FileExtensions.html",
+          "hash": "XoFr5fKiuh75jYB3E04fyA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Extensions.FolderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Extensions.FolderExtensions.html",
+          "hash": "jmum51ARb+el6yioWu3G7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Extensions.html",
+          "hash": "UZyHYpuFuIzSIM/ca03nUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Files.FileFromPath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Files.FileFromPath.html",
+          "hash": "5dKf3pcs+xCubK2CT4uL2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Files.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Files.html",
+          "hash": "Ue3mMN8u095Bx2FJjeZWGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.ApplicationRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.ApplicationRootFolder.html",
+          "hash": "ce3ASpmCb9kzjyFBekFXSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.DocumentsRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html",
+          "hash": "ubQn5YKfdPjcPuDVu/VdTg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.FolderFromPath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.FolderFromPath.html",
+          "hash": "3/0t06pShhMH/23OyDEc0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.LocalRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.LocalRootFolder.html",
+          "hash": "c8YPoSO+sdqcPuER7Jm3eg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.RoamingRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.RoamingRootFolder.html",
+          "hash": "fEgm5bUeYVnh/bq13GGD+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.TempRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.TempRootFolder.html",
+          "hash": "eEcI3CwFRIcrJ5ioD9XZpw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.html",
+          "hash": "jCO9pUflG3H1a31qoZn6hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.PortablePath.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.PortablePath.html",
+          "hash": "iETtgojUAsl+i2Zf2Gxfng=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.html",
+          "hash": "mqhMlyrv/6efA/0ai0p3/w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "/tEgdBg/AfzNSLjuxhxGzQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "RestApiDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor RestApiDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

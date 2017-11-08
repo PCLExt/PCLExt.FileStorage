@@ -1,0 +1,582 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: PCLExt.FileStorage
+  name: PCLExt.FileStorage
+  href: api/PCLExt.FileStorage.html
+  commentId: N:PCLExt.FileStorage
+  fullName: PCLExt.FileStorage
+  nameWithType: PCLExt.FileStorage
+- uid: PCLExt.FileStorage.Exceptions
+  name: PCLExt.FileStorage.Exceptions
+  href: api/PCLExt.FileStorage.Exceptions.html
+  commentId: N:PCLExt.FileStorage.Exceptions
+  fullName: PCLExt.FileStorage.Exceptions
+  nameWithType: PCLExt.FileStorage.Exceptions
+- uid: PCLExt.FileStorage.Exceptions.FileExistException
+  name: FileExistException
+  href: api/PCLExt.FileStorage.Exceptions.FileExistException.html
+  commentId: T:PCLExt.FileStorage.Exceptions.FileExistException
+  fullName: PCLExt.FileStorage.Exceptions.FileExistException
+  nameWithType: FileExistException
+- uid: PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String)
+  name: FileExistException(String)
+  href: api/PCLExt.FileStorage.Exceptions.FileExistException.html#PCLExt_FileStorage_Exceptions_FileExistException__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException(System.String)
+  nameWithType: FileExistException.FileExistException(String)
+- uid: PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String,Exception)
+  name: FileExistException(String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FileExistException.html#PCLExt_FileStorage_Exceptions_FileExistException__ctor_System_String_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String,Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException(System.String, Exception)
+  nameWithType: FileExistException.FileExistException(String, Exception)
+- uid: PCLExt.FileStorage.Exceptions.FileExistException.#ctor*
+  name: FileExistException
+  href: api/PCLExt.FileStorage.Exceptions.FileExistException.html#PCLExt_FileStorage_Exceptions_FileExistException__ctor_
+  commentId: Overload:PCLExt.FileStorage.Exceptions.FileExistException.#ctor
+  fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException
+  nameWithType: FileExistException.FileExistException
+- uid: PCLExt.FileStorage.Exceptions.FileNotFoundException
+  name: FileNotFoundException
+  href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html
+  commentId: T:PCLExt.FileStorage.Exceptions.FileNotFoundException
+  fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException
+  nameWithType: FileNotFoundException
+- uid: PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String)
+  name: FileNotFoundException(String)
+  href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html#PCLExt_FileStorage_Exceptions_FileNotFoundException__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException(System.String)
+  nameWithType: FileNotFoundException.FileNotFoundException(String)
+- uid: PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String,Exception)
+  name: FileNotFoundException(String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html#PCLExt_FileStorage_Exceptions_FileNotFoundException__ctor_System_String_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String,Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException(System.String, Exception)
+  nameWithType: FileNotFoundException.FileNotFoundException(String, Exception)
+- uid: PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor*
+  name: FileNotFoundException
+  href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html#PCLExt_FileStorage_Exceptions_FileNotFoundException__ctor_
+  commentId: Overload:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor
+  fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException
+  nameWithType: FileNotFoundException.FileNotFoundException
+- uid: PCLExt.FileStorage.Exceptions.FolderExistException
+  name: FolderExistException
+  href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html
+  commentId: T:PCLExt.FileStorage.Exceptions.FolderExistException
+  fullName: PCLExt.FileStorage.Exceptions.FolderExistException
+  nameWithType: FolderExistException
+- uid: PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String)
+  name: FolderExistException(String)
+  href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html#PCLExt_FileStorage_Exceptions_FolderExistException__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException(System.String)
+  nameWithType: FolderExistException.FolderExistException(String)
+- uid: PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String,Exception)
+  name: FolderExistException(String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html#PCLExt_FileStorage_Exceptions_FolderExistException__ctor_System_String_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String,Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException(System.String, Exception)
+  nameWithType: FolderExistException.FolderExistException(String, Exception)
+- uid: PCLExt.FileStorage.Exceptions.FolderExistException.#ctor*
+  name: FolderExistException
+  href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html#PCLExt_FileStorage_Exceptions_FolderExistException__ctor_
+  commentId: Overload:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor
+  fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException
+  nameWithType: FolderExistException.FolderExistException
+- uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException
+  name: FolderNotFoundException
+  href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html
+  commentId: T:PCLExt.FileStorage.Exceptions.FolderNotFoundException
+  fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException
+  nameWithType: FolderNotFoundException
+- uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String)
+  name: FolderNotFoundException(String)
+  href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html#PCLExt_FileStorage_Exceptions_FolderNotFoundException__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException(System.String)
+  nameWithType: FolderNotFoundException.FolderNotFoundException(String)
+- uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String,Exception)
+  name: FolderNotFoundException(String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html#PCLExt_FileStorage_Exceptions_FolderNotFoundException__ctor_System_String_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String,Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException(System.String, Exception)
+  nameWithType: FolderNotFoundException.FolderNotFoundException(String, Exception)
+- uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor*
+  name: FolderNotFoundException
+  href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html#PCLExt_FileStorage_Exceptions_FolderNotFoundException__ctor_
+  commentId: Overload:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor
+  fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException
+  nameWithType: FolderNotFoundException.FolderNotFoundException
+- uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException
+  name: RootFolderDeletionException
+  href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html
+  commentId: T:PCLExt.FileStorage.Exceptions.RootFolderDeletionException
+  fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException
+  nameWithType: RootFolderDeletionException
+- uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String)
+  name: RootFolderDeletionException(String)
+  href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html#PCLExt_FileStorage_Exceptions_RootFolderDeletionException__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException(System.String)
+  nameWithType: RootFolderDeletionException.RootFolderDeletionException(String)
+- uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String,Exception)
+  name: RootFolderDeletionException(String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html#PCLExt_FileStorage_Exceptions_RootFolderDeletionException__ctor_System_String_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String,Exception)
+  fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException(System.String, Exception)
+  nameWithType: RootFolderDeletionException.RootFolderDeletionException(String, Exception)
+- uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor*
+  name: RootFolderDeletionException
+  href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html#PCLExt_FileStorage_Exceptions_RootFolderDeletionException__ctor_
+  commentId: Overload:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor
+  fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException
+  nameWithType: RootFolderDeletionException.RootFolderDeletionException
+- uid: PCLExt.FileStorage.Extensions
+  name: PCLExt.FileStorage.Extensions
+  href: api/PCLExt.FileStorage.Extensions.html
+  commentId: N:PCLExt.FileStorage.Extensions
+  fullName: PCLExt.FileStorage.Extensions
+  nameWithType: PCLExt.FileStorage.Extensions
+- uid: PCLExt.FileStorage.Extensions.FileExtensions
+  name: FileExtensions
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html
+  commentId: T:PCLExt.FileStorage.Extensions.FileExtensions
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions
+  nameWithType: FileExtensions
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines(IFile,IEnumerable{System.String})
+  name: AppendLines(IFile, IEnumerable<String>)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLines_IFile_IEnumerable_System_String__
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendLines(IFile,IEnumerable{System.String})
+  name.vb: AppendLines(IFile, IEnumerable(Of String))
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines(IFile, IEnumerable<System.String>)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines(IFile, IEnumerable(Of System.String))
+  nameWithType: FileExtensions.AppendLines(IFile, IEnumerable<String>)
+  nameWithType.vb: FileExtensions.AppendLines(IFile, IEnumerable(Of String))
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines*
+  name: AppendLines
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLines_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendLines
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines
+  nameWithType: FileExtensions.AppendLines
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(IFile,IEnumerable{System.String})
+  name: AppendLinesAsync(IFile, IEnumerable<String>)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_IFile_IEnumerable_System_String__
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(IFile,IEnumerable{System.String})
+  name.vb: AppendLinesAsync(IFile, IEnumerable(Of String))
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(IFile, IEnumerable<System.String>)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(IFile, IEnumerable(Of System.String))
+  nameWithType: FileExtensions.AppendLinesAsync(IFile, IEnumerable<String>)
+  nameWithType.vb: FileExtensions.AppendLinesAsync(IFile, IEnumerable(Of String))
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync*
+  name: AppendLinesAsync
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync
+  nameWithType: FileExtensions.AppendLinesAsync
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendText(IFile,System.String)
+  name: AppendText(IFile, String)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendText_IFile_System_String_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendText(IFile,System.String)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendText(IFile, System.String)
+  nameWithType: FileExtensions.AppendText(IFile, String)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendText*
+  name: AppendText
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendText_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendText
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendText
+  nameWithType: FileExtensions.AppendText
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(IFile,System.String)
+  name: AppendTextAsync(IFile, String)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_IFile_System_String_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(IFile,System.String)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(IFile, System.String)
+  nameWithType: FileExtensions.AppendTextAsync(IFile, String)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync*
+  name: AppendTextAsync
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync
+  nameWithType: FileExtensions.AppendTextAsync
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines(IFile)
+  name: ReadAllLines(IFile)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLines_IFile_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines(IFile)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines(IFile)
+  nameWithType: FileExtensions.ReadAllLines(IFile)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines*
+  name: ReadAllLines
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLines_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines
+  nameWithType: FileExtensions.ReadAllLines
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(IFile)
+  name: ReadAllLinesAsync(IFile)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_IFile_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(IFile)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(IFile)
+  nameWithType: FileExtensions.ReadAllLinesAsync(IFile)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync*
+  name: ReadAllLinesAsync
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync
+  nameWithType: FileExtensions.ReadAllLinesAsync
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText(IFile)
+  name: ReadAllText(IFile)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllText_IFile_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText(IFile)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText(IFile)
+  nameWithType: FileExtensions.ReadAllText(IFile)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText*
+  name: ReadAllText
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllText_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText
+  nameWithType: FileExtensions.ReadAllText
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(IFile)
+  name: ReadAllTextAsync(IFile)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_IFile_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(IFile)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(IFile)
+  nameWithType: FileExtensions.ReadAllTextAsync(IFile)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync*
+  name: ReadAllTextAsync
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync
+  nameWithType: FileExtensions.ReadAllTextAsync
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines(IFile,IEnumerable{System.String})
+  name: WriteAllLines(IFile, IEnumerable<String>)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLines_IFile_IEnumerable_System_String__
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines(IFile,IEnumerable{System.String})
+  name.vb: WriteAllLines(IFile, IEnumerable(Of String))
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines(IFile, IEnumerable<System.String>)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines(IFile, IEnumerable(Of System.String))
+  nameWithType: FileExtensions.WriteAllLines(IFile, IEnumerable<String>)
+  nameWithType.vb: FileExtensions.WriteAllLines(IFile, IEnumerable(Of String))
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines*
+  name: WriteAllLines
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLines_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines
+  nameWithType: FileExtensions.WriteAllLines
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(IFile,IEnumerable{System.String})
+  name: WriteAllLinesAsync(IFile, IEnumerable<String>)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_IFile_IEnumerable_System_String__
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(IFile,IEnumerable{System.String})
+  name.vb: WriteAllLinesAsync(IFile, IEnumerable(Of String))
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(IFile, IEnumerable<System.String>)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(IFile, IEnumerable(Of System.String))
+  nameWithType: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable<String>)
+  nameWithType.vb: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable(Of String))
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync*
+  name: WriteAllLinesAsync
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync
+  nameWithType: FileExtensions.WriteAllLinesAsync
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText(IFile,System.String)
+  name: WriteAllText(IFile, String)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllText_IFile_System_String_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText(IFile,System.String)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText(IFile, System.String)
+  nameWithType: FileExtensions.WriteAllText(IFile, String)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText*
+  name: WriteAllText
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllText_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText
+  nameWithType: FileExtensions.WriteAllText
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(IFile,System.String)
+  name: WriteAllTextAsync(IFile, String)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_IFile_System_String_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(IFile,System.String)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(IFile, System.String)
+  nameWithType: FileExtensions.WriteAllTextAsync(IFile, String)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync*
+  name: WriteAllTextAsync
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync
+  nameWithType: FileExtensions.WriteAllTextAsync
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions
+  name: FolderExtensions
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html
+  commentId: T:PCLExt.FileStorage.Extensions.FolderExtensions
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions
+  nameWithType: FolderExtensions
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder,System.String)
+  name: GetFileFromPath(IFolder, String)
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFileFromPath_IFolder_System_String_
+  commentId: M:PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder,System.String)
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder, System.String)
+  nameWithType: FolderExtensions.GetFileFromPath(IFolder, String)
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder,System.String[])
+  name: GetFileFromPath(IFolder, String[])
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFileFromPath_IFolder_System_String___
+  commentId: M:PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder,System.String[])
+  name.vb: GetFileFromPath(IFolder, String())
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder, System.String[])
+  fullName.vb: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath(IFolder, System.String())
+  nameWithType: FolderExtensions.GetFileFromPath(IFolder, String[])
+  nameWithType.vb: FolderExtensions.GetFileFromPath(IFolder, String())
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath*
+  name: GetFileFromPath
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFileFromPath_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath
+  nameWithType: FolderExtensions.GetFileFromPath
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder,System.String)
+  name: GetFolderFromPath(IFolder, String)
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFolderFromPath_IFolder_System_String_
+  commentId: M:PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder,System.String)
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder, System.String)
+  nameWithType: FolderExtensions.GetFolderFromPath(IFolder, String)
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder,System.String[])
+  name: GetFolderFromPath(IFolder, String[])
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFolderFromPath_IFolder_System_String___
+  commentId: M:PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder,System.String[])
+  name.vb: GetFolderFromPath(IFolder, String())
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder, System.String[])
+  fullName.vb: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(IFolder, System.String())
+  nameWithType: FolderExtensions.GetFolderFromPath(IFolder, String[])
+  nameWithType.vb: FolderExtensions.GetFolderFromPath(IFolder, String())
+- uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath*
+  name: GetFolderFromPath
+  href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFolderFromPath_
+  commentId: Overload:PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath
+  fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath
+  nameWithType: FolderExtensions.GetFolderFromPath
+- uid: PCLExt.FileStorage.Files
+  name: PCLExt.FileStorage.Files
+  href: api/PCLExt.FileStorage.Files.html
+  commentId: N:PCLExt.FileStorage.Files
+  fullName: PCLExt.FileStorage.Files
+  nameWithType: PCLExt.FileStorage.Files
+- uid: PCLExt.FileStorage.Files.FileFromPath
+  name: FileFromPath
+  href: api/PCLExt.FileStorage.Files.FileFromPath.html
+  commentId: T:PCLExt.FileStorage.Files.FileFromPath
+  fullName: PCLExt.FileStorage.Files.FileFromPath
+  nameWithType: FileFromPath
+- uid: PCLExt.FileStorage.Files.FileFromPath.#ctor(System.String)
+  name: FileFromPath(String)
+  href: api/PCLExt.FileStorage.Files.FileFromPath.html#PCLExt_FileStorage_Files_FileFromPath__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Files.FileFromPath.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Files.FileFromPath.FileFromPath(System.String)
+  nameWithType: FileFromPath.FileFromPath(String)
+- uid: PCLExt.FileStorage.Files.FileFromPath.#ctor*
+  name: FileFromPath
+  href: api/PCLExt.FileStorage.Files.FileFromPath.html#PCLExt_FileStorage_Files_FileFromPath__ctor_
+  commentId: Overload:PCLExt.FileStorage.Files.FileFromPath.#ctor
+  fullName: PCLExt.FileStorage.Files.FileFromPath.FileFromPath
+  nameWithType: FileFromPath.FileFromPath
+- uid: PCLExt.FileStorage.Folders
+  name: PCLExt.FileStorage.Folders
+  href: api/PCLExt.FileStorage.Folders.html
+  commentId: N:PCLExt.FileStorage.Folders
+  fullName: PCLExt.FileStorage.Folders
+  nameWithType: PCLExt.FileStorage.Folders
+- uid: PCLExt.FileStorage.Folders.ApplicationRootFolder
+  name: ApplicationRootFolder
+  href: api/PCLExt.FileStorage.Folders.ApplicationRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.ApplicationRootFolder
+  fullName: PCLExt.FileStorage.Folders.ApplicationRootFolder
+  nameWithType: ApplicationRootFolder
+- uid: PCLExt.FileStorage.Folders.ApplicationRootFolder.#ctor
+  name: ApplicationRootFolder()
+  href: api/PCLExt.FileStorage.Folders.ApplicationRootFolder.html#PCLExt_FileStorage_Folders_ApplicationRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.ApplicationRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.ApplicationRootFolder.ApplicationRootFolder()
+  nameWithType: ApplicationRootFolder.ApplicationRootFolder()
+- uid: PCLExt.FileStorage.Folders.ApplicationRootFolder.#ctor*
+  name: ApplicationRootFolder
+  href: api/PCLExt.FileStorage.Folders.ApplicationRootFolder.html#PCLExt_FileStorage_Folders_ApplicationRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.ApplicationRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.ApplicationRootFolder.ApplicationRootFolder
+  nameWithType: ApplicationRootFolder.ApplicationRootFolder
+- uid: PCLExt.FileStorage.Folders.DocumentsRootFolder
+  name: DocumentsRootFolder
+  href: api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.DocumentsRootFolder
+  fullName: PCLExt.FileStorage.Folders.DocumentsRootFolder
+  nameWithType: DocumentsRootFolder
+- uid: PCLExt.FileStorage.Folders.DocumentsRootFolder.#ctor
+  name: DocumentsRootFolder()
+  href: api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html#PCLExt_FileStorage_Folders_DocumentsRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.DocumentsRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.DocumentsRootFolder.DocumentsRootFolder()
+  nameWithType: DocumentsRootFolder.DocumentsRootFolder()
+- uid: PCLExt.FileStorage.Folders.DocumentsRootFolder.#ctor*
+  name: DocumentsRootFolder
+  href: api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html#PCLExt_FileStorage_Folders_DocumentsRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.DocumentsRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.DocumentsRootFolder.DocumentsRootFolder
+  nameWithType: DocumentsRootFolder.DocumentsRootFolder
+- uid: PCLExt.FileStorage.Folders.FolderFromPath
+  name: FolderFromPath
+  href: api/PCLExt.FileStorage.Folders.FolderFromPath.html
+  commentId: T:PCLExt.FileStorage.Folders.FolderFromPath
+  fullName: PCLExt.FileStorage.Folders.FolderFromPath
+  nameWithType: FolderFromPath
+- uid: PCLExt.FileStorage.Folders.FolderFromPath.#ctor(System.String)
+  name: FolderFromPath(String)
+  href: api/PCLExt.FileStorage.Folders.FolderFromPath.html#PCLExt_FileStorage_Folders_FolderFromPath__ctor_System_String_
+  commentId: M:PCLExt.FileStorage.Folders.FolderFromPath.#ctor(System.String)
+  fullName: PCLExt.FileStorage.Folders.FolderFromPath.FolderFromPath(System.String)
+  nameWithType: FolderFromPath.FolderFromPath(String)
+- uid: PCLExt.FileStorage.Folders.FolderFromPath.#ctor*
+  name: FolderFromPath
+  href: api/PCLExt.FileStorage.Folders.FolderFromPath.html#PCLExt_FileStorage_Folders_FolderFromPath__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.FolderFromPath.#ctor
+  fullName: PCLExt.FileStorage.Folders.FolderFromPath.FolderFromPath
+  nameWithType: FolderFromPath.FolderFromPath
+- uid: PCLExt.FileStorage.Folders.LocalRootFolder
+  name: LocalRootFolder
+  href: api/PCLExt.FileStorage.Folders.LocalRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.LocalRootFolder
+  fullName: PCLExt.FileStorage.Folders.LocalRootFolder
+  nameWithType: LocalRootFolder
+- uid: PCLExt.FileStorage.Folders.LocalRootFolder.#ctor
+  name: LocalRootFolder()
+  href: api/PCLExt.FileStorage.Folders.LocalRootFolder.html#PCLExt_FileStorage_Folders_LocalRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.LocalRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.LocalRootFolder.LocalRootFolder()
+  nameWithType: LocalRootFolder.LocalRootFolder()
+- uid: PCLExt.FileStorage.Folders.LocalRootFolder.#ctor*
+  name: LocalRootFolder
+  href: api/PCLExt.FileStorage.Folders.LocalRootFolder.html#PCLExt_FileStorage_Folders_LocalRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.LocalRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.LocalRootFolder.LocalRootFolder
+  nameWithType: LocalRootFolder.LocalRootFolder
+- uid: PCLExt.FileStorage.Folders.RoamingRootFolder
+  name: RoamingRootFolder
+  href: api/PCLExt.FileStorage.Folders.RoamingRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.RoamingRootFolder
+  fullName: PCLExt.FileStorage.Folders.RoamingRootFolder
+  nameWithType: RoamingRootFolder
+- uid: PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor
+  name: RoamingRootFolder()
+  href: api/PCLExt.FileStorage.Folders.RoamingRootFolder.html#PCLExt_FileStorage_Folders_RoamingRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.RoamingRootFolder.RoamingRootFolder()
+  nameWithType: RoamingRootFolder.RoamingRootFolder()
+- uid: PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor*
+  name: RoamingRootFolder
+  href: api/PCLExt.FileStorage.Folders.RoamingRootFolder.html#PCLExt_FileStorage_Folders_RoamingRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.RoamingRootFolder.RoamingRootFolder
+  nameWithType: RoamingRootFolder.RoamingRootFolder
+- uid: PCLExt.FileStorage.Folders.TempRootFolder
+  name: TempRootFolder
+  href: api/PCLExt.FileStorage.Folders.TempRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.TempRootFolder
+  fullName: PCLExt.FileStorage.Folders.TempRootFolder
+  nameWithType: TempRootFolder
+- uid: PCLExt.FileStorage.Folders.TempRootFolder.#ctor
+  name: TempRootFolder()
+  href: api/PCLExt.FileStorage.Folders.TempRootFolder.html#PCLExt_FileStorage_Folders_TempRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.TempRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.TempRootFolder.TempRootFolder()
+  nameWithType: TempRootFolder.TempRootFolder()
+- uid: PCLExt.FileStorage.Folders.TempRootFolder.#ctor*
+  name: TempRootFolder
+  href: api/PCLExt.FileStorage.Folders.TempRootFolder.html#PCLExt_FileStorage_Folders_TempRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.TempRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.TempRootFolder.TempRootFolder
+  nameWithType: TempRootFolder.TempRootFolder
+- uid: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile(System.String)
+  name: CreateTempFile(String)
+  href: api/PCLExt.FileStorage.Folders.TempRootFolder.html#PCLExt_FileStorage_Folders_TempRootFolder_CreateTempFile_System_String_
+  commentId: M:PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile(System.String)
+  fullName: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile(System.String)
+  nameWithType: TempRootFolder.CreateTempFile(String)
+- uid: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile*
+  name: CreateTempFile
+  href: api/PCLExt.FileStorage.Folders.TempRootFolder.html#PCLExt_FileStorage_Folders_TempRootFolder_CreateTempFile_
+  commentId: Overload:PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile
+  fullName: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile
+  nameWithType: TempRootFolder.CreateTempFile
+- uid: PCLExt.FileStorage.PortablePath
+  name: PortablePath
+  href: api/PCLExt.FileStorage.PortablePath.html
+  commentId: T:PCLExt.FileStorage.PortablePath
+  fullName: PCLExt.FileStorage.PortablePath
+  nameWithType: PortablePath
+- uid: PCLExt.FileStorage.PortablePath.Combine(System.String[])
+  name: Combine(String[])
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_Combine_System_String___
+  commentId: M:PCLExt.FileStorage.PortablePath.Combine(System.String[])
+  name.vb: Combine(String())
+  fullName: PCLExt.FileStorage.PortablePath.Combine(System.String[])
+  fullName.vb: PCLExt.FileStorage.PortablePath.Combine(System.String())
+  nameWithType: PortablePath.Combine(String[])
+  nameWithType.vb: PortablePath.Combine(String())
+- uid: PCLExt.FileStorage.PortablePath.Combine*
+  name: Combine
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_Combine_
+  commentId: Overload:PCLExt.FileStorage.PortablePath.Combine
+  fullName: PCLExt.FileStorage.PortablePath.Combine
+  nameWithType: PortablePath.Combine
+- uid: PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
+  name: DirectorySeparatorChar
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_DirectorySeparatorChar
+  commentId: P:PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
+  fullName: PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
+  nameWithType: PortablePath.DirectorySeparatorChar
+- uid: PCLExt.FileStorage.PortablePath.DirectorySeparatorChar*
+  name: DirectorySeparatorChar
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_DirectorySeparatorChar_
+  commentId: Overload:PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
+  fullName: PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
+  nameWithType: PortablePath.DirectorySeparatorChar
+- uid: PCLExt.FileStorage.PortablePath.GetExtension(System.String)
+  name: GetExtension(String)
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetExtension_System_String_
+  commentId: M:PCLExt.FileStorage.PortablePath.GetExtension(System.String)
+  fullName: PCLExt.FileStorage.PortablePath.GetExtension(System.String)
+  nameWithType: PortablePath.GetExtension(String)
+- uid: PCLExt.FileStorage.PortablePath.GetExtension*
+  name: GetExtension
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetExtension_
+  commentId: Overload:PCLExt.FileStorage.PortablePath.GetExtension
+  fullName: PCLExt.FileStorage.PortablePath.GetExtension
+  nameWithType: PortablePath.GetExtension
+- uid: PCLExt.FileStorage.PortablePath.GetFileName(System.String)
+  name: GetFileName(String)
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetFileName_System_String_
+  commentId: M:PCLExt.FileStorage.PortablePath.GetFileName(System.String)
+  fullName: PCLExt.FileStorage.PortablePath.GetFileName(System.String)
+  nameWithType: PortablePath.GetFileName(String)
+- uid: PCLExt.FileStorage.PortablePath.GetFileName*
+  name: GetFileName
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetFileName_
+  commentId: Overload:PCLExt.FileStorage.PortablePath.GetFileName
+  fullName: PCLExt.FileStorage.PortablePath.GetFileName
+  nameWithType: PortablePath.GetFileName
+- uid: PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension(System.String)
+  name: GetFileNameWithoutExtension(String)
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetFileNameWithoutExtension_System_String_
+  commentId: M:PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension(System.String)
+  fullName: PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension(System.String)
+  nameWithType: PortablePath.GetFileNameWithoutExtension(String)
+- uid: PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension*
+  name: GetFileNameWithoutExtension
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetFileNameWithoutExtension_
+  commentId: Overload:PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension
+  fullName: PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension
+  nameWithType: PortablePath.GetFileNameWithoutExtension
+- uid: PCLExt.FileStorage.PortablePath.HasExtension(System.String)
+  name: HasExtension(String)
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_HasExtension_System_String_
+  commentId: M:PCLExt.FileStorage.PortablePath.HasExtension(System.String)
+  fullName: PCLExt.FileStorage.PortablePath.HasExtension(System.String)
+  nameWithType: PortablePath.HasExtension(String)
+- uid: PCLExt.FileStorage.PortablePath.HasExtension*
+  name: HasExtension
+  href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_HasExtension_
+  commentId: Overload:PCLExt.FileStorage.PortablePath.HasExtension
+  fullName: PCLExt.FileStorage.PortablePath.HasExtension
+  nameWithType: PortablePath.HasExtension
