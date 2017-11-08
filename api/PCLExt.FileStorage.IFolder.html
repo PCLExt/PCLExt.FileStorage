@@ -1,0 +1,1210 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IFolder
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IFolder
+   ">
+    <meta name="generator" content="docfx 2.26.4.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="PCLExt.FileStorage.IFolder">
+  
+  
+  <h1 id="PCLExt_FileStorage_IFolder" data-uid="PCLExt.FileStorage.IFolder" class="text-break">Interface IFolder
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a file system folder</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="PCLExt.FileStorage.html">PCLExt.FileStorage</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="PCLExt_FileStorage_IFolder_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IFolder</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Exists_" data-uid="PCLExt.FileStorage.IFolder.Exists*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Exists" data-uid="PCLExt.FileStorage.IFolder.Exists">Exists</h4>
+  <div class="markdown level1 summary"><p>Shows if the folder actually exist. Controversial property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool Exists { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Name_" data-uid="PCLExt.FileStorage.IFolder.Name*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Name" data-uid="PCLExt.FileStorage.IFolder.Name">Name</h4>
+  <div class="markdown level1 summary"><p>The name of the folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Name { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Path_" data-uid="PCLExt.FileStorage.IFolder.Path*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Path" data-uid="PCLExt.FileStorage.IFolder.Path">Path</h4>
+  <div class="markdown level1 summary"><p>The &quot;full path&quot; of the folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string Path { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CheckExists_" data-uid="PCLExt.FileStorage.IFolder.CheckExists*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CheckExists_System_String_" data-uid="PCLExt.FileStorage.IFolder.CheckExists(System.String)">CheckExists(String)</h4>
+  <div class="markdown level1 summary"><p>Checks whether a folder or file exists at the given location.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ExistenceCheckResult CheckExists(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the file or folder to check for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.ExistenceCheckResult.html">ExistenceCheckResult</a></td>
+        <td><p>A task whose result is the result of the existence check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CheckExistsAsync_" data-uid="PCLExt.FileStorage.IFolder.CheckExistsAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CheckExistsAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String,CancellationToken)">CheckExistsAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Checks whether a folder or file exists at the given location.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;ExistenceCheckResult&gt; CheckExistsAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the file or folder to check for.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.ExistenceCheckResult.html">ExistenceCheckResult</a>&gt;</td>
+        <td><p>A task whose result is the result of the existence check.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Copy_" data-uid="PCLExt.FileStorage.IFolder.Copy*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Copy_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_" data-uid="PCLExt.FileStorage.IFolder.Copy(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)">Copy(IFolder, NameCollisionOption)</h4>
+  <div class="markdown level1 summary"><p>Copies this folder and all of its contents to the given folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td><span class="parametername">folder</span></td>
+        <td><p>The folder in which content will be copied</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.NameCollisionOption.html">NameCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified folder/file already exists</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CopyAsync_" data-uid="PCLExt.FileStorage.IFolder.CopyAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">CopyAsync(IFolder, NameCollisionOption, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Copies this folder and all of its contents to the given folder.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td><span class="parametername">folder</span></td>
+        <td><p>The folder in which content will be copied</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.NameCollisionOption.html">NameCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified folder/file already exists</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CreateFile_" data-uid="PCLExt.FileStorage.IFolder.CreateFile*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CreateFile_System_String_PCLExt_FileStorage_CreationCollisionOption_" data-uid="PCLExt.FileStorage.IFolder.CreateFile(System.String,PCLExt.FileStorage.CreationCollisionOption)">CreateFile(String, CreationCollisionOption)</h4>
+  <div class="markdown level1 summary"><p>Creates a file in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFile CreateFile(string desiredName, CreationCollisionOption option)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">desiredName</span></td>
+        <td><p>The name of the file to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.CreationCollisionOption.html">CreationCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified file already exists</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a></td>
+        <td><p>The newly created file</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CreateFileAsync_" data-uid="PCLExt.FileStorage.IFolder.CreateFileAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)">CreateFileAsync(String, CreationCollisionOption, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Creates a file in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">desiredName</span></td>
+        <td><p>The name of the file to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.CreationCollisionOption.html">CreationCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified file already exists</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><p>The newly created file</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CreateFolder_" data-uid="PCLExt.FileStorage.IFolder.CreateFolder*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CreateFolder_System_String_PCLExt_FileStorage_CreationCollisionOption_" data-uid="PCLExt.FileStorage.IFolder.CreateFolder(System.String,PCLExt.FileStorage.CreationCollisionOption)">CreateFolder(String, CreationCollisionOption)</h4>
+  <div class="markdown level1 summary"><p>Creates a subfolder in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFolder CreateFolder(string desiredName, CreationCollisionOption option)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">desiredName</span></td>
+        <td><p>The name of the folder to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.CreationCollisionOption.html">CreationCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified folder already exists</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td><p>The newly created folder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_CreateFolderAsync_" data-uid="PCLExt.FileStorage.IFolder.CreateFolderAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)">CreateFolderAsync(String, CreationCollisionOption, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Creates a subfolder in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IFolder&gt; CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">desiredName</span></td>
+        <td><p>The name of the folder to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.CreationCollisionOption.html">CreationCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified folder already exists</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td><p>The newly created folder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Delete_" data-uid="PCLExt.FileStorage.IFolder.Delete*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Delete" data-uid="PCLExt.FileStorage.IFolder.Delete">Delete()</h4>
+  <div class="markdown level1 summary"><p>Deletes this folder and all of its contents</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Delete()</code></pre>
+  </div>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_DeleteAsync_" data-uid="PCLExt.FileStorage.IFolder.DeleteAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_DeleteAsync_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.DeleteAsync(CancellationToken)">DeleteAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Deletes this folder and all of its contents</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DeleteAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>A task which will complete after the folder is deleted</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFile_" data-uid="PCLExt.FileStorage.IFolder.GetFile*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFile_System_String_" data-uid="PCLExt.FileStorage.IFolder.GetFile(System.String)">GetFile(String)</h4>
+  <div class="markdown level1 summary"><p>Gets a file in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFile GetFile(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the file to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a></td>
+        <td><p>The requested file, or null if it does not exist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFileAsync_" data-uid="PCLExt.FileStorage.IFolder.GetFileAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFileAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.GetFileAsync(System.String,CancellationToken)">GetFileAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Gets a file in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; GetFileAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the file to get</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><p>The requested file, or null if it does not exist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFiles_" data-uid="PCLExt.FileStorage.IFolder.GetFiles*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFiles_System_String_PCLExt_FileStorage_FolderSearchOption_" data-uid="PCLExt.FileStorage.IFolder.GetFiles(System.String,PCLExt.FileStorage.FolderSearchOption)">GetFiles(String, FolderSearchOption)</h4>
+  <div class="markdown level1 summary"><p>Gets a list of the files in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;IFile&gt; GetFiles(string searchPattern = &quot;*&quot;, FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">searchPattern</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.FolderSearchOption.html">FolderSearchOption</a></td>
+        <td><span class="parametername">searchOption</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><p>A list of the files in the folder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFilesAsync_" data-uid="PCLExt.FileStorage.IFolder.GetFilesAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,CancellationToken)">GetFilesAsync(String, FolderSearchOption, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Gets a list of the files in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;IFile&gt;&gt; GetFilesAsync(string searchPattern = &quot;*&quot;, FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">searchPattern</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.FolderSearchOption.html">FolderSearchOption</a></td>
+        <td><span class="parametername">searchOption</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;&gt;</td>
+        <td><p>A list of the files in the folder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFolder_" data-uid="PCLExt.FileStorage.IFolder.GetFolder*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFolder_System_String_" data-uid="PCLExt.FileStorage.IFolder.GetFolder(System.String)">GetFolder(String)</h4>
+  <div class="markdown level1 summary"><p>Gets a subfolder in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFolder GetFolder(string name)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the folder to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td><p>The requested folder, or null if it does not exist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFolderAsync_" data-uid="PCLExt.FileStorage.IFolder.GetFolderAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFolderAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.GetFolderAsync(System.String,CancellationToken)">GetFolderAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Gets a subfolder in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IFolder&gt; GetFolderAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">name</span></td>
+        <td><p>The name of the folder to get</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td><p>The requested folder, or null if it does not exist</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFolders_" data-uid="PCLExt.FileStorage.IFolder.GetFolders*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFolders" data-uid="PCLExt.FileStorage.IFolder.GetFolders">GetFolders()</h4>
+  <div class="markdown level1 summary"><p>Gets a list of subfolders in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;IFolder&gt; GetFolders()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td><p>A list of subfolders in the folder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_GetFoldersAsync_" data-uid="PCLExt.FileStorage.IFolder.GetFoldersAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_GetFoldersAsync_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.GetFoldersAsync(CancellationToken)">GetFoldersAsync(CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Gets a list of subfolders in this folder</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IList&lt;IFolder&gt;&gt; GetFoldersAsync(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;&gt;</td>
+        <td><p>A list of subfolders in the folder</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Move_" data-uid="PCLExt.FileStorage.IFolder.Move*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Move_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_" data-uid="PCLExt.FileStorage.IFolder.Move(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)">Move(IFolder, NameCollisionOption)</h4>
+  <div class="markdown level1 summary"><p>Moves this folder and all of its contents to the given folder, current folder will be deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td><span class="parametername">folder</span></td>
+        <td><p>The folder in which content will be moved</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.NameCollisionOption.html">NameCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified folder/file already exists</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_MoveAsync_" data-uid="PCLExt.FileStorage.IFolder.MoveAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">MoveAsync(IFolder, NameCollisionOption, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Moves this folder and all of its contents to the given folder, current folder will be deleted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td><span class="parametername">folder</span></td>
+        <td><p>The folder in which content will be moved</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.NameCollisionOption.html">NameCollisionOption</a></td>
+        <td><span class="parametername">option</span></td>
+        <td><p>Specifies how to behave if the specified folder/file already exists</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>The folder with moved content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_Rename_" data-uid="PCLExt.FileStorage.IFolder.Rename*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_Rename_System_String_" data-uid="PCLExt.FileStorage.IFolder.Rename(System.String)">Rename(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IFolder Rename(string newName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">newName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="PCLExt_FileStorage_IFolder_RenameAsync_" data-uid="PCLExt.FileStorage.IFolder.RenameAsync*"></a>
+  <h4 id="PCLExt_FileStorage_IFolder_RenameAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.IFolder.RenameAsync(System.String,CancellationToken)">RenameAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IFolder&gt; RenameAsync(string newName, CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">newName</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2015-2017 PCLExt
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
