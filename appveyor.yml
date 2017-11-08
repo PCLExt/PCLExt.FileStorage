@@ -8,6 +8,10 @@ platform: Any CPU
 environment:
     COVERALLS_REPO_TOKEN:  
        secure: 7poiWT8gLPZOdo8fwSWeerKD+flRokWUY3Ke5s4TW9+vejCzcH8AXY4pwurPxb9D
+  op_build_user: "OpenPublishBuild"
+  op_build_user_email: "vscopbld@microsoft.com"
+  access_token:
+    secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
 
 install:
 - git submodule update --init --recursive
@@ -18,6 +22,29 @@ before_build:
 build:
   project: PCLExt.FileStorage.sln
   verbosity: minimal
+  
+after_build:
+  - ps: |
+        if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
+        {
+            # & nuget install docfx.console -Version 2.18.4 -Source https://www.myget.org/F/docfx/api/v3/index.json
+            # & docfx.console.2.18.4\tools\docfx docfx.json
+            & docfx docfx.json
+            if ($lastexitcode -ne 0){
+              throw [System.Exception] "docfx build failed with exit code $lastexitcode."
+            }
+            
+            git config --global credential.helper store
+            Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
+            git config --global user.email $env:op_build_user_email
+            git config --global user.name $env:op_build_user
+            git clone https://github.com/docascode/docfx-seed.git -b gh-pages origin_site -q
+            Copy-Item origin_site/.git _site -recurse
+            CD _site
+            git add -A 2>&1
+            git commit -m "CI Updates" -q
+            git push origin gh-pages -q
+        }
 
 after_test:
 - choco install codecov
