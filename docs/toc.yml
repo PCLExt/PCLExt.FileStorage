@@ -1,5 +1,5 @@
 - name: Home
-  href: readme.md
+  href: index.md
 - name: Articles
   href: articles/
   homepage: articles/getting_started.md

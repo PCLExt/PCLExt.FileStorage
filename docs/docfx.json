@@ -3,6 +3,7 @@
     {
       "src": [
         {
+		  "src": "..",
           "files": [
             "src/**.csproj"
           ],
@@ -60,6 +61,9 @@
       }
     ],
     "dest": "_site",
+	"globalMetadata": {
+	  "_appFooter": "© 2015-2017 PCLExt"
+	},
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
