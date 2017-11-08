@@ -6,7 +6,7 @@ configuration:
 platform: Any CPU
 
 environment:
-    COVERALLS_REPO_TOKEN:  
+  COVERALLS_REPO_TOKEN:  
        secure: 7poiWT8gLPZOdo8fwSWeerKD+flRokWUY3Ke5s4TW9+vejCzcH8AXY4pwurPxb9D
   op_build_user: "OpenPublishBuild"
   op_build_user_email: "vscopbld@microsoft.com"
