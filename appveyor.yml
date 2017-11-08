@@ -24,6 +24,9 @@ after_test:
 - nuget install NUnit.ConsoleRunner -Version 3.7.0 -OutputDirectory tools
 - nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
 - nuget install coveralls.io -Version 1.4.2 -OutputDirectory tools
-- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:".\tools\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage.xml
-- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage.xml -r %COVERALLS_REPO_TOKEN%
-- codecov -f coverage.xml
+#- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj" -oldStyle -output:coverage_netcore.xml
+- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:".\tools\NUnit.ConsoleRunner.3.7.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+#- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netcore.xml -r %COVERALLS_REPO_TOKEN%
+- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
+#- codecov -f coverage_netcore.xml
+- codecov -f coverage_netfx.xml
