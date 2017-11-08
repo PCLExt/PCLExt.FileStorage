@@ -62,7 +62,9 @@
     ],
     "dest": "_site",
 	"globalMetadata": {
+	  "_appTitle": "PCLExt.FileStorage documentation",
 	  "_appFooter": "© 2015-2017 PCLExt"
+	  "_appFaviconPath": "images/favicon.ico",
 	},
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
