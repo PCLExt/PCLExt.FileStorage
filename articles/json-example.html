@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>JSON File | PCLExt.FileStorage documentation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="JSON File | PCLExt.FileStorage documentation ">
+    <meta name="generator" content="docfx 2.27.0.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="json-file">JSON File</h1>
+
+<p>Class that serializes/deserializes JSON file.</p>
+<pre><code class="lang-cs">public abstract class JsonFile : BaseFile
+{
+    /// &lt;summary&gt;
+    /// Ignores readonly properties from BaseFile in the Json file.
+    /// &lt;/summary&gt;
+    protected class BaseFileResolver : DefaultContractResolver
+    {
+        protected override IList&lt;JsonProperty&gt; 
+            CreateProperties(Type type, MemberSerialization memberSerialization) =&gt;
+            base.CreateProperties(type, memberSerialization)
+                .Where(p =&gt; p.PropertyName != nameof(Name) &amp;&amp;
+                            p.PropertyName != nameof(Path) &amp;&amp;
+                            p.PropertyName != nameof(Exists) &amp;&amp;
+                            p.PropertyName != nameof(Size))
+                .ToList();
+    }
+
+    protected virtual JsonSerializerSettings GetSettings() =&gt; new JsonSerializerSettings()
+    {
+        ContractResolver = new BaseFileResolver(),
+        Formatting = Formatting.Indented
+    };
+
+    protected JsonFile(IFile file) : base(file)
+    {
+        Reload();
+    }
+
+    /// &lt;summary&gt;
+    /// Will trigger Save() if field has changed.
+    /// &lt;/summary&gt;
+    protected void SetValueIfChangedAndSave&lt;TRet&gt;(ref TRet backingField, TRet newValue)
+    {
+        if (!EqualityComparer&lt;TRet&gt;.Default.Equals(backingField, newValue))
+        {
+            backingField = newValue;
+            Save();
+        }
+    }
+
+    public bool Reload()
+    {
+        try
+        {
+            var content = this.ReadAllText();
+            if (string.IsNullOrEmpty(content))
+                this.WriteAllText(content = JsonConvert.SerializeObject(this, GetSettings()));
+
+            JsonConvert.PopulateObject(content, this, GetSettings());
+            return true;
+        }
+        catch (JsonSerializationException) // Json file is invalid, replace with the default valid one.
+        {
+            // Comment this to prevent replacing invalid json with default values.
+            this.WriteAllText(JsonConvert.SerializeObject(this, GetSettings()));
+            return false;
+        }
+    }
+    public bool Save()
+    {
+        try
+        {
+            this.WriteAllText(JsonConvert.SerializeObject(this, GetSettings()));
+            return true;
+        }
+        catch (JsonSerializationException)
+        {
+            return false;
+        }
+    }
+
+    protected async Task&lt;bool&gt; ReloadAsync()
+    {
+        try
+        {
+            var content = await this.ReadAllTextAsync();
+            if (string.IsNullOrEmpty(content))
+                await this.WriteAllTextAsync(content = JsonConvert.SerializeObject(this, GetSettings()));
+
+            JsonConvert.PopulateObject(content, this, GetSettings());
+            return true;
+        }
+        catch (JsonSerializationException) // Json file is invalid, replace with the default valid one.
+        {
+            // Comment this to prevent replacing with default.
+            await this.WriteAllTextAsync(JsonConvert.SerializeObject(this, GetSettings()));
+            return false;
+        }
+    }
+    public async Task&lt;bool&gt; SaveAsync()
+    {
+        try
+        {
+            await this.WriteAllTextAsync(JsonConvert.SerializeObject(this, GetSettings()));
+            return true;
+        }
+        catch (JsonSerializationException)
+        {
+            return false;
+        }
+    }
+}
+public class SomeJsonFile : JsonFile
+{
+    private string _serverName = &quot;Put Server Name Here&quot;;
+    public string ServerName { get =&gt; _serverName; set =&gt; SetValueIfChangedAndSave(ref _serverName, value); }
+
+    private string _serverMessage = &quot;Put Server Description Here&quot;;
+    public string ServerMessage { get =&gt; _serverMessage; set =&gt; SetValueIfChangedAndSave(ref _serverMessage, value); }
+
+    private int _maxPlayers = 1000;
+    public int MaxPlayers { get =&gt; _maxPlayers; set =&gt; SetValueIfChangedAndSave(ref _maxPlayers, value); }
+
+
+    public SomeJsonFile() : base(new ApplicationRootFolder().CreateFile(&quot;Some.json&quot;, CreationCollisionOption.OpenIfExists)) { }
+}
+
+public class OtherJsonFile : JsonFile
+{
+    public string ServerName { get; set; } = &quot;Put Server Name Here&quot;;
+
+    public string ServerMessage { get; set; } = &quot;Put Server Description Here&quot;;
+
+    public int MaxPlayers { get; set; } = 1000;
+
+
+    public OtherJsonFile() : base(new ApplicationRootFolder().CreateFile(&quot;Other.json&quot;, CreationCollisionOption.OpenIfExists)) { }
+}
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/PCLExt/PCLExt.FileStorage/blob/docs/docs/articles/json-example.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            © 2015-2017 PCLExt
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
