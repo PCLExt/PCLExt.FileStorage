@@ -1,5 +1,7 @@
 - name: Getting Started
   href: getting_started.md
   items:
+    - name: Log Example
+      href: log-example.md
     - name: JSON Example
       href: json-example.md
