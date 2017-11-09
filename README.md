@@ -11,3 +11,6 @@ It was formely a basic fork of [PCL Storage](https://github.com/dsplaisted/PCLSt
   
 PCLExt.FileStorage supports .NET Framework (4.5), .NET Standard (2.0), Xamarin.iOS, Xamarin.Android, Xamarin.Mac and UWP.
 This makes it easier to create cross-platform .NET libraries and apps.
+
+# Documentation
+Examples and API documentation can be found [here](http://pclext.github.io/PCLExt.FileStorage/).
