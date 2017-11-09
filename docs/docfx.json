@@ -36,7 +36,11 @@
           "obj/**",
           "_site/**"
         ]
-      }
+      },
+	  {
+		"files": "README.md",
+        "src": ".."
+	  }
     ],
     "resource": [
       {
