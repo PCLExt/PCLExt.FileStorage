@@ -1,3 +1,2 @@
-# API Reference
-
-Welcome to PCLExt.FileStorage reference. To begin, select a namespace, then a class, from the table of contents on the left.
+# APIs
+The primary APIs are the IFile and IFolder interfaces. BaseFile and BaseFolder implements them as abstract classes.
