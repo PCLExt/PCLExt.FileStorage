@@ -369,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "Cw04m49/Iy9AW0Wy3ykb4w=="
+          "hash": "6PZWG3SI1a1on9o8527VzA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started.html",
-          "hash": "itP4hdbUBOIvKSa61jXmCA=="
+          "hash": "WcmqaPe2HQMXoj8tsPmgRw=="
         }
       },
       "is_incremental": false,
@@ -475,7 +475,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "l53+VCgBMZnjYI1lePeKPQ=="
+          "hash": "x7uaVGHGlHXPp+LnDGl+Pw=="
         }
       },
       "is_incremental": false,
@@ -495,11 +495,11 @@
           "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },

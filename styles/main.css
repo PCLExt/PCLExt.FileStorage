@@ -1,7 +1,7 @@
 /* Copyright (c) Microsoft Corporation. All Rights Reserved. Licensed under the MIT License. See License.txt in the project root for license information. */
 /* Colors */
 button, a, .btn-primary {
-  color: #47A7A0;
+  color: #147115;
 }
 .btn-primary:hover, .btn-primary:focus, button:hover, button:focus, a:hover, a:focus, .toc .nav > li.active > a:hover, .toc .nav > li.active > a:focus, .toc .nav > li > a:hover, .toc .nav > li > a:focus {
   color: #0e500f;
