@@ -3,3 +3,4 @@
 <script type="text/javascript" src="{{_rel}}styles/docfx.vendor.js"></script>
 <script type="text/javascript" src="{{_rel}}styles/docfx.js"></script>
 <script type="text/javascript" src="{{_rel}}styles/main.js"></script>
+<script id="dsq-count-scr" src="//pclext-filestorage.disqus.com/count.js" async></script>

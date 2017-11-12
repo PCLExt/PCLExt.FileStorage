@@ -19,7 +19,6 @@ footer{
     <div class="buttons-unit">
 	  <a href="https://github.com/PCLExt/PCLExt.FileStorage" class="button"><i class="glyphicon glyphicon-cloud"></i>View in Github</a>
 	  <a href="https://www.nuget.org/packages/PCLExt.FileStorage/" class="button"><i class="glyphicon glyphicon-globe"></i>Get on NuGet</a>
-	  <a href="https://github.com/PCLExt/PCLExt.FileStorage/releases" class="button"><i class="glyphicon glyphicon-download"></i>Download Latest</a>
     </div>
   </div>
 </div>
@@ -30,7 +29,7 @@ footer{
         <i class="glyphicon glyphicon-tree-deciduous"></i>
         <section>
           <h2>Origin</h2>
-          <p class="lead">It was formely a basic fork of PCL Storage, but later formed it's own set of API's designed to ease use of files and folders in managed code. It has a more "OOP" approach.</p>
+          <p class="lead">It was formely a basic fork of PCL Storage, but later formed it's own set of API's designed to ease use of files and folders in managed code. It has a more "OOP" approach, avoiding the use of static classes.</p>
         </section>
       </div>
     </div>
