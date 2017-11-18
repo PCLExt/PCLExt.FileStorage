@@ -41,7 +41,7 @@ namespace PCLExt.FileStorage.Test
         [Test]
         public void CreationTime()
         {
-            var timeBeforeFileCreaton = DateTime.Now;
+            var timeBeforeFileCreaton = DateTime.Now.AddSeconds(-1);
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
 
             Assert.True(timeBeforeFileCreaton <= file.CreationTime);
@@ -52,11 +52,11 @@ namespace PCLExt.FileStorage.Test
         [Test]
         public void CreationTimeUTC()
         {
-            var timeBeforeFileCreaton = DateTime.UtcNow;
+            var timeBeforeFileCreaton = DateTime.UtcNow.AddSeconds(-1);
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
 
             Assert.True(timeBeforeFileCreaton <= file.CreationTimeUTC,
-                $"{timeBeforeFileCreaton} <= {file.CreationTimeUTC}");
+                $"{timeBeforeFileCreaton:yyyyMMddHHmmss.fff} <= {file.CreationTimeUTC:yyyyMMddHHmmss.fff}");
 
             file.Delete();
         }
@@ -64,7 +64,7 @@ namespace PCLExt.FileStorage.Test
         [Test]
         public void LastAccessTime()
         {
-            var timeBeforeFileCreaton = DateTime.Now;
+            var timeBeforeFileCreaton = DateTime.Now.AddSeconds(-1);
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
 
             Assert.True(timeBeforeFileCreaton <= file.LastAccessTime);
@@ -75,7 +75,7 @@ namespace PCLExt.FileStorage.Test
         [Test]
         public void LastAccessTimeUTC()
         {
-            var timeBeforeFileCreaton = DateTime.UtcNow;
+            var timeBeforeFileCreaton = DateTime.UtcNow.AddSeconds(-1);
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
 
             Assert.True(timeBeforeFileCreaton <= file.LastAccessTimeUTC);
