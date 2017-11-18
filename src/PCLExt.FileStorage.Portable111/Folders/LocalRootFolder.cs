@@ -45,8 +45,8 @@ namespace PCLExt.FileStorage.Folders
 #elif DESKTOP || NETSTANDARD2_0
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)).GetDataFolder();
 #elif WINDOWS_UWP
-            return null;
-            return new DefaultFolderImplementation(Windows.Storage.ApplicationData.Current.LocalFolder.Path);
+            return new UWP.StorageFolderImplementation(
+                Windows.Storage.ApplicationData.Current.LocalFolder);
 #endif
         }
 #else
