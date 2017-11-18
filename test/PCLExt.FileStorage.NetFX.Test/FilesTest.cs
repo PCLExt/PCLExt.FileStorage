@@ -55,7 +55,8 @@ namespace PCLExt.FileStorage.Test
             var timeBeforeFileCreaton = DateTime.UtcNow;
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
 
-            Assert.True(timeBeforeFileCreaton <= file.CreationTimeUTC);
+            Assert.True(timeBeforeFileCreaton <= file.CreationTimeUTC,
+                $"{timeBeforeFileCreaton} <= {file.CreationTimeUTC}");
 
             file.Delete();
         }
