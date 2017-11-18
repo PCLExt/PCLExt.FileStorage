@@ -18,10 +18,8 @@ namespace PCLExt.FileStorage.Folders
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments));
 #elif DESKTOP || __MACOS__ || NETSTANDARD2_0
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments)).GetDataFolder();
-#elif WINDOWS_UWP
-            return null;
-            // TODO
-            return new DefaultFolderImplementation(Windows.Storage.KnownFolders.DocumentsLibrary.Path);
+#elif WINDOWS_UWP            
+            return new UWP.StorageFolderImplementation(Windows.Storage.KnownFolders.DocumentsLibrary);
 #endif
         }
 #else

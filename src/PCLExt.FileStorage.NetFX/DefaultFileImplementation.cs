@@ -31,6 +31,18 @@ namespace PCLExt.FileStorage
         public bool Exists => File.Exists(Path);
         /// <inheritdoc />
         public long Size => Exists ? new FileInfo(Path).Length : -1;
+        /// <inheritdoc />
+        public DateTime CreationTime => File.GetCreationTime(Path);
+        /// <inheritdoc />
+        public DateTime CreationTimeUTC => File.GetCreationTimeUtc(Path);
+        /// <inheritdoc />
+        public DateTime LastAccessTime => File.GetLastAccessTime(Path);
+        /// <inheritdoc />
+        public DateTime LastAccessTimeUTC => File.GetLastAccessTimeUtc(Path);
+        /// <inheritdoc />
+        public DateTime LastWriteTime => File.GetLastWriteTime(Path);
+        /// <inheritdoc />
+        public DateTime LastWriteTimeUTC => File.GetLastWriteTimeUtc(Path);
 
         /// <summary>
         /// Creates a new <see cref="IFile"/> corresponding to the specified path.

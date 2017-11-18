@@ -16,6 +16,8 @@
 
 #if DESKTOP || ANDROID || __IOS__ || __MACOS__ || NETSTANDARD2_0
             return System.IO.Directory.Exists(path) ? new DefaultFolderImplementation(path, true) : null;
+#elif WINDOWS_UWP
+            return new UWP.StorageFolderImplementation(path);
 #endif
 
             throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();

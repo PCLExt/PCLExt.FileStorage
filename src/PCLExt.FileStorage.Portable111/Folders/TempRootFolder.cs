@@ -13,8 +13,8 @@
         private static IFolder GetTempFolder()
         {
 #if WINDOWS_UWP
-            return null;
-            return new DefaultFolderImplementation(Windows.Storage.ApplicationData.Current.TemporaryFolder.Path);
+             return new UWP.StorageFolderImplementation(
+                Windows.Storage.ApplicationData.Current.TemporaryFolder);
 #else
             return new DefaultFolderImplementation(System.IO.Path.GetTempPath());
 #endif
