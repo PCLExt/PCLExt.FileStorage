@@ -23,8 +23,8 @@ namespace PCLExt.FileStorage
         {
             get
             {
-#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__
-				return System.IO.Path.DirectorySeparatorChar;
+#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
+                return System.IO.Path.DirectorySeparatorChar;
 #endif
 
 				throw ExceptionsHelper.NotImplementedInReferenceAssembly();
@@ -38,7 +38,7 @@ namespace PCLExt.FileStorage
         /// <returns>A combined path.</returns>
         public static string Combine(params string[] paths)
         {
-#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__
+#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
 			return System.IO.Path.Combine(paths);
 #endif
 
@@ -58,8 +58,8 @@ namespace PCLExt.FileStorage
         /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
         public static string GetExtension(string path)
         {
-#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__
-			return System.IO.Path.GetExtension(path);
+#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
+            return System.IO.Path.GetExtension(path);
 #endif
 
             throw ExceptionsHelper.NotImplementedInReferenceAssembly();
@@ -82,8 +82,8 @@ namespace PCLExt.FileStorage
         /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
         public static string GetFileName(string path)
         {
-#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__
-			return System.IO.Path.GetFileName(path);
+#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
+            return System.IO.Path.GetFileName(path);
 #endif
 
             throw ExceptionsHelper.NotImplementedInReferenceAssembly();
@@ -101,8 +101,8 @@ namespace PCLExt.FileStorage
         /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
         public static string GetFileNameWithoutExtension(string path)
         {
-#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__
-			return System.IO.Path.GetFileNameWithoutExtension(path);
+#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
+            return System.IO.Path.GetFileNameWithoutExtension(path);
 #endif
 
             throw ExceptionsHelper.NotImplementedInReferenceAssembly();
@@ -121,8 +121,8 @@ namespace PCLExt.FileStorage
         /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>
         public static bool HasExtension(string path)
         {
-#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__
-			return System.IO.Path.HasExtension(path);
+#if NETSTANDARD2_0 || DESKTOP || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
+            return System.IO.Path.HasExtension(path);
 #endif
 
             throw ExceptionsHelper.NotImplementedInReferenceAssembly();

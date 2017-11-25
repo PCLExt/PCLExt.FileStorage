@@ -20,7 +20,7 @@ namespace PCLExt.FileStorage.UWP.Extensions
             if (collisionOption == NameCollisionOption.ReplaceExisting)
                 return Windows.Storage.NameCollisionOption.ReplaceExisting;
 
-            throw new NotSupportedException(collisionOption.ToString());
+            throw new ArgumentException(collisionOption.ToString());
         }
 
         public static CreationCollisionOption ConvertToCreationCollision(
@@ -33,7 +33,7 @@ namespace PCLExt.FileStorage.UWP.Extensions
             if (collisionOption == NameCollisionOption.ReplaceExisting)
                 return CreationCollisionOption.ReplaceExisting;
 
-            throw new NotSupportedException(collisionOption.ToString());
+            throw new ArgumentException(collisionOption.ToString());
         }
 
         public static Windows.Storage.CreationCollisionOption ConvertToWindowsCreationCollisionOption(
@@ -48,7 +48,7 @@ namespace PCLExt.FileStorage.UWP.Extensions
             if (collisionOption == CreationCollisionOption.OpenIfExists)
                 return Windows.Storage.CreationCollisionOption.OpenIfExists;
 
-            throw new NotSupportedException(collisionOption.ToString());
+            throw new ArgumentException(collisionOption.ToString());
         }
     }
 }

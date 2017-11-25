@@ -224,7 +224,7 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            Assert.That(() => file.Open((FileAccess)2), Throws.ArgumentException);
+            Assert.That(() => file.Open((FileAccess) 2), Throws.ArgumentException);
         }
 
         #endregion
@@ -519,7 +519,7 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            Assert.That(() => file.Move(file.Path, (NameCollisionOption)3), Throws.ArgumentException);
+            Assert.That(() => file.Move(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
 
             file.Delete();
         }
