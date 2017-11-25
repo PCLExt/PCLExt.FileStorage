@@ -170,12 +170,15 @@
     <Compile Include="..\PCLExt.FileStorage.Portable111\Requires.cs">
       <Link>Requires.cs</Link>
     </Compile>
+    <Compile Include="Extensions\StorageExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StorageFileImplementation.cs" />
+    <Compile Include="StorageFolderImplementation.cs" />
     <EmbeddedResource Include="Properties\PCLExt.FileStorage.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>5.4.0</Version>
+      <Version>6.0.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

@@ -21,7 +21,8 @@
 #elif NETSTANDARD2_0
             return new DefaultFolderImplementation(System.AppContext.BaseDirectory);
 #elif WINDOWS_UWP
-            return null;
+            return new UWP.StorageFolderImplementation(
+                Windows.ApplicationModel.Package.Current.InstalledLocation);
 #endif
         }
 #else
