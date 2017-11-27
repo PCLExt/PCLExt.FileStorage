@@ -5,16 +5,16 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title> | PCLExt.FileStorage documentation </title>
+    <title>PCLExt.FileStorage | PCLExt.FileStorage documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content=" | PCLExt.FileStorage documentation ">
+    <meta name="title" content="PCLExt.FileStorage | PCLExt.FileStorage documentation ">
     <meta name="generator" content="docfx 2.27.0.0">
     
-    <link rel="shortcut icon" href="../images/favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
     
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.svg" alt="">
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="images/logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -57,35 +57,38 @@
         </div>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div id="sidetoc"></div>
-          </div>
-        </div>
-        <div class="article row grid-right">
+        <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
 
-<p>You have a <code>Logs</code> folder and need to create a log file with the current datetime as it&#39;s name, e.g. <code>2017-06-23.13.45.56.log</code></p>
-<pre><code class="lang-cs">public class LogsFolder : BaseFolder
-{
-  public LogsFolder() : base(new ApplicationFolder().CreateFolder(&quot;Logs&quot;, CreationCollisionOption.OpenIfExists)) { }
-}
-
-public class LogFile : BaseFile
-{
-  public LogFile() : base(new LogsFolder().CreateFile($&quot;{DateTime.Now:yyyy-MM-dd_HH.mm.ss}.log&quot;, CreationCollisionOption.OpenIfExists)) { }
-}
-
-...
-
-using(var fs = new LogFile().Open(FileAccess.ReadAndWrite))
-{
-  // -- Do something with the log file
-}
-</code></pre><div id="disqus_thread"></div>
+<table>
+<thead>
+<tr>
+<th><strong>Mono &amp; .NET Core:</strong></th>
+<th><strong>.NET 4.5 &amp; .NET Core:</strong></th>
+<th><strong>NuGet</strong></th>
+<th><strong>Codecov</strong></th>
+<th><strong>COVERALLS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://travis-ci.org/PCLExt/PCLExt.FileStorage"><img src="https://travis-ci.org/PCLExt/PCLExt.FileStorage.svg?branch=master" alt="Build Status"></a></td>
+<td><a href="https://ci.appveyor.com/project/Aragas/pclext-filestorage"><img src="https://ci.appveyor.com/api/projects/status/puku2ym0k1n7ryde?svg=true" alt="Build status"></a> <a href=""><img src="https://img.shields.io/appveyor/tests/Aragas/pclext-filestorage.svg" alt="AppVeyor tests"></a></td>
+<td><a href="https://www.nuget.org/packages/PCLExt.FileStorage/"><img src="https://img.shields.io/nuget/v/PCLExt.FileStorage.svg" alt="NuGet"></a></td>
+<td><a href="https://coveralls.io/github/PCLExt/PCLExt.FileStorage?branch=master"><img src="https://coveralls.io/repos/github/PCLExt/PCLExt.FileStorage/badge.svg?branch=master" alt="Coverage Status"></a></td>
+<td><a href="https://codecov.io/gh/PCLExt/PCLExt.FileStorage"><img src="https://codecov.io/gh/PCLExt/PCLExt.FileStorage/branch/master/graph/badge.svg" alt="codecov"></a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="pclextfilestorage">PCLExt.FileStorage</h1>
+<p><img src="https://raw.githubusercontent.com/Aragas/PCLExt.FileStorage/master/common/sushi_64.png" alt="PCLExt.FileStorage"></p>
+<p>PCLExt.FileStorage is a <a href="http://ericsink.com/entries/pcl_bait_and_switch.html">bait-and-switch</a> library that was designed to implement a storage API in portable(PCL) projects.<br>It was formely a basic fork of <a href="https://github.com/dsplaisted/PCLStorage">PCL Storage</a>, but later formed it&#39;s own set of API&#39;s designed to ease use of files and folders in managed code. It has a more &quot;OOP&quot; approach.</p>
+<p>PCLExt.FileStorage supports .NET Framework (4.5), .NET Standard (2.0), Xamarin.iOS, Xamarin.Android, Xamarin.Mac and UWP.
+This makes it easier to create cross-platform .NET libraries and apps.</p>
+<h1 id="documentation">Documentation</h1>
+<p>Examples and API documentation can be found <a href="http://pclext.github.io/PCLExt.FileStorage/">here</a>.</p>
+<div id="disqus_thread"></div>
                 <script>
                 (function() { // DON'T EDIT BELOW THIS LINE
                 var d = document, s = d.createElement('script');
@@ -103,7 +106,7 @@ using(var fs = new LogFile().Open(FileAccess.ReadAndWrite))
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/PCLExt/PCLExt.FileStorage/blob/master/docs/articles/log-example.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/PCLExt/PCLExt.FileStorage/blob/master/README.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
                     <a href="#disqus_thread" class="contribution-link">0 Comments</a>
@@ -132,8 +135,8 @@ using(var fs = new LogFile().Open(FileAccess.ReadAndWrite))
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
     <script id="dsq-count-scr" src="//pclext-filestorage.disqus.com/count.js" async=""></script>  </body>
 </html>

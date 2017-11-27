@@ -469,6 +469,30 @@ references:
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreateFolderAsync
   fullName: PCLExt.FileStorage.BaseFolder.CreateFolderAsync
   nameWithType: BaseFolder.CreateFolderAsync
+- uid: PCLExt.FileStorage.BaseFolder.CreationTime
+  name: CreationTime
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTime
+  commentId: P:PCLExt.FileStorage.BaseFolder.CreationTime
+  fullName: PCLExt.FileStorage.BaseFolder.CreationTime
+  nameWithType: BaseFolder.CreationTime
+- uid: PCLExt.FileStorage.BaseFolder.CreationTime*
+  name: CreationTime
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTime_
+  commentId: Overload:PCLExt.FileStorage.BaseFolder.CreationTime
+  fullName: PCLExt.FileStorage.BaseFolder.CreationTime
+  nameWithType: BaseFolder.CreationTime
+- uid: PCLExt.FileStorage.BaseFolder.CreationTimeUTC
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTimeUTC
+  commentId: P:PCLExt.FileStorage.BaseFolder.CreationTimeUTC
+  fullName: PCLExt.FileStorage.BaseFolder.CreationTimeUTC
+  nameWithType: BaseFolder.CreationTimeUTC
+- uid: PCLExt.FileStorage.BaseFolder.CreationTimeUTC*
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.BaseFolder.CreationTimeUTC
+  fullName: PCLExt.FileStorage.BaseFolder.CreationTimeUTC
+  nameWithType: BaseFolder.CreationTimeUTC
 - uid: PCLExt.FileStorage.BaseFolder.Delete
   name: Delete()
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Delete
@@ -601,6 +625,54 @@ references:
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFoldersAsync
   fullName: PCLExt.FileStorage.BaseFolder.GetFoldersAsync
   nameWithType: BaseFolder.GetFoldersAsync
+- uid: PCLExt.FileStorage.BaseFolder.LastAccessTime
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTime
+  commentId: P:PCLExt.FileStorage.BaseFolder.LastAccessTime
+  fullName: PCLExt.FileStorage.BaseFolder.LastAccessTime
+  nameWithType: BaseFolder.LastAccessTime
+- uid: PCLExt.FileStorage.BaseFolder.LastAccessTime*
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTime_
+  commentId: Overload:PCLExt.FileStorage.BaseFolder.LastAccessTime
+  fullName: PCLExt.FileStorage.BaseFolder.LastAccessTime
+  nameWithType: BaseFolder.LastAccessTime
+- uid: PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTimeUTC
+  commentId: P:PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
+  nameWithType: BaseFolder.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC*
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
+  nameWithType: BaseFolder.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.BaseFolder.LastWriteTime
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTime
+  commentId: P:PCLExt.FileStorage.BaseFolder.LastWriteTime
+  fullName: PCLExt.FileStorage.BaseFolder.LastWriteTime
+  nameWithType: BaseFolder.LastWriteTime
+- uid: PCLExt.FileStorage.BaseFolder.LastWriteTime*
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTime_
+  commentId: Overload:PCLExt.FileStorage.BaseFolder.LastWriteTime
+  fullName: PCLExt.FileStorage.BaseFolder.LastWriteTime
+  nameWithType: BaseFolder.LastWriteTime
+- uid: PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTimeUTC
+  commentId: P:PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
+  nameWithType: BaseFolder.LastWriteTimeUTC
+- uid: PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC*
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
+  nameWithType: BaseFolder.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.BaseFolder.Move(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)
   name: Move(IFolder, NameCollisionOption)
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Move_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_
@@ -892,15 +964,15 @@ references:
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendLines
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines
   nameWithType: FileExtensions.AppendLines
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String})
-  name: AppendLinesAsync(IFile, IEnumerable<String>)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String})
-  name.vb: AppendLinesAsync(IFile, IEnumerable(Of String))
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>)
-  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String))
-  nameWithType: FileExtensions.AppendLinesAsync(IFile, IEnumerable<String>)
-  nameWithType.vb: FileExtensions.AppendLinesAsync(IFile, IEnumerable(Of String))
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+  name: AppendLinesAsync(IFile, IEnumerable<String>, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+  name.vb: AppendLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>, CancellationToken)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String), CancellationToken)
+  nameWithType: FileExtensions.AppendLinesAsync(IFile, IEnumerable<String>, CancellationToken)
+  nameWithType.vb: FileExtensions.AppendLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync*
   name: AppendLinesAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_
@@ -919,12 +991,12 @@ references:
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendText
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendText
   nameWithType: FileExtensions.AppendText
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String)
-  name: AppendTextAsync(IFile, String)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_PCLExt_FileStorage_IFile_System_String_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile, System.String)
-  nameWithType: FileExtensions.AppendTextAsync(IFile, String)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
+  name: AppendTextAsync(IFile, String, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_PCLExt_FileStorage_IFile_System_String_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile, System.String, CancellationToken)
+  nameWithType: FileExtensions.AppendTextAsync(IFile, String, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync*
   name: AppendTextAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_
@@ -943,12 +1015,12 @@ references:
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines
   nameWithType: FileExtensions.ReadAllLines
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile)
-  name: ReadAllLinesAsync(IFile)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_PCLExt_FileStorage_IFile_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile)
-  nameWithType: FileExtensions.ReadAllLinesAsync(IFile)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,CancellationToken)
+  name: ReadAllLinesAsync(IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_PCLExt_FileStorage_IFile_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  nameWithType: FileExtensions.ReadAllLinesAsync(IFile, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync*
   name: ReadAllLinesAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_
@@ -967,12 +1039,12 @@ references:
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText
   nameWithType: FileExtensions.ReadAllText
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile)
-  name: ReadAllTextAsync(IFile)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_PCLExt_FileStorage_IFile_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile)
-  nameWithType: FileExtensions.ReadAllTextAsync(IFile)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,CancellationToken)
+  name: ReadAllTextAsync(IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_PCLExt_FileStorage_IFile_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  nameWithType: FileExtensions.ReadAllTextAsync(IFile, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync*
   name: ReadAllTextAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_
@@ -994,15 +1066,15 @@ references:
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines
   nameWithType: FileExtensions.WriteAllLines
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String})
-  name: WriteAllLinesAsync(IFile, IEnumerable<String>)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String})
-  name.vb: WriteAllLinesAsync(IFile, IEnumerable(Of String))
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>)
-  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String))
-  nameWithType: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable<String>)
-  nameWithType.vb: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable(Of String))
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+  name: WriteAllLinesAsync(IFile, IEnumerable<String>, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+  name.vb: WriteAllLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>, CancellationToken)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String), CancellationToken)
+  nameWithType: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable<String>, CancellationToken)
+  nameWithType.vb: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync*
   name: WriteAllLinesAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_
@@ -1021,12 +1093,12 @@ references:
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText
   nameWithType: FileExtensions.WriteAllText
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String)
-  name: WriteAllTextAsync(IFile, String)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_PCLExt_FileStorage_IFile_System_String_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile, System.String)
-  nameWithType: FileExtensions.WriteAllTextAsync(IFile, String)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
+  name: WriteAllTextAsync(IFile, String, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_PCLExt_FileStorage_IFile_System_String_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile, System.String, CancellationToken)
+  nameWithType: FileExtensions.WriteAllTextAsync(IFile, String, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync*
   name: WriteAllTextAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_
@@ -1117,6 +1189,15 @@ references:
   commentId: M:PCLExt.FileStorage.Files.FileFromPath.#ctor(System.String)
   fullName: PCLExt.FileStorage.Files.FileFromPath.FileFromPath(System.String)
   nameWithType: FileFromPath.FileFromPath(String)
+- uid: PCLExt.FileStorage.Files.FileFromPath.#ctor(System.String[])
+  name: FileFromPath(String[])
+  href: api/PCLExt.FileStorage.Files.FileFromPath.html#PCLExt_FileStorage_Files_FileFromPath__ctor_System_String___
+  commentId: M:PCLExt.FileStorage.Files.FileFromPath.#ctor(System.String[])
+  name.vb: FileFromPath(String())
+  fullName: PCLExt.FileStorage.Files.FileFromPath.FileFromPath(System.String[])
+  fullName.vb: PCLExt.FileStorage.Files.FileFromPath.FileFromPath(System.String())
+  nameWithType: FileFromPath.FileFromPath(String[])
+  nameWithType.vb: FileFromPath.FileFromPath(String())
 - uid: PCLExt.FileStorage.Files.FileFromPath.#ctor*
   name: FileFromPath
   href: api/PCLExt.FileStorage.Files.FileFromPath.html#PCLExt_FileStorage_Files_FileFromPath__ctor_
@@ -1177,6 +1258,15 @@ references:
   commentId: M:PCLExt.FileStorage.Folders.FolderFromPath.#ctor(System.String)
   fullName: PCLExt.FileStorage.Folders.FolderFromPath.FolderFromPath(System.String)
   nameWithType: FolderFromPath.FolderFromPath(String)
+- uid: PCLExt.FileStorage.Folders.FolderFromPath.#ctor(System.String[])
+  name: FolderFromPath(String[])
+  href: api/PCLExt.FileStorage.Folders.FolderFromPath.html#PCLExt_FileStorage_Folders_FolderFromPath__ctor_System_String___
+  commentId: M:PCLExt.FileStorage.Folders.FolderFromPath.#ctor(System.String[])
+  name.vb: FolderFromPath(String())
+  fullName: PCLExt.FileStorage.Folders.FolderFromPath.FolderFromPath(System.String[])
+  fullName.vb: PCLExt.FileStorage.Folders.FolderFromPath.FolderFromPath(System.String())
+  nameWithType: FolderFromPath.FolderFromPath(String[])
+  nameWithType.vb: FolderFromPath.FolderFromPath(String())
 - uid: PCLExt.FileStorage.Folders.FolderFromPath.#ctor*
   name: FolderFromPath
   href: api/PCLExt.FileStorage.Folders.FolderFromPath.html#PCLExt_FileStorage_Folders_FolderFromPath__ctor_
@@ -1693,6 +1783,30 @@ references:
   commentId: Overload:PCLExt.FileStorage.IFolder.CreateFolderAsync
   fullName: PCLExt.FileStorage.IFolder.CreateFolderAsync
   nameWithType: IFolder.CreateFolderAsync
+- uid: PCLExt.FileStorage.IFolder.CreationTime
+  name: CreationTime
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreationTime
+  commentId: P:PCLExt.FileStorage.IFolder.CreationTime
+  fullName: PCLExt.FileStorage.IFolder.CreationTime
+  nameWithType: IFolder.CreationTime
+- uid: PCLExt.FileStorage.IFolder.CreationTime*
+  name: CreationTime
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreationTime_
+  commentId: Overload:PCLExt.FileStorage.IFolder.CreationTime
+  fullName: PCLExt.FileStorage.IFolder.CreationTime
+  nameWithType: IFolder.CreationTime
+- uid: PCLExt.FileStorage.IFolder.CreationTimeUTC
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreationTimeUTC
+  commentId: P:PCLExt.FileStorage.IFolder.CreationTimeUTC
+  fullName: PCLExt.FileStorage.IFolder.CreationTimeUTC
+  nameWithType: IFolder.CreationTimeUTC
+- uid: PCLExt.FileStorage.IFolder.CreationTimeUTC*
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreationTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.IFolder.CreationTimeUTC
+  fullName: PCLExt.FileStorage.IFolder.CreationTimeUTC
+  nameWithType: IFolder.CreationTimeUTC
 - uid: PCLExt.FileStorage.IFolder.Delete
   name: Delete()
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Delete
@@ -1825,6 +1939,54 @@ references:
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFoldersAsync
   fullName: PCLExt.FileStorage.IFolder.GetFoldersAsync
   nameWithType: IFolder.GetFoldersAsync
+- uid: PCLExt.FileStorage.IFolder.LastAccessTime
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastAccessTime
+  commentId: P:PCLExt.FileStorage.IFolder.LastAccessTime
+  fullName: PCLExt.FileStorage.IFolder.LastAccessTime
+  nameWithType: IFolder.LastAccessTime
+- uid: PCLExt.FileStorage.IFolder.LastAccessTime*
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastAccessTime_
+  commentId: Overload:PCLExt.FileStorage.IFolder.LastAccessTime
+  fullName: PCLExt.FileStorage.IFolder.LastAccessTime
+  nameWithType: IFolder.LastAccessTime
+- uid: PCLExt.FileStorage.IFolder.LastAccessTimeUTC
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastAccessTimeUTC
+  commentId: P:PCLExt.FileStorage.IFolder.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.IFolder.LastAccessTimeUTC
+  nameWithType: IFolder.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.IFolder.LastAccessTimeUTC*
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastAccessTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.IFolder.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.IFolder.LastAccessTimeUTC
+  nameWithType: IFolder.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.IFolder.LastWriteTime
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastWriteTime
+  commentId: P:PCLExt.FileStorage.IFolder.LastWriteTime
+  fullName: PCLExt.FileStorage.IFolder.LastWriteTime
+  nameWithType: IFolder.LastWriteTime
+- uid: PCLExt.FileStorage.IFolder.LastWriteTime*
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastWriteTime_
+  commentId: Overload:PCLExt.FileStorage.IFolder.LastWriteTime
+  fullName: PCLExt.FileStorage.IFolder.LastWriteTime
+  nameWithType: IFolder.LastWriteTime
+- uid: PCLExt.FileStorage.IFolder.LastWriteTimeUTC
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastWriteTimeUTC
+  commentId: P:PCLExt.FileStorage.IFolder.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.IFolder.LastWriteTimeUTC
+  nameWithType: IFolder.LastWriteTimeUTC
+- uid: PCLExt.FileStorage.IFolder.LastWriteTimeUTC*
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastWriteTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.IFolder.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.IFolder.LastWriteTimeUTC
+  nameWithType: IFolder.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.IFolder.Move(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)
   name: Move(IFolder, NameCollisionOption)
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Move_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_

@@ -73,7 +73,8 @@
   
   <h1 id="PCLExt_FileStorage_Folders_RoamingRootFolder" data-uid="PCLExt.FileStorage.Folders.RoamingRootFolder" class="text-break">Class RoamingRootFolder
   </h1>
-  <div class="markdown level0 summary"><p>A folder representing storage which may be synced with other devices for the same user.</p>
+  <div class="markdown level0 summary"><p>A <a class="xref" href="PCLExt.FileStorage.BaseFolder.html">BaseFolder</a> representing storage which may be synced with other devices for the same user.
+Does not exist in Android and iOS.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -96,6 +97,24 @@
     </div>
     <div>
       <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Exists">BaseFolder.Exists</a>
+    </div>
+    <div>
+      <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTime">BaseFolder.CreationTime</a>
+    </div>
+    <div>
+      <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTimeUTC">BaseFolder.CreationTimeUTC</a>
+    </div>
+    <div>
+      <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTime">BaseFolder.LastAccessTime</a>
+    </div>
+    <div>
+      <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTimeUTC">BaseFolder.LastAccessTimeUTC</a>
+    </div>
+    <div>
+      <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTime">BaseFolder.LastWriteTime</a>
+    </div>
+    <div>
+      <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTimeUTC">BaseFolder.LastWriteTimeUTC</a>
     </div>
     <div>
       <a class="xref" href="PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFile_System_String_">BaseFolder.GetFile(String)</a>
@@ -197,7 +216,7 @@
   
   <a id="PCLExt_FileStorage_Folders_RoamingRootFolder__ctor_" data-uid="PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor*"></a>
   <h4 id="PCLExt_FileStorage_Folders_RoamingRootFolder__ctor" data-uid="PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor">RoamingRootFolder()</h4>
-  <div class="markdown level1 summary"><p>Creates a folder representing storage which may be synced with other devices for the same user.</p>
+  <div class="markdown level1 summary"><p>Creates a <a class="xref" href="PCLExt.FileStorage.BaseFolder.html">BaseFolder</a> representing storage which may be synced with other devices for the same user.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -208,13 +227,26 @@
   <div>
       <a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>
   </div>
-</article>
+<div id="disqus_thread"></div>
+                <script>
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://pclext-filestorage.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="#disqus_thread" class="contribution-link">0 Comments</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
@@ -242,5 +274,5 @@
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+    <script id="dsq-count-scr" src="//pclext-filestorage.disqus.com/count.js" async=""></script>  </body>
 </html>
