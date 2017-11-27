@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -17,7 +18,18 @@ namespace PCLExt.FileStorage
         public bool Exists => _file.Exists;
         /// <inheritdoc />
         public long Size => _file.Size;
-
+        /// <inheritdoc />
+        public DateTime CreationTime => _file.CreationTime;
+        /// <inheritdoc />
+        public DateTime CreationTimeUTC => _file.CreationTimeUTC;
+        /// <inheritdoc />
+        public DateTime LastAccessTime => _file.LastAccessTime;
+        /// <inheritdoc />
+        public DateTime LastAccessTimeUTC => _file.LastAccessTimeUTC;
+        /// <inheritdoc />
+        public DateTime LastWriteTime => _file.LastWriteTime;
+        /// <inheritdoc />
+        public DateTime LastWriteTimeUTC => _file.LastWriteTimeUTC;
 
         /// <summary>
         /// Wraps an <see cref="IFile"/>

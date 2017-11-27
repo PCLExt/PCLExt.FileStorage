@@ -4,7 +4,7 @@ using System.IO;
 using NUnit.Framework;
 
 using PCLExt.FileStorage.Exceptions;
-using PCLExt.FileStorage.Extensions; 
+using PCLExt.FileStorage.Extensions;
 
 
 namespace PCLExt.FileStorage.Test
@@ -22,7 +22,7 @@ namespace PCLExt.FileStorage.Test
         [TearDown]
         public void Clean() => TestFolder.Delete();
 
-        #region Size
+        #region Size & Times
 
         [Test]
         public void Size()
@@ -34,6 +34,51 @@ namespace PCLExt.FileStorage.Test
             file.WriteAllBytes(data);
 
             Assert.IsTrue(file.Size == data.Length);
+
+            file.Delete();
+        }
+
+        [Test]
+        public void CreationTime()
+        {
+            var timeBeforeFileCreaton = DateTime.Now.AddSeconds(-1);
+            var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
+
+            Assert.True(timeBeforeFileCreaton <= file.CreationTime);
+
+            file.Delete();
+        }
+
+        [Test]
+        public void CreationTimeUTC()
+        {
+            var timeBeforeFileCreaton = DateTime.UtcNow.AddSeconds(-1);
+            var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
+
+            Assert.True(timeBeforeFileCreaton <= file.CreationTimeUTC,
+                $"{timeBeforeFileCreaton:yyyyMMddHHmmss.fff} <= {file.CreationTimeUTC:yyyyMMddHHmmss.fff}");
+
+            file.Delete();
+        }
+
+        [Test]
+        public void LastAccessTime()
+        {
+            var timeBeforeFileCreaton = DateTime.Now.AddSeconds(-1);
+            var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
+
+            Assert.True(timeBeforeFileCreaton <= file.LastAccessTime);
+
+            file.Delete();
+        }
+
+        [Test]
+        public void LastAccessTimeUTC()
+        {
+            var timeBeforeFileCreaton = DateTime.UtcNow.AddSeconds(-1);
+            var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
+
+            Assert.True(timeBeforeFileCreaton <= file.LastAccessTimeUTC);
 
             file.Delete();
         }
@@ -347,7 +392,7 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            Assert.That(() => file.Copy(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
+            Assert.That(() => file.Copy(file.Path, (NameCollisionOption)3), Throws.ArgumentException);
 
             file.Delete();
         }

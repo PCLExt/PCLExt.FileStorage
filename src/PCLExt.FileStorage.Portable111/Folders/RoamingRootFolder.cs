@@ -21,8 +21,8 @@ namespace PCLExt.FileStorage.Folders
 #elif DESKTOP || __MACOS__ || NETSTANDARD2_0
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)).GetDataFolder();
 #elif WINDOWS_UWP
-            return null;
-            return new DefaultFolderImplementation(Windows.Storage.ApplicationData.Current.RoamingFolder.Path);
+            return new UWP.StorageFolderImplementation(
+                Windows.Storage.ApplicationData.Current.RoamingFolder);
 #endif
         }
 #else
