@@ -66,7 +66,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="content">The content to write to the file</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which completes when the write operation finishes</returns>
-        public static async Task WriteAllTextAsync(this IFile file, string contents, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task WriteAllTextAsync(this IFile file, string content, CancellationToken cancellationToken = default(CancellationToken))
         {
             using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
             {

@@ -83,6 +83,7 @@ namespace PCLExt.FileStorage
         public Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken)) => _file.CopyAsync(newPath, collisionOption, cancellationToken);
 
 
+        /// <inheritdoc />
         public override string ToString() => Path;
     }
 }

@@ -90,7 +90,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = new CancellationToken()) => _folder.CopyAsync(folder, option, cancellationToken);
 
-
+        /// <inheritdoc />
         public override string ToString() => Path;
     }
 }
