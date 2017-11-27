@@ -61,6 +61,30 @@ references:
   commentId: Overload:PCLExt.FileStorage.BaseFile.CopyAsync
   fullName: PCLExt.FileStorage.BaseFile.CopyAsync
   nameWithType: BaseFile.CopyAsync
+- uid: PCLExt.FileStorage.BaseFile.CreationTime
+  name: CreationTime
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CreationTime
+  commentId: P:PCLExt.FileStorage.BaseFile.CreationTime
+  fullName: PCLExt.FileStorage.BaseFile.CreationTime
+  nameWithType: BaseFile.CreationTime
+- uid: PCLExt.FileStorage.BaseFile.CreationTime*
+  name: CreationTime
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CreationTime_
+  commentId: Overload:PCLExt.FileStorage.BaseFile.CreationTime
+  fullName: PCLExt.FileStorage.BaseFile.CreationTime
+  nameWithType: BaseFile.CreationTime
+- uid: PCLExt.FileStorage.BaseFile.CreationTimeUTC
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CreationTimeUTC
+  commentId: P:PCLExt.FileStorage.BaseFile.CreationTimeUTC
+  fullName: PCLExt.FileStorage.BaseFile.CreationTimeUTC
+  nameWithType: BaseFile.CreationTimeUTC
+- uid: PCLExt.FileStorage.BaseFile.CreationTimeUTC*
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CreationTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.BaseFile.CreationTimeUTC
+  fullName: PCLExt.FileStorage.BaseFile.CreationTimeUTC
+  nameWithType: BaseFile.CreationTimeUTC
 - uid: PCLExt.FileStorage.BaseFile.Delete
   name: Delete()
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Delete
@@ -97,6 +121,54 @@ references:
   commentId: Overload:PCLExt.FileStorage.BaseFile.Exists
   fullName: PCLExt.FileStorage.BaseFile.Exists
   nameWithType: BaseFile.Exists
+- uid: PCLExt.FileStorage.BaseFile.LastAccessTime
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastAccessTime
+  commentId: P:PCLExt.FileStorage.BaseFile.LastAccessTime
+  fullName: PCLExt.FileStorage.BaseFile.LastAccessTime
+  nameWithType: BaseFile.LastAccessTime
+- uid: PCLExt.FileStorage.BaseFile.LastAccessTime*
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastAccessTime_
+  commentId: Overload:PCLExt.FileStorage.BaseFile.LastAccessTime
+  fullName: PCLExt.FileStorage.BaseFile.LastAccessTime
+  nameWithType: BaseFile.LastAccessTime
+- uid: PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastAccessTimeUTC
+  commentId: P:PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
+  nameWithType: BaseFile.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.BaseFile.LastAccessTimeUTC*
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastAccessTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
+  nameWithType: BaseFile.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.BaseFile.LastWriteTime
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastWriteTime
+  commentId: P:PCLExt.FileStorage.BaseFile.LastWriteTime
+  fullName: PCLExt.FileStorage.BaseFile.LastWriteTime
+  nameWithType: BaseFile.LastWriteTime
+- uid: PCLExt.FileStorage.BaseFile.LastWriteTime*
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastWriteTime_
+  commentId: Overload:PCLExt.FileStorage.BaseFile.LastWriteTime
+  fullName: PCLExt.FileStorage.BaseFile.LastWriteTime
+  nameWithType: BaseFile.LastWriteTime
+- uid: PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastWriteTimeUTC
+  commentId: P:PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
+  nameWithType: BaseFile.LastWriteTimeUTC
+- uid: PCLExt.FileStorage.BaseFile.LastWriteTimeUTC*
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastWriteTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
+  nameWithType: BaseFile.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.BaseFile.Move(PCLExt.FileStorage.IFile)
   name: Move(IFile)
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Move_PCLExt_FileStorage_IFile_
@@ -1237,6 +1309,30 @@ references:
   commentId: Overload:PCLExt.FileStorage.IFile.CopyAsync
   fullName: PCLExt.FileStorage.IFile.CopyAsync
   nameWithType: IFile.CopyAsync
+- uid: PCLExt.FileStorage.IFile.CreationTime
+  name: CreationTime
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CreationTime
+  commentId: P:PCLExt.FileStorage.IFile.CreationTime
+  fullName: PCLExt.FileStorage.IFile.CreationTime
+  nameWithType: IFile.CreationTime
+- uid: PCLExt.FileStorage.IFile.CreationTime*
+  name: CreationTime
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CreationTime_
+  commentId: Overload:PCLExt.FileStorage.IFile.CreationTime
+  fullName: PCLExt.FileStorage.IFile.CreationTime
+  nameWithType: IFile.CreationTime
+- uid: PCLExt.FileStorage.IFile.CreationTimeUTC
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CreationTimeUTC
+  commentId: P:PCLExt.FileStorage.IFile.CreationTimeUTC
+  fullName: PCLExt.FileStorage.IFile.CreationTimeUTC
+  nameWithType: IFile.CreationTimeUTC
+- uid: PCLExt.FileStorage.IFile.CreationTimeUTC*
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CreationTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.IFile.CreationTimeUTC
+  fullName: PCLExt.FileStorage.IFile.CreationTimeUTC
+  nameWithType: IFile.CreationTimeUTC
 - uid: PCLExt.FileStorage.IFile.Delete
   name: Delete()
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Delete
@@ -1273,6 +1369,54 @@ references:
   commentId: Overload:PCLExt.FileStorage.IFile.Exists
   fullName: PCLExt.FileStorage.IFile.Exists
   nameWithType: IFile.Exists
+- uid: PCLExt.FileStorage.IFile.LastAccessTime
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastAccessTime
+  commentId: P:PCLExt.FileStorage.IFile.LastAccessTime
+  fullName: PCLExt.FileStorage.IFile.LastAccessTime
+  nameWithType: IFile.LastAccessTime
+- uid: PCLExt.FileStorage.IFile.LastAccessTime*
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastAccessTime_
+  commentId: Overload:PCLExt.FileStorage.IFile.LastAccessTime
+  fullName: PCLExt.FileStorage.IFile.LastAccessTime
+  nameWithType: IFile.LastAccessTime
+- uid: PCLExt.FileStorage.IFile.LastAccessTimeUTC
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastAccessTimeUTC
+  commentId: P:PCLExt.FileStorage.IFile.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.IFile.LastAccessTimeUTC
+  nameWithType: IFile.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.IFile.LastAccessTimeUTC*
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastAccessTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.IFile.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.IFile.LastAccessTimeUTC
+  nameWithType: IFile.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.IFile.LastWriteTime
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastWriteTime
+  commentId: P:PCLExt.FileStorage.IFile.LastWriteTime
+  fullName: PCLExt.FileStorage.IFile.LastWriteTime
+  nameWithType: IFile.LastWriteTime
+- uid: PCLExt.FileStorage.IFile.LastWriteTime*
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastWriteTime_
+  commentId: Overload:PCLExt.FileStorage.IFile.LastWriteTime
+  fullName: PCLExt.FileStorage.IFile.LastWriteTime
+  nameWithType: IFile.LastWriteTime
+- uid: PCLExt.FileStorage.IFile.LastWriteTimeUTC
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastWriteTimeUTC
+  commentId: P:PCLExt.FileStorage.IFile.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.IFile.LastWriteTimeUTC
+  nameWithType: IFile.LastWriteTimeUTC
+- uid: PCLExt.FileStorage.IFile.LastWriteTimeUTC*
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastWriteTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.IFile.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.IFile.LastWriteTimeUTC
+  nameWithType: IFile.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.IFile.Move(PCLExt.FileStorage.IFile)
   name: Move(IFile)
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Move_PCLExt_FileStorage_IFile_
