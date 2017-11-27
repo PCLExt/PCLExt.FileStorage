@@ -5,3 +5,4 @@
   homepage: articles/getting_started.md
 - name: API Documentation
   href: api/
+  homepage: api/index.md
