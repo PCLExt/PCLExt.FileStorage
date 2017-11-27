@@ -1,8 +1,4 @@
-﻿#if WINDOWS_UWP
-using PCLExt.FileStorage.UWP;
-#endif
-
-namespace PCLExt.FileStorage.Files
+﻿namespace PCLExt.FileStorage.Files
 {
     /// <summary>
     /// Represents a folder created by a given path
@@ -24,7 +20,7 @@ namespace PCLExt.FileStorage.Files
             else
                 throw new Exceptions.FileNotFoundException($"File does not exists on {path}");
 #elif WINDOWS_UWP
-            var result = new StorageFileImplementation(path);
+            var result = new UWP.StorageFileImplementation(path);
             if(!result.Exists)
                 throw new Exceptions.FileNotFoundException($"File does not exists on {path}");
             return result;

@@ -32,6 +32,18 @@ namespace PCLExt.FileStorage
         public string Path { get; }
         /// <inheritdoc />
         public bool Exists => Directory.Exists(Path);
+        /// <inheritdoc />
+        public DateTime CreationTime => Directory.GetCreationTime(Path);
+        /// <inheritdoc />
+        public DateTime CreationTimeUTC => Directory.GetCreationTimeUtc(Path);
+        /// <inheritdoc />
+        public DateTime LastAccessTime => Directory.GetLastAccessTime(Path);
+        /// <inheritdoc />
+        public DateTime LastAccessTimeUTC => Directory.GetLastAccessTimeUtc(Path);
+        /// <inheritdoc />
+        public DateTime LastWriteTime => Directory.GetLastWriteTime(Path);
+        /// <inheritdoc />
+        public DateTime LastWriteTimeUTC => Directory.GetLastWriteTimeUtc(Path);
 
         /// <summary>
         /// Creates a new <see cref="IFolder" /> corresponding to a specified path.

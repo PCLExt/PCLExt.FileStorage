@@ -1,14 +1,15 @@
-﻿using PCLExt.FileStorage.Exceptions;
-using PCLExt.FileStorage.UWP.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+
 using Windows.Storage;
+using Windows.Storage.FileProperties;
 using Windows.Storage.Search;
+
+using PCLExt.FileStorage.Exceptions;
+using PCLExt.FileStorage.UWP.Extensions;
 
 namespace PCLExt.FileStorage.UWP
 {
@@ -35,6 +36,24 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
+        public DateTime CreationTime =>
+            _storageFolder.DateCreated.ToLocalTime().DateTime;
+
+        public DateTime CreationTimeUTC =>
+            _storageFolder.DateCreated.ToUniversalTime().DateTime;
+
+        public DateTime LastAccessTime =>
+            GetStorageFolderProperties().ItemDate.ToLocalTime().DateTime;
+
+        public DateTime LastAccessTimeUTC => GetStorageFolderProperties().
+            ItemDate.ToUniversalTime().DateTime;
+
+        public DateTime LastWriteTime => GetStorageFolderProperties().
+            DateModified.ToLocalTime().DateTime;
+
+        public DateTime LastWriteTimeUTC => GetStorageFolderProperties().
+            DateModified.ToUniversalTime().DateTime;
+
         private StorageFolder _storageFolder;
 
         public StorageFolderImplementation(StorageFolder storageFolder)
@@ -42,9 +61,15 @@ namespace PCLExt.FileStorage.UWP
             _storageFolder = storageFolder;
         }
 
-        public StorageFolderImplementation(String path)
+        public StorageFolderImplementation(string path)
         {
             _storageFolder = StorageFolder.GetFolderFromPathAsync(path).
+                AsTask().GetAwaiter().GetResult();
+        }
+
+        private BasicProperties GetStorageFolderProperties()
+        {
+            return _storageFolder.GetBasicPropertiesAsync().
                 AsTask().GetAwaiter().GetResult();
         }
 
@@ -65,7 +90,7 @@ namespace PCLExt.FileStorage.UWP
                     return ExistenceCheckResult.NotFound;
                 }
 
-                if (finded.Attributes == Windows.Storage.FileAttributes.Directory)
+                if (finded.Attributes == FileAttributes.Directory)
                 {
                     return ExistenceCheckResult.FolderExists;
                 }
@@ -174,7 +199,7 @@ namespace PCLExt.FileStorage.UWP
             }
             catch (Exception ex)
             {
-                throw new Exceptions.FileExistException(desiredName, ex);
+                throw new FileExistException(desiredName, ex);
             }
 
 
@@ -202,7 +227,7 @@ namespace PCLExt.FileStorage.UWP
             }
             catch (Exception ex)
             {
-                throw new Exceptions.FolderExistException(desiredName, ex);
+                throw new FolderExistException(desiredName, ex);
             }
         }
 
@@ -247,7 +272,7 @@ namespace PCLExt.FileStorage.UWP
             }
             catch (Exception ex)
             {
-                throw new Exceptions.FileNotFoundException(name, ex);
+                throw new FileNotFoundException(name, ex);
             }
 
         }
@@ -341,7 +366,7 @@ namespace PCLExt.FileStorage.UWP
             {
                 var moveToSubfolderName = System.IO.Path.Combine(
                     folder.Path, subfolder.Name);
-                var creationCollisionOption = default(CreationCollisionOption);
+                CreationCollisionOption creationCollisionOption;
                 if (option == NameCollisionOption.ReplaceExisting)
                     creationCollisionOption = CreationCollisionOption.ReplaceExisting;
                 else if (option == NameCollisionOption.GenerateUniqueName)

@@ -110,12 +110,6 @@
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFileImplementation.cs">
-      <Link>DefaultFileImplementation.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFolderImplementation.cs">
-      <Link>DefaultFolderImplementation.cs</Link>
-    </Compile>
     <Compile Include="..\pclext.filestorage.portable111\exceptions\ExceptionsHelper.cs">
       <Link>Exceptions\ExceptionsHelper.cs</Link>
     </Compile>

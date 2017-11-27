@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,6 +16,18 @@ namespace PCLExt.FileStorage
         public string Path => _folder.Path;
         /// <inheritdoc />
         public bool Exists => _folder != null;
+        /// <inheritdoc />
+        public DateTime CreationTime => _folder.CreationTime;
+        /// <inheritdoc />
+        public DateTime CreationTimeUTC => _folder.CreationTimeUTC;
+        /// <inheritdoc />
+        public DateTime LastAccessTime => _folder.LastAccessTime;
+        /// <inheritdoc />
+        public DateTime LastAccessTimeUTC => _folder.LastAccessTimeUTC;
+        /// <inheritdoc />
+        public DateTime LastWriteTime => _folder.LastWriteTime;
+        /// <inheritdoc />
+        public DateTime LastWriteTimeUTC => _folder.LastWriteTimeUTC;
 
         /// <summary>
         /// Wraps an <see cref="IFolder"/>

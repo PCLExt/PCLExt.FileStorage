@@ -7,6 +7,7 @@
 // Which is released under the MS-PL license.
 //-----------------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,6 +32,42 @@ namespace PCLExt.FileStorage
         /// Shows if the folder actually exist. Controversial property.
         /// </summary>
         bool Exists { get; }
+
+        /// <summary>
+        /// Creation time.
+        /// </summary>
+        /// <value>The creation time.</value>
+        DateTime CreationTime { get; }
+
+        /// <summary>
+        /// Creation time UTC.
+        /// </summary>
+        /// <value>The creation time UTC.</value>
+        DateTime CreationTimeUTC { get; }
+
+        /// <summary>
+        /// Last access time.
+        /// </summary>
+        /// <value>The last access time.</value>
+        DateTime LastAccessTime { get; }
+
+        /// <summary>
+        /// Last access time UTC.
+        /// </summary>
+        /// <value>The last access time UTC.</value>
+        DateTime LastAccessTimeUTC { get; }
+
+        /// <summary>
+        /// Last write time.
+        /// </summary>
+        /// <value>The last write time.</value>
+        DateTime LastWriteTime { get; }
+
+        /// <summary>
+        /// Last write time UTC.
+        /// </summary>
+        /// <value>The last write time UTC.</value>
+        DateTime LastWriteTimeUTC { get; }
 
         /// <summary>
         /// Creates a file in this folder

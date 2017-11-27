@@ -1,13 +1,14 @@
-﻿using PCLExt.FileStorage.Exceptions;
-using PCLExt.FileStorage.Extensions;
-using PCLExt.FileStorage.UWP.Extensions;
-using System;
+﻿using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
+
 using Windows.Storage;
 using Windows.Storage.FileProperties;
+
+using PCLExt.FileStorage.Exceptions;
+using PCLExt.FileStorage.Extensions;
+using PCLExt.FileStorage.UWP.Extensions;
 
 namespace PCLExt.FileStorage.UWP
 {
@@ -35,7 +36,7 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
-        public long Size => (long)GetStorageFileProperties().Size;
+        public long Size => (long) GetStorageFileProperties().Size;
 
         public DateTime CreationTime =>
             _storageFile.DateCreated.ToLocalTime().DateTime;
@@ -166,12 +167,12 @@ namespace PCLExt.FileStorage.UWP
             var newFolder = await StorageFolder.GetFolderFromPathAsync(
                   System.IO.Path.GetDirectoryName(newPath));
 
-            String newName;
+            string newName;
             if (collisionOption == NameCollisionOption.GenerateUniqueName)
             {
                 newName = $"{Guid.NewGuid()}";
                 var extension = PortablePath.GetExtension(newPath);
-                if (!String.IsNullOrEmpty(extension))
+                if (!string.IsNullOrEmpty(extension))
                     newName = newName + "." + extension;
             }
             else
