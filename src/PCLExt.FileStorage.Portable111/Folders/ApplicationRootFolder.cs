@@ -1,12 +1,13 @@
 ﻿namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
-    /// A folder where the app is running.
+    /// A <see cref="BaseFolder"/> where the application is running.
     /// </summary>
     public class ApplicationRootFolder : BaseFolder
     {
         /// <summary>
-        /// Returns the folder where the app is running.
+        /// Returns the <see cref="BaseFolder"/> where the application is running.
+        /// Does not exist in Android and UWP
         /// </summary>
 #if !PORTABLE
         public ApplicationRootFolder() : base(GetApplicationFolder()) { }

@@ -1,12 +1,18 @@
 ﻿namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
-    /// Represents a folder created by a given path
+    /// Represents a <see cref="BaseFolder"/> created by a given path
     /// </summary>
     public class FolderFromPath : BaseFolder
     {
         /// <summary>
-        /// Creates a new <see cref="IFolder"/> corresponding to the specified path.
+        /// Creates a new <see cref="BaseFolder"/> corresponding to the specified path.
+        /// </summary>
+        /// <param name="paths">An array of parts of the path.</param>
+        public FolderFromPath(params string[] paths) : base(GetFolderFromPath(System.IO.Path.Combine(paths))) { }
+
+        /// <summary>
+        /// Creates a new <see cref="BaseFolder"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
         public FolderFromPath(string path) : base(GetFolderFromPath(path)) { }

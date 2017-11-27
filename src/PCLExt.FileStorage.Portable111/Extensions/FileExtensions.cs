@@ -23,7 +23,7 @@ namespace PCLExt.FileStorage.Extensions
         /// Reads the contents of a file as a string
         /// </summary>
         /// <param name="file">The file to read </param>
-        /// <returns>The contents of the file</returns>
+        /// <returns>The content of the file</returns>
         public static string ReadAllText(this IFile file)
         {
             using (var stream = file.Open(FileAccess.Read))
@@ -36,7 +36,7 @@ namespace PCLExt.FileStorage.Extensions
         /// </summary>
         /// <param name="file">The file to read </param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>The contents of the file</returns>
+        /// <returns>The content of the file</returns>
         public static async Task<string> ReadAllTextAsync(this IFile file, CancellationToken cancellationToken = default(CancellationToken))
         {
             using (var stream = await file.OpenAsync(FileAccess.Read, cancellationToken).ConfigureAwait(false))
@@ -48,15 +48,14 @@ namespace PCLExt.FileStorage.Extensions
         /// Writes text to a file, overwriting any existing data
         /// </summary>
         /// <param name="file">The file to write to</param>
-        /// <param name="contents">The content to write to the file</param>
-        /// <returns>A task which completes when the write operation finishes</returns>
-        public static void WriteAllText(this IFile file, string contents)
+        /// <param name="content">The content to write to the file</param>
+        public static void WriteAllText(this IFile file, string content)
         {
             using (var stream = file.Open(FileAccess.ReadAndWrite))
             {
                 stream.SetLength(0);
                 using (var sw = new StreamWriter(stream))
-                    sw.Write(contents);
+                    sw.Write(content);
             }
         }
 
@@ -64,7 +63,7 @@ namespace PCLExt.FileStorage.Extensions
         /// Writes text to a file, overwriting any existing data
         /// </summary>
         /// <param name="file">The file to write to</param>
-        /// <param name="contents">The content to write to the file</param>
+        /// <param name="content">The content to write to the file</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which completes when the write operation finishes</returns>
         public static async Task WriteAllTextAsync(this IFile file, string contents, CancellationToken cancellationToken = default(CancellationToken))
@@ -73,16 +72,16 @@ namespace PCLExt.FileStorage.Extensions
             {
                 stream.SetLength(0);
                 using (var sw = new StreamWriter(stream))
-                    await sw.WriteAsync(contents).ConfigureAwait(false);
+                    await sw.WriteAsync(content).ConfigureAwait(false);
             }
         }
 
 
         /// <summary>
-        /// 
+        /// Reads the contents of a file as an array of strings
         /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
+        /// <param name="file">The file to read </param>
+        /// <returns>The content of the file</returns>
         public static string[] ReadAllLines(this IFile file)
         {
             using (var stream = file.Open(FileAccess.Read))
@@ -96,11 +95,11 @@ namespace PCLExt.FileStorage.Extensions
         }
 
         /// <summary>
-        /// 
+        /// Reads the contents of a file as an array of strings
         /// </summary>
-        /// <param name="file"></param>
+        /// <param name="file">The file to read </param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns></returns>
+        /// <returns>The content of the file</returns>
         public static async Task<string[]> ReadAllLinesAsync(this IFile file, CancellationToken cancellationToken = default(CancellationToken))
         {
             using (var stream = await file.OpenAsync(FileAccess.Read, cancellationToken).ConfigureAwait(false))
@@ -114,10 +113,10 @@ namespace PCLExt.FileStorage.Extensions
         }
 
         /// <summary>
-        /// 
+        /// Writes lines to a file, overwriting any existing data
         /// </summary>
-        /// <param name="file"></param>
-        /// <param name="lines"></param>
+        /// <param name="file">The file to write to</param>
+        /// <param name="lines">The content to write to the file</param>
         public static void WriteAllLines(this IFile file, IEnumerable<string> lines)
         {
             using (var stream = file.Open(FileAccess.ReadAndWrite))
@@ -130,10 +129,10 @@ namespace PCLExt.FileStorage.Extensions
         }
 
         /// <summary>
-        /// 
+        /// Writes lines to a file, overwriting any existing data
         /// </summary>
-        /// <param name="file"></param>
-        /// <param name="lines"></param>
+        /// <param name="file">The file to write to</param>
+        /// <param name="lines">The content to write to the file</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         public static async Task WriteAllLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default(CancellationToken))
         {

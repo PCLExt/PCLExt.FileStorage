@@ -3,12 +3,12 @@
 namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
-    /// A folder where the app is running.
+    /// A <see cref="BaseFolder"/> where the app is running.
     /// </summary>
     public class DocumentsRootFolder : BaseFolder
     {
         /// <summary>
-        /// Returns the folder where the app is running.
+        /// Returns the <see cref="BaseFolder"/> where the app is running.
         /// </summary>
 #if !PORTABLE
         public DocumentsRootFolder() : base(GetDocumentsFolder()) { }

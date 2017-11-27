@@ -2,11 +2,11 @@
 
 namespace PCLExt.FileStorage.Exceptions
 {
-    /// <exclude/>
+    /// <summary>
+    /// The exception that is thrown when an attempt to delete a root folder fails.
+    /// </summary>
     public class RootFolderDeletionException
 #if PORTABLE
-        : System.IO.IOException
-#elif NETSTANDARD2_0
         : System.IO.IOException
 #else
         : System.IO.IOException

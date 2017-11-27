@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 using PCLExt.FileStorage.Exceptions;
 using PCLExt.FileStorage.Extensions;
+using PCLExt.FileStorage.Files;
 
 
 namespace PCLExt.FileStorage.Test

@@ -24,7 +24,7 @@ namespace PCLExt.FileStorage
        /// </summary>
         string Name { get; }
         /// <summary>
-        /// The "full path" of the file
+        /// The full path of the file
         /// </summary>
         string Path { get; }
 

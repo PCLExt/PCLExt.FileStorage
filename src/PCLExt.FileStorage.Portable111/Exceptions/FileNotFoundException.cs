@@ -11,7 +11,9 @@ using System;
 
 namespace PCLExt.FileStorage.Exceptions
 {
-    /// <exclude/>
+    /// <summary>
+    /// The exception that is thrown when an attempt to access a file that does not exist on disk fails.
+    /// </summary>
     public class FileNotFoundException
 #if PORTABLE
         : System.IO.IOException

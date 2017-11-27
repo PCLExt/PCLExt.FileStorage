@@ -3,7 +3,7 @@
 namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
-    /// A folder representing storage which is local to the current device.
+    /// A <see cref="BaseFolder"/> representing storage which is local to the current device.
     /// </summary>
     public class LocalRootFolder : BaseFolder
     {
@@ -17,7 +17,7 @@ namespace PCLExt.FileStorage.Folders
 #endif
 
         /// <summary>
-        /// Creates a folder representing storage which is local to the current device
+        /// Creates a <see cref="BaseFolder"/> representing storage which is local to the current device
         /// </summary>
 #if !PORTABLE
         public LocalRootFolder() : base(GetLocalFolder()) { }

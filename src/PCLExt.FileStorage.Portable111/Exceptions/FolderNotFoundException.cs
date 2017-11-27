@@ -11,12 +11,12 @@ using System;
 
 namespace PCLExt.FileStorage.Exceptions
 {
-    /// <exclude/>
+    /// <summary>
+    /// The exception that is thrown when an attempt to access a folder that does not exist on disk fails.
+    /// </summary>
     public class FolderNotFoundException
 #if PORTABLE
         : System.IO.IOException
-#elif NETSTANDARD2_0
-        : System.IO.FileNotFoundException
 #else
         : System.IO.DirectoryNotFoundException
 #endif

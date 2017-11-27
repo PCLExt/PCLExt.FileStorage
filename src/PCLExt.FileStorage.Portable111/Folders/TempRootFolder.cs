@@ -1,12 +1,12 @@
 ﻿namespace PCLExt.FileStorage.Folders
 {
     /// <summary>
-    /// A folder representing storage that deals  with temporary files.
+    /// A <see cref="BaseFolder"/> representing storage that deals with temporary files.
     /// </summary>
     public class TempRootFolder : BaseFolder
     {
         /// <summary>
-        /// Creates a folder representing storage that deals  with temporary files.
+        /// Creates a <see cref="BaseFolder"/> representing storage that deals with temporary files.
         /// </summary>
 #if !PORTABLE
         public TempRootFolder() : base(GetTempFolder()) { }

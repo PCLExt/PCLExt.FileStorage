@@ -2,11 +2,11 @@
 
 namespace PCLExt.FileStorage.Exceptions
 {
-    /// <exclude/>
+    /// <summary>
+    /// The exception that is thrown when an attempt to create a file fails because it already exists on disk.
+    /// </summary>
     public class FileExistException
 #if PORTABLE
-        : System.IO.IOException
-#elif NETSTANDARD2_0
         : System.IO.IOException
 #else
         : System.IO.IOException
