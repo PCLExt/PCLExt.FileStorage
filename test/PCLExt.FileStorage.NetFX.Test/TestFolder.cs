@@ -7,7 +7,7 @@ namespace PCLExt.FileStorage.Test
 #if __ANDROID__ || __IOS__
         public TestFolder() : base(new LocalRootFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
 #else
-        public TestFolder() : base(new ApplicationRootFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
+        public TestFolder() : base(new TempRootFolder().CreateFolder("Testing", CreationCollisionOption.OpenIfExists)) { }
 #endif
     }
 }

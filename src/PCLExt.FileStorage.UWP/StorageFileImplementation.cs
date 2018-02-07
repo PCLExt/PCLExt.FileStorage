@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PCLExt.FileStorage.Extensions;
+using PCLExt.FileStorage.UWP.Extensions;
+using System;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
@@ -7,8 +9,6 @@ using Windows.Storage;
 using Windows.Storage.FileProperties;
 
 using PCLExt.FileStorage.Exceptions;
-using PCLExt.FileStorage.Extensions;
-using PCLExt.FileStorage.UWP.Extensions;
 
 namespace PCLExt.FileStorage.UWP
 {
@@ -36,7 +36,7 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
-        public long Size => (long) GetStorageFileProperties().Size;
+        public long Size => (long)GetStorageFileProperties().Size;
 
         public DateTime CreationTime =>
             _storageFile.DateCreated.ToLocalTime().DateTime;
@@ -121,10 +121,32 @@ namespace PCLExt.FileStorage.UWP
 
             var newFolder = await StorageFolder.GetFolderFromPathAsync(
                 System.IO.Path.GetDirectoryName(newPath));
-            var newName = System.IO.Path.GetFileName(newPath);
+            var initialNewName = System.IO.Path.GetFileName(newPath);
+            var newName = initialNewName;
             var windowsNameCollision = StorageExtensions.ConvertToNameCollision(collisionOption);
-            var newFile = await _storageFile.CopyAsync(
-                newFolder, newName, windowsNameCollision);
+            var nameCollisionCounter = 2;
+            StorageFile newFile = null;
+            while (true)
+            {
+                try
+                {
+                    newFile = await _storageFile.CopyAsync(
+                        newFolder, newName, windowsNameCollision);
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    if (collisionOption != NameCollisionOption.GenerateUniqueName)
+                    {
+                        if (ex.Message.Contains("HRESULT: 0x800700B7"))
+                            throw new Exceptions.FileExistException(newPath, ex);
+                        else
+                            throw;
+                    }
+                    newName = $"{initialNewName} ({nameCollisionCounter++})";
+                }
+
+            }
             return new StorageFileImplementation(newFile.Path);
         }
 
@@ -135,7 +157,14 @@ namespace PCLExt.FileStorage.UWP
 
         public async Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
-            await _storageFile.DeleteAsync().AsTask(cancellationToken);
+            try
+            {
+                await _storageFile.DeleteAsync().AsTask(cancellationToken);
+            }
+            catch (System.IO.FileNotFoundException ex)
+            {
+                throw new Exceptions.FileNotFoundException(_storageFile.Path, ex);
+            }            
         }
 
         public void Move(IFile newFile)
@@ -167,30 +196,26 @@ namespace PCLExt.FileStorage.UWP
             var newFolder = await StorageFolder.GetFolderFromPathAsync(
                   System.IO.Path.GetDirectoryName(newPath));
 
-            string newName;
-            if (collisionOption == NameCollisionOption.GenerateUniqueName)
-            {
-                newName = $"{Guid.NewGuid()}";
-                var extension = PortablePath.GetExtension(newPath);
-                if (!string.IsNullOrEmpty(extension))
-                    newName = newName + "." + extension;
-            }
-            else
-            {
-                newName = System.IO.Path.GetFileName(newPath);
-            }
-
             var windowsCollisionOption = StorageExtensions.
                 ConvertToNameCollision(collisionOption);
 
             var oldFile = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
-            try
+            var initialName = System.IO.Path.GetFileName(newPath);
+            var newName = initialName;
+            var nameCollisionCounter = 2;
+            while (true)
             {
-                await _storageFile.MoveAsync(newFolder, newName, windowsCollisionOption);
-            }
-            catch (Exception ex)
-            {
-                throw new FileExistException(newPath, ex);
+                try
+                {
+                    await _storageFile.MoveAsync(newFolder, newName, windowsCollisionOption);
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    if (collisionOption != NameCollisionOption.GenerateUniqueName)
+                        throw new FileExistException(newPath, ex);
+                    newName = $"{initialName} ({nameCollisionCounter++})";
+                }
             }
             var result = new StorageFileImplementation(_storageFile);
             _storageFile = oldFile;
