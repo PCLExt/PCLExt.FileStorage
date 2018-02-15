@@ -15,7 +15,7 @@ namespace PCLExt.FileStorage.UWP.Extensions
                 return Windows.Storage.NameCollisionOption.FailIfExists;
 
             if (collisionOption == NameCollisionOption.GenerateUniqueName)
-                return Windows.Storage.NameCollisionOption.GenerateUniqueName;
+                return Windows.Storage.NameCollisionOption.FailIfExists;
 
             if (collisionOption == NameCollisionOption.ReplaceExisting)
                 return Windows.Storage.NameCollisionOption.ReplaceExisting;
@@ -29,7 +29,7 @@ namespace PCLExt.FileStorage.UWP.Extensions
             if (collisionOption == NameCollisionOption.FailIfExists)
                 return CreationCollisionOption.FailIfExists;
             if (collisionOption == NameCollisionOption.GenerateUniqueName)
-                return CreationCollisionOption.GenerateUniqueName;
+                return CreationCollisionOption.FailIfExists;
             if (collisionOption == NameCollisionOption.ReplaceExisting)
                 return CreationCollisionOption.ReplaceExisting;
 
