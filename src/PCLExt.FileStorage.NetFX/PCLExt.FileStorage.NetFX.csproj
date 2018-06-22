@@ -100,7 +100,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj">
+    <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
       <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
     </ProjectReference>
