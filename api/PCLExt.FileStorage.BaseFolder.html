@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class BaseFolder
    | PCLExt.FileStorage documentation ">
-    <meta name="generator" content="docfx 2.31.0.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -171,7 +171,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The creation time.</p>
 </td>
       </tr>
@@ -198,7 +198,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The creation time UTC.</p>
 </td>
       </tr>
@@ -251,7 +251,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last access time.</p>
 </td>
       </tr>
@@ -278,7 +278,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last access time UTC.</p>
 </td>
       </tr>
@@ -305,7 +305,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last write time.</p>
 </td>
       </tr>
@@ -332,7 +332,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last write time UTC.</p>
 </td>
       </tr>
@@ -440,13 +440,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_CheckExistsAsync_" data-uid="PCLExt.FileStorage.BaseFolder.CheckExistsAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_CheckExistsAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String,CancellationToken)">CheckExistsAsync(String, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_CheckExistsAsync_System_String_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String,System.Threading.CancellationToken)">CheckExistsAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Checks whether a folder or file exists at the given location.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;ExistenceCheckResult&gt; CheckExistsAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;ExistenceCheckResult&gt; CheckExistsAsync(string name, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -465,7 +465,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -482,7 +482,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.ExistenceCheckResult.html">ExistenceCheckResult</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.ExistenceCheckResult.html">ExistenceCheckResult</a>&gt;</td>
         <td><p>A task whose result is the result of the existence check.</p>
 </td>
       </tr>
@@ -526,13 +526,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_CopyAsync_" data-uid="PCLExt.FileStorage.BaseFolder.CopyAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">CopyAsync(IFolder, NameCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)">CopyAsync(IFolder, NameCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Copies this folder and all of its contents to the given folder.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -557,7 +557,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -574,7 +574,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -633,13 +633,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_CreateFileAsync_" data-uid="PCLExt.FileStorage.BaseFolder.CreateFileAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)">CreateFileAsync(String, CreationCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)">CreateFileAsync(String, CreationCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Creates a file in this folder</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IFile&gt; CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IFile&gt; CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -664,7 +664,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -681,7 +681,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
         <td><p>The newly created file</p>
 </td>
       </tr>
@@ -741,13 +741,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_CreateFolderAsync_" data-uid="PCLExt.FileStorage.BaseFolder.CreateFolderAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)">CreateFolderAsync(String, CreationCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)">CreateFolderAsync(String, CreationCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Creates a subfolder in this folder</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IFolder&gt; CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IFolder&gt; CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -772,7 +772,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -789,7 +789,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
         <td><p>The newly created folder</p>
 </td>
       </tr>
@@ -809,13 +809,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_DeleteAsync_" data-uid="PCLExt.FileStorage.BaseFolder.DeleteAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_DeleteAsync_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.DeleteAsync(CancellationToken)">DeleteAsync(CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_DeleteAsync_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.DeleteAsync(System.Threading.CancellationToken)">DeleteAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Deletes this folder and all of its contents</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task DeleteAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -828,7 +828,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -845,7 +845,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task which will complete after the folder is deleted</p>
 </td>
       </tr>
@@ -899,13 +899,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_GetFileAsync_" data-uid="PCLExt.FileStorage.BaseFolder.GetFileAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_GetFileAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String,CancellationToken)">GetFileAsync(String, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_GetFileAsync_System_String_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String,System.Threading.CancellationToken)">GetFileAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets a file in this folder</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IFile&gt; GetFileAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IFile&gt; GetFileAsync(string name, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -924,7 +924,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -941,7 +941,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
         <td><p>The requested file, or null if it does not exist</p>
 </td>
       </tr>
@@ -999,13 +999,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_GetFilesAsync_" data-uid="PCLExt.FileStorage.BaseFolder.GetFilesAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,CancellationToken)">GetFilesAsync(String, FolderSearchOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,System.Threading.CancellationToken)">GetFilesAsync(String, FolderSearchOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets a list of the files in this folder</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;IFile&gt;&gt; GetFilesAsync(string searchPattern = &quot;*&quot;, FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;IFile&gt;&gt; GetFilesAsync(string searchPattern = &quot;*&quot;, FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1028,7 +1028,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -1045,7 +1045,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;&gt;</td>
         <td><p>A list of the files in the folder</p>
 </td>
       </tr>
@@ -1099,13 +1099,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_GetFolderAsync_" data-uid="PCLExt.FileStorage.BaseFolder.GetFolderAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_GetFolderAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String,CancellationToken)">GetFolderAsync(String, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_GetFolderAsync_System_String_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String,System.Threading.CancellationToken)">GetFolderAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets a subfolder in this folder</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IFolder&gt; GetFolderAsync(string name, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IFolder&gt; GetFolderAsync(string name, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1124,7 +1124,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -1141,7 +1141,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
         <td><p>The requested folder, or null if it does not exist</p>
 </td>
       </tr>
@@ -1177,13 +1177,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_GetFoldersAsync_" data-uid="PCLExt.FileStorage.BaseFolder.GetFoldersAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_GetFoldersAsync_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFoldersAsync(CancellationToken)">GetFoldersAsync(CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_GetFoldersAsync_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.GetFoldersAsync(System.Threading.CancellationToken)">GetFoldersAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Gets a list of subfolders in this folder</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;IFolder&gt;&gt; GetFoldersAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IList&lt;IFolder&gt;&gt; GetFoldersAsync(CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1196,7 +1196,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -1213,7 +1213,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">IList</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;&gt;</td>
         <td><p>A list of subfolders in the folder</p>
 </td>
       </tr>
@@ -1257,13 +1257,13 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_MoveAsync_" data-uid="PCLExt.FileStorage.BaseFolder.MoveAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">MoveAsync(IFolder, NameCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)">MoveAsync(IFolder, NameCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Moves this folder and all of its contents to the given folder, current folder will be deleted.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1288,7 +1288,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -1305,7 +1305,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The folder with moved content.</p>
 </td>
       </tr>
@@ -1356,12 +1356,12 @@
   
   
   <a id="PCLExt_FileStorage_BaseFolder_RenameAsync_" data-uid="PCLExt.FileStorage.BaseFolder.RenameAsync*"></a>
-  <h4 id="PCLExt_FileStorage_BaseFolder_RenameAsync_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.RenameAsync(System.String,CancellationToken)">RenameAsync(String, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_BaseFolder_RenameAsync_System_String_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.BaseFolder.RenameAsync(System.String,System.Threading.CancellationToken)">RenameAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;IFolder&gt; RenameAsync(string newName, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;IFolder&gt; RenameAsync(string newName, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1379,7 +1379,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -1395,7 +1395,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFolder.html">IFolder</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>

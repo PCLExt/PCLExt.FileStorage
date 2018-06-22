@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IFile
    | PCLExt.FileStorage documentation ">
-    <meta name="generator" content="docfx 2.31.0.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -105,7 +105,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The creation time.</p>
 </td>
       </tr>
@@ -132,7 +132,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The creation time UTC.</p>
 </td>
       </tr>
@@ -185,7 +185,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last access time.</p>
 </td>
       </tr>
@@ -212,7 +212,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last access time UTC.</p>
 </td>
       </tr>
@@ -239,7 +239,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last write time.</p>
 </td>
       </tr>
@@ -266,7 +266,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">DateTime</span></td>
+        <td><span class="xref">System.DateTime</span></td>
         <td><p>The last write time UTC.</p>
 </td>
       </tr>
@@ -435,13 +435,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_CopyAsync_" data-uid="PCLExt.FileStorage.IFile.CopyAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_CopyAsync_PCLExt_FileStorage_IFile_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile,CancellationToken)">CopyAsync(IFile, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_CopyAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)">CopyAsync(IFile, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Copies a file. Overwriting a file of the same name is allowed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task CopyAsync(IFile newFile, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -460,7 +460,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -477,7 +477,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task which will complete after the file is moved.</p>
 </td>
       </tr>
@@ -486,13 +486,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_CopyAsync_" data-uid="PCLExt.FileStorage.IFile.CopyAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">CopyAsync(String, NameCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)">CopyAsync(String, NameCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Copies a file. Overwriting a file of the same name is allowed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -517,7 +517,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -534,7 +534,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
         <td><p>A task which will complete after the file is moved.</p>
 </td>
       </tr>
@@ -554,13 +554,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_DeleteAsync_" data-uid="PCLExt.FileStorage.IFile.DeleteAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_DeleteAsync_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.DeleteAsync(CancellationToken)">DeleteAsync(CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_DeleteAsync_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.DeleteAsync(System.Threading.CancellationToken)">DeleteAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Deletes the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task DeleteAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -573,7 +573,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -590,7 +590,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task which will complete after the file is deleted.</p>
 </td>
       </tr>
@@ -679,13 +679,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_MoveAsync_" data-uid="PCLExt.FileStorage.IFile.MoveAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_MoveAsync_PCLExt_FileStorage_IFile_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile,CancellationToken)">MoveAsync(IFile, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_MoveAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)">MoveAsync(IFile, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Moves a file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task MoveAsync(IFile newFile, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -704,7 +704,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -721,7 +721,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task which will complete after the file is moved.</p>
 </td>
       </tr>
@@ -730,13 +730,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_MoveAsync_" data-uid="PCLExt.FileStorage.IFile.MoveAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">MoveAsync(String, NameCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)">MoveAsync(String, NameCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Moves a file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -761,7 +761,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -778,7 +778,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
         <td><p>A task which will complete after the file is moved.</p>
 </td>
       </tr>
@@ -823,8 +823,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Stream</span></td>
-        <td><p>A <see cref="!:Stream"></see> which can be used to read from or write to the file</p>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><p>A <span class="xref">System.IO.Stream</span> which can be used to read from or write to the file</p>
 </td>
       </tr>
     </tbody>
@@ -832,13 +832,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_OpenAsync_" data-uid="PCLExt.FileStorage.IFile.OpenAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_OpenAsync_PCLExt_FileStorage_FileAccess_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess,CancellationToken)">OpenAsync(FileAccess, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_OpenAsync_PCLExt_FileStorage_FileAccess_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)">OpenAsync(FileAccess, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Opens the file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;Stream&gt; OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;Stream&gt; OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -857,7 +857,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -874,8 +874,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">Stream</span>&gt;</td>
-        <td><p>A <see cref="!:Stream"></see> which can be used to read from or write to the file</p>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.IO.Stream</span>&gt;</td>
+        <td><p>A <span class="xref">System.IO.Stream</span> which can be used to read from or write to the file</p>
 </td>
       </tr>
     </tbody>
@@ -908,12 +908,12 @@
   
   
   <a id="PCLExt_FileStorage_IFile_ReadAllBytesAsync_" data-uid="PCLExt.FileStorage.IFile.ReadAllBytesAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_ReadAllBytesAsync_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.ReadAllBytesAsync(CancellationToken)">ReadAllBytesAsync(CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_ReadAllBytesAsync_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.ReadAllBytesAsync(System.Threading.CancellationToken)">ReadAllBytesAsync(CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;byte[]&gt; ReadAllBytesAsync(CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;byte[]&gt; ReadAllBytesAsync(CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -926,7 +926,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -942,7 +942,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Byte</span>[]&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1001,13 +1001,13 @@
   
   
   <a id="PCLExt_FileStorage_IFile_RenameAsync_" data-uid="PCLExt.FileStorage.IFile.RenameAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)">RenameAsync(String, NameCollisionOption, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)">RenameAsync(String, NameCollisionOption, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Renames a file without changing its directory.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task&lt;IFile&gt; RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1032,7 +1032,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -1049,7 +1049,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="PCLExt.FileStorage.IFile.html">IFile</a>&gt;</td>
         <td><p>A task which will complete after the file is renamed.</p>
 </td>
       </tr>
@@ -1085,12 +1085,12 @@
   
   
   <a id="PCLExt_FileStorage_IFile_WriteAllBytesAsync_" data-uid="PCLExt.FileStorage.IFile.WriteAllBytesAsync*"></a>
-  <h4 id="PCLExt_FileStorage_IFile_WriteAllBytesAsync_System_Byte___CancellationToken_" data-uid="PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[],CancellationToken)">WriteAllBytesAsync(Byte[], CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_IFile_WriteAllBytesAsync_System_Byte___System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)">WriteAllBytesAsync(Byte[], CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1108,7 +1108,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td></td>
       </tr>
@@ -1124,7 +1124,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td></td>
       </tr>
     </tbody>

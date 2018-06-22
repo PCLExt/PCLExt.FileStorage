@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "gBgmiFXb1p4kD6c8YVObKw=="
+          "hash": "i8l6oyFotWQZ/AJpXNPpXg=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.BaseFile.html",
-          "hash": "DYK0chb8uSN5TGN5WYbcfA=="
+          "hash": "eDF/pVTfNdvPSNzIV1JEfQ=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.BaseFolder.html",
-          "hash": "5ZDOg8J6Olb3JFfIPNXRew=="
+          "hash": "n6efHuiOSQ33spvX3FnA1g=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.CreationCollisionOption.html",
-          "hash": "3Dz46AuBfcareJkUjoP+PQ=="
+          "hash": "wQXOJcyU3t2r691VVZhdjQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Exceptions.FileExistException.html",
-          "hash": "/bG9G0CLhs4MuhIg56z6dw=="
+          "hash": "FLheuRFkQMXxfry3fnpAjg=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html",
-          "hash": "fRiFC/dps6Irh0B/nikzIQ=="
+          "hash": "Dc2elWuQX/wpB2WimPVJ6Q=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Exceptions.FolderExistException.html",
-          "hash": "+wM6Qlm/KaMw1PGJbTshMQ=="
+          "hash": "EmH9q8HA0Cg+v6+AzLFBIA=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html",
-          "hash": "2vA8qbmHSPJt7GZnAwTzpw=="
+          "hash": "6Q8IW/+yHZT8Cb1YHXvjAw=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html",
-          "hash": "dg6j2K3tvwKv2ptRX65vsw=="
+          "hash": "YxZeiVpzhmNjgBlIvdb3Rw=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Exceptions.html",
-          "hash": "0OBT/Cgq5esTOteBvMV3VQ=="
+          "hash": "TorOBtze79aSIcGl9n+wew=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.ExistenceCheckResult.html",
-          "hash": "TJiAvTgZZw84yxT3lmdPSg=="
+          "hash": "il202d6W2jxbgi9CcIhGuA=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Extensions.FileExtensions.html",
-          "hash": "w4mI+rEczONlP7nN6jedpA=="
+          "hash": "pGaqLtkTQv2HYJqI6niKiw=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Extensions.FolderExtensions.html",
-          "hash": "8yp2CgzU20IghldPgBl8GA=="
+          "hash": "O7lJbqWqWuuwenCQY9lefg=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Extensions.html",
-          "hash": "pmc3w6nPv2zWZTtssFo7jg=="
+          "hash": "XXSNiWrv0faubuK5bl2vgA=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.FileAccess.html",
-          "hash": "bGoReJ8OFyJ21yDqHgYY4w=="
+          "hash": "oIot+kUNTA9SslnEHJpQTg=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Files.FileFromPath.html",
-          "hash": "jPv1Ys0gul4+QrQf5cOVQw=="
+          "hash": "8JsQIuzOK4XkdnO1F385+g=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Files.html",
-          "hash": "o5YM2EoBCGtbQjwN0g7wEQ=="
+          "hash": "rJ+T3x5sLS/pio8EJfhGaA=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.FolderSearchOption.html",
-          "hash": "IEhmsfY/DuoQtsZF4GD4mg=="
+          "hash": "tUrORqULdfbw5CmEhIcS5A=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.ApplicationRootFolder.html",
-          "hash": "j80wMn3nXwwcCoAR49vEYg=="
+          "hash": "DqNCMOx6PMjKY8NE8b3Fqw=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html",
-          "hash": "jug6B1s+qYEDycKunXMNEA=="
+          "hash": "lWQLiVc0nqP+b5eb0zob5A=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.FolderFromPath.html",
-          "hash": "z9bS6vAi4Jq8sS/TIRY/0Q=="
+          "hash": "2LUy8EMmb9hVW1FvM56xmw=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.LocalRootFolder.html",
-          "hash": "/ld6U1tzMKdizMhRRrVQqQ=="
+          "hash": "9oXd3vbMOKZ5aVr9YkvYWw=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.RoamingRootFolder.html",
-          "hash": "mN4+NQGZxPtEfHjzP0IuGg=="
+          "hash": "VF2JV5pusg1CvgOZCahdYg=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.TempRootFolder.html",
-          "hash": "YGB/UK2JXMl6PxkWdIisfw=="
+          "hash": "IJKLOY8sspOj4FgXmhe+yA=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.html",
-          "hash": "1ULAldZ22H7yvPeIWM8INA=="
+          "hash": "UAB2uP8Tqeul7oq7dHVF/g=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.IFile.html",
-          "hash": "hlnb6xsioqhuHeFCjhR+Wg=="
+          "hash": "23OrEJbN8gLE930M3xw9ww=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.IFolder.html",
-          "hash": "CdoILW5xVE4CYMSpdxG71Q=="
+          "hash": "xUQjnhQNeA4Ndw3Hs2n4DA=="
         }
       },
       "is_incremental": false,
@@ -333,7 +333,19 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.NameCollisionOption.html",
-          "hash": "3BgXLGhrP7LVrvcNt3ZRaA=="
+          "hash": "WQ2/8dhSX6Y2Ir5XPlZndg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.NonExistingFile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.NonExistingFile.html",
+          "hash": "1+sJNKMd186na7jm3pnebQ=="
         }
       },
       "is_incremental": false,
@@ -345,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.PortablePath.html",
-          "hash": "U9RNQXfNRTNVvZB0RXs91w=="
+          "hash": "oPSnF2EKgS16/SOjkIyiaw=="
         }
       },
       "is_incremental": false,
@@ -357,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.html",
-          "hash": "UtCFMXh4jxq9rtFMCUGLVQ=="
+          "hash": "dy+m621lrHzJFAgML7D8VQ=="
         }
       },
       "is_incremental": false,
@@ -369,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "jilPTyKV9DUKzJpWMLUbXw=="
+          "hash": "z3BV2h2T2xoKHyphaqrdSQ=="
         }
       },
       "is_incremental": false,
@@ -381,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BzcOrrwgYCJ54jegcBpvpw=="
+          "hash": "6oLdKCw3DqV5Q8t3b/3uMw=="
         }
       },
       "is_incremental": false,
@@ -393,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/available.html",
-          "hash": "csMavTA7D+Fob0jDDD2MJA=="
+          "hash": "CImYiCFx2oOv0GabUb6k8A=="
         }
       },
       "is_incremental": false,
@@ -405,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting_started.html",
-          "hash": "1+xY/k9q8QXBSyYEKJWdgA=="
+          "hash": "bc7826iXrrpc4ygQj+GnEw=="
         }
       },
       "is_incremental": false,
@@ -417,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/json-example.html",
-          "hash": "iVyf9JmmLW23Nc8eS3dTMg=="
+          "hash": "PTxZlIqWK4ZZDxs/ttXRmA=="
         }
       },
       "is_incremental": false,
@@ -429,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/log-example.html",
-          "hash": "9HMKNOrF4CP17e6W7X+kXw=="
+          "hash": "CsjzawNKR1t9y6Zu4l/MzQ=="
         }
       },
       "is_incremental": false,
@@ -475,7 +487,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "RSFUCqzXk34nFqEhII4qgQ=="
+          "hash": "xXE+FaZhSZwkPutUPWpFhg=="
         }
       },
       "is_incremental": false,
@@ -502,22 +514,22 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ResourceDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

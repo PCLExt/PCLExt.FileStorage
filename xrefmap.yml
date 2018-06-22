@@ -23,6 +23,7 @@ references:
   name: BaseFile
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile__ctor_
   commentId: Overload:PCLExt.FileStorage.BaseFile.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.BaseFile
   nameWithType: BaseFile.BaseFile
 - uid: PCLExt.FileStorage.BaseFile.Copy(PCLExt.FileStorage.IFile)
@@ -41,24 +42,26 @@ references:
   name: Copy
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Copy_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Copy
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Copy
   nameWithType: BaseFile.Copy
-- uid: PCLExt.FileStorage.BaseFile.CopyAsync(PCLExt.FileStorage.IFile,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
   name: CopyAsync(IFile, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CopyAsync_PCLExt_FileStorage_IFile_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.CopyAsync(PCLExt.FileStorage.IFile,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.CopyAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CopyAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.CopyAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
   nameWithType: BaseFile.CopyAsync(IFile, CancellationToken)
-- uid: PCLExt.FileStorage.BaseFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: CopyAsync(String, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.CopyAsync(System.String, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.CopyAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFile.CopyAsync(String, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.CopyAsync*
   name: CopyAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CopyAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.CopyAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.CopyAsync
   nameWithType: BaseFile.CopyAsync
 - uid: PCLExt.FileStorage.BaseFile.CreationTime
@@ -71,6 +74,7 @@ references:
   name: CreationTime
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CreationTime_
   commentId: Overload:PCLExt.FileStorage.BaseFile.CreationTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.CreationTime
   nameWithType: BaseFile.CreationTime
 - uid: PCLExt.FileStorage.BaseFile.CreationTimeUTC
@@ -83,6 +87,7 @@ references:
   name: CreationTimeUTC
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_CreationTimeUTC_
   commentId: Overload:PCLExt.FileStorage.BaseFile.CreationTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.CreationTimeUTC
   nameWithType: BaseFile.CreationTimeUTC
 - uid: PCLExt.FileStorage.BaseFile.Delete
@@ -95,18 +100,20 @@ references:
   name: Delete
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Delete_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Delete
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Delete
   nameWithType: BaseFile.Delete
-- uid: PCLExt.FileStorage.BaseFile.DeleteAsync(CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.DeleteAsync(System.Threading.CancellationToken)
   name: DeleteAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_DeleteAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.DeleteAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.DeleteAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_DeleteAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.DeleteAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.DeleteAsync(System.Threading.CancellationToken)
   nameWithType: BaseFile.DeleteAsync(CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.DeleteAsync*
   name: DeleteAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_DeleteAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.DeleteAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.DeleteAsync
   nameWithType: BaseFile.DeleteAsync
 - uid: PCLExt.FileStorage.BaseFile.Exists
@@ -119,6 +126,7 @@ references:
   name: Exists
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Exists_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Exists
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Exists
   nameWithType: BaseFile.Exists
 - uid: PCLExt.FileStorage.BaseFile.LastAccessTime
@@ -131,6 +139,7 @@ references:
   name: LastAccessTime
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastAccessTime_
   commentId: Overload:PCLExt.FileStorage.BaseFile.LastAccessTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.LastAccessTime
   nameWithType: BaseFile.LastAccessTime
 - uid: PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
@@ -143,6 +152,7 @@ references:
   name: LastAccessTimeUTC
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastAccessTimeUTC_
   commentId: Overload:PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.LastAccessTimeUTC
   nameWithType: BaseFile.LastAccessTimeUTC
 - uid: PCLExt.FileStorage.BaseFile.LastWriteTime
@@ -155,6 +165,7 @@ references:
   name: LastWriteTime
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastWriteTime_
   commentId: Overload:PCLExt.FileStorage.BaseFile.LastWriteTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.LastWriteTime
   nameWithType: BaseFile.LastWriteTime
 - uid: PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
@@ -167,6 +178,7 @@ references:
   name: LastWriteTimeUTC
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_LastWriteTimeUTC_
   commentId: Overload:PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.LastWriteTimeUTC
   nameWithType: BaseFile.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.BaseFile.Move(PCLExt.FileStorage.IFile)
@@ -185,24 +197,26 @@ references:
   name: Move
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Move_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Move
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Move
   nameWithType: BaseFile.Move
-- uid: PCLExt.FileStorage.BaseFile.MoveAsync(PCLExt.FileStorage.IFile,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
   name: MoveAsync(IFile, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_MoveAsync_PCLExt_FileStorage_IFile_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.MoveAsync(PCLExt.FileStorage.IFile,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.MoveAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_MoveAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.MoveAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
   nameWithType: BaseFile.MoveAsync(IFile, CancellationToken)
-- uid: PCLExt.FileStorage.BaseFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: MoveAsync(String, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.MoveAsync(System.String, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.MoveAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFile.MoveAsync(String, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.MoveAsync*
   name: MoveAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_MoveAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.MoveAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.MoveAsync
   nameWithType: BaseFile.MoveAsync
 - uid: PCLExt.FileStorage.BaseFile.Name
@@ -215,6 +229,7 @@ references:
   name: Name
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Name_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Name
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Name
   nameWithType: BaseFile.Name
 - uid: PCLExt.FileStorage.BaseFile.Open(PCLExt.FileStorage.FileAccess)
@@ -227,18 +242,20 @@ references:
   name: Open
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Open_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Open
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Open
   nameWithType: BaseFile.Open
-- uid: PCLExt.FileStorage.BaseFile.OpenAsync(PCLExt.FileStorage.FileAccess,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)
   name: OpenAsync(FileAccess, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_OpenAsync_PCLExt_FileStorage_FileAccess_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.OpenAsync(PCLExt.FileStorage.FileAccess,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.OpenAsync(PCLExt.FileStorage.FileAccess, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_OpenAsync_PCLExt_FileStorage_FileAccess_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.OpenAsync(PCLExt.FileStorage.FileAccess, System.Threading.CancellationToken)
   nameWithType: BaseFile.OpenAsync(FileAccess, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.OpenAsync*
   name: OpenAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_OpenAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.OpenAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.OpenAsync
   nameWithType: BaseFile.OpenAsync
 - uid: PCLExt.FileStorage.BaseFile.Path
@@ -251,6 +268,7 @@ references:
   name: Path
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Path_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Path
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Path
   nameWithType: BaseFile.Path
 - uid: PCLExt.FileStorage.BaseFile.ReadAllBytes
@@ -263,18 +281,20 @@ references:
   name: ReadAllBytes
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_ReadAllBytes_
   commentId: Overload:PCLExt.FileStorage.BaseFile.ReadAllBytes
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.ReadAllBytes
   nameWithType: BaseFile.ReadAllBytes
-- uid: PCLExt.FileStorage.BaseFile.ReadAllBytesAsync(CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.ReadAllBytesAsync(System.Threading.CancellationToken)
   name: ReadAllBytesAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_ReadAllBytesAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.ReadAllBytesAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.ReadAllBytesAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_ReadAllBytesAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.ReadAllBytesAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.ReadAllBytesAsync(System.Threading.CancellationToken)
   nameWithType: BaseFile.ReadAllBytesAsync(CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.ReadAllBytesAsync*
   name: ReadAllBytesAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_ReadAllBytesAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.ReadAllBytesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.ReadAllBytesAsync
   nameWithType: BaseFile.ReadAllBytesAsync
 - uid: PCLExt.FileStorage.BaseFile.Rename(System.String,PCLExt.FileStorage.NameCollisionOption)
@@ -287,18 +307,20 @@ references:
   name: Rename
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Rename_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Rename
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Rename
   nameWithType: BaseFile.Rename
-- uid: PCLExt.FileStorage.BaseFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: RenameAsync(String, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.RenameAsync(System.String, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.RenameAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFile.RenameAsync(String, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.RenameAsync*
   name: RenameAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_RenameAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.RenameAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.RenameAsync
   nameWithType: BaseFile.RenameAsync
 - uid: PCLExt.FileStorage.BaseFile.Size
@@ -311,6 +333,7 @@ references:
   name: Size
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_Size_
   commentId: Overload:PCLExt.FileStorage.BaseFile.Size
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.Size
   nameWithType: BaseFile.Size
 - uid: PCLExt.FileStorage.BaseFile.ToString
@@ -323,6 +346,7 @@ references:
   name: ToString
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_ToString_
   commentId: Overload:PCLExt.FileStorage.BaseFile.ToString
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.ToString
   nameWithType: BaseFile.ToString
 - uid: PCLExt.FileStorage.BaseFile.WriteAllBytes(System.Byte[])
@@ -338,21 +362,23 @@ references:
   name: WriteAllBytes
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_WriteAllBytes_
   commentId: Overload:PCLExt.FileStorage.BaseFile.WriteAllBytes
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.WriteAllBytes
   nameWithType: BaseFile.WriteAllBytes
-- uid: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte[],CancellationToken)
+- uid: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)
   name: WriteAllBytesAsync(Byte[], CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_WriteAllBytesAsync_System_Byte___CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte[],CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_WriteAllBytesAsync_System_Byte___System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)
   name.vb: WriteAllBytesAsync(Byte(), CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte[], CancellationToken)
-  fullName.vb: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte(), CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync(System.Byte(), System.Threading.CancellationToken)
   nameWithType: BaseFile.WriteAllBytesAsync(Byte[], CancellationToken)
   nameWithType.vb: BaseFile.WriteAllBytesAsync(Byte(), CancellationToken)
 - uid: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync*
   name: WriteAllBytesAsync
   href: api/PCLExt.FileStorage.BaseFile.html#PCLExt_FileStorage_BaseFile_WriteAllBytesAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFile.WriteAllBytesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFile.WriteAllBytesAsync
   nameWithType: BaseFile.WriteAllBytesAsync
 - uid: PCLExt.FileStorage.BaseFolder
@@ -371,6 +397,7 @@ references:
   name: BaseFolder
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder__ctor_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.BaseFolder
   nameWithType: BaseFolder.BaseFolder
 - uid: PCLExt.FileStorage.BaseFolder.CheckExists(System.String)
@@ -383,18 +410,20 @@ references:
   name: CheckExists
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CheckExists_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CheckExists
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CheckExists
   nameWithType: BaseFolder.CheckExists
-- uid: PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String,System.Threading.CancellationToken)
   name: CheckExistsAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CheckExistsAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CheckExistsAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.CheckExistsAsync(System.String, System.Threading.CancellationToken)
   nameWithType: BaseFolder.CheckExistsAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.CheckExistsAsync*
   name: CheckExistsAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CheckExistsAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CheckExistsAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CheckExistsAsync
   nameWithType: BaseFolder.CheckExistsAsync
 - uid: PCLExt.FileStorage.BaseFolder.Copy(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)
@@ -407,18 +436,20 @@ references:
   name: Copy
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Copy_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Copy
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Copy
   nameWithType: BaseFolder.Copy
-- uid: PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: CopyAsync(IFolder, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.CopyAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFolder.CopyAsync(IFolder, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.CopyAsync*
   name: CopyAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CopyAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CopyAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CopyAsync
   nameWithType: BaseFolder.CopyAsync
 - uid: PCLExt.FileStorage.BaseFolder.CreateFile(System.String,PCLExt.FileStorage.CreationCollisionOption)
@@ -431,18 +462,20 @@ references:
   name: CreateFile
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFile_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreateFile
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CreateFile
   nameWithType: BaseFolder.CreateFile
-- uid: PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
   name: CreateFileAsync(String, CreationCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.CreateFileAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFolder.CreateFileAsync(String, CreationCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.CreateFileAsync*
   name: CreateFileAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFileAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreateFileAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CreateFileAsync
   nameWithType: BaseFolder.CreateFileAsync
 - uid: PCLExt.FileStorage.BaseFolder.CreateFolder(System.String,PCLExt.FileStorage.CreationCollisionOption)
@@ -455,18 +488,20 @@ references:
   name: CreateFolder
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFolder_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreateFolder
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CreateFolder
   nameWithType: BaseFolder.CreateFolder
-- uid: PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
   name: CreateFolderAsync(String, CreationCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.CreateFolderAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFolder.CreateFolderAsync(String, CreationCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.CreateFolderAsync*
   name: CreateFolderAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreateFolderAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreateFolderAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CreateFolderAsync
   nameWithType: BaseFolder.CreateFolderAsync
 - uid: PCLExt.FileStorage.BaseFolder.CreationTime
@@ -479,6 +514,7 @@ references:
   name: CreationTime
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTime_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreationTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CreationTime
   nameWithType: BaseFolder.CreationTime
 - uid: PCLExt.FileStorage.BaseFolder.CreationTimeUTC
@@ -491,6 +527,7 @@ references:
   name: CreationTimeUTC
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_CreationTimeUTC_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.CreationTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.CreationTimeUTC
   nameWithType: BaseFolder.CreationTimeUTC
 - uid: PCLExt.FileStorage.BaseFolder.Delete
@@ -503,18 +540,20 @@ references:
   name: Delete
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Delete_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Delete
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Delete
   nameWithType: BaseFolder.Delete
-- uid: PCLExt.FileStorage.BaseFolder.DeleteAsync(CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.DeleteAsync(System.Threading.CancellationToken)
   name: DeleteAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_DeleteAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.DeleteAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.DeleteAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_DeleteAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.DeleteAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.DeleteAsync(System.Threading.CancellationToken)
   nameWithType: BaseFolder.DeleteAsync(CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.DeleteAsync*
   name: DeleteAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_DeleteAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.DeleteAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.DeleteAsync
   nameWithType: BaseFolder.DeleteAsync
 - uid: PCLExt.FileStorage.BaseFolder.Exists
@@ -527,6 +566,7 @@ references:
   name: Exists
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Exists_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Exists
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Exists
   nameWithType: BaseFolder.Exists
 - uid: PCLExt.FileStorage.BaseFolder.GetFile(System.String)
@@ -539,18 +579,20 @@ references:
   name: GetFile
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFile_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFile
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFile
   nameWithType: BaseFolder.GetFile
-- uid: PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String,System.Threading.CancellationToken)
   name: GetFileAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFileAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFileAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.GetFileAsync(System.String, System.Threading.CancellationToken)
   nameWithType: BaseFolder.GetFileAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.GetFileAsync*
   name: GetFileAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFileAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFileAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFileAsync
   nameWithType: BaseFolder.GetFileAsync
 - uid: PCLExt.FileStorage.BaseFolder.GetFiles(System.String,PCLExt.FileStorage.FolderSearchOption)
@@ -563,18 +605,20 @@ references:
   name: GetFiles
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFiles_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFiles
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFiles
   nameWithType: BaseFolder.GetFiles
-- uid: PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,System.Threading.CancellationToken)
   name: GetFilesAsync(String, FolderSearchOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String, PCLExt.FileStorage.FolderSearchOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.GetFilesAsync(System.String, PCLExt.FileStorage.FolderSearchOption, System.Threading.CancellationToken)
   nameWithType: BaseFolder.GetFilesAsync(String, FolderSearchOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.GetFilesAsync*
   name: GetFilesAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFilesAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFilesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFilesAsync
   nameWithType: BaseFolder.GetFilesAsync
 - uid: PCLExt.FileStorage.BaseFolder.GetFolder(System.String)
@@ -587,18 +631,20 @@ references:
   name: GetFolder
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFolder_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFolder
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFolder
   nameWithType: BaseFolder.GetFolder
-- uid: PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String,System.Threading.CancellationToken)
   name: GetFolderAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFolderAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFolderAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.GetFolderAsync(System.String, System.Threading.CancellationToken)
   nameWithType: BaseFolder.GetFolderAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.GetFolderAsync*
   name: GetFolderAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFolderAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFolderAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFolderAsync
   nameWithType: BaseFolder.GetFolderAsync
 - uid: PCLExt.FileStorage.BaseFolder.GetFolders
@@ -611,18 +657,20 @@ references:
   name: GetFolders
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFolders_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFolders
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFolders
   nameWithType: BaseFolder.GetFolders
-- uid: PCLExt.FileStorage.BaseFolder.GetFoldersAsync(CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.GetFoldersAsync(System.Threading.CancellationToken)
   name: GetFoldersAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFoldersAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.GetFoldersAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.GetFoldersAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFoldersAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.GetFoldersAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.GetFoldersAsync(System.Threading.CancellationToken)
   nameWithType: BaseFolder.GetFoldersAsync(CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.GetFoldersAsync*
   name: GetFoldersAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_GetFoldersAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.GetFoldersAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.GetFoldersAsync
   nameWithType: BaseFolder.GetFoldersAsync
 - uid: PCLExt.FileStorage.BaseFolder.LastAccessTime
@@ -635,6 +683,7 @@ references:
   name: LastAccessTime
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTime_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.LastAccessTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.LastAccessTime
   nameWithType: BaseFolder.LastAccessTime
 - uid: PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
@@ -647,6 +696,7 @@ references:
   name: LastAccessTimeUTC
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastAccessTimeUTC_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.LastAccessTimeUTC
   nameWithType: BaseFolder.LastAccessTimeUTC
 - uid: PCLExt.FileStorage.BaseFolder.LastWriteTime
@@ -659,6 +709,7 @@ references:
   name: LastWriteTime
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTime_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.LastWriteTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.LastWriteTime
   nameWithType: BaseFolder.LastWriteTime
 - uid: PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
@@ -671,6 +722,7 @@ references:
   name: LastWriteTimeUTC
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_LastWriteTimeUTC_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.LastWriteTimeUTC
   nameWithType: BaseFolder.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.BaseFolder.Move(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)
@@ -683,18 +735,20 @@ references:
   name: Move
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Move_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Move
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Move
   nameWithType: BaseFolder.Move
-- uid: PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: MoveAsync(IFolder, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.MoveAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: BaseFolder.MoveAsync(IFolder, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.MoveAsync*
   name: MoveAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_MoveAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.MoveAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.MoveAsync
   nameWithType: BaseFolder.MoveAsync
 - uid: PCLExt.FileStorage.BaseFolder.Name
@@ -707,6 +761,7 @@ references:
   name: Name
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Name_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Name
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Name
   nameWithType: BaseFolder.Name
 - uid: PCLExt.FileStorage.BaseFolder.Path
@@ -719,6 +774,7 @@ references:
   name: Path
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Path_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Path
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Path
   nameWithType: BaseFolder.Path
 - uid: PCLExt.FileStorage.BaseFolder.Rename(System.String)
@@ -731,18 +787,20 @@ references:
   name: Rename
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_Rename_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.Rename
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.Rename
   nameWithType: BaseFolder.Rename
-- uid: PCLExt.FileStorage.BaseFolder.RenameAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.BaseFolder.RenameAsync(System.String,System.Threading.CancellationToken)
   name: RenameAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_RenameAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.BaseFolder.RenameAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.BaseFolder.RenameAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_RenameAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.BaseFolder.RenameAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.BaseFolder.RenameAsync(System.String, System.Threading.CancellationToken)
   nameWithType: BaseFolder.RenameAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.BaseFolder.RenameAsync*
   name: RenameAsync
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_RenameAsync_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.RenameAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.RenameAsync
   nameWithType: BaseFolder.RenameAsync
 - uid: PCLExt.FileStorage.BaseFolder.ToString
@@ -755,6 +813,7 @@ references:
   name: ToString
   href: api/PCLExt.FileStorage.BaseFolder.html#PCLExt_FileStorage_BaseFolder_ToString_
   commentId: Overload:PCLExt.FileStorage.BaseFolder.ToString
+  isSpec: "True"
   fullName: PCLExt.FileStorage.BaseFolder.ToString
   nameWithType: BaseFolder.ToString
 - uid: PCLExt.FileStorage.CreationCollisionOption
@@ -805,16 +864,17 @@ references:
   commentId: M:PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String)
   fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException(System.String)
   nameWithType: FileExistException.FileExistException(String)
-- uid: PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String,Exception)
+- uid: PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String,System.Exception)
   name: FileExistException(String, Exception)
-  href: api/PCLExt.FileStorage.Exceptions.FileExistException.html#PCLExt_FileStorage_Exceptions_FileExistException__ctor_System_String_Exception_
-  commentId: M:PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String,Exception)
-  fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException(System.String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FileExistException.html#PCLExt_FileStorage_Exceptions_FileExistException__ctor_System_String_System_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FileExistException.#ctor(System.String,System.Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException(System.String, System.Exception)
   nameWithType: FileExistException.FileExistException(String, Exception)
 - uid: PCLExt.FileStorage.Exceptions.FileExistException.#ctor*
   name: FileExistException
   href: api/PCLExt.FileStorage.Exceptions.FileExistException.html#PCLExt_FileStorage_Exceptions_FileExistException__ctor_
   commentId: Overload:PCLExt.FileStorage.Exceptions.FileExistException.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Exceptions.FileExistException.FileExistException
   nameWithType: FileExistException.FileExistException
 - uid: PCLExt.FileStorage.Exceptions.FileNotFoundException
@@ -829,16 +889,17 @@ references:
   commentId: M:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String)
   fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException(System.String)
   nameWithType: FileNotFoundException.FileNotFoundException(String)
-- uid: PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String,Exception)
+- uid: PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String,System.Exception)
   name: FileNotFoundException(String, Exception)
-  href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html#PCLExt_FileStorage_Exceptions_FileNotFoundException__ctor_System_String_Exception_
-  commentId: M:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String,Exception)
-  fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException(System.String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html#PCLExt_FileStorage_Exceptions_FileNotFoundException__ctor_System_String_System_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor(System.String,System.Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException(System.String, System.Exception)
   nameWithType: FileNotFoundException.FileNotFoundException(String, Exception)
 - uid: PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor*
   name: FileNotFoundException
   href: api/PCLExt.FileStorage.Exceptions.FileNotFoundException.html#PCLExt_FileStorage_Exceptions_FileNotFoundException__ctor_
   commentId: Overload:PCLExt.FileStorage.Exceptions.FileNotFoundException.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Exceptions.FileNotFoundException.FileNotFoundException
   nameWithType: FileNotFoundException.FileNotFoundException
 - uid: PCLExt.FileStorage.Exceptions.FolderExistException
@@ -853,16 +914,17 @@ references:
   commentId: M:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String)
   fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException(System.String)
   nameWithType: FolderExistException.FolderExistException(String)
-- uid: PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String,Exception)
+- uid: PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String,System.Exception)
   name: FolderExistException(String, Exception)
-  href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html#PCLExt_FileStorage_Exceptions_FolderExistException__ctor_System_String_Exception_
-  commentId: M:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String,Exception)
-  fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException(System.String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html#PCLExt_FileStorage_Exceptions_FolderExistException__ctor_System_String_System_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor(System.String,System.Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException(System.String, System.Exception)
   nameWithType: FolderExistException.FolderExistException(String, Exception)
 - uid: PCLExt.FileStorage.Exceptions.FolderExistException.#ctor*
   name: FolderExistException
   href: api/PCLExt.FileStorage.Exceptions.FolderExistException.html#PCLExt_FileStorage_Exceptions_FolderExistException__ctor_
   commentId: Overload:PCLExt.FileStorage.Exceptions.FolderExistException.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Exceptions.FolderExistException.FolderExistException
   nameWithType: FolderExistException.FolderExistException
 - uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException
@@ -877,16 +939,17 @@ references:
   commentId: M:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String)
   fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException(System.String)
   nameWithType: FolderNotFoundException.FolderNotFoundException(String)
-- uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String,Exception)
+- uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String,System.Exception)
   name: FolderNotFoundException(String, Exception)
-  href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html#PCLExt_FileStorage_Exceptions_FolderNotFoundException__ctor_System_String_Exception_
-  commentId: M:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String,Exception)
-  fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException(System.String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html#PCLExt_FileStorage_Exceptions_FolderNotFoundException__ctor_System_String_System_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor(System.String,System.Exception)
+  fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException(System.String, System.Exception)
   nameWithType: FolderNotFoundException.FolderNotFoundException(String, Exception)
 - uid: PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor*
   name: FolderNotFoundException
   href: api/PCLExt.FileStorage.Exceptions.FolderNotFoundException.html#PCLExt_FileStorage_Exceptions_FolderNotFoundException__ctor_
   commentId: Overload:PCLExt.FileStorage.Exceptions.FolderNotFoundException.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Exceptions.FolderNotFoundException.FolderNotFoundException
   nameWithType: FolderNotFoundException.FolderNotFoundException
 - uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException
@@ -901,16 +964,17 @@ references:
   commentId: M:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String)
   fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException(System.String)
   nameWithType: RootFolderDeletionException.RootFolderDeletionException(String)
-- uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String,Exception)
+- uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String,System.Exception)
   name: RootFolderDeletionException(String, Exception)
-  href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html#PCLExt_FileStorage_Exceptions_RootFolderDeletionException__ctor_System_String_Exception_
-  commentId: M:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String,Exception)
-  fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException(System.String, Exception)
+  href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html#PCLExt_FileStorage_Exceptions_RootFolderDeletionException__ctor_System_String_System_Exception_
+  commentId: M:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor(System.String,System.Exception)
+  fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException(System.String, System.Exception)
   nameWithType: RootFolderDeletionException.RootFolderDeletionException(String, Exception)
 - uid: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor*
   name: RootFolderDeletionException
   href: api/PCLExt.FileStorage.Exceptions.RootFolderDeletionException.html#PCLExt_FileStorage_Exceptions_RootFolderDeletionException__ctor_
   commentId: Overload:PCLExt.FileStorage.Exceptions.RootFolderDeletionException.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Exceptions.RootFolderDeletionException.RootFolderDeletionException
   nameWithType: RootFolderDeletionException.RootFolderDeletionException
 - uid: PCLExt.FileStorage.ExistenceCheckResult
@@ -962,21 +1026,23 @@ references:
   name: AppendLines
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLines_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendLines
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLines
   nameWithType: FileExtensions.AppendLines
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},System.Threading.CancellationToken)
   name: AppendLinesAsync(IFile, IEnumerable<String>, CancellationToken)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__CancellationToken_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},System.Threading.CancellationToken)
   name.vb: AppendLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>, CancellationToken)
-  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String), CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>, System.Threading.CancellationToken)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String), System.Threading.CancellationToken)
   nameWithType: FileExtensions.AppendLinesAsync(IFile, IEnumerable<String>, CancellationToken)
   nameWithType.vb: FileExtensions.AppendLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync*
   name: AppendLinesAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync
   nameWithType: FileExtensions.AppendLinesAsync
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendText(PCLExt.FileStorage.IFile,System.String)
@@ -989,18 +1055,20 @@ references:
   name: AppendText
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendText_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendText
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendText
   nameWithType: FileExtensions.AppendText
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,System.Threading.CancellationToken)
   name: AppendTextAsync(IFile, String, CancellationToken)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_PCLExt_FileStorage_IFile_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile, System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_PCLExt_FileStorage_IFile_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile, System.String, System.Threading.CancellationToken)
   nameWithType: FileExtensions.AppendTextAsync(IFile, String, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync*
   name: AppendTextAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync
   nameWithType: FileExtensions.AppendTextAsync
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines(PCLExt.FileStorage.IFile)
@@ -1013,18 +1081,20 @@ references:
   name: ReadAllLines
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLines_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLines
   nameWithType: FileExtensions.ReadAllLines
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,CancellationToken)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
   name: ReadAllLinesAsync(IFile, CancellationToken)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_PCLExt_FileStorage_IFile_CancellationToken_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,CancellationToken)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
   nameWithType: FileExtensions.ReadAllLinesAsync(IFile, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync*
   name: ReadAllLinesAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync
   nameWithType: FileExtensions.ReadAllLinesAsync
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText(PCLExt.FileStorage.IFile)
@@ -1037,18 +1107,20 @@ references:
   name: ReadAllText
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllText_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllText
   nameWithType: FileExtensions.ReadAllText
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,CancellationToken)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
   name: ReadAllTextAsync(IFile, CancellationToken)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_PCLExt_FileStorage_IFile_CancellationToken_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,CancellationToken)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
   nameWithType: FileExtensions.ReadAllTextAsync(IFile, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync*
   name: ReadAllTextAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync
   nameWithType: FileExtensions.ReadAllTextAsync
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines(PCLExt.FileStorage.IFile,IEnumerable{System.String})
@@ -1064,21 +1136,23 @@ references:
   name: WriteAllLines
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLines_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLines
   nameWithType: FileExtensions.WriteAllLines
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},System.Threading.CancellationToken)
   name: WriteAllLinesAsync(IFile, IEnumerable<String>, CancellationToken)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__CancellationToken_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},System.Threading.CancellationToken)
   name.vb: WriteAllLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>, CancellationToken)
-  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String), CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable<System.String>, System.Threading.CancellationToken)
+  fullName.vb: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile, IEnumerable(Of System.String), System.Threading.CancellationToken)
   nameWithType: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable<String>, CancellationToken)
   nameWithType.vb: FileExtensions.WriteAllLinesAsync(IFile, IEnumerable(Of String), CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync*
   name: WriteAllLinesAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync
   nameWithType: FileExtensions.WriteAllLinesAsync
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText(PCLExt.FileStorage.IFile,System.String)
@@ -1091,18 +1165,20 @@ references:
   name: WriteAllText
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllText_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllText
   nameWithType: FileExtensions.WriteAllText
-- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
+- uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,System.Threading.CancellationToken)
   name: WriteAllTextAsync(IFile, String, CancellationToken)
-  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_PCLExt_FileStorage_IFile_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile, System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_PCLExt_FileStorage_IFile_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile, System.String, System.Threading.CancellationToken)
   nameWithType: FileExtensions.WriteAllTextAsync(IFile, String, CancellationToken)
 - uid: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync*
   name: WriteAllTextAsync
   href: api/PCLExt.FileStorage.Extensions.FileExtensions.html#PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_
   commentId: Overload:PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync
   nameWithType: FileExtensions.WriteAllTextAsync
 - uid: PCLExt.FileStorage.Extensions.FolderExtensions
@@ -1130,6 +1206,7 @@ references:
   name: GetFileFromPath
   href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFileFromPath_
   commentId: Overload:PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFileFromPath
   nameWithType: FolderExtensions.GetFileFromPath
 - uid: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath(PCLExt.FileStorage.IFolder,System.String)
@@ -1151,6 +1228,7 @@ references:
   name: GetFolderFromPath
   href: api/PCLExt.FileStorage.Extensions.FolderExtensions.html#PCLExt_FileStorage_Extensions_FolderExtensions_GetFolderFromPath_
   commentId: Overload:PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Extensions.FolderExtensions.GetFolderFromPath
   nameWithType: FolderExtensions.GetFolderFromPath
 - uid: PCLExt.FileStorage.FileAccess
@@ -1202,6 +1280,7 @@ references:
   name: FileFromPath
   href: api/PCLExt.FileStorage.Files.FileFromPath.html#PCLExt_FileStorage_Files_FileFromPath__ctor_
   commentId: Overload:PCLExt.FileStorage.Files.FileFromPath.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Files.FileFromPath.FileFromPath
   nameWithType: FileFromPath.FileFromPath
 - uid: PCLExt.FileStorage.Folders
@@ -1226,6 +1305,7 @@ references:
   name: ApplicationRootFolder
   href: api/PCLExt.FileStorage.Folders.ApplicationRootFolder.html#PCLExt_FileStorage_Folders_ApplicationRootFolder__ctor_
   commentId: Overload:PCLExt.FileStorage.Folders.ApplicationRootFolder.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.ApplicationRootFolder.ApplicationRootFolder
   nameWithType: ApplicationRootFolder.ApplicationRootFolder
 - uid: PCLExt.FileStorage.Folders.DocumentsRootFolder
@@ -1244,6 +1324,7 @@ references:
   name: DocumentsRootFolder
   href: api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html#PCLExt_FileStorage_Folders_DocumentsRootFolder__ctor_
   commentId: Overload:PCLExt.FileStorage.Folders.DocumentsRootFolder.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.DocumentsRootFolder.DocumentsRootFolder
   nameWithType: DocumentsRootFolder.DocumentsRootFolder
 - uid: PCLExt.FileStorage.Folders.FolderFromPath
@@ -1271,6 +1352,7 @@ references:
   name: FolderFromPath
   href: api/PCLExt.FileStorage.Folders.FolderFromPath.html#PCLExt_FileStorage_Folders_FolderFromPath__ctor_
   commentId: Overload:PCLExt.FileStorage.Folders.FolderFromPath.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.FolderFromPath.FolderFromPath
   nameWithType: FolderFromPath.FolderFromPath
 - uid: PCLExt.FileStorage.Folders.LocalRootFolder
@@ -1289,6 +1371,7 @@ references:
   name: LocalRootFolder
   href: api/PCLExt.FileStorage.Folders.LocalRootFolder.html#PCLExt_FileStorage_Folders_LocalRootFolder__ctor_
   commentId: Overload:PCLExt.FileStorage.Folders.LocalRootFolder.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.LocalRootFolder.LocalRootFolder
   nameWithType: LocalRootFolder.LocalRootFolder
 - uid: PCLExt.FileStorage.Folders.RoamingRootFolder
@@ -1307,6 +1390,7 @@ references:
   name: RoamingRootFolder
   href: api/PCLExt.FileStorage.Folders.RoamingRootFolder.html#PCLExt_FileStorage_Folders_RoamingRootFolder__ctor_
   commentId: Overload:PCLExt.FileStorage.Folders.RoamingRootFolder.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.RoamingRootFolder.RoamingRootFolder
   nameWithType: RoamingRootFolder.RoamingRootFolder
 - uid: PCLExt.FileStorage.Folders.TempRootFolder
@@ -1325,6 +1409,7 @@ references:
   name: TempRootFolder
   href: api/PCLExt.FileStorage.Folders.TempRootFolder.html#PCLExt_FileStorage_Folders_TempRootFolder__ctor_
   commentId: Overload:PCLExt.FileStorage.Folders.TempRootFolder.#ctor
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.TempRootFolder.TempRootFolder
   nameWithType: TempRootFolder.TempRootFolder
 - uid: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile(System.String)
@@ -1337,6 +1422,7 @@ references:
   name: CreateTempFile
   href: api/PCLExt.FileStorage.Folders.TempRootFolder.html#PCLExt_FileStorage_Folders_TempRootFolder_CreateTempFile_
   commentId: Overload:PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile
+  isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile
   nameWithType: TempRootFolder.CreateTempFile
 - uid: PCLExt.FileStorage.FolderSearchOption
@@ -1379,24 +1465,26 @@ references:
   name: Copy
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Copy_
   commentId: Overload:PCLExt.FileStorage.IFile.Copy
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Copy
   nameWithType: IFile.Copy
-- uid: PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile,CancellationToken)
+- uid: PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
   name: CopyAsync(IFile, CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CopyAsync_PCLExt_FileStorage_IFile_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile,CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CopyAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.CopyAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
   nameWithType: IFile.CopyAsync(IFile, CancellationToken)
-- uid: PCLExt.FileStorage.IFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: CopyAsync(String, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.CopyAsync(System.String, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.CopyAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFile.CopyAsync(String, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFile.CopyAsync*
   name: CopyAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CopyAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.CopyAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.CopyAsync
   nameWithType: IFile.CopyAsync
 - uid: PCLExt.FileStorage.IFile.CreationTime
@@ -1409,6 +1497,7 @@ references:
   name: CreationTime
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CreationTime_
   commentId: Overload:PCLExt.FileStorage.IFile.CreationTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.CreationTime
   nameWithType: IFile.CreationTime
 - uid: PCLExt.FileStorage.IFile.CreationTimeUTC
@@ -1421,6 +1510,7 @@ references:
   name: CreationTimeUTC
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_CreationTimeUTC_
   commentId: Overload:PCLExt.FileStorage.IFile.CreationTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.CreationTimeUTC
   nameWithType: IFile.CreationTimeUTC
 - uid: PCLExt.FileStorage.IFile.Delete
@@ -1433,18 +1523,20 @@ references:
   name: Delete
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Delete_
   commentId: Overload:PCLExt.FileStorage.IFile.Delete
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Delete
   nameWithType: IFile.Delete
-- uid: PCLExt.FileStorage.IFile.DeleteAsync(CancellationToken)
+- uid: PCLExt.FileStorage.IFile.DeleteAsync(System.Threading.CancellationToken)
   name: DeleteAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_DeleteAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.DeleteAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.DeleteAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_DeleteAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.DeleteAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.DeleteAsync(System.Threading.CancellationToken)
   nameWithType: IFile.DeleteAsync(CancellationToken)
 - uid: PCLExt.FileStorage.IFile.DeleteAsync*
   name: DeleteAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_DeleteAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.DeleteAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.DeleteAsync
   nameWithType: IFile.DeleteAsync
 - uid: PCLExt.FileStorage.IFile.Exists
@@ -1457,6 +1549,7 @@ references:
   name: Exists
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Exists_
   commentId: Overload:PCLExt.FileStorage.IFile.Exists
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Exists
   nameWithType: IFile.Exists
 - uid: PCLExt.FileStorage.IFile.LastAccessTime
@@ -1469,6 +1562,7 @@ references:
   name: LastAccessTime
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastAccessTime_
   commentId: Overload:PCLExt.FileStorage.IFile.LastAccessTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.LastAccessTime
   nameWithType: IFile.LastAccessTime
 - uid: PCLExt.FileStorage.IFile.LastAccessTimeUTC
@@ -1481,6 +1575,7 @@ references:
   name: LastAccessTimeUTC
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastAccessTimeUTC_
   commentId: Overload:PCLExt.FileStorage.IFile.LastAccessTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.LastAccessTimeUTC
   nameWithType: IFile.LastAccessTimeUTC
 - uid: PCLExt.FileStorage.IFile.LastWriteTime
@@ -1493,6 +1588,7 @@ references:
   name: LastWriteTime
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastWriteTime_
   commentId: Overload:PCLExt.FileStorage.IFile.LastWriteTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.LastWriteTime
   nameWithType: IFile.LastWriteTime
 - uid: PCLExt.FileStorage.IFile.LastWriteTimeUTC
@@ -1505,6 +1601,7 @@ references:
   name: LastWriteTimeUTC
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_LastWriteTimeUTC_
   commentId: Overload:PCLExt.FileStorage.IFile.LastWriteTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.LastWriteTimeUTC
   nameWithType: IFile.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.IFile.Move(PCLExt.FileStorage.IFile)
@@ -1523,24 +1620,26 @@ references:
   name: Move
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Move_
   commentId: Overload:PCLExt.FileStorage.IFile.Move
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Move
   nameWithType: IFile.Move
-- uid: PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile,CancellationToken)
+- uid: PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
   name: MoveAsync(IFile, CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_MoveAsync_PCLExt_FileStorage_IFile_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile,CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_MoveAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.MoveAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
   nameWithType: IFile.MoveAsync(IFile, CancellationToken)
-- uid: PCLExt.FileStorage.IFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: MoveAsync(String, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.MoveAsync(System.String, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.MoveAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFile.MoveAsync(String, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFile.MoveAsync*
   name: MoveAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_MoveAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.MoveAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.MoveAsync
   nameWithType: IFile.MoveAsync
 - uid: PCLExt.FileStorage.IFile.Name
@@ -1553,6 +1652,7 @@ references:
   name: Name
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Name_
   commentId: Overload:PCLExt.FileStorage.IFile.Name
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Name
   nameWithType: IFile.Name
 - uid: PCLExt.FileStorage.IFile.Open(PCLExt.FileStorage.FileAccess)
@@ -1565,18 +1665,20 @@ references:
   name: Open
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Open_
   commentId: Overload:PCLExt.FileStorage.IFile.Open
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Open
   nameWithType: IFile.Open
-- uid: PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess,CancellationToken)
+- uid: PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)
   name: OpenAsync(FileAccess, CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_OpenAsync_PCLExt_FileStorage_FileAccess_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess,CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess, CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_OpenAsync_PCLExt_FileStorage_FileAccess_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.OpenAsync(PCLExt.FileStorage.FileAccess, System.Threading.CancellationToken)
   nameWithType: IFile.OpenAsync(FileAccess, CancellationToken)
 - uid: PCLExt.FileStorage.IFile.OpenAsync*
   name: OpenAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_OpenAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.OpenAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.OpenAsync
   nameWithType: IFile.OpenAsync
 - uid: PCLExt.FileStorage.IFile.Path
@@ -1589,6 +1691,7 @@ references:
   name: Path
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Path_
   commentId: Overload:PCLExt.FileStorage.IFile.Path
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Path
   nameWithType: IFile.Path
 - uid: PCLExt.FileStorage.IFile.ReadAllBytes
@@ -1601,18 +1704,20 @@ references:
   name: ReadAllBytes
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_ReadAllBytes_
   commentId: Overload:PCLExt.FileStorage.IFile.ReadAllBytes
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.ReadAllBytes
   nameWithType: IFile.ReadAllBytes
-- uid: PCLExt.FileStorage.IFile.ReadAllBytesAsync(CancellationToken)
+- uid: PCLExt.FileStorage.IFile.ReadAllBytesAsync(System.Threading.CancellationToken)
   name: ReadAllBytesAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_ReadAllBytesAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.ReadAllBytesAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.ReadAllBytesAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_ReadAllBytesAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.ReadAllBytesAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.ReadAllBytesAsync(System.Threading.CancellationToken)
   nameWithType: IFile.ReadAllBytesAsync(CancellationToken)
 - uid: PCLExt.FileStorage.IFile.ReadAllBytesAsync*
   name: ReadAllBytesAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_ReadAllBytesAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.ReadAllBytesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.ReadAllBytesAsync
   nameWithType: IFile.ReadAllBytesAsync
 - uid: PCLExt.FileStorage.IFile.Rename(System.String,PCLExt.FileStorage.NameCollisionOption)
@@ -1625,18 +1730,20 @@ references:
   name: Rename
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Rename_
   commentId: Overload:PCLExt.FileStorage.IFile.Rename
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Rename
   nameWithType: IFile.Rename
-- uid: PCLExt.FileStorage.IFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: RenameAsync(String, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.RenameAsync(System.String, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.RenameAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFile.RenameAsync(String, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFile.RenameAsync*
   name: RenameAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_RenameAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.RenameAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.RenameAsync
   nameWithType: IFile.RenameAsync
 - uid: PCLExt.FileStorage.IFile.Size
@@ -1649,6 +1756,7 @@ references:
   name: Size
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_Size_
   commentId: Overload:PCLExt.FileStorage.IFile.Size
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.Size
   nameWithType: IFile.Size
 - uid: PCLExt.FileStorage.IFile.WriteAllBytes(System.Byte[])
@@ -1664,21 +1772,23 @@ references:
   name: WriteAllBytes
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_WriteAllBytes_
   commentId: Overload:PCLExt.FileStorage.IFile.WriteAllBytes
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.WriteAllBytes
   nameWithType: IFile.WriteAllBytes
-- uid: PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[],CancellationToken)
+- uid: PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)
   name: WriteAllBytesAsync(Byte[], CancellationToken)
-  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_WriteAllBytesAsync_System_Byte___CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[],CancellationToken)
+  href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_WriteAllBytesAsync_System_Byte___System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)
   name.vb: WriteAllBytesAsync(Byte(), CancellationToken)
-  fullName: PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[], CancellationToken)
-  fullName.vb: PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte(), CancellationToken)
+  fullName: PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: PCLExt.FileStorage.IFile.WriteAllBytesAsync(System.Byte(), System.Threading.CancellationToken)
   nameWithType: IFile.WriteAllBytesAsync(Byte[], CancellationToken)
   nameWithType.vb: IFile.WriteAllBytesAsync(Byte(), CancellationToken)
 - uid: PCLExt.FileStorage.IFile.WriteAllBytesAsync*
   name: WriteAllBytesAsync
   href: api/PCLExt.FileStorage.IFile.html#PCLExt_FileStorage_IFile_WriteAllBytesAsync_
   commentId: Overload:PCLExt.FileStorage.IFile.WriteAllBytesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFile.WriteAllBytesAsync
   nameWithType: IFile.WriteAllBytesAsync
 - uid: PCLExt.FileStorage.IFolder
@@ -1697,18 +1807,20 @@ references:
   name: CheckExists
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CheckExists_
   commentId: Overload:PCLExt.FileStorage.IFolder.CheckExists
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CheckExists
   nameWithType: IFolder.CheckExists
-- uid: PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String,System.Threading.CancellationToken)
   name: CheckExistsAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CheckExistsAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CheckExistsAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.CheckExistsAsync(System.String, System.Threading.CancellationToken)
   nameWithType: IFolder.CheckExistsAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.CheckExistsAsync*
   name: CheckExistsAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CheckExistsAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.CheckExistsAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CheckExistsAsync
   nameWithType: IFolder.CheckExistsAsync
 - uid: PCLExt.FileStorage.IFolder.Copy(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)
@@ -1721,18 +1833,20 @@ references:
   name: Copy
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Copy_
   commentId: Overload:PCLExt.FileStorage.IFolder.Copy
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Copy
   nameWithType: IFolder.Copy
-- uid: PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: CopyAsync(IFolder, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CopyAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.CopyAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFolder.CopyAsync(IFolder, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.CopyAsync*
   name: CopyAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CopyAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.CopyAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CopyAsync
   nameWithType: IFolder.CopyAsync
 - uid: PCLExt.FileStorage.IFolder.CreateFile(System.String,PCLExt.FileStorage.CreationCollisionOption)
@@ -1745,18 +1859,20 @@ references:
   name: CreateFile
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFile_
   commentId: Overload:PCLExt.FileStorage.IFolder.CreateFile
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CreateFile
   nameWithType: IFolder.CreateFile
-- uid: PCLExt.FileStorage.IFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
   name: CreateFileAsync(String, CreationCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.CreateFileAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFileAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.CreateFileAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.CreateFileAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFolder.CreateFileAsync(String, CreationCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.CreateFileAsync*
   name: CreateFileAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFileAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.CreateFileAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CreateFileAsync
   nameWithType: IFolder.CreateFileAsync
 - uid: PCLExt.FileStorage.IFolder.CreateFolder(System.String,PCLExt.FileStorage.CreationCollisionOption)
@@ -1769,18 +1885,20 @@ references:
   name: CreateFolder
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFolder_
   commentId: Overload:PCLExt.FileStorage.IFolder.CreateFolder
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CreateFolder
   nameWithType: IFolder.CreateFolder
-- uid: PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
   name: CreateFolderAsync(String, CreationCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFolderAsync_System_String_PCLExt_FileStorage_CreationCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String,PCLExt.FileStorage.CreationCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.CreateFolderAsync(System.String, PCLExt.FileStorage.CreationCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFolder.CreateFolderAsync(String, CreationCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.CreateFolderAsync*
   name: CreateFolderAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreateFolderAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.CreateFolderAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CreateFolderAsync
   nameWithType: IFolder.CreateFolderAsync
 - uid: PCLExt.FileStorage.IFolder.CreationTime
@@ -1793,6 +1911,7 @@ references:
   name: CreationTime
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreationTime_
   commentId: Overload:PCLExt.FileStorage.IFolder.CreationTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CreationTime
   nameWithType: IFolder.CreationTime
 - uid: PCLExt.FileStorage.IFolder.CreationTimeUTC
@@ -1805,6 +1924,7 @@ references:
   name: CreationTimeUTC
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_CreationTimeUTC_
   commentId: Overload:PCLExt.FileStorage.IFolder.CreationTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.CreationTimeUTC
   nameWithType: IFolder.CreationTimeUTC
 - uid: PCLExt.FileStorage.IFolder.Delete
@@ -1817,18 +1937,20 @@ references:
   name: Delete
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Delete_
   commentId: Overload:PCLExt.FileStorage.IFolder.Delete
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Delete
   nameWithType: IFolder.Delete
-- uid: PCLExt.FileStorage.IFolder.DeleteAsync(CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.DeleteAsync(System.Threading.CancellationToken)
   name: DeleteAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_DeleteAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.DeleteAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.DeleteAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_DeleteAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.DeleteAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.DeleteAsync(System.Threading.CancellationToken)
   nameWithType: IFolder.DeleteAsync(CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.DeleteAsync*
   name: DeleteAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_DeleteAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.DeleteAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.DeleteAsync
   nameWithType: IFolder.DeleteAsync
 - uid: PCLExt.FileStorage.IFolder.Exists
@@ -1841,6 +1963,7 @@ references:
   name: Exists
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Exists_
   commentId: Overload:PCLExt.FileStorage.IFolder.Exists
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Exists
   nameWithType: IFolder.Exists
 - uid: PCLExt.FileStorage.IFolder.GetFile(System.String)
@@ -1853,18 +1976,20 @@ references:
   name: GetFile
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFile_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFile
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFile
   nameWithType: IFolder.GetFile
-- uid: PCLExt.FileStorage.IFolder.GetFileAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.GetFileAsync(System.String,System.Threading.CancellationToken)
   name: GetFileAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFileAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.GetFileAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.GetFileAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFileAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.GetFileAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.GetFileAsync(System.String, System.Threading.CancellationToken)
   nameWithType: IFolder.GetFileAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.GetFileAsync*
   name: GetFileAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFileAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFileAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFileAsync
   nameWithType: IFolder.GetFileAsync
 - uid: PCLExt.FileStorage.IFolder.GetFiles(System.String,PCLExt.FileStorage.FolderSearchOption)
@@ -1877,18 +2002,20 @@ references:
   name: GetFiles
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFiles_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFiles
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFiles
   nameWithType: IFolder.GetFiles
-- uid: PCLExt.FileStorage.IFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,System.Threading.CancellationToken)
   name: GetFilesAsync(String, FolderSearchOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.GetFilesAsync(System.String, PCLExt.FileStorage.FolderSearchOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFilesAsync_System_String_PCLExt_FileStorage_FolderSearchOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.GetFilesAsync(System.String,PCLExt.FileStorage.FolderSearchOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.GetFilesAsync(System.String, PCLExt.FileStorage.FolderSearchOption, System.Threading.CancellationToken)
   nameWithType: IFolder.GetFilesAsync(String, FolderSearchOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.GetFilesAsync*
   name: GetFilesAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFilesAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFilesAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFilesAsync
   nameWithType: IFolder.GetFilesAsync
 - uid: PCLExt.FileStorage.IFolder.GetFolder(System.String)
@@ -1901,18 +2028,20 @@ references:
   name: GetFolder
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFolder_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFolder
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFolder
   nameWithType: IFolder.GetFolder
-- uid: PCLExt.FileStorage.IFolder.GetFolderAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.GetFolderAsync(System.String,System.Threading.CancellationToken)
   name: GetFolderAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFolderAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.GetFolderAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.GetFolderAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFolderAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.GetFolderAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.GetFolderAsync(System.String, System.Threading.CancellationToken)
   nameWithType: IFolder.GetFolderAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.GetFolderAsync*
   name: GetFolderAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFolderAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFolderAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFolderAsync
   nameWithType: IFolder.GetFolderAsync
 - uid: PCLExt.FileStorage.IFolder.GetFolders
@@ -1925,18 +2054,20 @@ references:
   name: GetFolders
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFolders_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFolders
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFolders
   nameWithType: IFolder.GetFolders
-- uid: PCLExt.FileStorage.IFolder.GetFoldersAsync(CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.GetFoldersAsync(System.Threading.CancellationToken)
   name: GetFoldersAsync(CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFoldersAsync_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.GetFoldersAsync(CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.GetFoldersAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFoldersAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.GetFoldersAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.GetFoldersAsync(System.Threading.CancellationToken)
   nameWithType: IFolder.GetFoldersAsync(CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.GetFoldersAsync*
   name: GetFoldersAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_GetFoldersAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.GetFoldersAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.GetFoldersAsync
   nameWithType: IFolder.GetFoldersAsync
 - uid: PCLExt.FileStorage.IFolder.LastAccessTime
@@ -1949,6 +2080,7 @@ references:
   name: LastAccessTime
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastAccessTime_
   commentId: Overload:PCLExt.FileStorage.IFolder.LastAccessTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.LastAccessTime
   nameWithType: IFolder.LastAccessTime
 - uid: PCLExt.FileStorage.IFolder.LastAccessTimeUTC
@@ -1961,6 +2093,7 @@ references:
   name: LastAccessTimeUTC
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastAccessTimeUTC_
   commentId: Overload:PCLExt.FileStorage.IFolder.LastAccessTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.LastAccessTimeUTC
   nameWithType: IFolder.LastAccessTimeUTC
 - uid: PCLExt.FileStorage.IFolder.LastWriteTime
@@ -1973,6 +2106,7 @@ references:
   name: LastWriteTime
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastWriteTime_
   commentId: Overload:PCLExt.FileStorage.IFolder.LastWriteTime
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.LastWriteTime
   nameWithType: IFolder.LastWriteTime
 - uid: PCLExt.FileStorage.IFolder.LastWriteTimeUTC
@@ -1985,6 +2119,7 @@ references:
   name: LastWriteTimeUTC
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_LastWriteTimeUTC_
   commentId: Overload:PCLExt.FileStorage.IFolder.LastWriteTimeUTC
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.LastWriteTimeUTC
   nameWithType: IFolder.LastWriteTimeUTC
 - uid: PCLExt.FileStorage.IFolder.Move(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption)
@@ -1997,18 +2132,20 @@ references:
   name: Move
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Move_
   commentId: Overload:PCLExt.FileStorage.IFolder.Move
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Move
   nameWithType: IFolder.Move
-- uid: PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
   name: MoveAsync(IFolder, NameCollisionOption, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_MoveAsync_PCLExt_FileStorage_IFolder_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.MoveAsync(PCLExt.FileStorage.IFolder, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
   nameWithType: IFolder.MoveAsync(IFolder, NameCollisionOption, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.MoveAsync*
   name: MoveAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_MoveAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.MoveAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.MoveAsync
   nameWithType: IFolder.MoveAsync
 - uid: PCLExt.FileStorage.IFolder.Name
@@ -2021,6 +2158,7 @@ references:
   name: Name
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Name_
   commentId: Overload:PCLExt.FileStorage.IFolder.Name
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Name
   nameWithType: IFolder.Name
 - uid: PCLExt.FileStorage.IFolder.Path
@@ -2033,6 +2171,7 @@ references:
   name: Path
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Path_
   commentId: Overload:PCLExt.FileStorage.IFolder.Path
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Path
   nameWithType: IFolder.Path
 - uid: PCLExt.FileStorage.IFolder.Rename(System.String)
@@ -2045,18 +2184,20 @@ references:
   name: Rename
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_Rename_
   commentId: Overload:PCLExt.FileStorage.IFolder.Rename
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.Rename
   nameWithType: IFolder.Rename
-- uid: PCLExt.FileStorage.IFolder.RenameAsync(System.String,CancellationToken)
+- uid: PCLExt.FileStorage.IFolder.RenameAsync(System.String,System.Threading.CancellationToken)
   name: RenameAsync(String, CancellationToken)
-  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_RenameAsync_System_String_CancellationToken_
-  commentId: M:PCLExt.FileStorage.IFolder.RenameAsync(System.String,CancellationToken)
-  fullName: PCLExt.FileStorage.IFolder.RenameAsync(System.String, CancellationToken)
+  href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_RenameAsync_System_String_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.IFolder.RenameAsync(System.String,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.IFolder.RenameAsync(System.String, System.Threading.CancellationToken)
   nameWithType: IFolder.RenameAsync(String, CancellationToken)
 - uid: PCLExt.FileStorage.IFolder.RenameAsync*
   name: RenameAsync
   href: api/PCLExt.FileStorage.IFolder.html#PCLExt_FileStorage_IFolder_RenameAsync_
   commentId: Overload:PCLExt.FileStorage.IFolder.RenameAsync
+  isSpec: "True"
   fullName: PCLExt.FileStorage.IFolder.RenameAsync
   nameWithType: IFolder.RenameAsync
 - uid: PCLExt.FileStorage.NameCollisionOption
@@ -2083,6 +2224,354 @@ references:
   commentId: F:PCLExt.FileStorage.NameCollisionOption.ReplaceExisting
   fullName: PCLExt.FileStorage.NameCollisionOption.ReplaceExisting
   nameWithType: NameCollisionOption.ReplaceExisting
+- uid: PCLExt.FileStorage.NonExistingFile
+  name: NonExistingFile
+  href: api/PCLExt.FileStorage.NonExistingFile.html
+  commentId: T:PCLExt.FileStorage.NonExistingFile
+  fullName: PCLExt.FileStorage.NonExistingFile
+  nameWithType: NonExistingFile
+- uid: PCLExt.FileStorage.NonExistingFile.Copy(PCLExt.FileStorage.IFile)
+  name: Copy(IFile)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Copy_PCLExt_FileStorage_IFile_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Copy(PCLExt.FileStorage.IFile)
+  fullName: PCLExt.FileStorage.NonExistingFile.Copy(PCLExt.FileStorage.IFile)
+  nameWithType: NonExistingFile.Copy(IFile)
+- uid: PCLExt.FileStorage.NonExistingFile.Copy(System.String,PCLExt.FileStorage.NameCollisionOption)
+  name: Copy(String, NameCollisionOption)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Copy_System_String_PCLExt_FileStorage_NameCollisionOption_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Copy(System.String,PCLExt.FileStorage.NameCollisionOption)
+  fullName: PCLExt.FileStorage.NonExistingFile.Copy(System.String, PCLExt.FileStorage.NameCollisionOption)
+  nameWithType: NonExistingFile.Copy(String, NameCollisionOption)
+- uid: PCLExt.FileStorage.NonExistingFile.Copy*
+  name: Copy
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Copy_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Copy
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Copy
+  nameWithType: NonExistingFile.Copy
+- uid: PCLExt.FileStorage.NonExistingFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  name: CopyAsync(IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CopyAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.CopyAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.CopyAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.CopyAsync(IFile, CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  name: CopyAsync(String, NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CopyAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.CopyAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.CopyAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.CopyAsync(String, NameCollisionOption, CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.CopyAsync*
+  name: CopyAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CopyAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.CopyAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.CopyAsync
+  nameWithType: NonExistingFile.CopyAsync
+- uid: PCLExt.FileStorage.NonExistingFile.CreationTime
+  name: CreationTime
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CreationTime
+  commentId: P:PCLExt.FileStorage.NonExistingFile.CreationTime
+  fullName: PCLExt.FileStorage.NonExistingFile.CreationTime
+  nameWithType: NonExistingFile.CreationTime
+- uid: PCLExt.FileStorage.NonExistingFile.CreationTime*
+  name: CreationTime
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CreationTime_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.CreationTime
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.CreationTime
+  nameWithType: NonExistingFile.CreationTime
+- uid: PCLExt.FileStorage.NonExistingFile.CreationTimeUTC
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CreationTimeUTC
+  commentId: P:PCLExt.FileStorage.NonExistingFile.CreationTimeUTC
+  fullName: PCLExt.FileStorage.NonExistingFile.CreationTimeUTC
+  nameWithType: NonExistingFile.CreationTimeUTC
+- uid: PCLExt.FileStorage.NonExistingFile.CreationTimeUTC*
+  name: CreationTimeUTC
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_CreationTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.CreationTimeUTC
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.CreationTimeUTC
+  nameWithType: NonExistingFile.CreationTimeUTC
+- uid: PCLExt.FileStorage.NonExistingFile.Delete
+  name: Delete()
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Delete
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Delete
+  fullName: PCLExt.FileStorage.NonExistingFile.Delete()
+  nameWithType: NonExistingFile.Delete()
+- uid: PCLExt.FileStorage.NonExistingFile.Delete*
+  name: Delete
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Delete_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Delete
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Delete
+  nameWithType: NonExistingFile.Delete
+- uid: PCLExt.FileStorage.NonExistingFile.DeleteAsync(System.Threading.CancellationToken)
+  name: DeleteAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_DeleteAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.DeleteAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.DeleteAsync(System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.DeleteAsync(CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.DeleteAsync*
+  name: DeleteAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_DeleteAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.DeleteAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.DeleteAsync
+  nameWithType: NonExistingFile.DeleteAsync
+- uid: PCLExt.FileStorage.NonExistingFile.Exists
+  name: Exists
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Exists
+  commentId: P:PCLExt.FileStorage.NonExistingFile.Exists
+  fullName: PCLExt.FileStorage.NonExistingFile.Exists
+  nameWithType: NonExistingFile.Exists
+- uid: PCLExt.FileStorage.NonExistingFile.Exists*
+  name: Exists
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Exists_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Exists
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Exists
+  nameWithType: NonExistingFile.Exists
+- uid: PCLExt.FileStorage.NonExistingFile.LastAccessTime
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastAccessTime
+  commentId: P:PCLExt.FileStorage.NonExistingFile.LastAccessTime
+  fullName: PCLExt.FileStorage.NonExistingFile.LastAccessTime
+  nameWithType: NonExistingFile.LastAccessTime
+- uid: PCLExt.FileStorage.NonExistingFile.LastAccessTime*
+  name: LastAccessTime
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastAccessTime_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.LastAccessTime
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.LastAccessTime
+  nameWithType: NonExistingFile.LastAccessTime
+- uid: PCLExt.FileStorage.NonExistingFile.LastAccessTimeUTC
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastAccessTimeUTC
+  commentId: P:PCLExt.FileStorage.NonExistingFile.LastAccessTimeUTC
+  fullName: PCLExt.FileStorage.NonExistingFile.LastAccessTimeUTC
+  nameWithType: NonExistingFile.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.NonExistingFile.LastAccessTimeUTC*
+  name: LastAccessTimeUTC
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastAccessTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.LastAccessTimeUTC
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.LastAccessTimeUTC
+  nameWithType: NonExistingFile.LastAccessTimeUTC
+- uid: PCLExt.FileStorage.NonExistingFile.LastWriteTime
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastWriteTime
+  commentId: P:PCLExt.FileStorage.NonExistingFile.LastWriteTime
+  fullName: PCLExt.FileStorage.NonExistingFile.LastWriteTime
+  nameWithType: NonExistingFile.LastWriteTime
+- uid: PCLExt.FileStorage.NonExistingFile.LastWriteTime*
+  name: LastWriteTime
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastWriteTime_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.LastWriteTime
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.LastWriteTime
+  nameWithType: NonExistingFile.LastWriteTime
+- uid: PCLExt.FileStorage.NonExistingFile.LastWriteTimeUTC
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastWriteTimeUTC
+  commentId: P:PCLExt.FileStorage.NonExistingFile.LastWriteTimeUTC
+  fullName: PCLExt.FileStorage.NonExistingFile.LastWriteTimeUTC
+  nameWithType: NonExistingFile.LastWriteTimeUTC
+- uid: PCLExt.FileStorage.NonExistingFile.LastWriteTimeUTC*
+  name: LastWriteTimeUTC
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_LastWriteTimeUTC_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.LastWriteTimeUTC
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.LastWriteTimeUTC
+  nameWithType: NonExistingFile.LastWriteTimeUTC
+- uid: PCLExt.FileStorage.NonExistingFile.Move(PCLExt.FileStorage.IFile)
+  name: Move(IFile)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Move_PCLExt_FileStorage_IFile_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Move(PCLExt.FileStorage.IFile)
+  fullName: PCLExt.FileStorage.NonExistingFile.Move(PCLExt.FileStorage.IFile)
+  nameWithType: NonExistingFile.Move(IFile)
+- uid: PCLExt.FileStorage.NonExistingFile.Move(System.String,PCLExt.FileStorage.NameCollisionOption)
+  name: Move(String, NameCollisionOption)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Move_System_String_PCLExt_FileStorage_NameCollisionOption_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Move(System.String,PCLExt.FileStorage.NameCollisionOption)
+  fullName: PCLExt.FileStorage.NonExistingFile.Move(System.String, PCLExt.FileStorage.NameCollisionOption)
+  nameWithType: NonExistingFile.Move(String, NameCollisionOption)
+- uid: PCLExt.FileStorage.NonExistingFile.Move*
+  name: Move
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Move_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Move
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Move
+  nameWithType: NonExistingFile.Move
+- uid: PCLExt.FileStorage.NonExistingFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  name: MoveAsync(IFile, CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_MoveAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.MoveAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.MoveAsync(PCLExt.FileStorage.IFile, System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.MoveAsync(IFile, CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  name: MoveAsync(String, NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_MoveAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.MoveAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.MoveAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.MoveAsync(String, NameCollisionOption, CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.MoveAsync*
+  name: MoveAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_MoveAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.MoveAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.MoveAsync
+  nameWithType: NonExistingFile.MoveAsync
+- uid: PCLExt.FileStorage.NonExistingFile.Name
+  name: Name
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Name
+  commentId: P:PCLExt.FileStorage.NonExistingFile.Name
+  fullName: PCLExt.FileStorage.NonExistingFile.Name
+  nameWithType: NonExistingFile.Name
+- uid: PCLExt.FileStorage.NonExistingFile.Name*
+  name: Name
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Name_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Name
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Name
+  nameWithType: NonExistingFile.Name
+- uid: PCLExt.FileStorage.NonExistingFile.Open(PCLExt.FileStorage.FileAccess)
+  name: Open(FileAccess)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Open_PCLExt_FileStorage_FileAccess_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Open(PCLExt.FileStorage.FileAccess)
+  fullName: PCLExt.FileStorage.NonExistingFile.Open(PCLExt.FileStorage.FileAccess)
+  nameWithType: NonExistingFile.Open(FileAccess)
+- uid: PCLExt.FileStorage.NonExistingFile.Open*
+  name: Open
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Open_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Open
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Open
+  nameWithType: NonExistingFile.Open
+- uid: PCLExt.FileStorage.NonExistingFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)
+  name: OpenAsync(FileAccess, CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_OpenAsync_PCLExt_FileStorage_FileAccess_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.OpenAsync(PCLExt.FileStorage.FileAccess,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.OpenAsync(PCLExt.FileStorage.FileAccess, System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.OpenAsync(FileAccess, CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.OpenAsync*
+  name: OpenAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_OpenAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.OpenAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.OpenAsync
+  nameWithType: NonExistingFile.OpenAsync
+- uid: PCLExt.FileStorage.NonExistingFile.Path
+  name: Path
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Path
+  commentId: P:PCLExt.FileStorage.NonExistingFile.Path
+  fullName: PCLExt.FileStorage.NonExistingFile.Path
+  nameWithType: NonExistingFile.Path
+- uid: PCLExt.FileStorage.NonExistingFile.Path*
+  name: Path
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Path_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Path
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Path
+  nameWithType: NonExistingFile.Path
+- uid: PCLExt.FileStorage.NonExistingFile.ReadAllBytes
+  name: ReadAllBytes()
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_ReadAllBytes
+  commentId: M:PCLExt.FileStorage.NonExistingFile.ReadAllBytes
+  fullName: PCLExt.FileStorage.NonExistingFile.ReadAllBytes()
+  nameWithType: NonExistingFile.ReadAllBytes()
+- uid: PCLExt.FileStorage.NonExistingFile.ReadAllBytes*
+  name: ReadAllBytes
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_ReadAllBytes_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.ReadAllBytes
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.ReadAllBytes
+  nameWithType: NonExistingFile.ReadAllBytes
+- uid: PCLExt.FileStorage.NonExistingFile.ReadAllBytesAsync(System.Threading.CancellationToken)
+  name: ReadAllBytesAsync(CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_ReadAllBytesAsync_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.ReadAllBytesAsync(System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.ReadAllBytesAsync(System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.ReadAllBytesAsync(CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.ReadAllBytesAsync*
+  name: ReadAllBytesAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_ReadAllBytesAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.ReadAllBytesAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.ReadAllBytesAsync
+  nameWithType: NonExistingFile.ReadAllBytesAsync
+- uid: PCLExt.FileStorage.NonExistingFile.Rename(System.String,PCLExt.FileStorage.NameCollisionOption)
+  name: Rename(String, NameCollisionOption)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Rename_System_String_PCLExt_FileStorage_NameCollisionOption_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.Rename(System.String,PCLExt.FileStorage.NameCollisionOption)
+  fullName: PCLExt.FileStorage.NonExistingFile.Rename(System.String, PCLExt.FileStorage.NameCollisionOption)
+  nameWithType: NonExistingFile.Rename(String, NameCollisionOption)
+- uid: PCLExt.FileStorage.NonExistingFile.Rename*
+  name: Rename
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Rename_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Rename
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Rename
+  nameWithType: NonExistingFile.Rename
+- uid: PCLExt.FileStorage.NonExistingFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  name: RenameAsync(String, NameCollisionOption, CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_RenameAsync_System_String_PCLExt_FileStorage_NameCollisionOption_System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.RenameAsync(System.String,PCLExt.FileStorage.NameCollisionOption,System.Threading.CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.RenameAsync(System.String, PCLExt.FileStorage.NameCollisionOption, System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.RenameAsync(String, NameCollisionOption, CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.RenameAsync*
+  name: RenameAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_RenameAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.RenameAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.RenameAsync
+  nameWithType: NonExistingFile.RenameAsync
+- uid: PCLExt.FileStorage.NonExistingFile.Size
+  name: Size
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Size
+  commentId: P:PCLExt.FileStorage.NonExistingFile.Size
+  fullName: PCLExt.FileStorage.NonExistingFile.Size
+  nameWithType: NonExistingFile.Size
+- uid: PCLExt.FileStorage.NonExistingFile.Size*
+  name: Size
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_Size_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.Size
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.Size
+  nameWithType: NonExistingFile.Size
+- uid: PCLExt.FileStorage.NonExistingFile.WriteAllBytes(System.Byte[])
+  name: WriteAllBytes(Byte[])
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_WriteAllBytes_System_Byte___
+  commentId: M:PCLExt.FileStorage.NonExistingFile.WriteAllBytes(System.Byte[])
+  name.vb: WriteAllBytes(Byte())
+  fullName: PCLExt.FileStorage.NonExistingFile.WriteAllBytes(System.Byte[])
+  fullName.vb: PCLExt.FileStorage.NonExistingFile.WriteAllBytes(System.Byte())
+  nameWithType: NonExistingFile.WriteAllBytes(Byte[])
+  nameWithType.vb: NonExistingFile.WriteAllBytes(Byte())
+- uid: PCLExt.FileStorage.NonExistingFile.WriteAllBytes*
+  name: WriteAllBytes
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_WriteAllBytes_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.WriteAllBytes
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.WriteAllBytes
+  nameWithType: NonExistingFile.WriteAllBytes
+- uid: PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)
+  name: WriteAllBytesAsync(Byte[], CancellationToken)
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_WriteAllBytesAsync_System_Byte___System_Threading_CancellationToken_
+  commentId: M:PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync(System.Byte[],System.Threading.CancellationToken)
+  name.vb: WriteAllBytesAsync(Byte(), CancellationToken)
+  fullName: PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync(System.Byte[], System.Threading.CancellationToken)
+  fullName.vb: PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync(System.Byte(), System.Threading.CancellationToken)
+  nameWithType: NonExistingFile.WriteAllBytesAsync(Byte[], CancellationToken)
+  nameWithType.vb: NonExistingFile.WriteAllBytesAsync(Byte(), CancellationToken)
+- uid: PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync*
+  name: WriteAllBytesAsync
+  href: api/PCLExt.FileStorage.NonExistingFile.html#PCLExt_FileStorage_NonExistingFile_WriteAllBytesAsync_
+  commentId: Overload:PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.NonExistingFile.WriteAllBytesAsync
+  nameWithType: NonExistingFile.WriteAllBytesAsync
 - uid: PCLExt.FileStorage.PortablePath
   name: PortablePath
   href: api/PCLExt.FileStorage.PortablePath.html
@@ -2102,6 +2591,7 @@ references:
   name: Combine
   href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_Combine_
   commentId: Overload:PCLExt.FileStorage.PortablePath.Combine
+  isSpec: "True"
   fullName: PCLExt.FileStorage.PortablePath.Combine
   nameWithType: PortablePath.Combine
 - uid: PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
@@ -2114,6 +2604,7 @@ references:
   name: DirectorySeparatorChar
   href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_DirectorySeparatorChar_
   commentId: Overload:PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
+  isSpec: "True"
   fullName: PCLExt.FileStorage.PortablePath.DirectorySeparatorChar
   nameWithType: PortablePath.DirectorySeparatorChar
 - uid: PCLExt.FileStorage.PortablePath.GetExtension(System.String)
@@ -2126,6 +2617,7 @@ references:
   name: GetExtension
   href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetExtension_
   commentId: Overload:PCLExt.FileStorage.PortablePath.GetExtension
+  isSpec: "True"
   fullName: PCLExt.FileStorage.PortablePath.GetExtension
   nameWithType: PortablePath.GetExtension
 - uid: PCLExt.FileStorage.PortablePath.GetFileName(System.String)
@@ -2138,6 +2630,7 @@ references:
   name: GetFileName
   href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetFileName_
   commentId: Overload:PCLExt.FileStorage.PortablePath.GetFileName
+  isSpec: "True"
   fullName: PCLExt.FileStorage.PortablePath.GetFileName
   nameWithType: PortablePath.GetFileName
 - uid: PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension(System.String)
@@ -2150,6 +2643,7 @@ references:
   name: GetFileNameWithoutExtension
   href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_GetFileNameWithoutExtension_
   commentId: Overload:PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension
+  isSpec: "True"
   fullName: PCLExt.FileStorage.PortablePath.GetFileNameWithoutExtension
   nameWithType: PortablePath.GetFileNameWithoutExtension
 - uid: PCLExt.FileStorage.PortablePath.HasExtension(System.String)
@@ -2162,5 +2656,6 @@ references:
   name: HasExtension
   href: api/PCLExt.FileStorage.PortablePath.html#PCLExt_FileStorage_PortablePath_HasExtension_
   commentId: Overload:PCLExt.FileStorage.PortablePath.HasExtension
+  isSpec: "True"
   fullName: PCLExt.FileStorage.PortablePath.HasExtension
   nameWithType: PortablePath.HasExtension

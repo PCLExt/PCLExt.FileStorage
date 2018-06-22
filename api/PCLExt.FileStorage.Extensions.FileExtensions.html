@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class FileExtensions
    | PCLExt.FileStorage documentation ">
-    <meta name="generator" content="docfx 2.31.0.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -148,12 +148,12 @@
   
   
   <a id="PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync*"></a>
-  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)">AppendLinesAsync(IFile, IEnumerable&lt;String&gt;, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_AppendLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.AppendLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},System.Threading.CancellationToken)">AppendLinesAsync(IFile, IEnumerable&lt;String&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task AppendLinesAsync(this IFile file, IEnumerable&lt;string&gt; lines, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task AppendLinesAsync(this IFile file, IEnumerable&lt;string&gt; lines, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -176,7 +176,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -193,7 +193,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -233,12 +233,12 @@
   
   
   <a id="PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync*"></a>
-  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_PCLExt_FileStorage_IFile_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)">AppendTextAsync(IFile, String, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_AppendTextAsync_PCLExt_FileStorage_IFile_System_String_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.AppendTextAsync(PCLExt.FileStorage.IFile,System.String,System.Threading.CancellationToken)">AppendTextAsync(IFile, String, CancellationToken)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task AppendTextAsync(this IFile file, string contents, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task AppendTextAsync(this IFile file, string contents, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -261,7 +261,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -278,7 +278,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -331,13 +331,13 @@
   
   
   <a id="PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync*"></a>
-  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_PCLExt_FileStorage_IFile_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,CancellationToken)">ReadAllLinesAsync(IFile, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_ReadAllLinesAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.ReadAllLinesAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)">ReadAllLinesAsync(IFile, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Reads the contents of a file as an array of strings</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;string[]&gt; ReadAllLinesAsync(this IFile file, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;string[]&gt; ReadAllLinesAsync(this IFile file, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -356,7 +356,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -373,7 +373,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
         <td><p>The content of the file</p>
 </td>
       </tr>
@@ -427,13 +427,13 @@
   
   
   <a id="PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync*"></a>
-  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_PCLExt_FileStorage_IFile_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,CancellationToken)">ReadAllTextAsync(IFile, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_ReadAllTextAsync_PCLExt_FileStorage_IFile_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.ReadAllTextAsync(PCLExt.FileStorage.IFile,System.Threading.CancellationToken)">ReadAllTextAsync(IFile, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Reads the contents of a file as a string</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; ReadAllTextAsync(this IFile file, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task&lt;string&gt; ReadAllTextAsync(this IFile file, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -452,7 +452,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -469,7 +469,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.String</span>&gt;</td>
         <td><p>The content of the file</p>
 </td>
       </tr>
@@ -513,13 +513,13 @@
   
   
   <a id="PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync*"></a>
-  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},CancellationToken)">WriteAllLinesAsync(IFile, IEnumerable&lt;String&gt;, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_WriteAllLinesAsync_PCLExt_FileStorage_IFile_IEnumerable_System_String__System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.WriteAllLinesAsync(PCLExt.FileStorage.IFile,IEnumerable{System.String},System.Threading.CancellationToken)">WriteAllLinesAsync(IFile, IEnumerable&lt;String&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Writes lines to a file, overwriting any existing data</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task WriteAllLinesAsync(this IFile file, IEnumerable&lt;string&gt; lines, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task WriteAllLinesAsync(this IFile file, IEnumerable&lt;string&gt; lines, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -544,7 +544,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -561,7 +561,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -604,13 +604,13 @@
   
   
   <a id="PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync*"></a>
-  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_PCLExt_FileStorage_IFile_System_String_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,CancellationToken)">WriteAllTextAsync(IFile, String, CancellationToken)</h4>
+  <h4 id="PCLExt_FileStorage_Extensions_FileExtensions_WriteAllTextAsync_PCLExt_FileStorage_IFile_System_String_System_Threading_CancellationToken_" data-uid="PCLExt.FileStorage.Extensions.FileExtensions.WriteAllTextAsync(PCLExt.FileStorage.IFile,System.String,System.Threading.CancellationToken)">WriteAllTextAsync(IFile, String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Writes text to a file, overwriting any existing data</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task WriteAllTextAsync(this IFile file, string content, CancellationToken cancellationToken = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static Task WriteAllTextAsync(this IFile file, string content, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -635,7 +635,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token.</p>
 </td>
@@ -652,7 +652,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>A task which completes when the write operation finishes</p>
 </td>
       </tr>
