@@ -15,7 +15,7 @@ install:
   - nuget restore PCLExt.FileStorage.sln
   
 script:
-  - dotnet restore src/PCLExt.FileStorage.Standard.Abstractions
+  - dotnet restore src/PCLExt.FileStorage.Abstractions
   - dotnet restore src/PCLExt.FileStorage.Core
   - dotnet restore src/PCLExt.FileStorage.NetFX
   - dotnet restore test/PCLExt.FileStorage.Core.Test
