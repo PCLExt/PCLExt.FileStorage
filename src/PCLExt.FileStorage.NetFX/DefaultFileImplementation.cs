@@ -30,7 +30,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => File.Exists(Path);
         /// <inheritdoc />
-        public long Size => Exists ? new FileInfo(Path).Length : -1;
+        public long Size => new FileInfo(Path).Length;
         /// <inheritdoc />
         public DateTime CreationTime => File.GetCreationTime(Path);
         /// <inheritdoc />

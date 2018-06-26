@@ -48,7 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj" />
+    <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -21,13 +21,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core.Tes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX.Test", "test\PCLExt.FileStorage.NetFX.Test\PCLExt.FileStorage.NetFX.Test.csproj", "{119368DE-E6BD-4746-BCD8-BBFE458579CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Standard.Abstractions", "src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Abstractions", "src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable111", "src\PCLExt.FileStorage.Portable111\PCLExt.FileStorage.Portable111.csproj", "{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.UWP", "src\PCLExt.FileStorage.UWP\PCLExt.FileStorage.UWP.csproj", "{D09BEB59-933D-4446-90FA-C8760705E8E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.UWP.Test", "test\PCLExt.FileStorage.UWP.Test\PCLExt.FileStorage.UWP.Test.csproj", "{9E934708-D6C7-48E3-9E95-13144C4E86B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable259", "src\PCLExt.FileStorage.Portable259\PCLExt.FileStorage.Portable259.csproj", "{083DDB9E-6B43-4F53-A016-0985F8C04C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -250,6 +252,22 @@ Global
 		{9E934708-D6C7-48E3-9E95-13144C4E86B5}.Release|x86.ActiveCfg = Release|x86
 		{9E934708-D6C7-48E3-9E95-13144C4E86B5}.Release|x86.Build.0 = Release|x86
 		{9E934708-D6C7-48E3-9E95-13144C4E86B5}.Release|x86.Deploy.0 = Release|x86
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|ARM.Build.0 = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|x64.Build.0 = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|x86.Build.0 = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|ARM.ActiveCfg = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|ARM.Build.0 = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x64.ActiveCfg = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x64.Build.0 = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x86.ActiveCfg = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

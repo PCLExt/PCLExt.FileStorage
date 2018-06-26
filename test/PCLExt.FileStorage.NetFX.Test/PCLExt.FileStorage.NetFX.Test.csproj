@@ -60,7 +60,7 @@
       <Project>{54dbaceb-b898-494b-ad88-2a407cb55a5a}</Project>
       <Name>PCLExt.FileStorage.NetFX</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj">
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
       <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
     </ProjectReference>

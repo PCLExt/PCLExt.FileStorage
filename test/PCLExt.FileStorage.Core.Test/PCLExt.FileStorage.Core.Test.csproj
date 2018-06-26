@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp2.0</TargetFrameworks>
@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj" />
-    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Standard.Abstractions\PCLExt.FileStorage.Standard.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
