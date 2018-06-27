@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.BaseFolder.html",
-          "hash": "n6efHuiOSQ33spvX3FnA1g=="
+          "hash": "3K4GXRMkeFFk1UhE+zS5Gw=="
         }
       },
       "is_incremental": false,
@@ -233,6 +233,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.CacheRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.CacheRootFolder.html",
+          "hash": "jDRHAWy3EAXAVeZcdcdznA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PCLExt.FileStorage.Folders.DocumentsRootFolder.yml",
       "output": {
         ".html": {
@@ -269,6 +281,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.MusicRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.MusicRootFolder.html",
+          "hash": "fhGF1YbfXJTfcV69Pvr7Tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.PicturesRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.PicturesRootFolder.html",
+          "hash": "3cf+MtNd8fLdilUPQK9qZA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PCLExt.FileStorage.Folders.RoamingRootFolder.yml",
       "output": {
         ".html": {
@@ -293,11 +329,23 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/PCLExt.FileStorage.Folders.VideosRootFolder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PCLExt.FileStorage.Folders.VideosRootFolder.html",
+          "hash": "0VJjzKQCBuuP1wu79ce+1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/PCLExt.FileStorage.Folders.yml",
       "output": {
         ".html": {
           "relative_path": "api/PCLExt.FileStorage.Folders.html",
-          "hash": "UAB2uP8Tqeul7oq7dHVF/g=="
+          "hash": "6muHbNcc9UjLH3IvF2nGpA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "6oLdKCw3DqV5Q8t3b/3uMw=="
+          "hash": "8PI8gKzNYfGQtbPV+uDPHw=="
         }
       },
       "is_incremental": false,
@@ -514,9 +562,9 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
@@ -527,9 +575,9 @@
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }

@@ -1308,6 +1308,25 @@ references:
   isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.ApplicationRootFolder.ApplicationRootFolder
   nameWithType: ApplicationRootFolder.ApplicationRootFolder
+- uid: PCLExt.FileStorage.Folders.CacheRootFolder
+  name: CacheRootFolder
+  href: api/PCLExt.FileStorage.Folders.CacheRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.CacheRootFolder
+  fullName: PCLExt.FileStorage.Folders.CacheRootFolder
+  nameWithType: CacheRootFolder
+- uid: PCLExt.FileStorage.Folders.CacheRootFolder.#ctor
+  name: CacheRootFolder()
+  href: api/PCLExt.FileStorage.Folders.CacheRootFolder.html#PCLExt_FileStorage_Folders_CacheRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.CacheRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.CacheRootFolder.CacheRootFolder()
+  nameWithType: CacheRootFolder.CacheRootFolder()
+- uid: PCLExt.FileStorage.Folders.CacheRootFolder.#ctor*
+  name: CacheRootFolder
+  href: api/PCLExt.FileStorage.Folders.CacheRootFolder.html#PCLExt_FileStorage_Folders_CacheRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.CacheRootFolder.#ctor
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.Folders.CacheRootFolder.CacheRootFolder
+  nameWithType: CacheRootFolder.CacheRootFolder
 - uid: PCLExt.FileStorage.Folders.DocumentsRootFolder
   name: DocumentsRootFolder
   href: api/PCLExt.FileStorage.Folders.DocumentsRootFolder.html
@@ -1374,6 +1393,44 @@ references:
   isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.LocalRootFolder.LocalRootFolder
   nameWithType: LocalRootFolder.LocalRootFolder
+- uid: PCLExt.FileStorage.Folders.MusicRootFolder
+  name: MusicRootFolder
+  href: api/PCLExt.FileStorage.Folders.MusicRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.MusicRootFolder
+  fullName: PCLExt.FileStorage.Folders.MusicRootFolder
+  nameWithType: MusicRootFolder
+- uid: PCLExt.FileStorage.Folders.MusicRootFolder.#ctor
+  name: MusicRootFolder()
+  href: api/PCLExt.FileStorage.Folders.MusicRootFolder.html#PCLExt_FileStorage_Folders_MusicRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.MusicRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.MusicRootFolder.MusicRootFolder()
+  nameWithType: MusicRootFolder.MusicRootFolder()
+- uid: PCLExt.FileStorage.Folders.MusicRootFolder.#ctor*
+  name: MusicRootFolder
+  href: api/PCLExt.FileStorage.Folders.MusicRootFolder.html#PCLExt_FileStorage_Folders_MusicRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.MusicRootFolder.#ctor
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.Folders.MusicRootFolder.MusicRootFolder
+  nameWithType: MusicRootFolder.MusicRootFolder
+- uid: PCLExt.FileStorage.Folders.PicturesRootFolder
+  name: PicturesRootFolder
+  href: api/PCLExt.FileStorage.Folders.PicturesRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.PicturesRootFolder
+  fullName: PCLExt.FileStorage.Folders.PicturesRootFolder
+  nameWithType: PicturesRootFolder
+- uid: PCLExt.FileStorage.Folders.PicturesRootFolder.#ctor
+  name: PicturesRootFolder()
+  href: api/PCLExt.FileStorage.Folders.PicturesRootFolder.html#PCLExt_FileStorage_Folders_PicturesRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.PicturesRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.PicturesRootFolder.PicturesRootFolder()
+  nameWithType: PicturesRootFolder.PicturesRootFolder()
+- uid: PCLExt.FileStorage.Folders.PicturesRootFolder.#ctor*
+  name: PicturesRootFolder
+  href: api/PCLExt.FileStorage.Folders.PicturesRootFolder.html#PCLExt_FileStorage_Folders_PicturesRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.PicturesRootFolder.#ctor
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.Folders.PicturesRootFolder.PicturesRootFolder
+  nameWithType: PicturesRootFolder.PicturesRootFolder
 - uid: PCLExt.FileStorage.Folders.RoamingRootFolder
   name: RoamingRootFolder
   href: api/PCLExt.FileStorage.Folders.RoamingRootFolder.html
@@ -1425,6 +1482,25 @@ references:
   isSpec: "True"
   fullName: PCLExt.FileStorage.Folders.TempRootFolder.CreateTempFile
   nameWithType: TempRootFolder.CreateTempFile
+- uid: PCLExt.FileStorage.Folders.VideosRootFolder
+  name: VideosRootFolder
+  href: api/PCLExt.FileStorage.Folders.VideosRootFolder.html
+  commentId: T:PCLExt.FileStorage.Folders.VideosRootFolder
+  fullName: PCLExt.FileStorage.Folders.VideosRootFolder
+  nameWithType: VideosRootFolder
+- uid: PCLExt.FileStorage.Folders.VideosRootFolder.#ctor
+  name: VideosRootFolder()
+  href: api/PCLExt.FileStorage.Folders.VideosRootFolder.html#PCLExt_FileStorage_Folders_VideosRootFolder__ctor
+  commentId: M:PCLExt.FileStorage.Folders.VideosRootFolder.#ctor
+  fullName: PCLExt.FileStorage.Folders.VideosRootFolder.VideosRootFolder()
+  nameWithType: VideosRootFolder.VideosRootFolder()
+- uid: PCLExt.FileStorage.Folders.VideosRootFolder.#ctor*
+  name: VideosRootFolder
+  href: api/PCLExt.FileStorage.Folders.VideosRootFolder.html#PCLExt_FileStorage_Folders_VideosRootFolder__ctor_
+  commentId: Overload:PCLExt.FileStorage.Folders.VideosRootFolder.#ctor
+  isSpec: "True"
+  fullName: PCLExt.FileStorage.Folders.VideosRootFolder.VideosRootFolder
+  nameWithType: VideosRootFolder.VideosRootFolder
 - uid: PCLExt.FileStorage.FolderSearchOption
   name: FolderSearchOption
   href: api/PCLExt.FileStorage.FolderSearchOption.html
