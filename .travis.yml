@@ -16,12 +16,12 @@ install:
   
 script:
   - dotnet restore src/PCLExt.FileStorage.Abstractions
-  - dotnet restore src/PCLExt.FileStorage.Core
+  - dotnet restore src/PCLExt.FileStorage.Standard
   - dotnet restore src/PCLExt.FileStorage.NetFX
   - dotnet restore test/PCLExt.FileStorage.Core.Test
   - dotnet restore test/PCLExt.FileStorage.NetFX.Test
   - dotnet build src/PCLExt.FileStorage.Abstractions
-  - dotnet build src/PCLExt.FileStorage.Core
+  - dotnet build src/PCLExt.FileStorage.Standard
   - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build src/PCLExt.FileStorage.NetFX
   - dotnet build test/PCLExt.FileStorage.Core.Test
   - FrameworkPathOverride=$MONO_BASE_PATH/4.5-api/ dotnet build test/PCLExt.FileStorage.NetFX.Test
