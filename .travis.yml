@@ -3,7 +3,7 @@ dist: trusty
 sudo: required
 language: csharp
 mono: latest
-dotnet: latest
+dotnet: 2.1.0
 env: MONO_BASE_PATH=/usr/lib/mono/
 
 solution: PCLExt.FileStorage.sln
