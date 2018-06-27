@@ -37,7 +37,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
     <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
-      <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
+      <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +77,9 @@
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationRootFolder.cs">
       <Link>Folders\ApplicationRootFolder.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\CacheRootFolder.cs">
+      <Link>Folders\CacheRootFolder.cs</Link>
+    </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\DocumentsRootFolder.cs">
       <Link>Folders\DocumentsRootFolder.cs</Link>
     </Compile>
@@ -86,11 +89,20 @@
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalRootFolder.cs">
       <Link>Folders\LocalRootFolder.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\MusicRootFolder.cs">
+      <Link>Folders\MusicRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\PicturesRootFolder.cs">
+      <Link>Folders\PicturesRootFolder.cs</Link>
+    </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingRootFolder.cs">
       <Link>Folders\RoamingRootFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\TempRootFolder.cs">
       <Link>Folders\TempRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\VideosRootFolder.cs">
+      <Link>Folders\VideosRootFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\PortablePath.cs">
       <Link>PortablePath.cs</Link>

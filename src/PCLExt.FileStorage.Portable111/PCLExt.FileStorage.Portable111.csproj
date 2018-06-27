@@ -37,7 +37,7 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
     <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
-      <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
+      <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -51,14 +51,18 @@
     <Compile Include="Exceptions\RootFolderDeletionException.cs" />
     <Compile Include="Extensions\FileExtensions.cs" />
     <Compile Include="Files\FileFromPath.cs" />
+    <Compile Include="Folders\CacheRootFolder.cs" />
     <Compile Include="Folders\DocumentsRootFolder.cs" />
     <Compile Include="Folders\FolderFromPath.cs" />
+    <Compile Include="Folders\MusicRootFolder.cs" />
+    <Compile Include="Folders\PicturesRootFolder.cs" />
     <Compile Include="Folders\TempRootFolder.cs" />
     <Compile Include="Folders\RoamingRootFolder.cs" />
     <Compile Include="Folders\LocalRootFolder.cs" />
     <Compile Include="Folders\ApplicationRootFolder.cs" />
     <Compile Include="Extensions\AwaitExtensions.cs" />
     <Compile Include="Extensions\FolderExtensions.cs" />
+    <Compile Include="Folders\VideosRootFolder.cs" />
     <Compile Include="PortablePath.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Requires.cs" />

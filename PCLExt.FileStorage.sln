@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.iOS", "src\PCLExt.FileStorage.iOS\PCLExt.FileStorage.iOS.csproj", "{03DA3968-61A3-44D1-9F99-F55D31E07813}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core", "src\PCLExt.FileStorage.Core\PCLExt.FileStorage.Core.csproj", "{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Android.Test", "test\PCLExt.FileStorage.Android.Test\PCLExt.FileStorage.Android.Test.csproj", "{CB89F319-1C9D-4574-8874-25F592EC76CD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.iOS.Test", "test\PCLExt.FileStorage.iOS.Test\PCLExt.FileStorage.iOS.Test.csproj", "{12AB9E53-8A6F-4B3A-8E2F-202799854F91}"
@@ -30,6 +28,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.UWP.Test", "test\PCLExt.FileStorage.UWP.Test\PCLExt.FileStorage.UWP.Test.csproj", "{9E934708-D6C7-48E3-9E95-13144C4E86B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable259", "src\PCLExt.FileStorage.Portable259\PCLExt.FileStorage.Portable259.csproj", "{083DDB9E-6B43-4F53-A016-0985F8C04C04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Standard", "src\PCLExt.FileStorage.Standard\PCLExt.FileStorage.Standard.csproj", "{DB6E630E-AD4A-4CFF-B504-01033A17D391}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,22 +75,6 @@ Global
 		{03DA3968-61A3-44D1-9F99-F55D31E07813}.Release|x64.Build.0 = Release|Any CPU
 		{03DA3968-61A3-44D1-9F99-F55D31E07813}.Release|x86.ActiveCfg = Release|Any CPU
 		{03DA3968-61A3-44D1-9F99-F55D31E07813}.Release|x86.Build.0 = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|ARM.Build.0 = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|x64.Build.0 = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Debug|x86.Build.0 = Debug|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|ARM.ActiveCfg = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|ARM.Build.0 = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|x64.ActiveCfg = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|x64.Build.0 = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|x86.ActiveCfg = Release|Any CPU
-		{94E4FE17-7F2B-4623-8FFA-12F4056CCB2A}.Release|x86.Build.0 = Release|Any CPU
 		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB89F319-1C9D-4574-8874-25F592EC76CD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
@@ -268,6 +252,22 @@ Global
 		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x64.Build.0 = Release|Any CPU
 		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x86.ActiveCfg = Release|Any CPU
 		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|x86.Build.0 = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|ARM.Build.0 = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|x64.Build.0 = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|x86.Build.0 = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|ARM.ActiveCfg = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|ARM.Build.0 = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|x64.ActiveCfg = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|x64.Build.0 = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|x86.ActiveCfg = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

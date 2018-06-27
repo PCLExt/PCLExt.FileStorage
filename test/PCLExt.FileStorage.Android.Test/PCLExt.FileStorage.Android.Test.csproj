@@ -83,7 +83,7 @@
     </ProjectReference>
     <ProjectReference Include="..\..\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
-      <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
+      <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
