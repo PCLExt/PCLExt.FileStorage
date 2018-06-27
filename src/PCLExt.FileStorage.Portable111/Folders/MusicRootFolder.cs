@@ -20,7 +20,7 @@ namespace PCLExt.FileStorage.Folders
 #elif __IOS__
             return new DefaultFolderImplementation(Foundation.NSSearchPath.GetDirectories(Foundation.NSSearchPathDirectory.MusicDirectory, Foundation.NSSearchPathDomain.User).FirstOrDefault());
 #elif DESKTOP || __MACOS__ || NETSTANDARD2_0
-            return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyMusic)).CreateFolder("Cache", CreationCollisionOption.OpenIfExists);
+            return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyMusic));
 #elif WINDOWS_UWP
             return null;
 #endif
