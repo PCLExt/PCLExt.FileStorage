@@ -36,11 +36,7 @@ namespace PCLExt.FileStorage.Test
         [Test]
 #endif
         public void LocalStorageFolder() =>
-#if __ANDROID__ || __IOS__
             Assert.IsTrue(new LocalRootFolder().Exists);
-#else
-            Assert.IsTrue(new LocalRootFolder().Exists);
-#endif
 
 
 #if WINDOWS_UWP
@@ -73,16 +69,55 @@ namespace PCLExt.FileStorage.Test
         [Test]
 #endif
         public void DocumentsFolder() =>
-            //#if __ANDROID__ || __IOS__
-            //            Assert.IsFalse(new DocumentsRootFolder().Exists);
-            //#else
 #if WINDOWS_UWP
             Assert.ThrowsException<System.UnauthorizedAccessException>(() => new DocumentsRootFolder());
 #else
-             Assert.IsTrue(new DocumentsRootFolder().Exists);
+            Assert.IsTrue(new DocumentsRootFolder().Exists);
 #endif
 
-        //#endif
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public void CacheFolder() =>
+            Assert.IsTrue(new CacheRootFolder().Exists);
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public void PicturesFolder() =>
+#if WINDOWS_UWP
+            Assert.ThrowsException<System.UnauthorizedAccessException>(() => new PicturesRootFolder());
+#else
+            Assert.IsTrue(new PicturesRootFolder().Exists);
+#endif
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public void MusicFolder() =>
+#if WINDOWS_UWP
+            Assert.ThrowsException<System.UnauthorizedAccessException>(() => new MusicRootFolder());
+#else
+            Assert.IsTrue(new MusicRootFolder().Exists);
+#endif
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public void VideosFolder() =>
+#if WINDOWS_UWP
+            Assert.ThrowsException<System.UnauthorizedAccessException>(() => new VideosRootFolder());
+#else
+            Assert.IsTrue(new VideosRootFolder().Exists);
+#endif
 
 #if WINDOWS_UWP
         [TestMethod]
@@ -124,6 +159,10 @@ namespace PCLExt.FileStorage.Test
             var t3 = new LocalRootFolder();
             var t4 = new RoamingRootFolder();
             var t5 = new TempRootFolder();
+            var t6 = new CacheRootFolder();
+            var t7 = new PicturesRootFolder();
+            var t8 = new MusicRootFolder();
+            var t9 = new VideosRootFolder();
         }
     }
 }

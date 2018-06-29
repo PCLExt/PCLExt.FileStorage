@@ -63,17 +63,29 @@
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationRootFolder.cs">
       <Link>Folders\ApplicationRootFolder.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\CacheRootFolder.cs">
+      <Link>Folders\CacheRootFolder.cs</Link>
+    </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\DocumentsRootFolder.cs">
       <Link>Folders\DocumentsRootFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalRootFolder.cs">
       <Link>Folders\LocalRootFolder.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\MusicRootFolder.cs">
+      <Link>Folders\MusicRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\PicturesRootFolder.cs">
+      <Link>Folders\PicturesRootFolder.cs</Link>
+    </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingRootFolder.cs">
       <Link>Folders\RoamingRootFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\TempRootFolder.cs">
       <Link>Folders\TempRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\VideosRootFolder.cs">
+      <Link>Folders\VideosRootFolder.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\AwaitExtensions.cs">
