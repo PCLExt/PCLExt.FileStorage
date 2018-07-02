@@ -20,7 +20,7 @@ build:
   project: PCLExt.FileStorage.sln
   verbosity: minimal
 
-test:
+test_script:
 - choco install codecov
 - dotnet tool install -g coveralls.net
 #netcore
