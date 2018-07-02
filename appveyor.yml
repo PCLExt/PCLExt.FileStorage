@@ -1,8 +1,7 @@
-os: Visual Studio 2017 Preview
+os: Visual Studio 2017
 
 configuration:
 - Debug
-- Release
 platform: Any CPU
 
 environment:
@@ -10,49 +9,16 @@ environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
-  op_build_user: "OpenPublishBuild"
-  op_build_user_email: "vscopbld@microsoft.com"
-  access_token:
-    secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
 
 install:
 - git submodule update --init --recursive
 
 before_build:
 - nuget restore
-- ps: |
-        if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
-        {
-            git checkout $env:APPVEYOR_REPO_BRANCH -q
-            choco install docfx -y
-            # choco install nuget.commandline -y
-        }
 
 build:
   project: PCLExt.FileStorage.sln
   verbosity: minimal
-  
-after_build:
-  - ps: |
-        if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
-        {
-            CD docs
-            & docfx docfx.json
-            if ($lastexitcode -ne 0){
-              throw [System.Exception] "docfx build failed with exit code $lastexitcode."
-            }
-            
-            git config --global credential.helper store
-            Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-            git config --global user.email $env:op_build_user_email
-            git config --global user.name $env:op_build_user
-            git clone https://github.com/PCLExt/PCLExt.FileStorage.git -b gh-pages origin_site -q
-            Copy-Item origin_site/.git _site -recurse
-            CD _site
-            git add -A 2>&1
-            git commit -m "CI Updates" -q
-            git push origin gh-pages -q
-        }
 
 after_test:
 - choco install codecov
@@ -64,13 +30,3 @@ after_test:
 - codecov -f "coverage.opencover.xml"
 - cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
 - cd ..\..
-
-#- nuget install NUnit.ConsoleRunner -Version 3.8.0 -OutputDirectory tools
-#- nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
-#- nuget install coveralls.io -Version 1.4.2 -OutputDirectory tools
-##- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj" -oldStyle -output:coverage_netcore.xml
-#- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:".\tools\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
-##- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netcore.xml -r %COVERALLS_REPO_TOKEN%
-#- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
-##- codecov -f coverage_netcore.xml
-#- codecov -f coverage_netfx.xml
