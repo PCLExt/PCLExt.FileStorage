@@ -12,6 +12,11 @@ environment:
   op_build_user_email: "vscopbld@microsoft.com"
   access_token:
     secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
+    
+cache:
+  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml
 
 install:
 - git submodule update --init --recursive
