@@ -20,12 +20,19 @@ build:
   project: PCLExt.FileStorage.sln
   verbosity: minimal
 
-after_test:
+test:
 - choco install codecov
 - dotnet tool install -g coveralls.net
+#netcore
 - cd test\PCLExt.FileStorage.Core.Test
 - dotnet add package coverlet.msbuild
 - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
 - csmacnz.coveralls --opencover -i coverage.opencover.xml --repoToken %COVERALLS_REPO_TOKEN%
 - codecov -f "coverage.opencover.xml"
 - cd ..\..
+#netfx
+- nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
+- nuget install NUnit.ConsoleRunner -Version 3.8.0 -OutputDirectory tools
+- .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[PCLExt*]*" -target:".\tools\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+- csmacnz.coveralls --opencover -i coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
+- codecov -f coverage_netfx.xml
