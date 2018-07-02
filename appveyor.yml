@@ -6,8 +6,10 @@ configuration:
 platform: Any CPU
 
 environment:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
   COVERALLS_REPO_TOKEN:  
-       secure: 7poiWT8gLPZOdo8fwSWeerKD+flRokWUY3Ke5s4TW9+vejCzcH8AXY4pwurPxb9D
+       secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
   op_build_user: "OpenPublishBuild"
   op_build_user_email: "vscopbld@microsoft.com"
   access_token:
@@ -52,14 +54,34 @@ after_build:
             git push origin gh-pages -q
         }
 
+
+test_script: 
+- choco install codecov
+- cd PokeD.Core.Test
+- dotnet tool install -g coveralls.net
+- dotnet add package coverlet.msbuild
+- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
+- csmacnz.coveralls --opencover coverage.opencover.xml -r %COVERALLS_REPO_TOKEN%
+- codecov -f "coverage.opencover.xml"
+- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
+- cd ..
 after_test:
 - choco install codecov
-- nuget install NUnit.ConsoleRunner -Version 3.8.0 -OutputDirectory tools
-- nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
-- nuget install coveralls.io -Version 1.4.2 -OutputDirectory tools
-#- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj" -oldStyle -output:coverage_netcore.xml
-- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:".\tools\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
-#- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netcore.xml -r %COVERALLS_REPO_TOKEN%
+- dotnet tool install -g coveralls.net
+- cd test\PCLExt.FileStorage.Core.Test
+- dotnet add package coverlet.msbuild
+- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
+- csmacnz.coveralls --opencover coverage.opencover.xml -r %COVERALLS_REPO_TOKEN%
+- codecov -f "coverage.opencover.xml"
 - cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
-#- codecov -f coverage_netcore.xml
-- codecov -f coverage_netfx.xml
+- cd ..\..
+
+#- nuget install NUnit.ConsoleRunner -Version 3.8.0 -OutputDirectory tools
+#- nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
+#- nuget install coveralls.io -Version 1.4.2 -OutputDirectory tools
+##- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:"C:/Program Files/dotnet/dotnet.exe" -targetargs:"test /p:DebugType=full test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj" -oldStyle -output:coverage_netcore.xml
+#- cmd: .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[*]*" -target:".\tools\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+##- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netcore.xml -r %COVERALLS_REPO_TOKEN%
+#- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
+##- codecov -f coverage_netcore.xml
+#- codecov -f coverage_netfx.xml
