@@ -26,7 +26,6 @@ after_test:
 - cd test\PCLExt.FileStorage.Core.Test
 - dotnet add package coverlet.msbuild
 - dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
-- csmacnz.coveralls --opencover coverage.opencover.xml -r %COVERALLS_REPO_TOKEN%
+- csmacnz.coveralls --opencover -i coverage.opencover.xml --repoToken %COVERALLS_REPO_TOKEN%
 - codecov -f "coverage.opencover.xml"
-- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover -i coverage_netfx.xml --repoToken %COVERALLS_REPO_TOKEN%
 - cd ..\..
