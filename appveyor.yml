@@ -1,4 +1,4 @@
-os: Visual Studio 2017
+os: Visual Studio 2017 Preview
 
 configuration:
 - Debug
@@ -54,17 +54,6 @@ after_build:
             git push origin gh-pages -q
         }
 
-
-test_script: 
-- choco install codecov
-- cd PokeD.Core.Test
-- dotnet tool install -g coveralls.net
-- dotnet add package coverlet.msbuild
-- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
-- csmacnz.coveralls --opencover coverage.opencover.xml -r %COVERALLS_REPO_TOKEN%
-- codecov -f "coverage.opencover.xml"
-- cmd: .\tools\coveralls.io.1.4.2\tools\coveralls.net.exe --opencover coverage_netfx.xml -r %COVERALLS_REPO_TOKEN%
-- cd ..
 after_test:
 - choco install codecov
 - dotnet tool install -g coveralls.net
