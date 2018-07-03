@@ -11,7 +11,7 @@
     - Debug
     - Release
   platform: Any CPU
-  version: 1.4.1
+  version: 1.4.1.{build}
   
   skip_commits:
     files:
@@ -59,8 +59,6 @@
     - nuget restore
     - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./before_build_docfx.ps1
-      only:
-        configuration: Release
       
   build:
     project: PCLExt.FileStorage.sln
@@ -69,16 +67,12 @@
   after_build:
     - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_build_docfx.ps1
-      only:
-        configuration: Release
 
   after_test:
     - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
     - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_nuget.ps1
-      only:
-        configuration: Release
         
 
   deploy:
@@ -149,8 +143,6 @@
     - ps: ./after_test_fx_core.ps1
     - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_nuget.ps1
-      only:
-        configuration: Release
   
   deploy:
     provider: NuGet

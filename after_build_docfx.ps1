@@ -1,4 +1,4 @@
-if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE) # is not a pull request
+if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE -and $env:CONFIGURATION -eq "Release") # is not a pull request
 {
 	CD docs
 	& docfx docfx.json
