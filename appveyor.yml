@@ -142,7 +142,7 @@
     - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
     - cd %APPVEYOR_BUILD_FOLDER%
-    - ps: ./after_test_nuget.ps1
+    - ps: ./after_test_nuget-devel.ps1
   
   deploy:
     provider: NuGet
