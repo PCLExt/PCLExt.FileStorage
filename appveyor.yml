@@ -1,76 +1,192 @@
-os: Visual Studio 2017
+########################################################
+##               MASTER                               ##
+########################################################
+-
+  branches:
+    only:
+      - master-test
 
-configuration:
-- Debug
-- Release
-platform: Any CPU
-
-environment:
-  COVERALLS_REPO_TOKEN:  
-       secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
-  op_build_user: "OpenPublishBuild"
-  op_build_user_email: "vscopbld@microsoft.com"
-  access_token:
-    secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
-    
-cache:
-  - packages -> **\packages.config  # preserve "packages" directory in the root of build folder but will reset it if packages.config is modified
-  - C:\ProgramData\chocolatey\bin -> appveyor.yml
-  - C:\ProgramData\chocolatey\lib -> appveyor.yml
-
-install:
-- git submodule update --init --recursive
-
-before_build:
-- nuget restore
-- ps: |
-        if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
-        {
-            git checkout $env:APPVEYOR_REPO_BRANCH -q
-            choco install docfx -y
-            # choco install nuget.commandline -y
-        }
-
-build:
-  project: PCLExt.FileStorage.sln
-  verbosity: minimal
+  os: Visual Studio 2017   
+  configuration:
+    - Debug
+    - Release
+  platform: Any CPU
+  version: 1.4.1
   
-after_build:
-  - ps: |
-        if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE)
-        {
-            CD docs
-            & docfx docfx.json
-            if ($lastexitcode -ne 0){
-              throw [System.Exception] "docfx build failed with exit code $lastexitcode."
-            }
-            
-            git config --global credential.helper store
-            Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:access_token):x-oauth-basic@github.com`n"
-            git config --global user.email $env:op_build_user_email
-            git config --global user.name $env:op_build_user
-            git clone https://github.com/PCLExt/PCLExt.FileStorage.git -b gh-pages origin_site -q
-            Copy-Item origin_site/.git _site -recurse
-            CD _site
-            git add -A 2>&1
-            git commit -m "CI Updates" -q
-            git push origin gh-pages -q
-        }
+  skip_commits:
+    files:
+      - docs/*
+      - LICENSE
+      - README.md
+      - .travis.yml
+      - .gitignore
+      
+  cache:
+    - packages -> **\packages.config
+    - C:\ProgramData\chocolatey\bin -> appveyor.yml
+    - C:\ProgramData\chocolatey\lib -> appveyor.yml
+  
+  environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
+    op_build_user: "OpenPublishBuild"
+    op_build_user_email: "vscopbld@microsoft.com"
+    access_token:
+      secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
 
-after_test:
-- choco install codecov
-- dotnet tool install -g coveralls.net
-#netcore
-- cd %APPVEYOR_BUILD_FOLDER%
-- cd test\PCLExt.FileStorage.Core.Test
-- dotnet add package coverlet.msbuild
-- dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
-- csmacnz.coveralls --opencover -i coverage.opencover.xml --repoToken %COVERALLS_REPO_TOKEN%
-- codecov -f "coverage.opencover.xml"
-#netfx
-- cd %APPVEYOR_BUILD_FOLDER%
-- nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
-- nuget install NUnit.ConsoleRunner -Version 3.8.0 -OutputDirectory tools
-- .\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:".\tools\NUnit.ConsoleRunner.3.8.0\tools\nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
-- csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken %COVERALLS_REPO_TOKEN%
-- codecov -f coverage_netfx.xml
+  artifacts:
+    - path: "common\PCLExt.FileStorage.nupkg"
+    
+  assembly_info:
+    patch: true
+    file: common\CommonAssemblyInfo.cs
+    assembly_version: "{version}"
+    assembly_file_version: "{version}"
+    assembly_informational_version: "{version}"
+           
+  init:
+    - ps: |
+        if ($env:APPVEYOR_REPO_TAG -eq "true")
+        {
+          Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_TAG_NAME)"
+        }
+    
+  install:
+    - git submodule update --init --recursive
+  
+  before_build:
+    - nuget restore
+    - ps: ./before_build_docfx.ps1
+      on:
+        configuration: Release
+      
+  build:
+    project: PCLExt.FileStorage.sln
+    verbosity: minimal
+    
+  after_build:
+    - ps: ./after_build_docfx.ps1
+      on:
+        configuration: Release
+
+  after_test:
+    - ps: ./after_test_fx_core.ps1
+    - ps: ./after_test_nuget.ps1
+      on:
+        configuration: Release
+        
+
+  deploy:
+    provider: NuGet
+    api_key:
+      secure: yoZtG3i28wVuNDk1HrGW/t3tsgt3Ru/Yk/y/sOzUHRc2WVZlynVdWSHK/Bp0uShJ
+    skip_symbols: false
+    artifact: "common\PCLExt.FileStorage.*.nupkg"
+    on:
+      configuration: Release
+      APPVEYOR_REPO_TAG: true
+
+
+########################################################
+##               DEVELOPMENT                          ##
+########################################################
+-
+  branches:
+    only:
+      - devel
+       
+  os: Visual Studio 2017
+  configuration: 
+  - Release
+  - Debug
+  platform: Any CPU
+  version: 1.4.1.{build}
+  
+  skip_commits:
+    files:
+      - docs/*
+      - LICENSE
+      - README.md
+      - .travis.yml
+      - .gitignore
+      
+  cache:
+    - packages -> **\packages.config
+    - C:\ProgramData\chocolatey\bin -> appveyor.yml
+    - C:\ProgramData\chocolatey\lib -> appveyor.yml
+  
+  environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
+  
+  artifacts:
+    - path: "common\PCLExt.FileStorage-devel.*.nupkg"
+    
+  assembly_info:
+    patch: true
+    file: common\CommonAssemblyInfo.cs
+    assembly_version: "{version}"
+    assembly_file_version: "{version}"
+    assembly_informational_version: "{version}-devel"
+  
+  install:
+    - git submodule update --init --recursive
+  
+  before_build:
+    - nuget restore
+  
+  build:
+    project: PCLExt.FileStorage.sln
+    verbosity: minimal
+  
+  after_test:
+    - ps: ./after_test_fx_core.ps1
+    - ps: ./after_test_nuget.ps1
+      on:
+        configuration: Release
+  
+  deploy:
+    provider: NuGet
+    api_key:
+      secure: yoZtG3i28wVuNDk1HrGW/t3tsgt3Ru/Yk/y/sOzUHRc2WVZlynVdWSHK/Bp0uShJ
+    skip_symbols: false
+    artifact: "common\PCLExt.FileStorage-devel.*.nupkg"
+    on:
+      configuration: Release
+
+
+########################################################
+##               ANY OTHER BRANCH                     ##
+########################################################
+-
+  os: Visual Studio 2017
+  configuration: 
+  - Release
+  - Debug
+  platform: Any CPU
+  
+  skip_commits:
+    files:
+      - docs/*
+      - LICENSE
+      - README.md
+      - .travis.yml
+      - .gitignore
+      
+  cache:
+    - packages -> **\packages.config
+    - C:\ProgramData\chocolatey\bin -> appveyor.yml
+    - C:\ProgramData\chocolatey\lib -> appveyor.yml
+
+  install:
+    - git submodule update --init --recursive
+  
+  before_build:
+    - nuget restore
+  
+  build:
+    project: PCLExt.FileStorage.sln
+    verbosity: minimal
+  
+  after_test:
+    - ps: ./after_test_fx_core.ps1

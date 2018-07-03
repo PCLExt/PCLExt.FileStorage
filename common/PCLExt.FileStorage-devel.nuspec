@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>PCLExt.FileStorage</id>
-        <version>1.4.1</version>
+        <id>PCLExt.FileStorage-devel</id>
+        <version>1.4.1.1</version>
         <title>PCL Extension - File Storage API</title>
         <authors>Daniel Plaisted, Aragas</authors>
         <owners>Aragas</owners>
