@@ -96,8 +96,8 @@
        
   os: Visual Studio 2017
   configuration: 
-  - Release
   - Debug
+  - Release
   platform: Any CPU
   version: 1.4.1.{build}
   
