@@ -6,7 +6,7 @@ CD test\PCLExt.FileStorage.Core.Test
 dotnet add package coverlet.msbuild
 dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
 csmacnz.coveralls --opencover -i coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
-codecov -f coverage_netfx.xml
+codecov -f coverage.opencover.xml
 
 # PCLExt.FileStorage.NetFX.Test
 CD $env:APPVEYOR_BUILD_FOLDER
