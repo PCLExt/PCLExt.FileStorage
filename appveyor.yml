@@ -45,6 +45,7 @@
     assembly_informational_version: "{version}"
            
   init:
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: |
         if ($env:APPVEYOR_REPO_TAG -eq "true")
         {
@@ -56,8 +57,9 @@
   
   before_build:
     - nuget restore
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./before_build_docfx.ps1
-      on:
+      only:
         configuration: Release
       
   build:
@@ -65,14 +67,17 @@
     verbosity: minimal
     
   after_build:
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_build_docfx.ps1
-      on:
+      only:
         configuration: Release
 
   after_test:
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_nuget.ps1
-      on:
+      only:
         configuration: Release
         
 
@@ -140,9 +145,11 @@
     verbosity: minimal
   
   after_test:
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_nuget.ps1
-      on:
+      only:
         configuration: Release
   
   deploy:
@@ -189,4 +196,5 @@
     verbosity: minimal
   
   after_test:
+    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
