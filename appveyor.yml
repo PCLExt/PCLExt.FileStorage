@@ -34,9 +34,6 @@
     access_token:
       secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
 
-  artifacts:
-    - path: "common\PCLExt.FileStorage.nupkg"
-    
   assembly_info:
     patch: true
     file: common\CommonAssemblyInfo.cs
@@ -117,9 +114,6 @@
   environment:
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
-  
-  artifacts:
-    - path: "common\PCLExt.FileStorage-devel.*.nupkg"
     
   assembly_info:
     patch: true
