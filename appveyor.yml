@@ -57,7 +57,7 @@
     - nuget restore
     - ps: ./before_build_docfx.ps1
       
-  build:
+  build_script:
     - ps: ./build.ps1
     
   after_build:
@@ -127,7 +127,7 @@
   before_build:
     - nuget restore
   
-  build:
+  build_script:
     - ps: ./build.ps1
 
   after_test:
@@ -176,7 +176,7 @@
   before_build:
     - nuget restore
   
-  build:
+  build_script:
     - ps: ./build.ps1
   
   after_test:
