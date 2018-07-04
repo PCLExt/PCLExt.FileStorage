@@ -57,9 +57,21 @@
     - nuget restore
     - ps: ./before_build_docfx.ps1
       
-  build:
-    project: PCLExt.FileStorage.sln
-    verbosity: minimal
+  for:
+  -
+    matrix:
+      only:
+        - image: Visual Studio 2017
+    build:
+      project: PCLExt.FileStorage.sln
+      verbosity: minimal
+        
+  -
+    matrix:
+      only:
+        - image: Ubuntu       
+    build:
+      - ps: ./build_ubuntu.ps1
     
   after_build:
     - ps: ./after_build_docfx.ps1
@@ -128,10 +140,22 @@
   before_build:
     - nuget restore
   
-  build:
-    project: PCLExt.FileStorage.sln
-    verbosity: minimal
-  
+  for:
+  -
+    matrix:
+      only:
+        - image: Visual Studio 2017
+    build:
+      project: PCLExt.FileStorage.sln
+      verbosity: minimal
+        
+  -
+    matrix:
+      only:
+        - image: Ubuntu       
+    build:
+      - ps: ./build_ubuntu.ps1
+
   after_test:
     - ps: ./after_test_fx_core.ps1
     - ps: ./after_test_nuget-devel.ps1
@@ -178,9 +202,20 @@
   before_build:
     - nuget restore
   
-  build:
-    project: PCLExt.FileStorage.sln
-    verbosity: minimal
+  for:
+  -
+    matrix:
+      only:
+        - image: Visual Studio 2017
+    build:
+      project: PCLExt.FileStorage.sln
+      verbosity: minimal   
+  -
+    matrix:
+      only:
+        - image: Ubuntu       
+    build:
+      - ps: ./build_ubuntu.ps1
   
   after_test:
     - ps: ./after_test_fx_core.ps1
