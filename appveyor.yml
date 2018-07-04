@@ -55,18 +55,18 @@
   
   before_build:
     - nuget restore
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/before_build_docfx.ps1
+    - ps: ./before_build_docfx.ps1
       
   build:
     project: PCLExt.FileStorage.sln
     verbosity: minimal
     
   after_build:
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/after_build_docfx.ps1
+    - ps: ./after_build_docfx.ps1
 
   after_test:
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/after_test_fx_core.ps1
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/after_test_nuget.ps1
+    - ps: ./after_test_fx_core.ps1
+    - ps: ./after_test_nuget.ps1
         
 
   deploy:
@@ -87,7 +87,7 @@
 -
   branches:
     only:
-      - devel
+      - appveyor_only
        
   image:
     - Visual Studio 2017
@@ -133,8 +133,8 @@
     verbosity: minimal
   
   after_test:
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/after_test_fx_core.ps1
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/after_test_nuget-devel.ps1
+    - ps: ./after_test_fx_core.ps1
+    - ps: ./after_test_nuget-devel.ps1
   
   deploy:
     provider: NuGet
@@ -183,4 +183,4 @@
     verbosity: minimal
   
   after_test:
-    - ps: ./$env:APPVEYOR_BUILD_FOLDER/after_test_fx_core.ps1
+    - ps: ./after_test_fx_core.ps1
