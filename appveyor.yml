@@ -153,8 +153,8 @@
     - Visual Studio 2017
     - Ubuntu
   configuration: 
-  - Release
   - Debug
+  - Release
   platform: Any CPU
   
   skip_commits:
