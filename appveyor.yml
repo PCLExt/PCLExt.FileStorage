@@ -12,7 +12,7 @@
   configuration:
     - Debug
     - Release
-  platform: Any CPU
+  platform: AnyCPU
   version: 1.4.1.{build}
   
   skip_commits:
@@ -94,7 +94,7 @@
   configuration: 
   - Debug
   - Release
-  platform: Any CPU
+  platform: AnyCPU
   version: 1.4.1.{build}
   
   skip_commits:
@@ -155,7 +155,7 @@
   configuration: 
   - Debug
   - Release
-  platform: Any CPU
+  platform: AnyCPU
   
   skip_commits:
     files:

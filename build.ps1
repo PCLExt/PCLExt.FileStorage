@@ -11,7 +11,7 @@ if($isLinux)
 	dotnet build test/PCLExt.FileStorage.Core.Test
 	dotnet build test/PCLExt.FileStorage.NetFX.Test
 	dotnet test test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj
-	msbuild test/PCLExt.FileStorage.NetFX.Test/PCLExt.FileStorage.NetFX.Test.csproj /p:Configuration=Debug /p:Platform="AnyCPU"
+	msbuild test/PCLExt.FileStorage.NetFX.Test/PCLExt.FileStorage.NetFX.Test.csproj
 	nuget install NUnit.ConsoleRunner -Version 3.8.0 -OutputDirectory packages
 	mono packages/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe test/PCLExt.FileStorage.NetFX.Test/bin/Debug/PCLExt.FileStorage.NetFX.Test.dll
 }
