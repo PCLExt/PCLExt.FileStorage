@@ -1,4 +1,4 @@
-if($env:CONFIGURATION -eq "Release" -and $env:APPVEYOR_REPO_TAG -eq "true")
+if($env:CONFIGURATION -eq "Release" -and $env:APPVEYOR_REPO_TAG -eq "true" -and $isWindows)
 {
 	cd $env:APPVEYOR_BUILD_FOLDER
 	cd common

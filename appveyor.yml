@@ -6,11 +6,13 @@
     only:
       - master
 
-  os: Visual Studio 2017   
+  image: 
+    - Visual Studio 2017
+    - Ubuntu
   configuration:
     - Debug
     - Release
-  platform: Any CPU
+  platform: AnyCPU
   version: 1.4.1.{build}
   
   skip_commits:
@@ -42,9 +44,8 @@
     assembly_informational_version: "{version}"
            
   init:
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: |
-        if ($env:APPVEYOR_REPO_TAG -eq "true")
+        if ($env:APPVEYOR_REPO_TAG -eq "true" -and $isWindows)
         {
           Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_TAG_NAME)"
         }
@@ -54,21 +55,16 @@
   
   before_build:
     - nuget restore
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./before_build_docfx.ps1
       
-  build:
-    project: PCLExt.FileStorage.sln
-    verbosity: minimal
+  build_script:
+    - ps: ./build.ps1
     
   after_build:
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_build_docfx.ps1
 
   after_test:
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_nuget.ps1
         
 
@@ -80,6 +76,7 @@
     artifact: PCLExt.FileStorage.nupkg
     on:
       configuration: Release
+      os: Visual Studio 2017
       APPVEYOR_REPO_TAG: true
 
 
@@ -91,11 +88,13 @@
     only:
       - devel
        
-  os: Visual Studio 2017
+  image:
+    - Visual Studio 2017
+    - Ubuntu
   configuration: 
   - Debug
   - Release
-  platform: Any CPU
+  platform: AnyCPU
   version: 1.4.1.{build}
   
   skip_commits:
@@ -128,14 +127,11 @@
   before_build:
     - nuget restore
   
-  build:
-    project: PCLExt.FileStorage.sln
-    verbosity: minimal
-  
+  build_script:
+    - ps: ./build.ps1
+
   after_test:
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_nuget-devel.ps1
   
   deploy:
@@ -145,6 +141,7 @@
     skip_symbols: false
     artifact: PCLExt.FileStorage-devel.nupkg
     on:
+      os: Visual Studio 2017
       configuration: Release
 
 
@@ -152,11 +149,13 @@
 ##               ANY OTHER BRANCH                     ##
 ########################################################
 -
-  os: Visual Studio 2017
+  image: 
+    - Visual Studio 2017
+    - Ubuntu
   configuration: 
-  - Release
   - Debug
-  platform: Any CPU
+  - Release
+  platform: AnyCPU
   
   skip_commits:
     files:
@@ -177,10 +176,8 @@
   before_build:
     - nuget restore
   
-  build:
-    project: PCLExt.FileStorage.sln
-    verbosity: minimal
+  build_script:
+    - ps: ./build.ps1
   
   after_test:
-    - cd %APPVEYOR_BUILD_FOLDER%
     - ps: ./after_test_fx_core.ps1
