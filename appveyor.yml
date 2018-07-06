@@ -21,6 +21,7 @@
       - LICENSE
       - README.md
       - .travis.yml
+      - codecov.yml
       - .gitignore
       
   cache:
@@ -109,6 +110,7 @@
       - LICENSE
       - README.md
       - .travis.yml
+      - codecov.yml
       - .gitignore
       
   cache:
@@ -175,6 +177,7 @@
       - LICENSE
       - README.md
       - .travis.yml
+      - codecov.yml
       - .gitignore
       
   cache:
