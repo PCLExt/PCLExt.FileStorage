@@ -26,7 +26,7 @@
       
   cache:
     - packages -> **\packages.config, **\*.csproj, build.ps1 #local nuget folder
-    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
+#    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
     - '%LocalAppData%\Microsoft\dotnet -> appveyor.yml, after_test_fx_core.ps1'
     - '%PROGRAMDATA%\chocolatey\bin -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey native
     - '%PROGRAMDATA%\chocolatey\lib -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey portable
@@ -115,7 +115,7 @@
       
   cache:
     - packages -> **\packages.config, **\*.csproj, build.ps1 #local nuget folder
-    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
+#    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
     - '%LocalAppData%\Microsoft\dotnet -> appveyor.yml, after_test_fx_core.ps1'
     - '%PROGRAMDATA%\chocolatey\bin -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey native
     - '%PROGRAMDATA%\chocolatey\lib -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey portable
@@ -182,7 +182,7 @@
       
   cache:
     - packages -> **\packages.config, **\*.csproj, build.ps1 #local nuget folder
-    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
+#    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
     - '%LocalAppData%\Microsoft\dotnet -> appveyor.yml, after_test_fx_core.ps1'
     - '%PROGRAMDATA%\chocolatey\bin -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey native
     - '%PROGRAMDATA%\chocolatey\lib -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey portable
