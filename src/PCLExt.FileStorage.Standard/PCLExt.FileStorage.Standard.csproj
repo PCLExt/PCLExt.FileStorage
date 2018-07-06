@@ -1,58 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.0;net45</TargetFrameworks>
     <RootNamespace>PCLExt.FileStorage</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>PCLExt.FileStorage</AssemblyName>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0' And '$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;RELEASE;NETSTANDARD2_0</DefineConstants>
-    <DocumentationFile>bin\Release\netstandard1.3\PCLExt.FileStorage.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\PCLExt.FileStorage.xml</DocumentationFile>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>TRACE;DEBUG;NETSTANDARD2_0</DefineConstants>
+  <PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp2.0' And '$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE;NETCOREAPP2_0</DefineConstants>
+    <DocumentationFile>bin\Release\netcoreapp2.0\PCLExt.FileStorage.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
-    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFileImplementation.cs" Link="DefaultFileImplementation.cs" />
-    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFolderImplementation.cs" Link="DefaultFolderImplementation.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\ExceptionsHelper.cs" Link="Exceptions\ExceptionsHelper.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FileExistException.cs" Link="Exceptions\FileExistException.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FileNotFoundException.cs" Link="Exceptions\FileNotFoundException.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FolderExistException.cs" Link="Exceptions\FolderExistException.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FolderNotFoundException.cs" Link="Exceptions\FolderNotFoundException.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\RootFolderDeletionException.cs" Link="Exceptions\RootFolderDeletionException.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\AwaitExtensions.cs" Link="Extensions\AwaitExtensions.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\FileExtensions.cs" Link="Extensions\FileExtensions.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\FolderExtensions.cs" Link="Extensions\FolderExtensions.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Files\FileFromPath.cs" Link="Files\FileFromPath.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationRootFolder.cs" Link="Folders\ApplicationRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\CacheRootFolder.cs" Link="Folders\CacheRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\DocumentsRootFolder.cs" Link="Folders\DocumentsRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\FolderFromPath.cs" Link="Folders\FolderFromPath.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalRootFolder.cs" Link="Folders\LocalRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\MusicRootFolder.cs" Link="Folders\MusicRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\PicturesRootFolder.cs" Link="Folders\PicturesRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingRootFolder.cs" Link="Folders\RoamingRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\TempRootFolder.cs" Link="Folders\TempRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\VideosRootFolder.cs" Link="Folders\VideosRootFolder.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\PortablePath.cs" Link="PortablePath.cs" />
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Requires.cs" Link="Requires.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Files\" />
-    <Folder Include="Folders\" />
-  </ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45' And '$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE;NETFX45</DefineConstants>
+    <DocumentationFile>bin\Release\net45\PCLExt.FileStorage.xml</DocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0' And '$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;RELEASE;NETSTANDARD2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp2.0' And '$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;RELEASE;NETCOREAPP2_0</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45' And '$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;RELEASE;NETFX45</DefineConstants>
+  </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj" />
   </ItemGroup>
 
-</Project>
+  <ItemGroup>
+    <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+  </ItemGroup>
+
+  </Project>
