@@ -25,10 +25,10 @@
       
   cache:
     - packages -> **\packages.config, **\*.csproj, build.ps1 #local nuget folder
-    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages' -> **\packages.config, **\*.csproj, build.ps1 #global nuget folder
-    - '%LocalAppData%\Microsoft\dotnet' -> appveyor.yml, after_test_fx_core.ps1
-    - '%PROGRAMDATA%\chocolatey\bin' -> before_build_docfx.ps1, after_test_fx_core.ps1 #chocolatey native
-    - '%PROGRAMDATA%\chocolatey\lib' -> before_build_docfx.ps1, after_test_fx_core.ps1 #chocolatey portable
+    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
+    - '%LocalAppData%\Microsoft\dotnet -> appveyor.yml, after_test_fx_core.ps1'
+    - '%PROGRAMDATA%\chocolatey\bin -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey native
+    - '%PROGRAMDATA%\chocolatey\lib -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey portable
     - '$HOME/.local/share/NuGet/v3-cache' #nuget cache ubuntu
     - '$HOME/.local/share/NuGet/Cache' #nuget cache ubuntu
     - '%LocalAppData%\NuGet\Cache' #v>3 nuget cache windows
@@ -113,10 +113,10 @@
       
   cache:
     - packages -> **\packages.config, **\*.csproj, build.ps1 #local nuget folder
-    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages' -> **\packages.config, **\*.csproj, build.ps1 #global nuget folder
-    - '%LocalAppData%\Microsoft\dotnet' -> appveyor.yml, after_test_fx_core.ps1
-    - '%PROGRAMDATA%\chocolatey\bin' -> before_build_docfx.ps1, after_test_fx_core.ps1 #chocolatey native
-    - '%PROGRAMDATA%\chocolatey\lib' -> before_build_docfx.ps1, after_test_fx_core.ps1 #chocolatey portable
+    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
+    - '%LocalAppData%\Microsoft\dotnet -> appveyor.yml, after_test_fx_core.ps1'
+    - '%PROGRAMDATA%\chocolatey\bin -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey native
+    - '%PROGRAMDATA%\chocolatey\lib -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey portable
     - '$HOME/.local/share/NuGet/v3-cache' #nuget cache ubuntu
     - '$HOME/.local/share/NuGet/Cache' #nuget cache ubuntu
     - '%LocalAppData%\NuGet\Cache' #v>3 nuget cache windows
@@ -179,10 +179,10 @@
       
   cache:
     - packages -> **\packages.config, **\*.csproj, build.ps1 #local nuget folder
-    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages' -> **\packages.config, **\*.csproj, build.ps1 #global nuget folder
-    - '%LocalAppData%\Microsoft\dotnet' -> appveyor.yml, after_test_fx_core.ps1
-    - '%PROGRAMDATA%\chocolatey\bin' -> before_build_docfx.ps1, after_test_fx_core.ps1 #chocolatey native
-    - '%PROGRAMDATA%\chocolatey\lib' -> before_build_docfx.ps1, after_test_fx_core.ps1 #chocolatey portable
+    - '%HOMEDRIVE%%HOMEPATH%\.nuget\packages -> **\packages.config, **\*.csproj, build.ps1' #global nuget folder
+    - '%LocalAppData%\Microsoft\dotnet -> appveyor.yml, after_test_fx_core.ps1'
+    - '%PROGRAMDATA%\chocolatey\bin -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey native
+    - '%PROGRAMDATA%\chocolatey\lib -> before_build_docfx.ps1, after_test_fx_core.ps1' #chocolatey portable
     - '$HOME/.local/share/NuGet/v3-cache' #nuget cache ubuntu
     - '$HOME/.local/share/NuGet/Cache' #nuget cache ubuntu
     - '%LocalAppData%\NuGet\Cache' #v>3 nuget cache windows
