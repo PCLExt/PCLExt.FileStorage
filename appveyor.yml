@@ -76,7 +76,7 @@
     artifact: PCLExt.FileStorage.nupkg
     on:
       configuration: Release
-      image: Visual Studio 2017
+      os: Windows_NT
       APPVEYOR_REPO_TAG: true
 
 
@@ -141,7 +141,7 @@
     skip_symbols: false
     artifact: PCLExt.FileStorage-devel.nupkg
     on:
-      image: Visual Studio 2017
+      os: Windows_NT
       configuration: Release
 
 
