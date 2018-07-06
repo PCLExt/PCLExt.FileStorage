@@ -1,7 +1,2 @@
-codecov:
-  notify:
-    wait_for_ci: yes
-    
-coverage:
-  ignore:
-    - "test/**/*"
+fixes:
+  - "test/PCLExt.FileStorage.Core.Test::"
