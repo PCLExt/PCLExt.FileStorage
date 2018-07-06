@@ -27,6 +27,7 @@
     - packages -> **\packages.config
     - C:\ProgramData\chocolatey\bin -> appveyor.yml
     - C:\ProgramData\chocolatey\lib -> appveyor.yml
+    - $HOME/.local/share/NuGet/v3-cache -> packages.config
   
   environment:
     COVERALLS_REPO_TOKEN:  
@@ -109,6 +110,7 @@
     - packages -> **\packages.config
     - C:\ProgramData\chocolatey\bin -> appveyor.yml
     - C:\ProgramData\chocolatey\lib -> appveyor.yml
+    - $HOME/.local/share/NuGet/v3-cache -> packages.config
   
   environment:
     COVERALLS_REPO_TOKEN:  
@@ -169,7 +171,8 @@
     - packages -> **\packages.config
     - C:\ProgramData\chocolatey\bin -> appveyor.yml
     - C:\ProgramData\chocolatey\lib -> appveyor.yml
-
+    - $HOME/.local/share/NuGet/v3-cache -> packages.config
+    
   install:
     - git submodule update --init --recursive
   
