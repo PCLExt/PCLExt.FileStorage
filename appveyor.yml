@@ -14,6 +14,7 @@
     - Release
   platform: AnyCPU
   version: 1.4.1.{build}
+  clone_depth: 1
   
   skip_commits:
     files:
@@ -63,6 +64,9 @@
     
   after_build:
     - ps: ./after_build_docfx.ps1
+    
+  test_script:
+    - ps: ./test_script.ps1
 
   after_test:
     - ps: ./after_test_fx_core.ps1
@@ -97,6 +101,7 @@
   - Release
   platform: AnyCPU
   version: 1.4.1.{build}
+  clone_depth: 1
   
   skip_commits:
     files:
@@ -139,6 +144,9 @@
   build_script:
     - ps: msbuild $env:SOLUTION_NAME /verbosity:m
 
+  test_script:
+    - ps: ./test_script.ps1
+    
   after_test:
     - ps: ./after_test_fx_core.ps1
     - ps: ./after_test_nuget-devel.ps1
@@ -165,6 +173,7 @@
   - Debug
   - Release
   platform: AnyCPU
+  clone_depth: 1
   
   skip_commits:
     files:
@@ -195,6 +204,9 @@
   
   build_script:
     - ps: msbuild $env:SOLUTION_NAME /verbosity:m
+    
+  test_script:
+    - ps: ./test_script.ps1
   
   after_test:
     - ps: ./after_test_fx_core.ps1
