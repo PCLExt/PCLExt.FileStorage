@@ -36,11 +36,6 @@
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
   
   environment:
-    matrix:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        SOLUTION_NAME: PCLExt.FileStorage.sln
-      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-        SOLUTION_NAME: PCLExt.FileStorage.Linux.sln
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
     op_build_user: "OpenPublishBuild"
@@ -56,11 +51,7 @@
     assembly_informational_version: "{version}"
            
   init:
-    - ps: |
-        if ($env:APPVEYOR_REPO_TAG -eq "true" -and $isWindows)
-        {
-          Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_TAG_NAME)"
-        }
+    - ps: ./init.ps1
     
   install:
     - git submodule update --init --recursive
@@ -131,11 +122,6 @@
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
   
   environment:
-    matrix:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        SOLUTION_NAME: PCLExt.FileStorage.sln
-      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-        SOLUTION_NAME: PCLExt.FileStorage.Linux.sln
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
     
@@ -145,6 +131,9 @@
     assembly_version: "{version}"
     assembly_file_version: "{version}"
     assembly_informational_version: "{version}-devel"
+  
+  init:
+    - ps: ./init.ps1
   
   install:
     - git submodule update --init --recursive
@@ -203,12 +192,8 @@
     - '%LocalAppData%\NuGet\Cache' #v>3 nuget cache windows
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
     
-  environment:
-    matrix:
-      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
-        SOLUTION_NAME: PCLExt.FileStorage.sln
-      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-        SOLUTION_NAME: PCLExt.FileStorage.Linux.sln
+  init:
+    - ps: ./init.ps1
     
   install:
     - git submodule update --init --recursive
