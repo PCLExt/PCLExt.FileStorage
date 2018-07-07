@@ -50,10 +50,8 @@
     assembly_file_version: "{version}"
     assembly_informational_version: "{version}"
            
-  init:
-    - ps: ./init_script.ps1
-    
   install:
+    - ps: ./init_script.ps1
     - git submodule update --init --recursive
   
   before_build:
@@ -132,10 +130,8 @@
     assembly_file_version: "{version}"
     assembly_informational_version: "{version}-devel"
   
-  init:
-    - ps: ./init_script.ps1
-  
   install:
+    - ps: ./init_script.ps1
     - git submodule update --init --recursive
   
   before_build:
@@ -191,11 +187,9 @@
     - '$HOME/.local/share/NuGet/Cache' #nuget cache ubuntu
     - '%LocalAppData%\NuGet\Cache' #v>3 nuget cache windows
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
-    
-  init:
-    - ps: ./init_script.ps1            
-    
+
   install:
+    - ps: ./init_script.ps1
     - git submodule update --init --recursive
   
   before_build:
