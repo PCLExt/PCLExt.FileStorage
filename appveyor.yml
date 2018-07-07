@@ -60,7 +60,7 @@
       
   build:
     verbosity: minimal
-    project: $(SOLUTION_NAME)
+    project: $(APPVEYOR_PROJECT_NAME).sln
     
   after_build:
     - ps: ./after_build_docfx.ps1
@@ -139,7 +139,7 @@
  
   build:
     verbosity: minimal
-    project: $(SOLUTION_NAME)
+    project: $(APPVEYOR_PROJECT_NAME).sln
 
   after_test:
     - ps: ./after_test_fx_core.ps1
@@ -197,7 +197,7 @@
   
   build:
     verbosity: minimal
-    project: $(SOLUTION_NAME)
+    project: $(APPVEYOR_PROJECT_NAME).sln
   
   after_test:
     - ps: ./after_test_fx_core.ps1
