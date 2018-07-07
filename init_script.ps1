@@ -1,6 +1,6 @@
 if($isWindows)
 {
-	$env:SOLUTION_NAME="PCLExt.FileStorage"
+	$env:SOLUTION_NAME="PCLExt.FileStorage.sln"
 	
 	if ($env:APPVEYOR_REPO_TAG -eq "true")
 	{
@@ -9,5 +9,5 @@ if($isWindows)
 }
 if($isLinux)
 {
-	$env:SOLUTION_NAME="PCLExt.FileStorage.Linux"
+	$env:SOLUTION_NAME="PCLExt.FileStorage.Linux.sln"
 }
