@@ -55,12 +55,12 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore %APPVEYOR_PROJECT_NAME%.sln
+    - nuget restore %SOLUTION_NAME%
     - ps: ./before_build_docfx.ps1
       
   build:
     verbosity: minimal
-    project: $(APPVEYOR_PROJECT_NAME).sln
+    project: $(SOLUTION_NAME)
     
   after_build:
     - ps: ./after_build_docfx.ps1
@@ -135,11 +135,11 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore %APPVEYOR_PROJECT_NAME%.sln
+    - nuget restore %SOLUTION_NAME%
  
   build:
     verbosity: minimal
-    project: $(APPVEYOR_PROJECT_NAME).sln
+    project: $(SOLUTION_NAME)
 
   after_test:
     - ps: ./after_test_fx_core.ps1
@@ -193,11 +193,11 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore %APPVEYOR_PROJECT_NAME%.sln
+    - nuget restore %SOLUTION_NAME%
   
   build:
     verbosity: minimal
-    project: $(APPVEYOR_PROJECT_NAME).sln
+    project: $(SOLUTION_NAME)
   
   after_test:
     - ps: ./after_test_fx_core.ps1
