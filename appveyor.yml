@@ -55,7 +55,7 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore %SOLUTION_NAME%
+    - ps: nuget restore $env:SOLUTION_NAME
     - ps: ./before_build_docfx.ps1
       
   build:
@@ -135,7 +135,7 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore %SOLUTION_NAME%
+    - ps: nuget restore $env:SOLUTION_NAME
  
   build:
     verbosity: minimal
@@ -193,7 +193,7 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore %SOLUTION_NAME%
+    - ps: nuget restore $env:SOLUTION_NAME
   
   build:
     verbosity: minimal
