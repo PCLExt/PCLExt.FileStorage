@@ -5,7 +5,7 @@ if($isWindows)
 if($isLinux)
 {
 	wget "https://github.com/nunit/nunit-console/releases/download/3.8/NUnit.Console-3.8.0.zip"
-	unzip "NUnit.Console-3.8.0.zip" "nunit"
+	unzip "NUnit.Console-3.8.0.zip" -d "nunit"
 	
 	mono nunit/nunit3-console ./test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll --result="fx-result.xml"
 }
