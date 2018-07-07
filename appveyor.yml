@@ -58,9 +58,8 @@
     - ps: nuget restore $env:SOLUTION_NAME
     - ps: ./before_build_docfx.ps1
       
-  build:
-    verbosity: minimal
-    project: $(SOLUTION_NAME)
+  build_script:
+    - ps: msbuild $env:SOLUTION_NAME /verbosity:m
     
   after_build:
     - ps: ./after_build_docfx.ps1
@@ -137,9 +136,8 @@
   before_build:
     - ps: nuget restore $env:SOLUTION_NAME
  
-  build:
-    verbosity: minimal
-    project: $(SOLUTION_NAME)
+  build_script:
+    - ps: msbuild $env:SOLUTION_NAME /verbosity:m
 
   after_test:
     - ps: ./after_test_fx_core.ps1
@@ -195,9 +193,8 @@
   before_build:
     - ps: nuget restore $env:SOLUTION_NAME
   
-  build:
-    verbosity: minimal
-    project: $(SOLUTION_NAME)
+  build_script:
+    - ps: msbuild $env:SOLUTION_NAME /verbosity:m
   
   after_test:
     - ps: ./after_test_fx_core.ps1
