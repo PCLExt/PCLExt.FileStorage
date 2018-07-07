@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Core.Test", "test\PCLExt.FileStorage.Core.Test\PCLExt.FileStorage.Core.Test.csproj", "{316FFBA8-57A8-4B4A-8352-F1E3361D8710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX.Test", "test\PCLExt.FileStorage.NetFX.Test\PCLExt.FileStorage.NetFX.Test.csproj", "{119368DE-E6BD-4746-BCD8-BBFE458579CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Abstractions", "src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable111", "src\PCLExt.FileStorage.Portable111\PCLExt.FileStorage.Portable111.csproj", "{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable259", "src\PCLExt.FileStorage.Portable259\PCLExt.FileStorage.Portable259.csproj", "{083DDB9E-6B43-4F53-A016-0985F8C04C04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Standard", "src\PCLExt.FileStorage.Standard\PCLExt.FileStorage.Standard.csproj", "{DB6E630E-AD4A-4CFF-B504-01033A17D391}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C11FC5BD-6FFC-4377-BA3C-A2A4691EEA0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AnyCPU = Debug|AnyCPU
+		Release|AnyCPU = Release|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{316FFBA8-57A8-4B4A-8352-F1E3361D8710}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{119368DE-E6BD-4746-BCD8-BBFE458579CC}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|AnyCPU.Build.0 = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|AnyCPU.Build.0 = Debug|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|AnyCPU.ActiveCfg = Release|Any CPU
+		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|AnyCPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{316FFBA8-57A8-4B4A-8352-F1E3361D8710} = {C11FC5BD-6FFC-4377-BA3C-A2A4691EEA0B}
+		{119368DE-E6BD-4746-BCD8-BBFE458579CC} = {C11FC5BD-6FFC-4377-BA3C-A2A4691EEA0B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {46C04569-986C-4FAF-8DA3-868AB9B06B09}
+	EndGlobalSection
+EndGlobal

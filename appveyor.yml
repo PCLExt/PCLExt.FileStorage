@@ -36,6 +36,11 @@
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
   
   environment:
+    matrix:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+        SOLUTION_NAME: PCLExt.FileStorage.sln
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+        SOLUTION_NAME: PCLExt.FileStorage.Linux.sln
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
     op_build_user: "OpenPublishBuild"
@@ -64,8 +69,9 @@
     - nuget restore
     - ps: ./before_build_docfx.ps1
       
-  build_script:
-    - ps: ./build.ps1
+  build:
+    verbosity: minimal
+    project: SOLUTION_NAME
     
   after_build:
     - ps: ./after_build_docfx.ps1
@@ -125,6 +131,11 @@
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
   
   environment:
+    matrix:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+        SOLUTION_NAME: PCLExt.FileStorage.sln
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+        SOLUTION_NAME: PCLExt.FileStorage.Linux.sln
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
     
@@ -140,9 +151,10 @@
   
   before_build:
     - nuget restore
-  
-  build_script:
-    - ps: ./build.ps1
+ 
+  build:
+    verbosity: minimal
+    project: SOLUTION_NAME
 
   after_test:
     - ps: ./after_test_fx_core.ps1
@@ -191,14 +203,22 @@
     - '%LocalAppData%\NuGet\Cache' #v>3 nuget cache windows
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
     
+  environment:
+    matrix:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+        SOLUTION_NAME: PCLExt.FileStorage.sln
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+        SOLUTION_NAME: PCLExt.FileStorage.Linux.sln
+    
   install:
     - git submodule update --init --recursive
   
   before_build:
     - nuget restore
   
-  build_script:
-    - ps: ./build.ps1
+  build:
+    verbosity: minimal
+    project: SOLUTION_NAME
   
   after_test:
     - ps: ./after_test_fx_core.ps1
