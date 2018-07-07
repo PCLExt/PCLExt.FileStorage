@@ -51,7 +51,7 @@
     assembly_informational_version: "{version}"
            
   init:
-    - ps: ./init_script.ps1.ps1
+    - ps: ./init_script.ps1
     
   install:
     - git submodule update --init --recursive
@@ -133,7 +133,7 @@
     assembly_informational_version: "{version}-devel"
   
   init:
-    - ps: ./init_script.ps1.ps1
+    - ps: ./init_script.ps1
   
   install:
     - git submodule update --init --recursive
@@ -193,7 +193,7 @@
     - '%LocalAppData%\NuGet\v3-cache' #nuget cache windows
     
   init:
-    - ps: ./init_script.ps1.ps1            
+    - ps: ./init_script.ps1            
     
   install:
     - git submodule update --init --recursive
