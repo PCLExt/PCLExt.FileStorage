@@ -55,7 +55,7 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore $(APPVEYOR_PROJECT_NAME).sln
+    - nuget restore %APPVEYOR_PROJECT_NAME%.sln
     - ps: ./before_build_docfx.ps1
       
   build:
@@ -135,7 +135,7 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore $(APPVEYOR_PROJECT_NAME).sln
+    - nuget restore %APPVEYOR_PROJECT_NAME%.sln
  
   build:
     verbosity: minimal
@@ -193,7 +193,7 @@
     - git submodule update --init --recursive
   
   before_build:
-    - nuget restore $(APPVEYOR_PROJECT_NAME).sln
+    - nuget restore %APPVEYOR_PROJECT_NAME%.sln
   
   build:
     verbosity: minimal
