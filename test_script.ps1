@@ -7,7 +7,7 @@ if($isWindows)
 	choco upgrade opencover.portable -s $(Get-Location)
 	
 	choco install nunit-console-runner
-	OpenCover.Console -filter:"+[PCLExt.*]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+	OpenCover.Console -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage_netfx.xml
 	
