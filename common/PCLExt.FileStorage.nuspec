@@ -45,12 +45,10 @@
         <file src="..\src\PCLExt.FileStorage.Portable259\bin\Release\PCLExt.FileStorage.dll" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.dll" />
         <file src="..\src\PCLExt.FileStorage.Portable259\bin\Release\PCLExt.FileStorage.xml" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.xml" />
 		
-		<!--
         <file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.Abstractions.dll" target="lib\uap10.0\PCLExt.FileStorage.Abstractions.dll" />
-		<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\uap10.0\PCLExt.FileStorage.Abstractions.xml" />
-		<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.dll" target="lib\uap10.0\PCLExt.FileStorage.dll" />
-		<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.xml" target="lib\uap10.0\PCLExt.FileStorage.xml" />
-		-->
+	<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\uap10.0\PCLExt.FileStorage.Abstractions.xml" />
+	<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.dll" target="lib\uap10.0\PCLExt.FileStorage.dll" />
+	<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.xml" target="lib\uap10.0\PCLExt.FileStorage.xml" />
 		
         <file src="..\src\PCLExt.FileStorage.iOS\bin\Release\PCLExt.FileStorage.Abstractions.dll" target="lib\Xamarin.iOS\PCLExt.FileStorage.Abstractions.dll" />
         <file src="..\src\PCLExt.FileStorage.iOS\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\Xamarin.iOS\PCLExt.FileStorage.Abstractions.xml" />
