@@ -3,11 +3,18 @@ if($isWindows)
 	dotnet tool install -g coveralls.net
 	choco install codecov
 
-	(New-Object System.Net.WebClient).DownloadFile("https://ci.appveyor.com/api/buildjobs/2kynh1hlndbq1ona/artifacts/main%2Fbin%2Fpackages%2Fchocolatey%2Fopencover.portable%2Fopencover.portable.4.6.832.nupkg", "$(Get-Location)\opencover.portable.4.6.832.nupkg")
-	choco upgrade opencover.portable -s $(Get-Location)
+	(New-Object System.Net.WebClient).DownloadFile("https://ci.appveyor.com/api/buildjobs/2kynh1hlndbq1ona/artifacts/main%2Fbin%2Fzip%2Fopencover.4.6.832.zip", "$(Get-Location)/opencover.4.6.832.zip")
+	Add-Type -AssemblyName System.IO.Compression.FileSystem
+	function Unzip
+	{
+		param([string]$zipfile, [string]$outpath)
+
+		[System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
+	}
+	Unzip "$(Get-Location)/opencover.4.6.832.zip" "$(Get-Location)/opencover.4.6.832"
 	
 	choco install nunit-console-runner
-	OpenCover.Console -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+	opencover.4.6.832/OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage_netfx.xml
 	
