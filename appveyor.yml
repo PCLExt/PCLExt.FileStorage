@@ -69,7 +69,6 @@
     - ps: ./test_script.ps1
 
   after_test:
-    - ps: ./after_test_fx_core.ps1
     - ps: ./after_test_nuget.ps1
         
 
@@ -148,7 +147,6 @@
     - ps: ./test_script.ps1
     
   after_test:
-    - ps: ./after_test_fx_core.ps1
     - ps: ./after_test_nuget-devel.ps1
   
   deploy:
@@ -207,6 +205,3 @@
     
   test_script:
     - ps: ./test_script.ps1
-  
-  after_test:
-    - ps: ./after_test_fx_core.ps1
