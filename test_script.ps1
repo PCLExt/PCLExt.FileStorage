@@ -19,7 +19,7 @@ if($isWindows)
 	codecov -f coverage_netfx.xml
 	
 	dotnet add test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj package coverlet.msbuild
-	dotnet test test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=\"[NUnit*]*,[PCLExt.FileStorage.Core.Test]*\" --logger:"trx;LogFileName=../core-result.trx"
+	&('dotnet') ('test', 'test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj', '/p:CollectCoverage=true', '/p:CoverletOutputFormat=opencover', '/p:Exclude=\"[NUnit*]*,[PCLExt.FileStorage.Core.Test]*\"')
 	csmacnz.coveralls --opencover -i test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml
 	(New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", "$(Get-Location )/test/PCLExt.FileStorage.Core.Test/core-result.trx")
