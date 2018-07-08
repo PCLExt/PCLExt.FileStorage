@@ -16,4 +16,5 @@ if(-Not $env:APPVEYOR_PULL_REQUEST_TITLE -and $env:CONFIGURATION -eq "Release" -
 	git add -A 2>&1
 	git commit -m "CI Updates" -q
 	git push origin gh-pages -q
+	CD $env:APPVEYOR_BUILD_FOLDER 
 }
