@@ -3,7 +3,11 @@ if($isWindows)
 	dotnet tool install -g coveralls.net
 	choco install codecov
 
-	choco install opencover.portable
+	(New-Object System.Net.WebClient).DownloadFile("https://ci.appveyor.com/api/buildjobs/2kynh1hl
+ndbq1ona/artifacts/main%2Fbin%2Fpackages%2Fchocolatey%2Fopencover.portable%2Fopencover.portable.4.6.832.nupkg", "$(Get-Location)
+\opencover.portable.4.6.832.nupkg")
+	choco upgrade opencover.portable -s $(Get-Location)
+	
 	choco install nunit-console-runner
 	OpenCover.Console -filter:"+[PCLExt.*]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
