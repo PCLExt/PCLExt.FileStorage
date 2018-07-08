@@ -16,6 +16,7 @@ if($isWindows)
 	# PCLExt.FileStorage.NetFX.Test
 	CD $env:APPVEYOR_BUILD_FOLDER
 	nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
+	choco install nunit-console-runner
 	.\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"$env:ProgramData/chocolatey/bin/nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage_netfx.xml
