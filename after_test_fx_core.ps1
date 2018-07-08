@@ -8,8 +8,8 @@ if($isWindows)
 	dotnet tool install -g coveralls.net
 	dotnet add test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj package coverlet.msbuild
 	dotnet test test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
-	csmacnz.coveralls --opencover -i coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
-	codecov -f coverage.opencover.xml
+	csmacnz.coveralls --opencover -i test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
+	codecov -f test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml
 
 	# PCLExt.FileStorage.NetFX.Test
 	choco install opencover.portable
