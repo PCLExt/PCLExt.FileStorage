@@ -1,7 +1,7 @@
 (New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path 'fx-result.xml'))
 (New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", (Resolve-Path 'core-result.trx'))
 
-if($isWindows) #no need to do the coverage on Ubuntu
+if($isWindows)
 {
 	# PCLExt.FileStorage.Core.Test
 	choco install codecov
@@ -16,7 +16,7 @@ if($isWindows) #no need to do the coverage on Ubuntu
 	# PCLExt.FileStorage.NetFX.Test
 	CD $env:APPVEYOR_BUILD_FOLDER
 	nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
-	.\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"nunit3-console" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+	.\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"$env:ProgramData/chocolatey/bin/nunit3-console" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage_netfx.xml
 }
