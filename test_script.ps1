@@ -3,9 +3,7 @@ if($isWindows)
 	dotnet tool install -g coveralls.net
 	choco install codecov
 
-	(New-Object System.Net.WebClient).DownloadFile("https://ci.appveyor.com/api/buildjobs/2kynh1hl
-ndbq1ona/artifacts/main%2Fbin%2Fpackages%2Fchocolatey%2Fopencover.portable%2Fopencover.portable.4.6.832.nupkg", "$(Get-Location)
-\opencover.portable.4.6.832.nupkg")
+	(New-Object System.Net.WebClient).DownloadFile("https://ci.appveyor.com/api/buildjobs/2kynh1hlndbq1ona/artifacts/main%2Fbin%2Fpackages%2Fchocolatey%2Fopencover.portable%2Fopencover.portable.4.6.832.nupkg", "$(Get-Location)\opencover.portable.4.6.832.nupkg")
 	choco upgrade opencover.portable -s $(Get-Location)
 	
 	choco install nunit-console-runner
