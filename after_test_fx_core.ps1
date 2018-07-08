@@ -6,18 +6,15 @@ if($isWindows)
 	# PCLExt.FileStorage.Core.Test
 	choco install codecov
 	dotnet tool install -g coveralls.net
-	CD $env:APPVEYOR_BUILD_FOLDER
-	CD test\PCLExt.FileStorage.Core.Test
-	dotnet add package coverlet.msbuild
-	dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
+	dotnet add test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj package coverlet.msbuild
+	dotnet test test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude=[NUnit*]*
 	csmacnz.coveralls --opencover -i coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage.opencover.xml
 
 	# PCLExt.FileStorage.NetFX.Test
-	CD $env:APPVEYOR_BUILD_FOLDER
-	nuget install OpenCover -Version 4.6.519 -OutputDirectory tools
+	choco install opencover.portable
 	choco install nunit-console-runner
-	.\tools\OpenCover.4.6.519\tools\OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"$env:ProgramData/chocolatey/bin/nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
+	OpenCover.Console -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage_netfx.xml
 }
