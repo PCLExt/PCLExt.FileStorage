@@ -20,7 +20,7 @@
         {
             Requires.NotNullOrEmpty(path, "path");
 
-#if DESKTOP || ANDROID || __IOS__ || __MACOS__ || NETSTANDARD2_0
+#if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
             if (System.IO.File.Exists(path))
                 return new DefaultFileImplementation(path);
             else

@@ -1,4 +1,4 @@
-if($env:CONFIGURATION -eq "Release") # is not a pull request
+if($env:CONFIGURATION -eq "Release" -and $isWindows) # is not a pull request
 {
 	cd $env:APPVEYOR_BUILD_FOLDER
 	cd common

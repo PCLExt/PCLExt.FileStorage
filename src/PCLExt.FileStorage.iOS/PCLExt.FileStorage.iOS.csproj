@@ -29,12 +29,6 @@
     <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;COMMON;</DefineConstants>
     <DocumentationFile>bin\Release\PCLExt.FileStorage.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'AppStore|AnyCPU'">
-    <DefineConstants>__UNIFIED__;__MOBILE__;__IOS__;COMMON;</DefineConstants>
-    <OutputPath>bin\AppStore</OutputPath>
-    <WarningLevel>4</WarningLevel>
-    <Optimize>false</Optimize>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,83 +37,83 @@
   <ItemGroup>
     <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
-      <Name>PCLExt.FileStorage.Standard.Abstractions</Name>
+      <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFileImplementation.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\DefaultFileImplementation.cs">
       <Link>DefaultFileImplementation.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.NetFX\DefaultFolderImplementation.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\DefaultFolderImplementation.cs">
       <Link>DefaultFolderImplementation.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\ExceptionsHelper.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\ExceptionsHelper.cs">
       <Link>Exceptions\ExceptionsHelper.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FileExistException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FileExistException.cs">
       <Link>Exceptions\FileExistException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FileNotFoundException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FileNotFoundException.cs">
       <Link>Exceptions\FileNotFoundException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FolderExistException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FolderExistException.cs">
       <Link>Exceptions\FolderExistException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\FolderNotFoundException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FolderNotFoundException.cs">
       <Link>Exceptions\FolderNotFoundException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Exceptions\RootFolderDeletionException.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\RootFolderDeletionException.cs">
       <Link>Exceptions\RootFolderDeletionException.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\AwaitExtensions.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Extensions\AwaitExtensions.cs">
       <Link>Extensions\AwaitExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\FileExtensions.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Extensions\FileExtensions.cs">
       <Link>Extensions\FileExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Extensions\FolderExtensions.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Extensions\FolderExtensions.cs">
       <Link>Extensions\FolderExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Files\FileFromPath.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Files\FileFromPath.cs">
       <Link>Files\FileFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\ApplicationRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\ApplicationRootFolder.cs">
       <Link>Folders\ApplicationRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\CacheRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\CacheRootFolder.cs">
       <Link>Folders\CacheRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\DocumentsRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\DocumentsRootFolder.cs">
       <Link>Folders\DocumentsRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\FolderFromPath.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\FolderFromPath.cs">
       <Link>Folders\FolderFromPath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\LocalRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\LocalRootFolder.cs">
       <Link>Folders\LocalRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\MusicRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\MusicRootFolder.cs">
       <Link>Folders\MusicRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\PicturesRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\PicturesRootFolder.cs">
       <Link>Folders\PicturesRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\RoamingRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\RoamingRootFolder.cs">
       <Link>Folders\RoamingRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\TempRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\TempRootFolder.cs">
       <Link>Folders\TempRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Folders\VideosRootFolder.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\VideosRootFolder.cs">
       <Link>Folders\VideosRootFolder.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\PortablePath.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\PortablePath.cs">
       <Link>PortablePath.cs</Link>
     </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Portable111\Requires.cs">
+    <Compile Include="..\PCLExt.FileStorage.Standard\Requires.cs">
       <Link>Requires.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

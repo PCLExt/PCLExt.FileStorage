@@ -17,9 +17,9 @@
             return null;
 #elif __IOS__
             return new DefaultFolderImplementation(Foundation.NSBundle.MainBundle.BundlePath);
-#elif DESKTOP || __MACOS__
+#elif NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.AppDomain.CurrentDomain.BaseDirectory);
-#elif NETSTANDARD2_0
+#elif NETSTANDARD2_0 || NETCOREAPP2_0
             return new DefaultFolderImplementation(System.AppContext.BaseDirectory);
 #elif WINDOWS_UWP
             return new UWP.StorageFolderImplementation(
