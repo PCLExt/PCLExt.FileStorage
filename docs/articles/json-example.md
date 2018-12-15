@@ -15,7 +15,13 @@ public abstract class JsonFile : BaseFile
                 .Where(p => p.PropertyName != nameof(Name) &&
                             p.PropertyName != nameof(Path) &&
                             p.PropertyName != nameof(Exists) &&
-                            p.PropertyName != nameof(Size))
+                            p.PropertyName != nameof(Size)&&
+                            p.PropertyName != nameof(CreationTime) &&
+                            p.PropertyName != nameof(CreationTimeUTC) &&
+                            p.PropertyName != nameof(LastAccessTime) &&
+                            p.PropertyName != nameof(LastAccessTimeUTC) &&
+                            p.PropertyName != nameof(LastWriteTime) &&
+                            p.PropertyName != nameof(LastWriteTimeUTC))
                 .ToList();
     }
 
