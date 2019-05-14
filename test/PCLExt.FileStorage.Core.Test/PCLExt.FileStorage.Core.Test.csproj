@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj" />
-    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Standard\PCLExt.FileStorage.Standard.csproj" />
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage\PCLExt.FileStorage.csproj" />
   </ItemGroup>
 
 </Project>

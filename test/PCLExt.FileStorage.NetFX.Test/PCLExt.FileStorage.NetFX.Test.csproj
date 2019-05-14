@@ -61,9 +61,9 @@
       <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
       <Name>PCLExt.FileStorage.Abstractions</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\PCLExt.FileStorage.Standard\PCLExt.FileStorage.Standard.csproj">
+    <ProjectReference Include="..\..\src\PCLExt.FileStorage\PCLExt.FileStorage.csproj">
       <Project>{db6e630e-ad4a-4cff-b504-01033a17d391}</Project>
-      <Name>PCLExt.FileStorage.Standard</Name>
+      <Name>PCLExt.FileStorage</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

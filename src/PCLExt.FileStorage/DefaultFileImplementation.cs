@@ -7,6 +7,7 @@
 // Which is released under the MS-PL license.
 //-----------------------------------------------------------------------
 
+#if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -381,3 +382,4 @@ namespace PCLExt.FileStorage
         }
     }
 }
+#endif

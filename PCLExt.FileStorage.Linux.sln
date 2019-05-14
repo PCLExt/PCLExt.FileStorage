@@ -9,11 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.NetFX.Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Abstractions", "src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj", "{5D529A12-F49C-40FE-B3C3-17747D73879E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable111", "src\PCLExt.FileStorage.Portable111\PCLExt.FileStorage.Portable111.csproj", "{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLExt.FileStorage.Portable259", "src\PCLExt.FileStorage.Portable259\PCLExt.FileStorage.Portable259.csproj", "{083DDB9E-6B43-4F53-A016-0985F8C04C04}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage.Standard", "src\PCLExt.FileStorage.Standard\PCLExt.FileStorage.Standard.csproj", "{DB6E630E-AD4A-4CFF-B504-01033A17D391}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLExt.FileStorage", "src\PCLExt.FileStorage\PCLExt.FileStorage.csproj", "{DB6E630E-AD4A-4CFF-B504-01033A17D391}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C11FC5BD-6FFC-4377-BA3C-A2A4691EEA0B}"
 EndProject
@@ -35,14 +31,6 @@ Global
 		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Debug|AnyCPU.Build.0 = Debug|Any CPU
 		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|AnyCPU.ActiveCfg = Release|Any CPU
 		{5D529A12-F49C-40FE-B3C3-17747D73879E}.Release|AnyCPU.Build.0 = Release|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Debug|AnyCPU.Build.0 = Debug|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|AnyCPU.ActiveCfg = Release|Any CPU
-		{A7C97A2B-F996-4CAF-87D8-F3A60B2B4D44}.Release|AnyCPU.Build.0 = Release|Any CPU
-		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
-		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Debug|AnyCPU.Build.0 = Debug|Any CPU
-		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|AnyCPU.ActiveCfg = Release|Any CPU
-		{083DDB9E-6B43-4F53-A016-0985F8C04C04}.Release|AnyCPU.Build.0 = Release|Any CPU
 		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|AnyCPU.ActiveCfg = Debug|Any CPU
 		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Debug|AnyCPU.Build.0 = Debug|Any CPU
 		{DB6E630E-AD4A-4CFF-B504-01033A17D391}.Release|AnyCPU.ActiveCfg = Release|Any CPU
