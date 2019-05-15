@@ -81,7 +81,7 @@ namespace PCLExt.FileStorage.UWP
 
         public async Task<ExistenceCheckResult> CheckExistsAsync(
             string name,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace PCLExt.FileStorage.UWP
         public async Task CopyAsync(
             IFolder folder,
             NameCollisionOption option = NameCollisionOption.ReplaceExisting,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             await CopyAsync(_storageFolder, folder, option, cancellationToken);
         }
@@ -123,7 +123,7 @@ namespace PCLExt.FileStorage.UWP
            StorageFolder source,
            IFolder folder,
            NameCollisionOption option = NameCollisionOption.ReplaceExisting,
-           CancellationToken cancellationToken = default(CancellationToken))
+           CancellationToken cancellationToken = default)
         {
 
             // Get all files (shallow) from source
@@ -223,7 +223,7 @@ namespace PCLExt.FileStorage.UWP
         public async Task<IFile> CreateFileAsync(
             string desiredName,
             CreationCollisionOption option,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             var windowsOption = StorageExtensions.
                 ConvertToWindowsCreationCollisionOption(option);
@@ -251,7 +251,7 @@ namespace PCLExt.FileStorage.UWP
         public async Task<IFolder> CreateFolderAsync(
             string desiredName,
             CreationCollisionOption option,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             var windowsOption = StorageExtensions.
                 ConvertToWindowsCreationCollisionOption(option);
@@ -274,7 +274,7 @@ namespace PCLExt.FileStorage.UWP
         }
 
         public async Task DeleteAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             if (Windows.ApplicationModel.Package.Current.InstalledLocation.Path == _storageFolder.Path)
             {
@@ -298,7 +298,7 @@ namespace PCLExt.FileStorage.UWP
 
         public async Task<IFile> GetFileAsync(
             string name,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             try
             {
@@ -323,7 +323,7 @@ namespace PCLExt.FileStorage.UWP
         public async Task<IList<IFile>> GetFilesAsync(
             string searchPattern = "*",
             FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             var fileTypeFilter = new List<string>();
             fileTypeFilter.Add("*");
@@ -356,7 +356,7 @@ namespace PCLExt.FileStorage.UWP
 
         public async Task<IFolder> GetFolderAsync(
             string name,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             try
             {
@@ -377,7 +377,7 @@ namespace PCLExt.FileStorage.UWP
         }
 
         public async Task<IList<IFolder>> GetFoldersAsync(
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             var storageFolders = await _storageFolder.
                 GetFoldersAsync().AsTask(cancellationToken);
@@ -395,7 +395,7 @@ namespace PCLExt.FileStorage.UWP
         public async Task MoveAsync(
             IFolder folder,
             NameCollisionOption option = NameCollisionOption.ReplaceExisting,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             var subfolders = await GetFoldersAsync(cancellationToken);
             foreach (var subfolder in subfolders)
@@ -440,7 +440,7 @@ namespace PCLExt.FileStorage.UWP
 
         public async Task<IFolder> RenameAsync(
             string newName,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             try
             {

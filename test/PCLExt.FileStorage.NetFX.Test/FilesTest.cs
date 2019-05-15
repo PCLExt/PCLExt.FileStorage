@@ -8,8 +8,7 @@ using NUnit.Framework;
 #endif
 
 using PCLExt.FileStorage.Exceptions;
-using PCLExt.FileStorage.Extensions; 
-
+using PCLExt.FileStorage.Extensions;
 
 namespace PCLExt.FileStorage.Test
 {
@@ -80,8 +79,7 @@ namespace PCLExt.FileStorage.Test
             var timeBeforeFileCreaton = DateTime.UtcNow.AddSeconds(-1);
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
 
-            Assert.IsTrue(timeBeforeFileCreaton <= file.CreationTimeUTC,
-                $"{timeBeforeFileCreaton:yyyyMMddHHmmss.fff} <= {file.CreationTimeUTC:yyyyMMddHHmmss.fff}");
+            Assert.IsTrue(timeBeforeFileCreaton <= file.CreationTimeUTC, $"{timeBeforeFileCreaton:yyyyMMddHHmmss.fff} <= {file.CreationTimeUTC:yyyyMMddHHmmss.fff}");
 
             file.Delete();
         }
@@ -192,12 +190,11 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
             Assert.IsTrue(file.Exists);
-            Action createFileAction = () => TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
 #if WINDOWS_UWP
-            Assert.ThrowsException<FileExistException>(createFileAction);
+            Assert.ThrowsException<FileExistException>(() => TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists));
 #else
-            Assert.That(delegate { createFileAction.Invoke(); }, Throws.TypeOf<FileExistException>());
+            Assert.That(() => TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
 #endif
         }
 
@@ -229,12 +226,11 @@ namespace PCLExt.FileStorage.Test
 
             file.Delete();
             Assert.IsFalse(file.Exists);
-            Action deleteAction = () => file.Delete();
 
 #if WINDOWS_UWP
-            Assert.ThrowsException<Exceptions.FileNotFoundException>(deleteAction);
+            Assert.ThrowsException<Exceptions.FileNotFoundException>(() => file.Delete());
 #else
-            Assert.That(delegate { deleteAction.Invoke(); }, Throws.TypeOf<Exceptions.FileNotFoundException>());
+            Assert.That(() => file.Delete(), Throws.TypeOf<Exceptions.FileNotFoundException>());
 #endif
         }
 
@@ -314,12 +310,11 @@ namespace PCLExt.FileStorage.Test
         public void OpenUnknown()
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
-            Action openFileAction = () => file.Open((FileAccess)2);
 
 #if WINDOWS_UWP
-            Assert.ThrowsException<ArgumentException>(openFileAction);
+            Assert.ThrowsException<ArgumentException>(() => file.Open((FileAccess) 2));
 #else
-            Assert.That(delegate { openFileAction.Invoke(); }, Throws.ArgumentException);
+            Assert.That(() => file.Open((FileAccess) 2), Throws.ArgumentException);
 #endif
         }
 
@@ -490,12 +485,10 @@ namespace PCLExt.FileStorage.Test
             var file1 = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
             var file2 = TestFolder.CreateFile(FileName2, CreationCollisionOption.FailIfExists);
 
-            Action copyAction = () => file1.Copy(file2.Path, NameCollisionOption.FailIfExists);
-
 #if WINDOWS_UWP
-            Assert.ThrowsException<FileExistException>(copyAction);
+            Assert.ThrowsException<FileExistException>(() => file1.Copy(file2.Path, NameCollisionOption.FailIfExists));
 #else
-            Assert.That(delegate { copyAction.Invoke(); }, Throws.TypeOf<FileExistException>());
+            Assert.That(() => file1.Copy(file2.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
 #endif
 
             Assert.IsTrue(file1.Exists);
@@ -514,12 +507,10 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            Action copyAction = () => file.Copy(file.Path, NameCollisionOption.FailIfExists);
-
 #if WINDOWS_UWP
-            Assert.ThrowsException<FileExistException>(copyAction);
+            Assert.ThrowsException<FileExistException>(() => file.Copy(file.Path, NameCollisionOption.FailIfExists));
 #else
-            Assert.That(delegate { copyAction.Invoke(); }, Throws.TypeOf<FileExistException>());
+            Assert.That(() => file.Copy(file.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
 #endif
 
             Assert.IsTrue(file.Exists);
@@ -536,12 +527,10 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            Action copyFileAction = () => file.Copy(file.Path, (NameCollisionOption)3);
-
 #if WINDOWS_UWP
-            Assert.ThrowsException<ArgumentException>(copyFileAction);
+            Assert.ThrowsException<ArgumentException>(() => file.Copy(file.Path, (NameCollisionOption) 3));
 #else
-            Assert.That(delegate { copyFileAction.Invoke(); }, Throws.ArgumentException);
+            Assert.That(() => file.Copy(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
 #endif
 
             file.Delete();
@@ -683,12 +672,10 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile("TestFile", CreationCollisionOption.FailIfExists);
 
-            Action moveFileAction = () => file.Move(file.Path, NameCollisionOption.FailIfExists);
-
 #if WINDOWS_UWP
-            Assert.ThrowsException<FileExistException>(moveFileAction);
+            Assert.ThrowsException<FileExistException>(() => file.Move(file.Path, NameCollisionOption.FailIfExists));
 #else
-            Assert.That(delegate { moveFileAction.Invoke(); }, Throws.TypeOf<FileExistException>());
+            Assert.That(() => file.Move(file.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
 #endif
 
             file.Delete();
@@ -703,12 +690,10 @@ namespace PCLExt.FileStorage.Test
         {
             var file = TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists);
 
-            Action moveAction = () => file.Move(file.Path, (NameCollisionOption)3);
-
 #if WINDOWS_UWP
-            Assert.ThrowsException<ArgumentException>(moveAction);
+            Assert.ThrowsException<ArgumentException>(() => file.Move(file.Path, (NameCollisionOption) 3));
 #else
-            Assert.That(delegate { moveAction.Invoke(); }, Throws.ArgumentException);
+            Assert.That(() => file.Move(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
 #endif
 
             file.Delete();

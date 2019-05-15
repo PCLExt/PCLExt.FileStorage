@@ -102,7 +102,7 @@ namespace PCLExt.FileStorage
             return new DefaultFileImplementation(newPath);
         }
         /// <inheritdoc />
-        public async Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default)
         {
             Requires.NotNullOrEmpty(desiredName, nameof(desiredName));
 
@@ -164,7 +164,7 @@ namespace PCLExt.FileStorage
             return new DefaultFileImplementation(path);
         }
         /// <inheritdoc />
-        public async Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default)
         {
             Requires.NotNullOrEmpty(name, nameof(name));
 
@@ -184,7 +184,7 @@ namespace PCLExt.FileStorage
             return Directory.GetFiles(Path, searchPattern, (SearchOption) searchOption).Select(f => new DefaultFileImplementation(f)).ToList<IFile>().AsReadOnly();
         }
         /// <inheritdoc />
-        public async Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
@@ -229,11 +229,11 @@ namespace PCLExt.FileStorage
             }
             else
                 Directory.CreateDirectory(newPath);
-            
+
             return new DefaultFolderImplementation(newPath, true);
         }
         /// <inheritdoc />
-        public async Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default)
         {
             Requires.NotNullOrEmpty(desiredName, nameof(desiredName));
 
@@ -286,7 +286,7 @@ namespace PCLExt.FileStorage
             return new DefaultFolderImplementation(path, true);
         }
         /// <inheritdoc />
-        public async Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default)
         {
             Requires.NotNullOrEmpty(name, nameof(name));
 
@@ -306,7 +306,7 @@ namespace PCLExt.FileStorage
             return Directory.GetDirectories(Path).Select(d => new DefaultFolderImplementation(d, true)).ToList<IFolder>().AsReadOnly();
         }
         /// <inheritdoc />
-        public async Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default)
         {
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
@@ -329,7 +329,7 @@ namespace PCLExt.FileStorage
                 return ExistenceCheckResult.NotFound;
         }
         /// <inheritdoc />
-        public async Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default)
         {
             Requires.NotNullOrEmpty(name, nameof(name));
 
@@ -366,7 +366,7 @@ namespace PCLExt.FileStorage
 
             Directory.Delete(Path, true);
         }
-        
+
         /// <inheritdoc />
         public IFolder Rename(string newName)
         {
@@ -423,7 +423,7 @@ namespace PCLExt.FileStorage
                 Delete();
         }
         /// <inheritdoc />
-        public async Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
         {
             Requires.NotNull(folder, nameof(folder));
 
@@ -459,7 +459,7 @@ namespace PCLExt.FileStorage
                 nFolder.Copy(folder.CreateFolder(nFolder.Name, CreationCollisionOption.OpenIfExists), option);
         }
         /// <inheritdoc />
-        public async Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
         {
             Requires.NotNull(folder, nameof(folder));
 
@@ -475,7 +475,6 @@ namespace PCLExt.FileStorage
             foreach (var nFolder in folders)
                 await nFolder.CopyAsync(await folder.CreateFolderAsync(nFolder.Name, CreationCollisionOption.OpenIfExists, cancellationToken), option, cancellationToken);
         }
-
 
         private void EnsureExists()
         {

@@ -88,28 +88,26 @@ namespace PCLExt.FileStorage.Extensions
                 var assembly = Assembly.GetEntryAssembly() ?? Assembly.GetCallingAssembly();
 
                 var attrs = (AssemblyCompanyAttribute[]) assembly.GetCustomAttributes(typeof(AssemblyCompanyAttribute), true);
-                if (attrs != null && attrs.Length > 0)
+                if (attrs?.Length > 0)
                     company = attrs[0].Company;
 
                 // If there is no [AssemblyCompany], return the outermost namespace
                 // on Main ()
-                if (string.IsNullOrEmpty(company))
-                    if (assembly.EntryPoint != null)
-                    {
-                        company = assembly.EntryPoint.DeclaringType.Namespace;
+                if (string.IsNullOrEmpty(company) && assembly.EntryPoint != null)
+                {
+                    company = assembly.EntryPoint.DeclaringType.Namespace;
 
-                        if (company != null)
-                        {
-                            int firstDot = company.IndexOf('.');
-                            if (firstDot >= 0)
-                                company = company.Substring(0, firstDot);
-                        }
+                    if (company != null)
+                    {
+                        int firstDot = company.IndexOf('.');
+                        if (firstDot >= 0)
+                            company = company.Substring(0, firstDot);
                     }
+                }
 
                 // If that doesn't work, return the name of class containing Main ()
-                if (string.IsNullOrEmpty(company))
-                    if (assembly.EntryPoint != null)
-                        company = assembly.EntryPoint.DeclaringType.FullName;
+                if (string.IsNullOrEmpty(company) && assembly.EntryPoint != null)
+                    company = assembly.EntryPoint.DeclaringType.FullName;
 
                 return company;
             }
@@ -125,27 +123,26 @@ namespace PCLExt.FileStorage.Extensions
                 var attrs = (AssemblyProductAttribute[])
                     assembly.GetCustomAttributes(typeof(AssemblyProductAttribute), true);
 
-                if (attrs != null && attrs.Length > 0)
+                if (attrs?.Length > 0)
                     name = attrs[0].Product;
 
                 // If there is no [AssemblyProduct], .NET returns the name of 
                 // the innermost namespace and if that fails, resorts to the 
                 // name of the class containing Main ()
-                if (string.IsNullOrEmpty(name))
-                    if (assembly.EntryPoint != null)
+                if (string.IsNullOrEmpty(name) && assembly.EntryPoint != null)
+                {
+                    name = assembly.EntryPoint.DeclaringType.Namespace;
+
+                    if (name != null)
                     {
-                        name = assembly.EntryPoint.DeclaringType.Namespace;
-
-                        if (name != null)
-                        {
-                            var lastDot = name.LastIndexOf('.');
-                            if (lastDot >= 0 && lastDot < name.Length - 1)
-                                name = name.Substring(lastDot + 1);
-                        }
-
-                        if (string.IsNullOrEmpty(name))
-                            name = assembly.EntryPoint.DeclaringType.FullName;
+                        var lastDot = name.LastIndexOf('.');
+                        if (lastDot >= 0 && lastDot < name.Length - 1)
+                            name = name.Substring(lastDot + 1);
                     }
+
+                    if (string.IsNullOrEmpty(name))
+                        name = assembly.EntryPoint.DeclaringType.FullName;
+                }
 
                 return name;
             }

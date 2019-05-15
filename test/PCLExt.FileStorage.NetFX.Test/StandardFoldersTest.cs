@@ -1,4 +1,5 @@
 ﻿using PCLExt.FileStorage.Folders;
+
 using System.Threading.Tasks;
 
 #if WINDOWS_UWP
@@ -174,7 +175,7 @@ namespace PCLExt.FileStorage.Test
 #endif
         public async Task LocalRootFolder_UnexistingFileAsync_ReturnsNotFound()
         {
-            var folder = new LocalRootFolder();        
+            var folder = new LocalRootFolder();
             var exists = await folder.CheckExistsAsync("test.zip");
             Assert.IsTrue(ExistenceCheckResult.NotFound == exists);
         }

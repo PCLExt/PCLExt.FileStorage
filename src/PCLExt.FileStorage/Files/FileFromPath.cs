@@ -18,7 +18,7 @@
         public FileFromPath(string path) : base(GetFileFromPath(path)) { }
         private static IFile GetFileFromPath(string path)
         {
-            Requires.NotNullOrEmpty(path, "path");
+            Requires.NotNullOrEmpty(path, nameof(path));
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
             if (System.IO.File.Exists(path))

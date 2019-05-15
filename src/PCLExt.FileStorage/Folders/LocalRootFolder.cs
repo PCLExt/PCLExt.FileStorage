@@ -11,9 +11,9 @@ namespace PCLExt.FileStorage.Folders
 
 #if __MACOS__
 		[System.Runtime.InteropServices.DllImport(ObjCRuntime.Constants.FoundationLibrary)]
-		static extern System.IntPtr NSHomeDirectory(); // Under the sandbox, need to read the HomeDirectory
+		private static extern System.IntPtr NSHomeDirectory(); // Under the sandbox, need to read the HomeDirectory
 
-		static string MacHomeDirectory => ((Foundation.NSString) ObjCRuntime.Runtime.GetNSObject(NSHomeDirectory())).ToString();
+		private static string MacHomeDirectory => ((Foundation.NSString) ObjCRuntime.Runtime.GetNSObject(NSHomeDirectory())).ToString();
 #endif
 
         /// <summary>

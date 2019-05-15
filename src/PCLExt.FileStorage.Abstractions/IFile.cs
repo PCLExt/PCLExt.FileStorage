@@ -43,31 +43,31 @@ namespace PCLExt.FileStorage
          /// </summary>
          /// <value>The creation time.</value>
          DateTime CreationTime { get; }
- 
+
          /// <summary>
          /// Creation time UTC.
          /// </summary>
          /// <value>The creation time UTC.</value>
          DateTime CreationTimeUTC { get; }
- 
+
          /// <summary>
          /// Last access time.
          /// </summary>
          /// <value>The last access time.</value>
          DateTime LastAccessTime { get; }
- 
+
          /// <summary>
          /// Last access time UTC.
          /// </summary>
          /// <value>The last access time UTC.</value>
          DateTime LastAccessTimeUTC { get; }
- 
+
          /// <summary>
          /// Last write time.
          /// </summary>
          /// <value>The last write time.</value>
          DateTime LastWriteTime { get; }
- 
+
          /// <summary>
          /// Last write time UTC.
          /// </summary>
@@ -86,7 +86,7 @@ namespace PCLExt.FileStorage
         /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file</returns>
-        Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default(CancellationToken));
+        Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes the file
@@ -99,35 +99,33 @@ namespace PCLExt.FileStorage
         /// Deletes the file
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
-        /// <returns>
-        /// A task which will complete after the file is deleted.
-        /// </returns>
-        Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        /// <returns>A task which will complete after the file is deleted.</returns>
+        Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Writes all bytes to the file, overwriting any existing data.
         /// </summary>
-        /// <param name="bytes"></param>
+        /// <param name="bytes">Bytes used to overwrite file</param>
         void WriteAllBytes(byte[] bytes);
         /// <summary>
-        /// 
+        /// Writes all bytes to the file, overwriting any existing data.
         /// </summary>
-        /// <param name="bytes"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="bytes">Bytes used to overwrite file</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A task which will complete after.</returns>
+        Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Read all bytes frim the file.
         /// </summary>
         /// <returns></returns>
         byte[] ReadAllBytes();
         /// <summary>
-        /// 
+        /// Read all bytes frim the file.
         /// </summary>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>A task which will complete after all bytes are read.</returns>
+        Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Renames a file without changing its directory.
@@ -147,7 +145,7 @@ namespace PCLExt.FileStorage
         /// <returns>
         /// A task which will complete after the file is renamed.
         /// </returns>
-        Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Moves a file.
@@ -161,7 +159,7 @@ namespace PCLExt.FileStorage
         /// <param name="newFile">The file to move to.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken));
+        Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Copies a file. Overwriting a file of the same name is allowed.
@@ -175,7 +173,7 @@ namespace PCLExt.FileStorage
         /// <param name="newFile">The file to copy to.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken));
+        Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Moves a file.
@@ -191,7 +189,7 @@ namespace PCLExt.FileStorage
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default);
 
         /// <summary>
 		/// Copies a file. Overwriting a file of the same name is allowed.
@@ -207,6 +205,6 @@ namespace PCLExt.FileStorage
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
-        Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default);
     }
 }

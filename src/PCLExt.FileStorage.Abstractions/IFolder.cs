@@ -83,7 +83,7 @@ namespace PCLExt.FileStorage
         /// <param name="option">Specifies how to behave if the specified file already exists</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The newly created file</returns>
-        Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a file in this folder
@@ -97,7 +97,7 @@ namespace PCLExt.FileStorage
         /// <param name="name">The name of the file to get</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The requested file, or null if it does not exist</returns>
-        Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a list of the files in this folder
@@ -114,7 +114,7 @@ namespace PCLExt.FileStorage
         /// <param name="searchOption"></param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A list of the files in the folder</returns>
-        Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Creates a subfolder in this folder
@@ -130,7 +130,7 @@ namespace PCLExt.FileStorage
         /// <param name="option">Specifies how to behave if the specified folder already exists</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The newly created folder</returns>
-        Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a subfolder in this folder
@@ -144,7 +144,7 @@ namespace PCLExt.FileStorage
         /// <param name="name">The name of the folder to get</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The requested folder, or null if it does not exist</returns>
-        Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
+        Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a list of subfolders in this folder
@@ -156,7 +156,7 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A list of subfolders in the folder</returns>
-        Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default(CancellationToken));
+        Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Checks whether a folder or file exists at the given location.
@@ -170,7 +170,7 @@ namespace PCLExt.FileStorage
         /// <param name="name">The name of the file or folder to check for.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task whose result is the result of the existence check.</returns>
-        Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes this folder and all of its contents
@@ -182,21 +182,21 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the folder is deleted</returns>
-        Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken));
+        Task DeleteAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 
+        /// Renames the folder.
         /// </summary>
-        /// <param name="newName"></param>
-        /// <returns></returns>
+        /// <param name="newName">New folder name.</param>
+        /// <returns>The renamed folder.</returns>
         IFolder Rename(string newName);
         /// <summary>
-        /// 
+        /// Renames the folder.
         /// </summary>
-        /// <param name="newName"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default(CancellationToken));
+        /// <param name="newName">New folder name.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>The renamed folder.</returns>
+        Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Moves this folder and all of its contents to the given folder, current folder will be deleted.
@@ -212,7 +212,7 @@ namespace PCLExt.FileStorage
         /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The folder with moved content.</returns>
-        Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Copies this folder and all of its contents to the given folder.
@@ -226,6 +226,6 @@ namespace PCLExt.FileStorage
         /// <param name="folder">The folder in which content will be copied</param>
         /// <param name="option">Specifies how to behave if the specified folder/file already exists</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken));
+        Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default);
     }
 }

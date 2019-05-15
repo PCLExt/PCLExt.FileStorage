@@ -93,7 +93,7 @@ namespace PCLExt.FileStorage.UWP
             return CopyAsync(newPath, collisionOption).GetAwaiter().GetResult();
         }
 
-        public async Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default)
         {
             if (_storageFile.Path == newFile.Path)
                 return;
@@ -108,7 +108,7 @@ namespace PCLExt.FileStorage.UWP
                 AsTask(cancellationToken);
         }
 
-        public async Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
         {
             if (_storageFile.Path == newPath)
             {
@@ -155,7 +155,7 @@ namespace PCLExt.FileStorage.UWP
             DeleteAsync().GetAwaiter().GetResult();
         }
 
-        public async Task DeleteAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             try
             {
@@ -164,7 +164,7 @@ namespace PCLExt.FileStorage.UWP
             catch (System.IO.FileNotFoundException ex)
             {
                 throw new Exceptions.FileNotFoundException(_storageFile.Path, ex);
-            }            
+            }
         }
 
         public void Move(IFile newFile)
@@ -180,14 +180,14 @@ namespace PCLExt.FileStorage.UWP
                 GetAwaiter().GetResult();
         }
 
-        public async Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default)
         {
             await MoveAsync(
                 newPath: newFile.Path,
                 cancellationToken: cancellationToken);
         }
 
-        public async Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
         {
             if (collisionOption == NameCollisionOption.ReplaceExisting &&
                 _storageFile.Path == newPath)
@@ -227,7 +227,7 @@ namespace PCLExt.FileStorage.UWP
             return OpenAsync(fileAccess).GetAwaiter().GetResult();
         }
 
-        public async Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default)
         {
             var windowsFileAccess = Convert(fileAccess);
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -250,7 +250,7 @@ namespace PCLExt.FileStorage.UWP
             return ReadAllBytesAsync().GetAwaiter().GetResult();
         }
 
-        public async Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default)
         {
             byte[] result;
             using (Stream stream = await _storageFile.OpenStreamForReadAsync())
@@ -269,7 +269,7 @@ namespace PCLExt.FileStorage.UWP
             return RenameAsync(newName, collisionOption).GetAwaiter().GetResult();
         }
 
-        public async Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default)
         {
             var windowsCollisionOption = StorageExtensions.ConvertToNameCollision(collisionOption);
             var newFileName = System.IO.Path.GetFileName(newName);
@@ -285,7 +285,7 @@ namespace PCLExt.FileStorage.UWP
             WriteAllBytesAsync(bytes).Wait();
         }
 
-        public async Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default)
         {
             using (Stream stream = await _storageFile.OpenStreamForWriteAsync())
             {

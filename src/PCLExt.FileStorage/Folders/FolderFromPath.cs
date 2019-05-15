@@ -18,7 +18,7 @@
         public FolderFromPath(string path) : base(GetFolderFromPath(path)) { }
         private static IFolder GetFolderFromPath(string path)
         {
-            Requires.NotNullOrEmpty(path, "path");
+            Requires.NotNullOrEmpty(path, nameof(path));
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
             return System.IO.Directory.Exists(path) ? new DefaultFolderImplementation(path, true) : null;

@@ -17,7 +17,7 @@ namespace PCLExt.FileStorage.Extensions
     /// <summary>
     /// Extensions for use internally by PCLStorage for awaiting.
     /// </summary>
-    internal static partial class AwaitExtensions
+    internal static class AwaitExtensions
     {
         /// <summary>
         /// Causes the caller who awaits this method to
@@ -35,7 +35,7 @@ namespace PCLExt.FileStorage.Extensions
         internal struct TaskSchedulerAwaiter : INotifyCompletion
         {
             private readonly TaskScheduler _taskScheduler;
-            private CancellationToken _cancellationToken;
+            private readonly CancellationToken _cancellationToken;
 
 
             internal TaskSchedulerAwaiter(TaskScheduler taskScheduler, CancellationToken cancellationToken) { _taskScheduler = taskScheduler; _cancellationToken = cancellationToken; }
@@ -49,7 +49,7 @@ namespace PCLExt.FileStorage.Extensions
             {
                 if (_taskScheduler == null)
                     throw new InvalidOperationException("IsCompleted is true, so this is unexpected.");
-                
+
                 Task.Factory.StartNew(continuation, CancellationToken.None, TaskCreationOptions.None, _taskScheduler);
             }
 

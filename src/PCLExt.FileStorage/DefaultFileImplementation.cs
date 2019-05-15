@@ -289,10 +289,10 @@ namespace PCLExt.FileStorage
         {
             // Test if path is not same. If same, skip/abort
             // When replacing, firts copy the replaceable file to the buffer, then delete. Dont just do File.Copy guess?
-            Requires.NotNullOrEmpty(newPath, "newPath");
+            Requires.NotNullOrEmpty(newPath, nameof(newPath));
 
             EnsureExists();
-    
+
             var newDirectory = System.IO.Path.GetDirectoryName(newPath);
             var newName = System.IO.Path.GetFileName(newPath);
 
@@ -373,7 +373,6 @@ namespace PCLExt.FileStorage
                 return new FileFromPath(candidatePath);
             }
         }
-
 
         private void EnsureExists()
         {

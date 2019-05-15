@@ -37,7 +37,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="file">The file to read </param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The content of the file</returns>
-        public static async Task<string> ReadAllTextAsync(this IFile file, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<string> ReadAllTextAsync(this IFile file, CancellationToken cancellationToken = default)
         {
             using (var stream = await file.OpenAsync(FileAccess.Read, cancellationToken).ConfigureAwait(false))
             using (var sr = new StreamReader(stream))
@@ -66,7 +66,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="content">The content to write to the file</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which completes when the write operation finishes</returns>
-        public static async Task WriteAllTextAsync(this IFile file, string content, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task WriteAllTextAsync(this IFile file, string content, CancellationToken cancellationToken = default)
         {
             using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
             {
@@ -100,7 +100,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="file">The file to read </param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>The content of the file</returns>
-        public static async Task<string[]> ReadAllLinesAsync(this IFile file, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task<string[]> ReadAllLinesAsync(this IFile file, CancellationToken cancellationToken = default)
         {
             using (var stream = await file.OpenAsync(FileAccess.Read, cancellationToken).ConfigureAwait(false))
             using (var sr = new StreamReader(stream))
@@ -134,7 +134,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="file">The file to write to</param>
         /// <param name="lines">The content to write to the file</param>
         /// <param name="cancellationToken">The cancellation token.</param>
-        public static async Task WriteAllLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task WriteAllLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default)
         {
             using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
             {
@@ -168,7 +168,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="contents"></param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public static async Task AppendTextAsync(this IFile file, string contents, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task AppendTextAsync(this IFile file, string contents, CancellationToken cancellationToken = default)
         {
             using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
             {
@@ -201,7 +201,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="lines"></param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
-        public static async Task AppendLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default(CancellationToken))
+        public static async Task AppendLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default)
         {
             using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
             {
