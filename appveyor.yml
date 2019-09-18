@@ -75,7 +75,7 @@
   deploy:
     provider: NuGet
     api_key:
-      secure: yoZtG3i28wVuNDk1HrGW/t3tsgt3Ru/Yk/y/sOzUHRc2WVZlynVdWSHK/Bp0uShJ
+      secure: N2k7BxQ7ZMgScB50k2flOS0T1xWCI1lWXNMTzDer1j/rWPZwLuG42fQWcZzHJ/Th
     skip_symbols: false
     artifact: PCLExt.FileStorage.nupkg
     on:
@@ -152,7 +152,7 @@
   deploy:
     provider: NuGet
     api_key:
-      secure: yoZtG3i28wVuNDk1HrGW/t3tsgt3Ru/Yk/y/sOzUHRc2WVZlynVdWSHK/Bp0uShJ
+      secure: N2k7BxQ7ZMgScB50k2flOS0T1xWCI1lWXNMTzDer1j/rWPZwLuG42fQWcZzHJ/Th
     skip_symbols: false
     artifact: PCLExt.FileStorage-devel.nupkg
     on:
