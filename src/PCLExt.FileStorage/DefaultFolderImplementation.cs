@@ -374,7 +374,7 @@ namespace PCLExt.FileStorage
 
             EnsureExists();
 
-            var parentFolder = Directory.GetParent(Path).FullName;
+            var parentFolder = new DirectoryInfo(Path).Parent.FullName;
             var newPath = System.IO.Path.Combine(parentFolder, newName);
 
             if(Directory.Exists(newPath))
@@ -393,7 +393,7 @@ namespace PCLExt.FileStorage
 
             EnsureExists();
 
-            var parentFolder = Directory.GetParent(Path).FullName;
+            var parentFolder = new DirectoryInfo(Path).Parent.FullName;
             var newPath = System.IO.Path.Combine(parentFolder, newName);
 
             if (Directory.Exists(newPath))
