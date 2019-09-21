@@ -24,7 +24,7 @@
             if (createIfNotExisting)
                 System.IO.Directory.CreateDirectory(path);
 
-            return System.IO.Directory.Exists(path) ? (IFolder) new DefaultFolderImplementation(path) : (IFolder) new NonExistingFolder(path);
+            return System.IO.Directory.Exists(path) ? (IFolder) new DefaultFolderImplementation(path, true) : (IFolder) new NonExistingFolder(path);
 #elif WINDOWS_UWP
             if (createIfNotExisting)
                 System.IO.Directory.CreateDirectory(path); // TODO: Test, will it work on UWP?
