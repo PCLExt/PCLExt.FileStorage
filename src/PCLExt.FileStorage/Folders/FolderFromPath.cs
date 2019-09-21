@@ -15,15 +15,21 @@
         /// Creates a new <see cref="BaseFolder"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
-        public FolderFromPath(string path) : base(GetFolderFromPath(path)) { }
-        private static IFolder GetFolderFromPath(string path)
+        public FolderFromPath(string path, bool createIfNotExisting = false) : base(GetFolderFromPath(path, createIfNotExisting)) { }
+        private static IFolder GetFolderFromPath(string path, bool createIfNotExisting = false)
         {
             Requires.NotNullOrEmpty(path, nameof(path));
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
-            return System.IO.Directory.Exists(path) ? new DefaultFolderImplementation(path, true) : null;
+            if (createIfNotExisting)
+                System.IO.Directory.CreateDirectory(path);
+
+            return System.IO.Directory.Exists(path) ? (IFolder) new DefaultFolderImplementation(path) : (IFolder) new NonExistingFolder(path);
 #elif WINDOWS_UWP
-            return new UWP.StorageFolderImplementation(path);
+            if (createIfNotExisting)
+                System.IO.Directory.CreateDirectory(path); // TODO: Test, will it work on UWP?
+
+            return new UWP.StorageFolderImplementation(path) is IFolder uwpFile && uwpFile.Exists ? uwpFile : new NonExistingFolder(path);
 #endif
 
             throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();

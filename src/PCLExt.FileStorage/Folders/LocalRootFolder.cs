@@ -25,7 +25,7 @@ namespace PCLExt.FileStorage.Folders
         {
 #if ANDROID
             var storage = Android.App.Application.Context.GetExternalFilesDir(null)?.ParentFile?.AbsolutePath;
-            return string.IsNullOrEmpty(storage) ? null : new DefaultFolderImplementation(storage);
+            return string.IsNullOrEmpty(storage) ? (IFolder) new NonExistingFolder("") : (IFolder) new DefaultFolderImplementation(storage);
 #elif __IOS__
             var documents = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
             var storage = System.IO.Path.Combine(documents, "..", "Library");

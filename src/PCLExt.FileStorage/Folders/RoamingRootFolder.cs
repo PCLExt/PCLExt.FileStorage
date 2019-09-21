@@ -18,12 +18,11 @@ namespace PCLExt.FileStorage.Folders
         private static IFolder GetRoamingFolder()
         {
 #if ANDROID || __IOS__
-            return null;
+            return new NonExistingFolder("");
 #elif NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData)).GetDataFolder();
 #elif WINDOWS_UWP
-            return new UWP.StorageFolderImplementation(
-                Windows.Storage.ApplicationData.Current.RoamingFolder);
+            return new UWP.StorageFolderImplementation(Windows.Storage.ApplicationData.Current.RoamingFolder);
 #endif
         }
 #else

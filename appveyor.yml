@@ -99,7 +99,7 @@
   - Debug
   - Release
   platform: AnyCPU
-  version: 1.4.1.{build}
+  version: 1.5.1.{build}
   clone_depth: 1
   
   skip_commits:

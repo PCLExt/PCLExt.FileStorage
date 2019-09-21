@@ -22,6 +22,9 @@ namespace PCLExt.FileStorage.Exceptions
 #endif
     {
         /// <exclude/>
+        public FolderNotFoundException() : base() { }
+
+        /// <exclude/>
         public FolderNotFoundException(string message) : base(message) { }
 
         /// <exclude/>

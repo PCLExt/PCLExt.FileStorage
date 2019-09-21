@@ -14,7 +14,7 @@
         private static IFolder GetApplicationFolder()
         {
 #if ANDROID
-            return null;
+            return new NonExistingFolder("");
 #elif __IOS__
             return new DefaultFolderImplementation(Foundation.NSBundle.MainBundle.BundlePath);
 #elif NETFX45 || __MACOS__

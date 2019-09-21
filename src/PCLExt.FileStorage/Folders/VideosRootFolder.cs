@@ -22,7 +22,7 @@ namespace PCLExt.FileStorage.Folders
 #elif NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyVideos));
 #elif WINDOWS_UWP
-            return null;
+            return new NonExistingFolder("");
 #endif
         }
 #else

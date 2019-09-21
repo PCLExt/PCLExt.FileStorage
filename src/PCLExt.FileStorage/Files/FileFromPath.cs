@@ -15,21 +15,21 @@
         /// Creates a new <see cref="BaseFile"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
-        public FileFromPath(string path) : base(GetFileFromPath(path)) { }
-        private static IFile GetFileFromPath(string path)
+        public FileFromPath(string path, bool createIfNotExisting = false) : base(GetFileFromPath(path, createIfNotExisting)) { }
+        private static IFile GetFileFromPath(string path, bool createIfNotExisting = false)
         {
             Requires.NotNullOrEmpty(path, nameof(path));
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
-            if (System.IO.File.Exists(path))
-                return new DefaultFileImplementation(path);
-            else
-                throw new Exceptions.FileNotFoundException($"File does not exists on {path}");
+            if(createIfNotExisting)
+                System.IO.File.Create(path).Dispose();
+
+            return System.IO.File.Exists(path) ? (IFile) new DefaultFileImplementation(path) : (IFile) new NonExistingFile(path);
 #elif WINDOWS_UWP
-            var result = new UWP.StorageFileImplementation(path);
-            if(!result.Exists)
-                throw new Exceptions.FileNotFoundException($"File does not exists on {path}");
-            return result;
+            if (createIfNotExisting)
+                System.IO.File.Create(path).Dispose(); // TODO: Test, will it work on UWP?
+
+            return new UWP.StorageFileImplementation(path) is IFile uwpFile && uwpFile.Exists ? uwpFile : new NonExistingFile(path);
 #endif
 
             throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();

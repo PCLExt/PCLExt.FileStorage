@@ -150,6 +150,9 @@
     <Compile Include="..\PCLExt.FileStorage\Files\FileFromPath.cs">
       <Link>Files\FileFromPath.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage\Files\NonExistingFile.cs">
+      <Link>Files\NonExistingFile.cs</Link>
+    </Compile>
     <Compile Include="..\PCLExt.FileStorage\Folders\ApplicationRootFolder.cs">
       <Link>Folders\ApplicationRootFolder.cs</Link>
     </Compile>
@@ -167,6 +170,9 @@
     </Compile>
     <Compile Include="..\PCLExt.FileStorage\Folders\MusicRootFolder.cs">
       <Link>Folders\MusicRootFolder.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLExt.FileStorage\Folders\NonExistingFolder.cs">
+      <Link>Folders\NonExistingFolder.cs</Link>
     </Compile>
     <Compile Include="..\PCLExt.FileStorage\Folders\PicturesRootFolder.cs">
       <Link>Folders\PicturesRootFolder.cs</Link>

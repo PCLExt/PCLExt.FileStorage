@@ -3,6 +3,8 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
+using FileNotFoundException = PCLExt.FileStorage.Exceptions.FileNotFoundException;
+
 namespace PCLExt.FileStorage
 {
     /// <summary>
@@ -11,9 +13,9 @@ namespace PCLExt.FileStorage
     public sealed class NonExistingFile : IFile
     {
         /// <inheritdoc />
-        public string Name => throw new FileNotFoundException();
+        public string Name { get; }
         /// <inheritdoc />
-        public string Path => throw new FileNotFoundException();
+        public string Path { get; }
         /// <inheritdoc />
         public bool Exists => false;
         /// <inheritdoc />
@@ -30,6 +32,12 @@ namespace PCLExt.FileStorage
         public DateTime LastWriteTime => throw new FileNotFoundException();
         /// <inheritdoc />
         public DateTime LastWriteTimeUTC => throw new FileNotFoundException();
+
+        public NonExistingFile(string path)
+        {
+            Name = System.IO.Path.GetFileName(path);
+            Path = path;
+        }
 
         /// <inheritdoc />
         public Stream Open(FileAccess fileAccess) => throw new FileNotFoundException();

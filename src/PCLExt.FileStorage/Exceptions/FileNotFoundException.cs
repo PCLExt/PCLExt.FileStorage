@@ -22,6 +22,9 @@ namespace PCLExt.FileStorage.Exceptions
 #endif
     {
         /// <exclude/>
+        public FileNotFoundException() : base() { }
+
+        /// <exclude/>
         public FileNotFoundException(string message) : base(message) { }
 
         /// <exclude/>
