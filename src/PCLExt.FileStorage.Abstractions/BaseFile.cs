@@ -35,7 +35,7 @@ namespace PCLExt.FileStorage
         /// Wraps an <see cref="IFile"/>
         /// </summary>
         /// <param name="file"></param>
-        protected BaseFile(IFile file) { _file = file ?? new NonExistingFile(); }
+        protected BaseFile(IFile file) { _file = file; }
 
         /// <inheritdoc />
         public Stream Open(FileAccess fileAccess) => _file.Open(fileAccess);
