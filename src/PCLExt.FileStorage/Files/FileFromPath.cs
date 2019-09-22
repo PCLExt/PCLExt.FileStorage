@@ -21,15 +21,19 @@
             Requires.NotNullOrEmpty(path, nameof(path));
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
-            if(createIfNotExisting)
+            var file = new DefaultFileImplementation(path);
+
+            if (!file.Exists && createIfNotExisting)
                 System.IO.File.Create(path).Dispose();
 
-            return System.IO.File.Exists(path) ? (IFile) new DefaultFileImplementation(path) : (IFile) new NonExistingFile(path);
+            return file.Exists ? (IFile) file : (IFile) new NonExistingFile(path);
 #elif WINDOWS_UWP
-            if (createIfNotExisting)
+            var uwpFile = new UWP.StorageFileImplementation(path);
+            
+            if (!uwpFile.Exists && createIfNotExisting)
                 System.IO.File.Create(path).Dispose(); // TODO: Test, will it work on UWP?
 
-            return new UWP.StorageFileImplementation(path) is IFile uwpFile && uwpFile.Exists ? uwpFile : new NonExistingFile(path);
+            return uwpFile.Exists ? (IFile) uwpFile : (IFile) new NonExistingFile(path);
 #endif
 
             throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();

@@ -21,15 +21,19 @@
             Requires.NotNullOrEmpty(path, nameof(path));
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
-            if (createIfNotExisting)
+            var folder = new DefaultFolderImplementation(path, true);
+
+            if (!folder.Exists && createIfNotExisting)
                 System.IO.Directory.CreateDirectory(path);
 
-            return System.IO.Directory.Exists(path) ? (IFolder) new DefaultFolderImplementation(path, true) : (IFolder) new NonExistingFolder(path);
+            return folder.Exists ? (IFolder) folder : (IFolder) new NonExistingFolder(path);
 #elif WINDOWS_UWP
-            if (createIfNotExisting)
+            var uwpFolder = new UWP.StorageFolderImplementation(path);
+
+            if (!uwpFolder.Exists && createIfNotExisting)
                 System.IO.Directory.CreateDirectory(path); // TODO: Test, will it work on UWP?
 
-            return new UWP.StorageFolderImplementation(path) is IFolder uwpFile && uwpFile.Exists ? uwpFile : new NonExistingFolder(path);
+            return uwpFolder.Exists ? (IFolder) uwpFolder : (IFolder) new NonExistingFolder(path);
 #endif
 
             throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
