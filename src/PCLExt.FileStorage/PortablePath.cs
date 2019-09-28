@@ -32,6 +32,21 @@ namespace PCLExt.FileStorage
         }
 
         /// <summary>
+        /// The alterrnative character used to separate elements in a file system path.
+        /// </summary>
+        public static char AltDirectorySeparatorChar
+        {
+            get
+            {
+#if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__ || ANDROID || __IOS__ || WINDOWS_UWP
+                return System.IO.Path.AltDirectorySeparatorChar;
+#endif
+
+                throw ExceptionsHelper.NotImplementedInReferenceAssembly();
+            }
+        }
+
+        /// <summary>
         /// Combines multiple strings into a path.
         /// </summary>
         /// <param name="paths">Path elements to combine.</param>
