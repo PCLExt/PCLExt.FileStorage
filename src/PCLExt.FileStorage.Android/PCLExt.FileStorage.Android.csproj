@@ -82,6 +82,9 @@
     <Compile Include="..\PCLExt.FileStorage\Extensions\FolderExtensions.cs">
       <Link>Extensions\FolderExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\PCLExt.FileStorage\Extensions\StringExtensions.cs">
+      <Link>Extensions\StringExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\PCLExt.FileStorage\Files\FileFromPath.cs">
       <Link>Files\FileFromPath.cs</Link>
     </Compile>

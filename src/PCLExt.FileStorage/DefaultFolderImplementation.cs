@@ -28,7 +28,7 @@ namespace PCLExt.FileStorage
         private readonly bool _canDelete;
 
         /// <inheritdoc />
-        public string Name => System.IO.Path.GetFileName(Path);
+        public string Name => System.IO.Path.GetFileName(System.IO.Path.GetDirectoryName(Path));
         /// <inheritdoc />
         public string Path { get; }
         /// <inheritdoc />
@@ -53,7 +53,7 @@ namespace PCLExt.FileStorage
         /// <param name="canDelete">Specifies whether the folder can be deleted (via <see cref="DeleteAsync"/>).</param>
         public DefaultFolderImplementation(string path, bool canDelete = false)
         {
-            Path = path;
+            Path = path.EnsureEndsWith(System.IO.Path.DirectorySeparatorChar, System.IO.Path.AltDirectorySeparatorChar);
             _canDelete = canDelete;
         }
 
