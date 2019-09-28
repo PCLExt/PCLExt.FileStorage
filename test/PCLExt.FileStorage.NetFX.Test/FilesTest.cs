@@ -163,7 +163,7 @@ namespace PCLExt.FileStorage.Test
             var file1 = TestFolder.CreateFile(FileName1, CreationCollisionOption.ReplaceExisting);
             Assert.IsTrue(file1.Exists);
 
-            Assert.IsTrue(file.Path == file1.Path);
+            Assert.IsTrue(string.Equals(file.Path, file1.Path, StringComparison.Ordinal));
 
             file.Delete();
         }
@@ -467,7 +467,7 @@ namespace PCLExt.FileStorage.Test
                 var newFile = file.Copy(file.Path, NameCollisionOption.ReplaceExisting);
                 Assert.IsTrue(file.Exists);
                 Assert.IsTrue(newFile.Exists);
-                Assert.IsTrue(file.Path == newFile.Path);
+                Assert.IsTrue(string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
             }
             finally
             {
@@ -710,7 +710,7 @@ namespace PCLExt.FileStorage.Test
         {
             var file = new TestFolder().GetFileFromPath(Path.Combine("Folder1", FileName2));
             Assert.IsTrue(file.Exists);
-            Assert.IsTrue(file.Path == Path.Combine(new TestFolder().Path, "Folder1", FileName2));
+            Assert.IsTrue(string.Equals(file.Path, Path.Combine(new TestFolder().Path, "Folder1", FileName2), StringComparison.Ordinal));
         }
     }
 }

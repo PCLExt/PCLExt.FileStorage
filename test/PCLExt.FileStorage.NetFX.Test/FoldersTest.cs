@@ -99,7 +99,7 @@ namespace PCLExt.FileStorage.Test
             var folder1 = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.ReplaceExisting);
             Assert.IsTrue(folder.Exists);
             Assert.IsTrue(folder1.Exists);
-            Assert.IsTrue(folder.Path == folder1.Path);
+            Assert.IsTrue(string.Equals(folder.Path, folder1.Path, System.StringComparison.Ordinal));
 
             folder.Delete();
         }
@@ -304,7 +304,7 @@ namespace PCLExt.FileStorage.Test
                 var newFolder = folder.Rename(FolderName2);
                 Assert.IsFalse(folder.Exists);
                 Assert.IsTrue(newFolder.Exists);
-                Assert.IsFalse(folder.Path == newFolder.Path);
+                Assert.IsFalse(string.Equals(folder.Path, newFolder.Path, System.StringComparison.Ordinal));
                 newFolder.Delete();
             }
             catch
@@ -351,7 +351,7 @@ namespace PCLExt.FileStorage.Test
             var folder2 = folder.CreateFolder(FolderName2, CreationCollisionOption.FailIfExists);
 
             var getFiles = folder.GetFile(FileName1);
-            Assert.IsTrue(file1.Path == getFiles.Path);
+            Assert.IsTrue(string.Equals(file1.Path, getFiles.Path, System.StringComparison.Ordinal));
         }
 
 #if WINDOWS_UWP
@@ -421,7 +421,7 @@ namespace PCLExt.FileStorage.Test
             var folder2 = folder.CreateFolder(FolderName2, CreationCollisionOption.FailIfExists);
 
             var getFolder = folder.GetFolder(FolderName1);
-            Assert.IsTrue(folder1.Path == getFolder.Path);
+            Assert.IsTrue(string.Equals(folder1.Path, getFolder.Path, System.StringComparison.Ordinal));
         }
 
 #if WINDOWS_UWP
@@ -827,7 +827,7 @@ namespace PCLExt.FileStorage.Test
         {
             var folder = new TestFolder().GetFolderFromPath(Path.Combine(FolderName1, FolderName2));
             Assert.IsTrue(folder.Exists);
-            Assert.IsTrue(folder.Path == Path.Combine(new TestFolder().Path, FolderName1, FolderName2));
+            Assert.IsTrue(string.Equals(folder.Path, Path.Combine(new TestFolder().Path, FolderName1, FolderName2).PathEnsureDirectorySeparator(), System.StringComparison.Ordinal));
         }
     }
 }

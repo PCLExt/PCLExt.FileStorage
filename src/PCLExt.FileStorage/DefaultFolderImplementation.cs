@@ -53,7 +53,7 @@ namespace PCLExt.FileStorage
         /// <param name="canDelete">Specifies whether the folder can be deleted (via <see cref="DeleteAsync"/>).</param>
         public DefaultFolderImplementation(string path, bool canDelete = false)
         {
-            Path = path.EnsureEndsWith(System.IO.Path.DirectorySeparatorChar, System.IO.Path.AltDirectorySeparatorChar);
+            Path = path.PathEnsureDirectorySeparator();
             _canDelete = canDelete;
         }
 

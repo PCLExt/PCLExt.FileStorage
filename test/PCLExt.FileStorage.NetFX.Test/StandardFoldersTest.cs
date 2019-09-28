@@ -27,7 +27,7 @@ namespace PCLExt.FileStorage.Test
         {
             var folder = new FolderFromPath(new TestFolder().Path);
             var folder1 = new TestFolder();
-            Assert.IsTrue(folder.Path == folder1.Path);
+            Assert.IsTrue(string.Equals(folder.Path, folder1.Path, System.StringComparison.Ordinal));
 
             folder.Delete();
         }

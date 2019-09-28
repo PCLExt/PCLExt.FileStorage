@@ -184,7 +184,7 @@ namespace PCLExt.FileStorage
         {
             Requires.NotNull(newFile, nameof(newFile));
 
-            if (Path == newFile.Path)
+            if (string.Equals(Path, newFile.Path, StringComparison.Ordinal))
                 return; // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
 
             File.Copy(Path, newFile.Path, true);
@@ -192,7 +192,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public async Task CopyAsync(IFile newFile, CancellationToken cancellationToken)
         {
-            if (Path == newFile.Path)
+            if (string.Equals(Path, newFile.Path, StringComparison.Ordinal))
                 return; // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
 
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -313,7 +313,7 @@ namespace PCLExt.FileStorage
                         case NameCollisionOption.GenerateUniqueName:
                             continue; // try again with a new name.
                         case NameCollisionOption.ReplaceExisting:
-                            if (Path == newPath)
+                            if (string.Equals(Path, newPath, StringComparison.Ordinal))
                                 return new FileFromPath(Path); // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
 
                             File.Delete(candidatePath);
@@ -358,7 +358,7 @@ namespace PCLExt.FileStorage
                         case NameCollisionOption.GenerateUniqueName:
                             continue; // try again with a new name.
                         case NameCollisionOption.ReplaceExisting:
-                            if (Path == newPath)
+                            if (string.Equals(Path, newPath, StringComparison.Ordinal))
                                 return new FileFromPath(Path); // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
 
                             File.Delete(candidatePath);
