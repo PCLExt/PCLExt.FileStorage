@@ -419,7 +419,7 @@ namespace PCLExt.FileStorage
             foreach (var nFolder in folders)
                 nFolder.Move(folder.CreateFolder(nFolder.Name, CreationCollisionOption.OpenIfExists), option);
 
-            if(Path != folder.Path)
+            if(!string.Equals(Path, folder.Path, StringComparison.Ordinal))
                 Delete();
         }
         /// <inheritdoc />
@@ -439,7 +439,7 @@ namespace PCLExt.FileStorage
             foreach (var nFolder in folders)
                 await nFolder.MoveAsync(await folder.CreateFolderAsync(nFolder.Name, CreationCollisionOption.OpenIfExists, cancellationToken), option, cancellationToken);
 
-            if (Path != folder.Path)
+            if (!string.Equals(Path, folder.Path, StringComparison.Ordinal))
                 await DeleteAsync(cancellationToken);
         }
 

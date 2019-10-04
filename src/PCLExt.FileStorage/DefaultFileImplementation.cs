@@ -161,7 +161,7 @@ namespace PCLExt.FileStorage
         {
             Requires.NotNull(newFile, nameof(newFile));
 
-            if (newFile.Exists && Path != newFile.Path)
+            if (newFile.Exists && !string.Equals(Path, newFile.Path, StringComparison.Ordinal))
                 newFile.Delete();
 
             File.Move(Path, newFile.Path);
@@ -173,7 +173,7 @@ namespace PCLExt.FileStorage
 
             await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
-            if (newFile.Exists && Path != newFile.Path)
+            if (newFile.Exists && !string.Equals(Path, newFile.Path, StringComparison.Ordinal))
                 newFile.Delete();
 
             File.Move(Path, newFile.Path);
@@ -227,7 +227,7 @@ namespace PCLExt.FileStorage
                         case NameCollisionOption.GenerateUniqueName:
                             continue; // try again with a new name.
                         case NameCollisionOption.ReplaceExisting:
-                            if(Path != candidatePath)
+                            if(!string.Equals(Path, candidatePath, StringComparison.Ordinal))
                                 File.Delete(candidatePath);
                             break;
                         default:
@@ -270,7 +270,7 @@ namespace PCLExt.FileStorage
                         case NameCollisionOption.GenerateUniqueName:
                             continue; // try again with a new name.
                         case NameCollisionOption.ReplaceExisting:
-                            if (Path != candidatePath)
+                            if (!string.Equals(Path, candidatePath, StringComparison.Ordinal))
                                 File.Delete(candidatePath);
                             break;
                         default:

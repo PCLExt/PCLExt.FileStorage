@@ -144,7 +144,7 @@ namespace PCLExt.FileStorage.Test
             var file1 = TestFolder.CreateFile(FileName1, CreationCollisionOption.GenerateUniqueName);
             Assert.IsTrue(file1.Exists);
 
-            Assert.IsTrue(file.Path != file1.Path);
+            Assert.IsTrue(!string.Equals(file.Path, file1.Path, StringComparison.Ordinal));
 
             file.Delete();
             file1.Delete();
@@ -336,7 +336,7 @@ namespace PCLExt.FileStorage.Test
                 var newFile = file.Rename(FileName2);
                 Assert.IsFalse(file.Exists);
                 Assert.IsTrue(newFile.Exists);
-                Assert.IsTrue(file.Name != newFile.Name);
+                Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
                 newFile.Delete();
             }
             catch
@@ -370,7 +370,7 @@ namespace PCLExt.FileStorage.Test
                 file.Copy(newFile);
                 Assert.IsTrue(file.Exists);
                 Assert.IsTrue(newFile.Exists);
-                Assert.IsTrue(file.Name != newFile.Name);
+                Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
                 // BUG
                 //CollectionAssert.AreEqual(data, newFile.ReadAllBytes());
             }
@@ -421,7 +421,7 @@ namespace PCLExt.FileStorage.Test
                 var newFile = file.Copy(file.Path, NameCollisionOption.GenerateUniqueName);
                 Assert.IsTrue(file.Exists);
                 Assert.IsTrue(newFile.Exists);
-                Assert.IsTrue(file.Name != newFile.Name);
+                Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
 
                 newFile.Delete();
             }
@@ -445,7 +445,7 @@ namespace PCLExt.FileStorage.Test
                 var newFile = file.Copy($"{file.Path} (1)", NameCollisionOption.ReplaceExisting);
                 Assert.IsTrue(file.Exists);
                 Assert.IsTrue(newFile.Exists);
-                Assert.IsTrue(file.Path != newFile.Path);
+                Assert.IsTrue(!string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
             }
             finally
             {
@@ -559,7 +559,7 @@ namespace PCLExt.FileStorage.Test
                 file.Move(newFile);
                 Assert.IsFalse(file.Exists);
                 Assert.IsTrue(newFile.Exists);
-                Assert.IsTrue(file.Name != newFile.Name);
+                Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
                 // BUG
                 //CollectionAssert.AreEqual(data, newFile.ReadAllBytes());
             }
@@ -607,7 +607,7 @@ namespace PCLExt.FileStorage.Test
             try
             {
                 var newFile = file.Move(file.Path, NameCollisionOption.GenerateUniqueName);
-                Assert.IsTrue(file.Name != newFile.Name);
+                Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
                 newFile.Delete();
             }
             catch
