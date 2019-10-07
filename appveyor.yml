@@ -43,6 +43,8 @@
     op_build_user_email: "vscopbld@microsoft.com"
     access_token:
       secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
+    GITHUB_NUGET:
+      secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
 
   assembly_info:
     patch: true
@@ -125,6 +127,8 @@
   environment:
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
+    GITHUB_NUGET:
+      secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
     
   assembly_info:
     patch: true

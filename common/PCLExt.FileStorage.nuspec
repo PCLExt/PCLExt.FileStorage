@@ -6,9 +6,9 @@
         <title>PCL Extension - File Storage API</title>
         <authors>Daniel Plaisted, Aragas</authors>
         <owners>Aragas</owners>
-        <licenseUrl>https://github.com/Aragas/PCLExt.FileStorage/blob/master/LICENSE</licenseUrl>
-        <projectUrl>https://github.com/Aragas/PCLExt.FileStorage</projectUrl>
-        <iconUrl>https://raw.githubusercontent.com/Aragas/PCLExt.FileStorage/master/common/sushi_64.png</iconUrl>
+        <licenseUrl>https://github.com/PCLExt/PCLExt.FileStorage/blob/master/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/PCLExt/PCLExt.FileStorage</projectUrl>
+        <iconUrl>https://raw.githubusercontent.com/PCLExt/PCLExt.FileStorage/master/common/sushi_64.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>PCL Extension provides file system implementations for PCL, .NET Framework, .NET Core, Xamarin.iOS, Xamarin.Android and Xamarin.Mac. This makes it easier to create cross-platform .NET libraries and apps. Supports .NET Standard now. UWP support is temporarily removed.</description>
         <summary>PCL Extension provides file system implementations for PCL platform</summary>
