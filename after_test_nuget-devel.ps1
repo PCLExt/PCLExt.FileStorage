@@ -6,7 +6,4 @@ if($env:CONFIGURATION -eq "Release" -and $isWindows) # is not a pull request
 	
 	$nupkg = (Get-ChildItem PCLExt.FileStorage-devel*.nupkg)[0];
 	Push-AppveyorArtifact $nupkg.FullName -FileName $nupkg.Name -DeploymentName "PCLExt.FileStorage-devel.nupkg";
-	
-	nuget source Add -Name "PCLExt" -Source "https://nuget.pkg.github.com/PCLExt/index.json" -UserName PCLExt -Password $env:GITHUB_NUGET
-	nuget push $nupkg.FullName -Source "PCLExt"
 }

@@ -43,8 +43,6 @@
     op_build_user_email: "vscopbld@microsoft.com"
     access_token:
       secure: GQ3IuQcROfrBh1zCm97nDduFgUcaK9uD4xbawJx5iKcx5IvP7dEahe16nmwF+fQE
-    GITHUB_NUGET:
-      secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
 
   assembly_info:
     patch: true
@@ -75,15 +73,25 @@
         
 
   deploy:
-    provider: NuGet
-    api_key:
-      secure: N2k7BxQ7ZMgScB50k2flOS0T1xWCI1lWXNMTzDer1j/rWPZwLuG42fQWcZzHJ/Th
-    skip_symbols: false
-    artifact: PCLExt.FileStorage.nupkg
-    on:
-      configuration: Release
-      os: Windows_NT
-      APPVEYOR_REPO_TAG: true
+    - provider: NuGet
+      api_key:
+        secure: N2k7BxQ7ZMgScB50k2flOS0T1xWCI1lWXNMTzDer1j/rWPZwLuG42fQWcZzHJ/Th
+      skip_symbols: false
+      artifact: PCLExt.FileStorage.nupkg
+      on:
+        os: Windows_NT
+        configuration: Release
+        APPVEYOR_REPO_TAG: true
+    - provider: NuGet
+      server: https://nuget.pkg.github.com/PCLExt/index.json
+      artifact: PCLExt.FileStorage-devel.nupkg
+      username: PCLExt
+      api_key:
+        secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
+      on:
+        os: Windows_NT
+        configuration: Release
+        APPVEYOR_REPO_TAG: true
 
 
 ########################################################
@@ -127,8 +135,6 @@
   environment:
     COVERALLS_REPO_TOKEN:  
        secure: q5xCVqG+/0ByXEFTGYgf1lCWwrOqq35br6CzLf5MPKMD2L8VboA10tKcRfW2n/70
-    GITHUB_NUGET:
-      secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
     
   assembly_info:
     patch: true
@@ -154,14 +160,23 @@
     - ps: ./after_test_nuget-devel.ps1
   
   deploy:
-    provider: NuGet
-    api_key:
-      secure: N2k7BxQ7ZMgScB50k2flOS0T1xWCI1lWXNMTzDer1j/rWPZwLuG42fQWcZzHJ/Th
-    skip_symbols: false
-    artifact: PCLExt.FileStorage-devel.nupkg
-    on:
-      os: Windows_NT
-      configuration: Release
+    - provider: NuGet
+      api_key:
+        secure: N2k7BxQ7ZMgScB50k2flOS0T1xWCI1lWXNMTzDer1j/rWPZwLuG42fQWcZzHJ/Th
+      skip_symbols: false
+      artifact: PCLExt.FileStorage-devel.nupkg
+      on:
+        os: Windows_NT
+        configuration: Release
+    - provider: NuGet
+      server: https://nuget.pkg.github.com/PCLExt/index.json
+      artifact: PCLExt.FileStorage-devel.nupkg
+      username: PCLExt
+      api_key:
+        secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
+      on:
+        os: Windows_NT
+        configuration: Release
 
 
 ########################################################
