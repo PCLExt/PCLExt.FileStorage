@@ -84,7 +84,7 @@
         APPVEYOR_REPO_TAG: true
     - provider: NuGet
       server: https://nuget.pkg.github.com/PCLExt/index.json
-      artifact: PCLExt.FileStorage-devel.nupkg
+      artifact: PCLExt.FileStorage.nupkg
       username: PCLExt
       api_key:
         secure: Cc5LQq7vuBMi2CTmoYPLFHuXeFeqTThn6xbL9O/f+r4GAut49B7rDBKfzbwl2TtC
