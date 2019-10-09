@@ -3,7 +3,7 @@ if($isWindows)
 	dotnet tool install -g coveralls.net
 	choco install codecov
 
-	(New-Object System.Net.WebClient).DownloadFile("https://github.com/OpenCover/opencover/releases/download/4.7.922/opencover.4.7.922.zip", "$(Get-Location)/opencover.4.7.922.zip
+	(New-Object System.Net.WebClient).DownloadFile("https://github.com/OpenCover/opencover/releases/download/4.7.922/opencover.4.7.922.zip", "$(Get-Location)/opencover.4.7.922.zip")
 	Add-Type -AssemblyName System.IO.Compression.FileSystem
 	function Unzip
 	{
