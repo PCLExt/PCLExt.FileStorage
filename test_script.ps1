@@ -26,12 +26,12 @@ if($isWindows)
 }
 if($isLinux)
 {
-	wget "https://github.com/nunit/nunit-console/releases/download/3.8/NUnit.Console-3.8.0.zip"
-	unzip "NUnit.Console-3.8.0.zip" -d "nunit"
+	wget "https://github.com/nunit/nunit-console/releases/download/3.10/NUnit.Console-3.10.0.zip"
+	unzip "NUnit.Console-3.1.0.zip" -d "nunit"
 	
 	mono nunit/nunit3-console.exe ./test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll --result="fx-result.xml"
 
-	dotnet vstest ./test/PCLExt.FileStorage.Core.Test/bin/$env:CONFIGURATION/netcoreapp2.0/PCLExt.FileStorage.Core.Test.dll --logger:"trx;LogFileName=../core-result.trx"
+	dotnet vstest ./test/PCLExt.FileStorage.Core.Test/bin/$env:CONFIGURATION/netcoreapp3.0/PCLExt.FileStorage.Core.Test.dll --logger:"trx;LogFileName=../core-result.trx"
 	
 	# manually upload test results
 	(New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path 'fx-result.xml'))
