@@ -23,7 +23,8 @@ if($isWindows)
 	#&('dotnet') ('test', 'test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj', '/p:CollectCoverage=true', '/p:CoverletOutputFormat=opencover', '/p:Exclude=\"[NUnit*]*,[PCLExt.FileStorage.Core.Test*]*\"', '--logger:"trx;LogFileName=../core-result.trx"')
 	#dotnet add test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj package coverlet.collector --no-restore
 	dotnet publish test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj -f netcoreapp3.0 --no-restore
-	dotnet vstest test/PCLExt.FileStorage.Core.Test/bin/$env:CONFIGURATION/netcoreapp3.0/publish/PCLExt.FileStorage.Core.Test.dll --collect:"XPlat Code Coverage" --logger:"trx;LogFileName=../core-result.trx"
+	dotnet vstest test/PCLExt.FileStorage.Core.Test/bin/$env:CONFIGURATION/netcoreapp3.0/publish/PCLExt.FileStorage.Core.Test.dll --collect:"XPlat Code Coverage" --logger:"trx;LogFileName=../core-result.trx" --ResultsDirectory:"test/PCLExt.FileStorage.Core.Test/TestResults"
+	Get-ChildItem "test/PCLExt.FileStorage.Core.Test/TestResults" -Recurse -File -Filter "coverage.cobertura.xml" | Sort-Object -Property LastWriteTime | foreach { copy $_.FullName "test/PCLExt.FileStorage.Core.Test" }
 	csmacnz.coveralls --opencover -i test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml
 	(New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/mstest/$($env:APPVEYOR_JOB_ID)", "$(Get-Location )/test/PCLExt.FileStorage.Core.Test/core-result.trx")
