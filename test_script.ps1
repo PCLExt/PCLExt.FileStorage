@@ -33,7 +33,7 @@ if($isLinux)
 	wget "https://github.com/nunit/nunit-console/releases/download/v3.10/NUnit.Console-3.10.0.zip"
 	unzip "NUnit.Console-3.10.0.zip" -d "nunit"
 	
-	mono bin/net35/nunit/nunit3-console.exe ./test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll --result="fx-result.xml"
+	mono bin/net35/nunit3-console.exe ./test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll --result="fx-result.xml"
 
 	dotnet vstest ./test/PCLExt.FileStorage.Core.Test/bin/$env:CONFIGURATION/netcoreapp3.0/PCLExt.FileStorage.Core.Test.dll --logger:"trx;LogFileName=../core-result.trx"
 	
