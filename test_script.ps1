@@ -4,9 +4,9 @@ if($isWindows)
 	#choco install codecov
 
 	(New-Object System.Net.WebClient).DownloadFile("https://github.com/OpenCover/opencover/releases/download/4.7.922/opencover.4.7.922.zip", "$(Get-Location)/opencover.zip")
-	Expand-Archive .\opencover.zip -DestinationPath
+	Expand-Archive .\opencover.zip -DestinationPath .
 	(New-Object System.Net.WebClient).DownloadFile("https://github.com/codecov/codecov-exe/releases/download/1.7.2/codecov-win7-x64.zip", "$(Get-Location)/Codecov.zip")
-	Expand-Archive .\Codecov.zip -DestinationPath
+	Expand-Archive .\Codecov.zip -DestinationPath .
 	
 	choco install nunit-console-runner
 	opencover/OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test*]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
@@ -27,10 +27,10 @@ if($isWindows)
 if($isLinux)
 {
 	(New-Object System.Net.WebClient).DownloadFile("https://github.com/codecov/codecov-exe/releases/download/1.7.2/codecov-linux-x64.zip", "$(Get-Location)/Codecov.zip")
-	Expand-Archive .\Codecov.zip -DestinationPath
+	Expand-Archive .\Codecov.zip -DestinationPath .
 
 	(New-Object System.Net.WebClient).DownloadFile("https://github.com/nunit/nunit-console/releases/download/v3.10/NUnit.Console-3.10.0.zip", "$(Get-Location)/NUnit.Console.zip")
-	Expand-Archive .\NUnit.Console.zip -DestinationPath 
+	Expand-Archive .\NUnit.Console.zip -DestinationPath .
 	
 	#mono NUnit.Console/bin/net35/nunit3-console.exe ./test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll --result="fx-result.xml"
 	mono opencover/OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test*]*" -register:user -target:"NUnit.Console/bin/net35/nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
