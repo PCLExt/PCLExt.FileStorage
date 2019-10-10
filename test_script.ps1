@@ -17,8 +17,9 @@ if($isWindows)
 	opencover.4.7.922/OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test*]*" -register:user -target:"nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
 	csmacnz.coveralls --opencover -i coverage_netfx.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f coverage_netfx.xml
-	
-	dotnet add test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj package coverlet.msbuild
+
+	# https://github.com/dotnet/sdk/issues/1514
+	dotnet add test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj package coverlet.msbuild --no-restore
 	&('dotnet') ('test', 'test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj', '/p:CollectCoverage=true', '/p:CoverletOutputFormat=opencover', '/p:Exclude=\"[NUnit*]*,[PCLExt.FileStorage.Core.Test*]*\"', '--logger:"trx;LogFileName=../core-result.trx"')
 	csmacnz.coveralls --opencover -i test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml --repoToken $env:COVERALLS_REPO_TOKEN
 	codecov -f test/PCLExt.FileStorage.Core.Test/coverage.opencover.xml
@@ -27,7 +28,7 @@ if($isWindows)
 if($isLinux)
 {
 	wget "https://github.com/nunit/nunit-console/releases/download/v3.10/NUnit.Console-3.10.0.zip"
-	unzip "NUnit.Console-3.1.0.zip" -d "nunit"
+	unzip "NUnit.Console-3.10.0.zip" -d "nunit"
 	
 	mono nunit/nunit3-console.exe ./test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll --result="fx-result.xml"
 
