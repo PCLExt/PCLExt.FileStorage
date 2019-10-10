@@ -26,6 +26,8 @@ if($isWindows)
 }
 if($isLinux)
 {
+	(New-Object System.Net.WebClient).DownloadFile("https://github.com/OpenCover/opencover/releases/download/4.7.922/opencover.4.7.922.zip", "$(Get-Location)/opencover.zip")
+	Expand-Archive .\opencover.zip
 	(New-Object System.Net.WebClient).DownloadFile("https://github.com/codecov/codecov-exe/releases/download/1.7.2/codecov-linux-x64.zip", "$(Get-Location)/Codecov.zip")
 	Expand-Archive .\Codecov.zip
 
@@ -33,12 +35,12 @@ if($isLinux)
 	Expand-Archive .\NUnit.Console.zip
 	
 	mono opencover/OpenCover.Console.exe -filter:"+[PCLExt.*]* -[PCLExt.FileStorage.NetFX.Test*]*" -register:user -target:"NUnit.Console/bin/net35/nunit3-console.exe" -targetargs:"/domain:single test/PCLExt.FileStorage.NetFX.Test/bin/$env:CONFIGURATION/PCLExt.FileStorage.NetFX.Test.dll" -output:coverage_netfx.xml
-	./Codecov/codecov -f coverage_netfx.xml
+	dotnet run Codecov/codecov -f coverage_netfx.xml
 
 	dotnet publish test/PCLExt.FileStorage.Core.Test/PCLExt.FileStorage.Core.Test.csproj -f netcoreapp3.0 --no-restore
 	dotnet vstest ./test/PCLExt.FileStorage.Core.Test/bin/$env:CONFIGURATION/netcoreapp3.0/PCLExt.FileStorage.Core.Test.dll --logger:"trx;LogFileName=../core-result.trx"
 	Get-ChildItem "test/PCLExt.FileStorage.Core.Test/TestResults" -Recurse -File -Filter "coverage.cobertura.xml" | Sort-Object -Property LastWriteTime | foreach { copy $_.FullName "test/PCLExt.FileStorage.Core.Test" }
-	./Codecov/codecov -f test/PCLExt.FileStorage.Core.Test/coverage.cobertura.xml
+	dotnet run Codecov/codecov -f test/PCLExt.FileStorage.Core.Test/coverage.cobertura.xml
 	
 	# manually upload test results
 	#(New-Object 'System.Net.WebClient').UploadFile("https://ci.appveyor.com/api/testresults/nunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path 'fx-result.xml'))
