@@ -14,7 +14,8 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

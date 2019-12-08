@@ -26,9 +26,9 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns>The content of the file</returns>
         public static string ReadAllText(this IFile file)
         {
-            using (var stream = file.Open(FileAccess.Read))
-            using (var sr = new StreamReader(stream))
-                return sr.ReadToEnd();
+            using var stream = file.Open(FileAccess.Read);
+            using var sr = new StreamReader(stream);
+            return sr.ReadToEnd();
         }
 
         /// <summary>
@@ -39,9 +39,9 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns>The content of the file</returns>
         public static async Task<string> ReadAllTextAsync(this IFile file, CancellationToken cancellationToken = default)
         {
-            using (var stream = await file.OpenAsync(FileAccess.Read, cancellationToken).ConfigureAwait(false))
-            using (var sr = new StreamReader(stream))
-                return await sr.ReadToEndAsync().ConfigureAwait(false);
+            using var stream = await file.OpenAsync(FileAccess.Read, cancellationToken);
+            using var sr = new StreamReader(stream);
+            return await sr.ReadToEndAsync();
         }
 
         /// <summary>
@@ -51,12 +51,10 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="content">The content to write to the file</param>
         public static void WriteAllText(this IFile file, string content)
         {
-            using (var stream = file.Open(FileAccess.ReadAndWrite))
-            {
-                stream.SetLength(0);
-                using (var sw = new StreamWriter(stream))
-                    sw.Write(content);
-            }
+            using var stream = file.Open(FileAccess.ReadAndWrite);
+            stream.SetLength(0);
+            using var sw = new StreamWriter(stream);
+            sw.Write(content);
         }
 
         /// <summary>
@@ -68,12 +66,10 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns>A task which completes when the write operation finishes</returns>
         public static async Task WriteAllTextAsync(this IFile file, string content, CancellationToken cancellationToken = default)
         {
-            using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
-            {
-                stream.SetLength(0);
-                using (var sw = new StreamWriter(stream))
-                    await sw.WriteAsync(content).ConfigureAwait(false);
-            }
+            using var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken);
+            stream.SetLength(0);
+            using var sw = new StreamWriter(stream);
+            await sw.WriteAsync(content);
         }
 
 
@@ -84,14 +80,12 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns>The content of the file</returns>
         public static string[] ReadAllLines(this IFile file)
         {
-            using (var stream = file.Open(FileAccess.Read))
-            using (var sr = new StreamReader(stream))
-            {
-                var lines = new List<string>();
-                while (!sr.EndOfStream)
-                    lines.Add(sr.ReadLine());
-                return lines.ToArray();
-            }
+            using var stream = file.Open(FileAccess.Read);
+            using var sr = new StreamReader(stream);
+            var lines = new List<string>();
+            while (!sr.EndOfStream)
+                lines.Add(sr.ReadLine());
+            return lines.ToArray();
         }
 
         /// <summary>
@@ -102,14 +96,12 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns>The content of the file</returns>
         public static async Task<string[]> ReadAllLinesAsync(this IFile file, CancellationToken cancellationToken = default)
         {
-            using (var stream = await file.OpenAsync(FileAccess.Read, cancellationToken).ConfigureAwait(false))
-            using (var sr = new StreamReader(stream))
-            {
-                var lines = new List<string>();
-                while (!sr.EndOfStream)
-                    lines.Add(await sr.ReadLineAsync().ConfigureAwait(false));
-                return lines.ToArray();
-            }
+            using var stream = await file.OpenAsync(FileAccess.Read, cancellationToken);
+            using var sr = new StreamReader(stream);
+            var lines = new List<string>();
+            while (!sr.EndOfStream)
+                lines.Add(await sr.ReadLineAsync());
+            return lines.ToArray();
         }
 
         /// <summary>
@@ -119,13 +111,11 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="lines">The content to write to the file</param>
         public static void WriteAllLines(this IFile file, IEnumerable<string> lines)
         {
-            using (var stream = file.Open(FileAccess.ReadAndWrite))
-            {
-                stream.SetLength(0);
-                using (var sw = new StreamWriter(stream))
-                    foreach (var line in lines)
-                        sw.WriteLine(line);
-            }
+            using var stream = file.Open(FileAccess.ReadAndWrite);
+            stream.SetLength(0);
+            using var sw = new StreamWriter(stream);
+            foreach (var line in lines)
+                sw.WriteLine(line);
         }
 
         /// <summary>
@@ -136,13 +126,11 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="cancellationToken">The cancellation token.</param>
         public static async Task WriteAllLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default)
         {
-            using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
-            {
-                stream.SetLength(0);
-                using (var sw = new StreamWriter(stream))
-                    foreach (var line in lines)
-                        await sw.WriteLineAsync(line).ConfigureAwait(false);
-            }
+            using var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken);
+            stream.SetLength(0);
+            using var sw = new StreamWriter(stream);
+            foreach (var line in lines)
+                await sw.WriteLineAsync(line);
         }
 
 
@@ -153,12 +141,10 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="contents"></param>
         public static void AppendText(this IFile file, string contents)
         {
-            using (var stream = file.Open(FileAccess.ReadAndWrite))
-            {
-                stream.Seek(stream.Length, SeekOrigin.Begin);
-                using (var sw = new StreamWriter(stream))
-                    sw.Write(contents);
-            }
+            using var stream = file.Open(FileAccess.ReadAndWrite);
+            stream.Seek(stream.Length, SeekOrigin.Begin);
+            using var sw = new StreamWriter(stream);
+            sw.Write(contents);
         }
 
         /// <summary>
@@ -170,12 +156,10 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns></returns>
         public static async Task AppendTextAsync(this IFile file, string contents, CancellationToken cancellationToken = default)
         {
-            using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
-            {
-                stream.Seek(stream.Length, SeekOrigin.Begin);
-                using (var sw = new StreamWriter(stream))
-                    await sw.WriteAsync(contents).ConfigureAwait(false);
-            }
+            using var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken);
+            stream.Seek(stream.Length, SeekOrigin.Begin);
+            using var sw = new StreamWriter(stream);
+            await sw.WriteAsync(contents);
         }
 
         /// <summary>
@@ -185,13 +169,11 @@ namespace PCLExt.FileStorage.Extensions
         /// <param name="lines"></param>
         public static void AppendLines(this IFile file, IEnumerable<string> lines)
         {
-            using (var stream = file.Open(FileAccess.ReadAndWrite))
-            {
-                stream.Seek(stream.Length, SeekOrigin.Begin);
-                using (var sw = new StreamWriter(stream))
-                    foreach (var line in lines)
-                        sw.WriteLine(line);
-            }
+            using var stream = file.Open(FileAccess.ReadAndWrite);
+            stream.Seek(stream.Length, SeekOrigin.Begin);
+            using var sw = new StreamWriter(stream);
+            foreach (var line in lines)
+                sw.WriteLine(line);
         }
 
         /// <summary>
@@ -203,13 +185,11 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns></returns>
         public static async Task AppendLinesAsync(this IFile file, IEnumerable<string> lines, CancellationToken cancellationToken = default)
         {
-            using (var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken).ConfigureAwait(false))
-            {
-                stream.Seek(stream.Length, SeekOrigin.Begin);
-                using (var sw = new StreamWriter(stream))
-                    foreach (var line in lines)
-                        await sw.WriteLineAsync(line).ConfigureAwait(false);
-            }
+            using var stream = await file.OpenAsync(FileAccess.ReadAndWrite, cancellationToken);
+            stream.Seek(stream.Length, SeekOrigin.Begin);
+            using var sw = new StreamWriter(stream);
+            foreach (var line in lines)
+                await sw.WriteLineAsync(line);
         }
     }
 }

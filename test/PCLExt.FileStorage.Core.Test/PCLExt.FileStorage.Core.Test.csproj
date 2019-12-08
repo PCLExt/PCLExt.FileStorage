@@ -3,10 +3,13 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.0</TargetFrameworks>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
+    <Compile Include="..\..\src\PCLExt.FileStorage\Extensions\AwaitExtensions.cs" Link="Extensions\AwaitExtensions.cs" />
     <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FilesTest.cs" Link="FilesTest.cs" />
     <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FoldersTest.cs" Link="FoldersTest.cs" />
     <Compile Include="..\PCLExt.FileStorage.NetFX.Test\StandardFoldersTest.cs" Link="StandardFoldersTest.cs" />
@@ -26,6 +29,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj" />
     <ProjectReference Include="..\..\src\PCLExt.FileStorage\PCLExt.FileStorage.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

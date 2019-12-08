@@ -14,6 +14,9 @@ namespace PCLExt.FileStorage.Exceptions
     /// <summary>
     /// The exception that is thrown when an attempt to access a folder that does not exist on disk fails.
     /// </summary>
+#if !PORTABLE
+    [Serializable]
+#endif
     public class FolderNotFoundException
 #if PORTABLE
         : System.IO.IOException
@@ -21,6 +24,8 @@ namespace PCLExt.FileStorage.Exceptions
         : System.IO.DirectoryNotFoundException
 #endif
     {
+        public string? FolderName { get; }
+
         /// <exclude/>
         public FolderNotFoundException() : base() { }
 
@@ -29,5 +34,30 @@ namespace PCLExt.FileStorage.Exceptions
 
         /// <exclude/>
         public FolderNotFoundException(string message, Exception innerException) : base(message, innerException) { }
+
+        /// <exclude/>
+        public FolderNotFoundException(string message, string folderName) : base(message)
+        {
+            FolderName = folderName;
+        }
+
+        /// <exclude/>
+        public FolderNotFoundException(string message, string folderName, Exception innerException) : base(message, innerException)
+        {
+            FolderName = folderName;
+        }
+
+#if !PORTABLE
+        protected FolderNotFoundException(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
+        {
+            FolderName = serializationInfo.GetString("PCLExt_NotFound_FolderName");
+        }
+
+        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("PCLExt_NotFound_FolderName", FolderName, typeof(string));
+        }
+#endif
     }
 }

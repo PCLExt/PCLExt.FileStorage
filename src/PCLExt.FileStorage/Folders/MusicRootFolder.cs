@@ -26,7 +26,7 @@ namespace PCLExt.FileStorage.Folders
 #endif
         }
 #else
-        public MusicRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public MusicRootFolder() : base(new NonExistingFolder(string.Empty)) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }

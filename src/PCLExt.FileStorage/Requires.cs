@@ -11,15 +11,12 @@ namespace PCLExt.FileStorage
 {
     using System;
     using System.Diagnostics;
-    using System.Globalization;
 
     /// <summary>
     /// Common runtime checks that throw ArgumentExceptions upon failure.
     /// </summary>
     internal static class Requires
     {
-        private const string ArgumentEmptyString = "'{0}' cannot be an empty string (\"\") or start with the null character.";
-
         /// <summary>
         /// Throws an exception if the specified parameter's value is null.
         /// </summary>
@@ -53,8 +50,7 @@ namespace PCLExt.FileStorage
                 throw new ArgumentNullException(parameterName);
 
             if (value.Length == 0 || value[0] == '\0')
-                throw new ArgumentException(string.Format(CultureInfo.CurrentCulture, ArgumentEmptyString, parameterName), parameterName);
+                throw new ArgumentException($"'{parameterName}' cannot be an empty string (\"\") or start with the null character.", parameterName);
         }
     }
 }
-

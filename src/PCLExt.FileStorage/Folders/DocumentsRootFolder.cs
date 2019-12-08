@@ -23,7 +23,7 @@ namespace PCLExt.FileStorage.Folders
 #endif
         }
 #else
-        public DocumentsRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public DocumentsRootFolder() : base(new NonExistingFolder(string.Empty)) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }

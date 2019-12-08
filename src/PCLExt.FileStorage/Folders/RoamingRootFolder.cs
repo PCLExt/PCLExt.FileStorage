@@ -26,7 +26,7 @@ namespace PCLExt.FileStorage.Folders
 #endif
         }
 #else
-        public RoamingRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public RoamingRootFolder() : base(new NonExistingFolder(string.Empty)) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,13 +10,13 @@ using Windows.Storage.Search;
 
 using PCLExt.FileStorage.Exceptions;
 using PCLExt.FileStorage.UWP.Extensions;
+using PCLExt.FileStorage.Extensions;
 
 namespace PCLExt.FileStorage.UWP
 {
-    sealed class StorageFolderImplementation : IFolder
+    internal sealed class StorageFolderImplementation : IFolder
     {
         public string Name => _storageFolder.Name;
-
         public string Path => _storageFolder.Path;
 
         public bool Exists
@@ -26,8 +25,7 @@ namespace PCLExt.FileStorage.UWP
             {
                 try
                 {
-                    var storageFolder = StorageFolder.GetFolderFromPathAsync(
-                        _storageFolder.Path).AsTask().GetAwaiter().GetResult();
+                    var storageFolder = StorageFolder.GetFolderFromPathAsync(_storageFolder.Path).RunSync();
                 }
                 catch (System.IO.FileNotFoundException)
                 {
@@ -37,23 +35,9 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
-        public DateTime CreationTime =>
-            _storageFolder.DateCreated.ToLocalTime().DateTime;
-
-        public DateTime CreationTimeUTC =>
-            _storageFolder.DateCreated.ToUniversalTime().DateTime;
-
-        public DateTime LastAccessTime =>
-            GetStorageFolderProperties().ItemDate.ToLocalTime().DateTime;
-
-        public DateTime LastAccessTimeUTC => GetStorageFolderProperties().
-            ItemDate.ToUniversalTime().DateTime;
-
-        public DateTime LastWriteTime => GetStorageFolderProperties().
-            DateModified.ToLocalTime().DateTime;
-
-        public DateTime LastWriteTimeUTC => GetStorageFolderProperties().
-            DateModified.ToUniversalTime().DateTime;
+        public DateTimeOffset CreationTime => _storageFolder.DateCreated;
+        public DateTimeOffset LastAccessTime => GetStorageFolderProperties().ItemDate;
+        public DateTimeOffset LastWriteTime => GetStorageFolderProperties().DateModified;
 
         private StorageFolder _storageFolder;
 
@@ -61,31 +45,20 @@ namespace PCLExt.FileStorage.UWP
         {
             _storageFolder = storageFolder;
         }
-
         public StorageFolderImplementation(string path)
         {
-            _storageFolder = StorageFolder.GetFolderFromPathAsync(path).
-                AsTask().GetAwaiter().GetResult();
+            _storageFolder = StorageFolder.GetFolderFromPathAsync(path).RunSync();
         }
 
-        private BasicProperties GetStorageFolderProperties()
-        {
-            return _storageFolder.GetBasicPropertiesAsync().
-                AsTask().GetAwaiter().GetResult();
-        }
+        private BasicProperties GetStorageFolderProperties() => _storageFolder.GetBasicPropertiesAsync().RunSync();
 
-        public ExistenceCheckResult CheckExists(string name)
-        {
-            return CheckExistsAsync(name).GetAwaiter().GetResult();
-        }
-
-        public async Task<ExistenceCheckResult> CheckExistsAsync(
-            string name,
-            CancellationToken cancellationToken = default)
+        public ExistenceCheckResult CheckExists(string name) => CheckExistsAsync(name).RunSync();
+        public async Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default)
         {
             try
             {
-                var finded = await _storageFolder.GetItemAsync(name).AsTask(cancellationToken);
+                var finded = await _storageFolder.GetItemAsync(name)
+                    .AsTask(cancellationToken);
                 if (finded == null)
                 {
                     return ExistenceCheckResult.NotFound;
@@ -104,28 +77,12 @@ namespace PCLExt.FileStorage.UWP
             return ExistenceCheckResult.FileExists;
         }
 
-        public void Copy(
-            IFolder folder,
-            NameCollisionOption option = NameCollisionOption.ReplaceExisting)
-        {
-            CopyAsync(folder, option).GetAwaiter().GetResult();
-        }
+        public void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => CopyAsync(folder, option).RunSync();
+        public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) =>
+            CopyAsync(_storageFolder, folder, option, cancellationToken);
 
-        public async Task CopyAsync(
-            IFolder folder,
-            NameCollisionOption option = NameCollisionOption.ReplaceExisting,
-            CancellationToken cancellationToken = default)
+        private async Task CopyAsync(StorageFolder source, IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
         {
-            await CopyAsync(_storageFolder, folder, option, cancellationToken);
-        }
-
-        private async Task CopyAsync(
-           StorageFolder source,
-           IFolder folder,
-           NameCollisionOption option = NameCollisionOption.ReplaceExisting,
-           CancellationToken cancellationToken = default)
-        {
-
             // Get all files (shallow) from source
             var queryOptions = new QueryOptions
             {
@@ -140,15 +97,12 @@ namespace PCLExt.FileStorage.UWP
             {
                 try
                 {
-                    var targetStorageFolder = await StorageFolder.
-                        GetFolderFromPathAsync(folder.Path);
-                    var windowsOption = StorageExtensions.ConvertToNameCollision(option);
+                    var targetStorageFolder = await StorageFolder.GetFolderFromPathAsync(folder.Path);
+                    var windowsOption = option.ConvertToNameCollision();
                     if (windowsOption == Windows.Storage.NameCollisionOption.ReplaceExisting)
                     {
-                        var findedFile = await targetStorageFolder.
-                            GetFileAsync(storageFile.Name);
-                        if (null != findedFile &&
-                            findedFile.Path == storageFile.Path)
+                        var findedFile = await targetStorageFolder.GetFileAsync(storageFile.Name);
+                        if (null != findedFile && string.Equals(findedFile.Path, storageFile.Path, StringComparison.Ordinal))
                             continue;
                     }
 
@@ -158,18 +112,15 @@ namespace PCLExt.FileStorage.UWP
                     {
                         try
                         {
-                            var copiedFile = await storageFile.CopyAsync(
-                                targetStorageFolder,
-                                filename,
-                                windowsOption);
+                            var copiedFile = await storageFile.CopyAsync(targetStorageFolder, filename, windowsOption);
                             break;
                         }
                         catch (Exception)
                         {
-                            if(option != NameCollisionOption.GenerateUniqueName)
+                            if (option != NameCollisionOption.GenerateUniqueName)
                                 throw;
                             filename = $"{filename} ({nameCollisionCounter++})";
-                        }                        
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -182,21 +133,18 @@ namespace PCLExt.FileStorage.UWP
             var queryFolders = source.CreateFolderQueryWithOptions(queryOptions);
             var folders = await queryFolders.GetFoldersAsync();
 
-            var creationCollisionOption = StorageExtensions.ConvertToCreationCollision(option);
-
             // For each folder call CopyAsync with new destination as destination
             foreach (var storageFolder in folders)
             {
                 var nameCollisionCounter = 2;
                 var subfolderName = storageFolder.Name;
-                StorageFolderImplementation targetFolder = null;
+                IFolder targetFolder = null;
                 while (true)
                 {
                     try
                     {
 
-                        targetFolder = await folder.CreateFolderAsync(subfolderName,
-                            creationCollisionOption, cancellationToken) as StorageFolderImplementation;
+                        targetFolder = await folder.CreateFolderAsync(subfolderName, option.ConvertToCreationCollision(), cancellationToken);
                         break;
                     }
                     catch (FolderExistException)
@@ -213,52 +161,28 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
-        public IFile CreateFile(
-            string desiredName,
-            CreationCollisionOption option)
+        public IFile CreateFile(string desiredName, CreationCollisionOption option) => CreateFileAsync(desiredName, option).RunSync();
+        public async Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default)
         {
-            return CreateFileAsync(desiredName, option).GetAwaiter().GetResult();
-        }
-
-        public async Task<IFile> CreateFileAsync(
-            string desiredName,
-            CreationCollisionOption option,
-            CancellationToken cancellationToken = default)
-        {
-            var windowsOption = StorageExtensions.
-                ConvertToWindowsCreationCollisionOption(option);
             try
             {
-                var file = await _storageFolder.CreateFileAsync(
-                    desiredName, windowsOption).AsTask(cancellationToken);
+                var file = await _storageFolder.CreateFileAsync(desiredName, option.ConvertToWindowsCreationCollisionOption())
+                    .AsTask(cancellationToken);
                 return new StorageFileImplementation(file);
             }
             catch (Exception ex)
             {
                 throw new FileExistException(desiredName, ex);
             }
-
-
         }
 
-        public IFolder CreateFolder(
-            string desiredName,
-            CreationCollisionOption option)
+        public IFolder CreateFolder(string desiredName, CreationCollisionOption option) => CreateFolderAsync(desiredName, option).RunSync();
+        public async Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default)
         {
-            return CreateFolderAsync(desiredName, option).GetAwaiter().GetResult();
-        }
-
-        public async Task<IFolder> CreateFolderAsync(
-            string desiredName,
-            CreationCollisionOption option,
-            CancellationToken cancellationToken = default)
-        {
-            var windowsOption = StorageExtensions.
-                ConvertToWindowsCreationCollisionOption(option);
             try
             {
-                var folder = await _storageFolder.CreateFolderAsync(
-                    desiredName, windowsOption).AsTask(cancellationToken);
+                var folder = await _storageFolder.CreateFolderAsync(desiredName, option.ConvertToWindowsCreationCollisionOption())
+                    .AsTask(cancellationToken);
                 return new StorageFolderImplementation(folder);
             }
             catch (Exception ex)
@@ -267,23 +191,18 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
-        public void Delete()
-
+        public void Delete() => DeleteAsync().RunSync();
+        public async Task DeleteAsync(CancellationToken cancellationToken = default)
         {
-            DeleteAsync().GetAwaiter().GetResult();
-        }
-
-        public async Task DeleteAsync(
-            CancellationToken cancellationToken = default)
-        {
-            if (Windows.ApplicationModel.Package.Current.InstalledLocation.Path == _storageFolder.Path)
+            if (string.Equals(Windows.ApplicationModel.Package.Current.InstalledLocation.Path, _storageFolder.Path, StringComparison.Ordinal))
             {
                 throw new RootFolderDeletionException("Cannot delete root storage folder.");
             }
 
             try
             {
-                await _storageFolder.DeleteAsync().AsTask(cancellationToken);
+                await _storageFolder.DeleteAsync()
+                    .AsTask(cancellationToken);
             }
             catch (Exception ex)
             {
@@ -291,19 +210,13 @@ namespace PCLExt.FileStorage.UWP
             }
         }
 
-        public IFile GetFile(string name)
-        {
-            return GetFileAsync(name).GetAwaiter().GetResult();
-        }
-
-        public async Task<IFile> GetFileAsync(
-            string name,
-            CancellationToken cancellationToken = default)
+        public IFile GetFile(string name) => GetFileAsync(name).RunSync();
+        public async Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default)
         {
             try
             {
-                var storageFile = await _storageFolder.GetFileAsync(name).
-                    AsTask(cancellationToken);
+                var storageFile = await _storageFolder.GetFileAsync(name)
+                    .AsTask(cancellationToken);
                 return new StorageFileImplementation(storageFile);
             }
             catch (Exception ex)
@@ -313,17 +226,9 @@ namespace PCLExt.FileStorage.UWP
 
         }
 
-        public IList<IFile> GetFiles(
-            string searchPattern = "*",
-            FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly)
-        {
-            return GetFilesAsync(searchPattern, searchOption).GetAwaiter().GetResult();
-        }
-
-        public async Task<IList<IFile>> GetFilesAsync(
-            string searchPattern = "*",
-            FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly,
-            CancellationToken cancellationToken = default)
+        public IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly) =>
+            GetFilesAsync(searchPattern, searchOption).RunSync();
+        public async Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default)
         {
             var fileTypeFilter = new List<string>();
             fileTypeFilter.Add("*");
@@ -342,26 +247,20 @@ namespace PCLExt.FileStorage.UWP
             queryOptions.UserSearchFilter = searchPattern;
             var queryResult = _storageFolder.
                 CreateFileQueryWithOptions(queryOptions);
-            var storageFiles = await queryResult.GetFilesAsync().
-                AsTask(cancellationToken);
+            var storageFiles = await queryResult.GetFilesAsync()
+                .AsTask(cancellationToken);
 
             return storageFiles.Select(
                 o => new StorageFileImplementation(o)).ToList<IFile>();
         }
 
-        public IFolder GetFolder(string name)
-        {
-            return GetFolderAsync(name).GetAwaiter().GetResult();
-        }
-
-        public async Task<IFolder> GetFolderAsync(
-            string name,
-            CancellationToken cancellationToken = default)
+        public IFolder GetFolder(string name) => GetFolderAsync(name).RunSync();
+        public async Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default)
         {
             try
             {
-                var storageFolder = await _storageFolder.
-                    GetFolderAsync(name).AsTask(cancellationToken);
+                var storageFolder = await _storageFolder.GetFolderAsync(name)
+                    .AsTask(cancellationToken);
                 return new StorageFolderImplementation(storageFolder);
             }
             catch (Exception ex)
@@ -371,31 +270,16 @@ namespace PCLExt.FileStorage.UWP
 
         }
 
-        public IList<IFolder> GetFolders()
+        public IList<IFolder> GetFolders() => GetFoldersAsync().RunSync();
+        public async Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default)
         {
-            return GetFoldersAsync().GetAwaiter().GetResult();
+            var storageFolders = await _storageFolder.GetFoldersAsync()
+                .AsTask(cancellationToken);
+            return storageFolders.Select(o => new StorageFolderImplementation(o)).ToList<IFolder>();
         }
 
-        public async Task<IList<IFolder>> GetFoldersAsync(
-            CancellationToken cancellationToken = default)
-        {
-            var storageFolders = await _storageFolder.
-                GetFoldersAsync().AsTask(cancellationToken);
-            return storageFolders.Select(
-                o => new StorageFolderImplementation(o)).ToList<IFolder>();
-        }
-
-        public void Move(
-            IFolder folder,
-            NameCollisionOption option = NameCollisionOption.ReplaceExisting)
-        {
-            MoveAsync(folder, option).GetAwaiter().GetResult();
-        }
-
-        public async Task MoveAsync(
-            IFolder folder,
-            NameCollisionOption option = NameCollisionOption.ReplaceExisting,
-            CancellationToken cancellationToken = default)
+        public void Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => MoveAsync(folder, option).RunSync();
+        public async Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
         {
             var subfolders = await GetFoldersAsync(cancellationToken);
             foreach (var subfolder in subfolders)
@@ -403,50 +287,46 @@ namespace PCLExt.FileStorage.UWP
                 var moveToSubfolderName = System.IO.Path.Combine(
                     folder.Path, subfolder.Name);
                 CreationCollisionOption creationCollisionOption;
-                if (option == NameCollisionOption.ReplaceExisting)
-                    creationCollisionOption = CreationCollisionOption.ReplaceExisting;
-                else if (option == NameCollisionOption.GenerateUniqueName)
-                    creationCollisionOption = CreationCollisionOption.GenerateUniqueName;
-                else if (option == NameCollisionOption.FailIfExists)
-                    creationCollisionOption = CreationCollisionOption.FailIfExists;
-                else
-                    throw new NotSupportedException(
-                        $"Not supported {nameof(option)}: {option}");
+                switch (option)
+                {
+                    case NameCollisionOption.ReplaceExisting:
+                        creationCollisionOption = CreationCollisionOption.ReplaceExisting;
+                        break;
+                    case NameCollisionOption.GenerateUniqueName:
+                        creationCollisionOption = CreationCollisionOption.GenerateUniqueName;
+                        break;
+                    case NameCollisionOption.FailIfExists:
+                        creationCollisionOption = CreationCollisionOption.FailIfExists;
+                        break;
+                    default:
+                        throw new NotSupportedException($"Not supported {nameof(option)}: {option}");
+                }
 
-                var moveToSubfoler = await folder.CreateFolderAsync(
-                    subfolder.Name, creationCollisionOption);
+                var moveToSubfoler = await folder.CreateFolderAsync(subfolder.Name, creationCollisionOption);
                 await subfolder.MoveAsync(moveToSubfoler, option, cancellationToken);
             }
 
-            var files = await GetFilesAsync(
-                cancellationToken: cancellationToken);
+            var files = await GetFilesAsync(cancellationToken: cancellationToken);
             foreach (var file in files)
             {
                 var newFilePath = PortablePath.Combine(folder.Path, file.Name);
-                var movedFile = await file.MoveAsync(
-                    newFilePath, option, cancellationToken);
+                var movedFile = await file.MoveAsync(newFilePath, option, cancellationToken);
             }
             if (folder.Path.StartsWith(_storageFolder.Path) &&
                (folder.Path.Length == _storageFolder.Path.Length ||
                 folder.Path[_storageFolder.Path.Length] == PortablePath.DirectorySeparatorChar))
                 return;
-            await DeleteAsync();
+            await DeleteAsync(cancellationToken);
         }
 
-        public IFolder Rename(string newName)
-        {
-            return RenameAsync(newName).GetAwaiter().GetResult();
-        }
-
-        public async Task<IFolder> RenameAsync(
-            string newName,
-            CancellationToken cancellationToken = default)
+        public IFolder Rename(string newName) => RenameAsync(newName).RunSync();
+        public async Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default)
         {
             try
             {
-                var oldStorageFolder = await StorageFolder.
-                    GetFolderFromPathAsync(_storageFolder.Path);
-                await _storageFolder.RenameAsync(newName).AsTask(cancellationToken);
+                var oldStorageFolder = await StorageFolder.GetFolderFromPathAsync(_storageFolder.Path);
+                await _storageFolder.RenameAsync(newName)
+                    .AsTask(cancellationToken);
                 var result = new StorageFolderImplementation(_storageFolder);
                 _storageFolder = oldStorageFolder;
                 return result;

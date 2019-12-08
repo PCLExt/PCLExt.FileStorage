@@ -31,7 +31,7 @@
 #endif
         }
 #else
-        public ApplicationRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public ApplicationRootFolder() : base(new NonExistingFolder(string.Empty)) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }

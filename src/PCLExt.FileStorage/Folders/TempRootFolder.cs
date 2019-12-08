@@ -34,7 +34,7 @@
             return CreateFile(fileName, CreationCollisionOption.FailIfExists);  // -- Potential race condition?
         }
 #else
-        public TempRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public TempRootFolder() : base(new NonExistingFolder(string.Empty)) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }

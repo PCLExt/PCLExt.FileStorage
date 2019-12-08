@@ -1,54 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Windows.Storage;
 
 namespace PCLExt.FileStorage.UWP.Extensions
 {
-    sealed class StorageExtensions
+    internal static class StorageExtensions
     {
-        public static Windows.Storage.NameCollisionOption ConvertToNameCollision(
-           NameCollisionOption collisionOption)
+        public static FileAccessMode ConvertToFileAccessMode(this FileAccess fileAccess) => fileAccess switch
         {
-            if (collisionOption == NameCollisionOption.FailIfExists)
-                return Windows.Storage.NameCollisionOption.FailIfExists;
+            FileAccess.Read => FileAccessMode.Read,
+            FileAccess.ReadAndWrite => FileAccessMode.ReadWrite,
 
-            if (collisionOption == NameCollisionOption.GenerateUniqueName)
-                return Windows.Storage.NameCollisionOption.FailIfExists;
+            _ => throw new ArgumentException(fileAccess.ToString(), nameof(fileAccess)),
+        };
 
-            if (collisionOption == NameCollisionOption.ReplaceExisting)
-                return Windows.Storage.NameCollisionOption.ReplaceExisting;
-
-            throw new ArgumentException(collisionOption.ToString());
-        }
-
-        public static CreationCollisionOption ConvertToCreationCollision(
-            NameCollisionOption collisionOption)
+        public static Windows.Storage.NameCollisionOption ConvertToNameCollision(this NameCollisionOption collisionOption) => collisionOption switch
         {
-            if (collisionOption == NameCollisionOption.FailIfExists)
-                return CreationCollisionOption.FailIfExists;
-            if (collisionOption == NameCollisionOption.GenerateUniqueName)
-                return CreationCollisionOption.FailIfExists;
-            if (collisionOption == NameCollisionOption.ReplaceExisting)
-                return CreationCollisionOption.ReplaceExisting;
+            NameCollisionOption.FailIfExists => Windows.Storage.NameCollisionOption.FailIfExists,
+            NameCollisionOption.GenerateUniqueName => Windows.Storage.NameCollisionOption.FailIfExists,
+            NameCollisionOption.ReplaceExisting => Windows.Storage.NameCollisionOption.ReplaceExisting,
+            _ => throw new ArgumentException(collisionOption.ToString(), nameof(collisionOption)),
+        };
 
-            throw new ArgumentException(collisionOption.ToString());
-        }
+        public static CreationCollisionOption ConvertToCreationCollision(this NameCollisionOption collisionOption) => collisionOption switch
+            {
+                NameCollisionOption.FailIfExists => CreationCollisionOption.FailIfExists,
+                NameCollisionOption.GenerateUniqueName => CreationCollisionOption.FailIfExists,
+                NameCollisionOption.ReplaceExisting => CreationCollisionOption.ReplaceExisting,
+                _ => throw new ArgumentException(collisionOption.ToString(), nameof(collisionOption)),
+            };
 
         public static Windows.Storage.CreationCollisionOption ConvertToWindowsCreationCollisionOption(
-            CreationCollisionOption collisionOption)
+            this CreationCollisionOption collisionOption) => collisionOption switch
         {
-            if (collisionOption == CreationCollisionOption.FailIfExists)
-                return Windows.Storage.CreationCollisionOption.FailIfExists;
-            if (collisionOption == CreationCollisionOption.GenerateUniqueName)
-                return Windows.Storage.CreationCollisionOption.GenerateUniqueName;
-            if (collisionOption == CreationCollisionOption.ReplaceExisting)
-                return Windows.Storage.CreationCollisionOption.ReplaceExisting;
-            if (collisionOption == CreationCollisionOption.OpenIfExists)
-                return Windows.Storage.CreationCollisionOption.OpenIfExists;
-
-            throw new ArgumentException(collisionOption.ToString());
-        }
+            CreationCollisionOption.FailIfExists => Windows.Storage.CreationCollisionOption.FailIfExists,
+            CreationCollisionOption.GenerateUniqueName => Windows.Storage.CreationCollisionOption.GenerateUniqueName,
+            CreationCollisionOption.ReplaceExisting => Windows.Storage.CreationCollisionOption.ReplaceExisting,
+            CreationCollisionOption.OpenIfExists => Windows.Storage.CreationCollisionOption.OpenIfExists,
+            _ => throw new ArgumentException(collisionOption.ToString(), nameof(collisionOption)),
+        };
     }
 }

@@ -17,19 +17,13 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => _file.Exists;
         /// <inheritdoc />
-        public long Size => _file.Size;
+        public ulong Size => _file.Size;
         /// <inheritdoc />
-        public DateTime CreationTime => _file.CreationTime;
+        public DateTimeOffset CreationTime => _file.CreationTime;
         /// <inheritdoc />
-        public DateTime CreationTimeUTC => _file.CreationTimeUTC;
+        public DateTimeOffset LastAccessTime => _file.LastAccessTime;
         /// <inheritdoc />
-        public DateTime LastAccessTime => _file.LastAccessTime;
-        /// <inheritdoc />
-        public DateTime LastAccessTimeUTC => _file.LastAccessTimeUTC;
-        /// <inheritdoc />
-        public DateTime LastWriteTime => _file.LastWriteTime;
-        /// <inheritdoc />
-        public DateTime LastWriteTimeUTC => _file.LastWriteTimeUTC;
+        public DateTimeOffset LastWriteTime => _file.LastWriteTime;
 
         /// <summary>
         /// Wraps an <see cref="IFile"/>
@@ -50,12 +44,12 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public void WriteAllBytes(byte[] bytes) => _file.WriteAllBytes(bytes);
         /// <inheritdoc />
-        public Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken) => _file.WriteAllBytesAsync(bytes, cancellationToken);
+        public Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default) => _file.WriteAllBytesAsync(bytes, cancellationToken);
 
         /// <inheritdoc />
         public byte[] ReadAllBytes() => _file.ReadAllBytes();
         /// <inheritdoc />
-        public Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken) => _file.ReadAllBytesAsync(cancellationToken);
+        public Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default) => _file.ReadAllBytesAsync(cancellationToken);
 
         /// <inheritdoc />
         public IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists) => _file.Rename(newName, collisionOption);

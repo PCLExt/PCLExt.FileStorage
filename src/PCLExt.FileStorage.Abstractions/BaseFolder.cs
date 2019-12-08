@@ -17,17 +17,11 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => _folder != null;
         /// <inheritdoc />
-        public DateTime CreationTime => _folder.CreationTime;
+        public DateTimeOffset CreationTime => _folder.CreationTime;
         /// <inheritdoc />
-        public DateTime CreationTimeUTC => _folder.CreationTimeUTC;
+        public DateTimeOffset LastAccessTime => _folder.LastAccessTime;
         /// <inheritdoc />
-        public DateTime LastAccessTime => _folder.LastAccessTime;
-        /// <inheritdoc />
-        public DateTime LastAccessTimeUTC => _folder.LastAccessTimeUTC;
-        /// <inheritdoc />
-        public DateTime LastWriteTime => _folder.LastWriteTime;
-        /// <inheritdoc />
-        public DateTime LastWriteTimeUTC => _folder.LastWriteTimeUTC;
+        public DateTimeOffset LastWriteTime => _folder.LastWriteTime;
 
         /// <summary>
         /// Wraps an <see cref="IFolder"/>

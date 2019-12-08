@@ -9,7 +9,8 @@
     <RootNamespace>PCLExt.FileStorage</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>PCLExt.FileStorage</AssemblyName>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

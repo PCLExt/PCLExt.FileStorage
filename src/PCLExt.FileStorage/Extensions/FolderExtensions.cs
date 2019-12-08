@@ -65,7 +65,7 @@ namespace PCLExt.FileStorage.Extensions
         /// <returns></returns>
         public static IFile GetFileFromPath(this IFolder folder, params string[] foldersWithFile)
         {
-            var fileName = foldersWithFile.Last();
+            var fileName = foldersWithFile[foldersWithFile.Length - 1];
             var folders = foldersWithFile.Length > 1 ? foldersWithFile.Take(foldersWithFile.Length - 1).ToArray() : null;
 
             if (folders != null)
@@ -79,7 +79,7 @@ namespace PCLExt.FileStorage.Extensions
 
 #if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
         // https://github.com/mono/mono/blob/master/mcs/class/System.Windows.Forms/System.Windows.Forms/Application.cs
-        private static string CompanyName
+        private static string? CompanyName
         {
             get
             {
@@ -99,7 +99,7 @@ namespace PCLExt.FileStorage.Extensions
 
                     if (company != null)
                     {
-                        int firstDot = company.IndexOf('.');
+                        var firstDot = company.IndexOf('.');
                         if (firstDot >= 0)
                             company = company.Substring(0, firstDot);
                     }
@@ -112,7 +112,7 @@ namespace PCLExt.FileStorage.Extensions
                 return company;
             }
         }
-        private static string ProductName
+        private static string? ProductName
         {
             get
             {
@@ -180,17 +180,17 @@ namespace PCLExt.FileStorage.Extensions
             if (string.IsNullOrEmpty(ProductName))
                 throw new Exception("Please specify Product Name in the executable assembly");
 
-            IFolder folder = baseFolder;
+            var folder = baseFolder;
 
-            if(!string.IsNullOrEmpty(CompanyName))
-                folder = folder.CreateFolder(CompanyName, CreationCollisionOption.OpenIfExists);
+            if (!string.IsNullOrEmpty(CompanyName))
+                folder = folder.CreateFolder(CompanyName!, CreationCollisionOption.OpenIfExists);
 
             if (!string.IsNullOrEmpty(ProductName))
-                folder = folder.CreateFolder(ProductName, CreationCollisionOption.OpenIfExists);
+                folder = folder.CreateFolder(ProductName!, CreationCollisionOption.OpenIfExists);
 
             // -- I will disable this for now.
             //if (!string.IsNullOrEmpty(ProductVersion))
-            //    folder = folder.CreateFolder(ProductVersion, CreationCollisionOption.OpenIfExists);
+            //    folder = folder.CreateFolder(ProductVersion!, CreationCollisionOption.OpenIfExists);
 
             return folder;
         }

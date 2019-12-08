@@ -14,14 +14,11 @@ using System.Threading.Tasks;
 
 namespace PCLExt.FileStorage
 {
-    /// <summary>
-    /// Represents a file
-    /// </summary>
-    public interface IFile
+    public interface IFileProperties
     {
-       /// <summary>
-       /// The name of the file
-       /// </summary>
+        /// <summary>
+        /// The name of the file
+        /// </summary>
         string Name { get; }
         /// <summary>
         /// The full path of the file
@@ -36,50 +33,99 @@ namespace PCLExt.FileStorage
         /// <summary>
         /// Size of the file.
         /// </summary>
-        long Size { get; }
+        ulong Size { get; }
 
-         /// <summary>
-         /// Creation time.
-         /// </summary>
-         /// <value>The creation time.</value>
-         DateTime CreationTime { get; }
+        /// <summary>
+        /// Creation time.
+        /// </summary>
+        /// <value>The creation time.</value>
+        DateTimeOffset CreationTime { get; }
 
-         /// <summary>
-         /// Creation time UTC.
-         /// </summary>
-         /// <value>The creation time UTC.</value>
-         DateTime CreationTimeUTC { get; }
+        /// <summary>
+        /// Last access time.
+        /// </summary>
+        /// <value>The last access time.</value>
+        DateTimeOffset LastAccessTime { get; }
 
-         /// <summary>
-         /// Last access time.
-         /// </summary>
-         /// <value>The last access time.</value>
-         DateTime LastAccessTime { get; }
+        /// <summary>
+        /// Last write time.
+        /// </summary>
+        /// <value>The last write time.</value>
+        DateTimeOffset LastWriteTime { get; }
+    }
 
-         /// <summary>
-         /// Last access time UTC.
-         /// </summary>
-         /// <value>The last access time UTC.</value>
-         DateTime LastAccessTimeUTC { get; }
-
-         /// <summary>
-         /// Last write time.
-         /// </summary>
-         /// <value>The last write time.</value>
-         DateTime LastWriteTime { get; }
-
-         /// <summary>
-         /// Last write time UTC.
-         /// </summary>
-         /// <value>The last write time UTC.</value>
-         DateTime LastWriteTimeUTC { get; }
-
+    public interface IFileSync
+    {
         /// <summary>
         /// Opens the file
         /// </summary>
         /// <param name="fileAccess">Specifies whether the file should be opened in read-only or read/write mode</param>
         /// <returns>A <see cref="Stream"/> which can be used to read from or write to the file</returns>
         Stream Open(FileAccess fileAccess);
+
+        /// <summary>
+        /// Deletes the file
+        /// </summary>
+        /// <returns>
+        /// A task which will complete after the file is deleted.
+        /// </returns>
+        void Delete();
+
+        /// <summary>
+        /// Writes all bytes to the file, overwriting any existing data.
+        /// </summary>
+        /// <param name="bytes">Bytes used to overwrite file</param>
+        void WriteAllBytes(byte[] bytes);
+
+        /// <summary>
+        /// Read all bytes frim the file.
+        /// </summary>
+        /// <returns></returns>
+        byte[] ReadAllBytes();
+
+        /// <summary>
+        /// Renames a file without changing its directory.
+        /// </summary>
+        /// <param name="newName">The new name of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <returns>
+        /// A task which will complete after the file is renamed.
+        /// </returns>
+        IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists);
+
+        /// <summary>
+        /// Moves a file.
+        /// </summary>
+        /// <param name="newFile">The file to move to.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        void Move(IFile newFile);
+
+        /// <summary>
+        /// Copies a file. Overwriting a file of the same name is allowed.
+        /// </summary>
+        /// <param name="newFile">The file to copy to.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        void Copy(IFile newFile);
+
+        /// <summary>
+        /// Moves a file.
+        /// </summary>
+        /// <param name="newPath">The new full path of the file.</param>
+        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
+        /// <returns>A task which will complete after the file is moved.</returns>
+        IFile Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
+
+        /// <summary>
+		/// Copies a file. Overwriting a file of the same name is allowed.
+		/// </summary>
+		/// <param name="newPath">The new full path of the file.</param>
+		/// <param name="collisionOption">How to deal with collisions with existing files.</param>
+		/// <returns>A task which will complete after the file is moved.</returns>
+		IFile Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
+    }
+
+    public interface IFileAsync
+    {
         /// <summary>
         /// Opens the file
         /// </summary>
@@ -91,22 +137,10 @@ namespace PCLExt.FileStorage
         /// <summary>
         /// Deletes the file
         /// </summary>
-        /// <returns>
-        /// A task which will complete after the file is deleted.
-        /// </returns>
-        void Delete();
-        /// <summary>
-        /// Deletes the file
-        /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is deleted.</returns>
         Task DeleteAsync(CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Writes all bytes to the file, overwriting any existing data.
-        /// </summary>
-        /// <param name="bytes">Bytes used to overwrite file</param>
-        void WriteAllBytes(byte[] bytes);
         /// <summary>
         /// Writes all bytes to the file, overwriting any existing data.
         /// </summary>
@@ -118,24 +152,10 @@ namespace PCLExt.FileStorage
         /// <summary>
         /// Read all bytes frim the file.
         /// </summary>
-        /// <returns></returns>
-        byte[] ReadAllBytes();
-        /// <summary>
-        /// Read all bytes frim the file.
-        /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after all bytes are read.</returns>
         Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Renames a file without changing its directory.
-        /// </summary>
-        /// <param name="newName">The new name of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <returns>
-        /// A task which will complete after the file is renamed.
-        /// </returns>
-        IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists);
         /// <summary>
         /// Renames a file without changing its directory.
         /// </summary>
@@ -151,22 +171,10 @@ namespace PCLExt.FileStorage
         /// Moves a file.
         /// </summary>
         /// <param name="newFile">The file to move to.</param>
-        /// <returns>A task which will complete after the file is moved.</returns>
-        void Move(IFile newFile);
-        /// <summary>
-        /// Moves a file.
-        /// </summary>
-        /// <param name="newFile">The file to move to.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
         Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default);
 
-        /// <summary>
-        /// Copies a file. Overwriting a file of the same name is allowed.
-        /// </summary>
-        /// <param name="newFile">The file to copy to.</param>
-        /// <returns>A task which will complete after the file is moved.</returns>
-        void Copy(IFile newFile);
         /// <summary>
         /// Copies a file. Overwriting a file of the same name is allowed.
         /// </summary>
@@ -180,24 +188,10 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="newPath">The new full path of the file.</param>
         /// <param name="collisionOption">How to deal with collisions with existing files.</param>
-        /// <returns>A task which will complete after the file is moved.</returns>
-        IFile Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
-        /// <summary>
-        /// Moves a file.
-        /// </summary>
-        /// <param name="newPath">The new full path of the file.</param>
-        /// <param name="collisionOption">How to deal with collisions with existing files.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>A task which will complete after the file is moved.</returns>
         Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default);
 
-        /// <summary>
-		/// Copies a file. Overwriting a file of the same name is allowed.
-		/// </summary>
-		/// <param name="newPath">The new full path of the file.</param>
-		/// <param name="collisionOption">How to deal with collisions with existing files.</param>
-		/// <returns>A task which will complete after the file is moved.</returns>
-		IFile Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting);
         /// <summary>
         /// Copies a file. Overwriting a file of the same name is allowed.
         /// </summary>
@@ -207,4 +201,9 @@ namespace PCLExt.FileStorage
         /// <returns>A task which will complete after the file is moved.</returns>
         Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default);
     }
+
+    /// <summary>
+    /// Represents a file
+    /// </summary>
+    public interface IFile : IFileProperties, IFileSync, IFileAsync { }
 }

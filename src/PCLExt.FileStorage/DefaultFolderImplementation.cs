@@ -23,7 +23,7 @@ namespace PCLExt.FileStorage
 {
     /// <inheritdoc />
     [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
-    internal class DefaultFolderImplementation : IFolder
+    internal sealed class DefaultFolderImplementation : IFolder
     {
         private readonly bool _canDelete;
 
@@ -34,17 +34,11 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => Directory.Exists(Path);
         /// <inheritdoc />
-        public DateTime CreationTime => Directory.GetCreationTime(Path);
+        public DateTimeOffset CreationTime => new DateTimeOffset(Directory.GetCreationTimeUtc(Path));
         /// <inheritdoc />
-        public DateTime CreationTimeUTC => Directory.GetCreationTimeUtc(Path);
+        public DateTimeOffset LastAccessTime => new DateTimeOffset(Directory.GetLastAccessTimeUtc(Path));
         /// <inheritdoc />
-        public DateTime LastAccessTime => Directory.GetLastAccessTime(Path);
-        /// <inheritdoc />
-        public DateTime LastAccessTimeUTC => Directory.GetLastAccessTimeUtc(Path);
-        /// <inheritdoc />
-        public DateTime LastWriteTime => Directory.GetLastWriteTime(Path);
-        /// <inheritdoc />
-        public DateTime LastWriteTimeUTC => Directory.GetLastWriteTimeUtc(Path);
+        public DateTimeOffset LastWriteTime => new DateTimeOffset(Directory.GetLastWriteTimeUtc(Path));
 
         /// <summary>
         /// Creates a new <see cref="IFolder" /> corresponding to a specified path.
@@ -90,7 +84,7 @@ namespace PCLExt.FileStorage
                         //	No operation.
                         break;
                     default:
-                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
+                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}", nameof(option));
                 }
             }
             else
@@ -137,7 +131,7 @@ namespace PCLExt.FileStorage
                         //	No operation.
                         break;
                     default:
-                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
+                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}", nameof(option));
                 }
             }
             else
@@ -148,9 +142,9 @@ namespace PCLExt.FileStorage
 
             return new DefaultFileImplementation(newPath);
         }
-        private void InternalCreateFile(string path)
+        private static void InternalCreateFile(string path)
         {
-            using (var stream = File.Create(path)) { }
+            File.Create(path).Dispose();
         }
 
         /// <inheritdoc />
@@ -160,7 +154,7 @@ namespace PCLExt.FileStorage
 
             var path = System.IO.Path.Combine(Path, name);
             if (!File.Exists(path))
-                throw new Exceptions.FileNotFoundException($"File does not exist: {path}");
+                throw new Exceptions.FileNotFoundException($"File does not exist: {path}", System.IO.Path.GetFileName(Path));
             return new DefaultFileImplementation(path);
         }
         /// <inheritdoc />
@@ -172,7 +166,7 @@ namespace PCLExt.FileStorage
 
             var path = System.IO.Path.Combine(Path, name);
             if (!File.Exists(path))
-                throw new Exceptions.FileNotFoundException($"File does not exist: {path}");
+                throw new Exceptions.FileNotFoundException($"File does not exist: {path}", System.IO.Path.GetFileName(Path));
             return new DefaultFileImplementation(path);
         }
 
@@ -224,7 +218,7 @@ namespace PCLExt.FileStorage
                         //	No operation.
                         break;
                     default:
-                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
+                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}", nameof(option));
                 }
             }
             else
@@ -266,7 +260,7 @@ namespace PCLExt.FileStorage
                         //	No operation.
                         break;
                     default:
-                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}");
+                        throw new ArgumentException($"Unrecognized CreationCollisionOption: {option}", nameof(option));
                 }
             }
             else
@@ -355,7 +349,7 @@ namespace PCLExt.FileStorage
             Directory.Delete(Path, true);
         }
         /// <inheritdoc />
-        public async Task DeleteAsync(CancellationToken cancellationToken)
+        public async Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             if (!_canDelete)
                 throw new RootFolderDeletionException("Cannot delete root storage folder.");
@@ -385,7 +379,7 @@ namespace PCLExt.FileStorage
             return new DefaultFolderImplementation(newPath, true);
         }
         /// <inheritdoc />
-        public async Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken)
+        public async Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default)
         {
             Requires.NotNullOrEmpty(newName, nameof(newName));
 

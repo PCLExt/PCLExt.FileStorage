@@ -9,6 +9,8 @@ namespace PCLExt.FileStorage
 {
     public class NonExistingFolder : IFolder
     {
+        private static Exception FolderNotFoundException() => throw FolderNotFoundException();
+
         /// <inheritdoc />
         public string Name { get; }
         /// <inheritdoc />
@@ -16,77 +18,71 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => false;
         /// <inheritdoc />
-        public DateTime CreationTime => throw new FolderNotFoundException();
+        public DateTimeOffset CreationTime => throw FolderNotFoundException();
         /// <inheritdoc />
-        public DateTime CreationTimeUTC => throw new FolderNotFoundException();
+        public DateTimeOffset LastAccessTime => throw FolderNotFoundException();
         /// <inheritdoc />
-        public DateTime LastAccessTime => throw new FolderNotFoundException();
-        /// <inheritdoc />
-        public DateTime LastAccessTimeUTC => throw new FolderNotFoundException();
-        /// <inheritdoc />
-        public DateTime LastWriteTime => throw new FolderNotFoundException();
-        /// <inheritdoc />
-        public DateTime LastWriteTimeUTC => throw new FolderNotFoundException();
+        public DateTimeOffset LastWriteTime => throw FolderNotFoundException();
 
         public NonExistingFolder(string path)
         {
-            Name = System.IO.Path.GetFileName(path);
             Path = path;
+            Name = System.IO.Path.GetFileName(Path);
         }
 
         /// <inheritdoc />
-        public ExistenceCheckResult CheckExists(string name) => throw new FolderNotFoundException();
+        public ExistenceCheckResult CheckExists(string name) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<ExistenceCheckResult> CheckExistsAsync(string name, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => throw new FolderNotFoundException();
+        public void Copy(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task CopyAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IFile CreateFile(string desiredName, CreationCollisionOption option) => throw new FolderNotFoundException();
+        public IFile CreateFile(string desiredName, CreationCollisionOption option) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IFile> CreateFileAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IFolder CreateFolder(string desiredName, CreationCollisionOption option) => throw new FolderNotFoundException();
+        public IFolder CreateFolder(string desiredName, CreationCollisionOption option) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IFolder> CreateFolderAsync(string desiredName, CreationCollisionOption option, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public void Delete() => throw new FolderNotFoundException();
+        public void Delete() => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task DeleteAsync(CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task DeleteAsync(CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IFile GetFile(string name) => throw new FolderNotFoundException();
+        public IFile GetFile(string name) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IFile> GetFileAsync(string name, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly) => throw new FolderNotFoundException();
+        public IList<IFile> GetFiles(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IList<IFile>> GetFilesAsync(string searchPattern = "*", FolderSearchOption searchOption = FolderSearchOption.TopFolderOnly, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IFolder GetFolder(string name) => throw new FolderNotFoundException();
+        public IFolder GetFolder(string name) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IFolder> GetFolderAsync(string name, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IList<IFolder> GetFolders() => throw new FolderNotFoundException();
+        public IList<IFolder> GetFolders() => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IList<IFolder>> GetFoldersAsync(CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public void Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => throw new FolderNotFoundException();
+        public void Move(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task MoveAsync(IFolder folder, NameCollisionOption option = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
 
         /// <inheritdoc />
-        public IFolder Rename(string newName) => throw new FolderNotFoundException();
+        public IFolder Rename(string newName) => throw FolderNotFoundException();
         /// <inheritdoc />
-        public Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default) => throw new FolderNotFoundException();
+        public Task<IFolder> RenameAsync(string newName, CancellationToken cancellationToken = default) => throw FolderNotFoundException();
     }
 }

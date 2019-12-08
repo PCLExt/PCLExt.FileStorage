@@ -12,6 +12,8 @@ namespace PCLExt.FileStorage
     /// </summary>
     public sealed class NonExistingFile : IFile
     {
+        private static Exception FileNotFoundException() => throw new FileNotFoundException();
+
         /// <inheritdoc />
         public string Name { get; }
         /// <inheritdoc />
@@ -19,69 +21,63 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => false;
         /// <inheritdoc />
-        public long Size => throw new FileNotFoundException();
+        public ulong Size => throw FileNotFoundException();
         /// <inheritdoc />
-        public DateTime CreationTime => throw new FileNotFoundException();
+        public DateTimeOffset CreationTime => throw FileNotFoundException();
         /// <inheritdoc />
-        public DateTime CreationTimeUTC => throw new FileNotFoundException();
+        public DateTimeOffset LastAccessTime => throw FileNotFoundException();
         /// <inheritdoc />
-        public DateTime LastAccessTime => throw new FileNotFoundException();
-        /// <inheritdoc />
-        public DateTime LastAccessTimeUTC => throw new FileNotFoundException();
-        /// <inheritdoc />
-        public DateTime LastWriteTime => throw new FileNotFoundException();
-        /// <inheritdoc />
-        public DateTime LastWriteTimeUTC => throw new FileNotFoundException();
+        public DateTimeOffset LastWriteTime => throw FileNotFoundException();
 
         public NonExistingFile(string path)
         {
-            Name = System.IO.Path.GetFileName(path);
             Path = path;
+            Name = System.IO.Path.GetFileName(Path);
         }
 
         /// <inheritdoc />
-        public Stream Open(FileAccess fileAccess) => throw new FileNotFoundException();
+        public Stream Open(FileAccess fileAccess) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public void Delete() => throw new FileNotFoundException();
+        public void Delete() => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task DeleteAsync(CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task DeleteAsync(CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public void WriteAllBytes(byte[] bytes) => throw new FileNotFoundException();
+        public void WriteAllBytes(byte[] bytes) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public byte[] ReadAllBytes() => throw new FileNotFoundException();
+        public byte[] ReadAllBytes() => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists) => throw new FileNotFoundException();
+        public IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public void Move(IFile newFile) => throw new FileNotFoundException();
+        public void Move(IFile newFile) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public void Copy(IFile newFile) => throw new FileNotFoundException();
+        public void Copy(IFile newFile) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public IFile Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting) => throw new FileNotFoundException();
+        public IFile Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw FileNotFoundException();
 
         /// <inheritdoc />
-        public IFile Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting) => throw new FileNotFoundException();
+        public IFile Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting) => throw FileNotFoundException();
         /// <inheritdoc />
-        public Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw new FileNotFoundException();
+        public Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default) => throw FileNotFoundException();
     }
 }

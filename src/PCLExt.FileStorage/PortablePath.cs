@@ -65,9 +65,9 @@ namespace PCLExt.FileStorage
         /// </summary>
         /// <param name="path">The path string from which to get the extension.</param>
         /// <returns>
-        /// A <see cref="string" /> containing the extension of the specified 
-        /// <paramref name="path" /> (including the "."), or an empty 
-        /// <see cref="string" /> if <paramref name="path" /> does not have 
+        /// A <see cref="string" /> containing the extension of the specified
+        /// <paramref name="path" /> (including the "."), or an empty
+        /// <see cref="string" /> if <paramref name="path" /> does not have
         /// extension information.
         /// </returns>
         /// <exception cref="System.ArgumentException"><paramref name="path" /> contains one or more invalid characters.</exception>

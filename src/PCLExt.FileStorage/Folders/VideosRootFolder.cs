@@ -26,7 +26,7 @@ namespace PCLExt.FileStorage.Folders
 #endif
         }
 #else
-        public VideosRootFolder() : base(null) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
+        public VideosRootFolder() : base(new NonExistingFolder(string.Empty)) => throw Exceptions.ExceptionsHelper.NotImplementedInReferenceAssembly();
 #endif
     }
 }

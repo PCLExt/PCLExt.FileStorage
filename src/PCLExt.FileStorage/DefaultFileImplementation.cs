@@ -22,7 +22,7 @@ namespace PCLExt.FileStorage
 {
     /// <inheritdoc />
     [DebuggerDisplay("Name = {" + nameof(Name) + "}")]
-    internal class DefaultFileImplementation : IFile
+    internal sealed class DefaultFileImplementation : IFile
     {
         /// <inheritdoc />
         public string Name => System.IO.Path.GetFileName(Path);
@@ -31,19 +31,44 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public bool Exists => File.Exists(Path);
         /// <inheritdoc />
-        public long Size => new FileInfo(Path).Length;
+        public ulong Size => (ulong) new FileInfo(Path).Length;
         /// <inheritdoc />
-        public DateTime CreationTime => File.GetCreationTime(Path);
+        public DateTimeOffset CreationTime
+        {
+            get
+            {
+                var creationTime = File.GetCreationTimeUtc(Path);
+                if (creationTime == DateTime.MinValue)
+                    EnsureExists();
+
+                return new DateTimeOffset(creationTime);
+            }
+        }
         /// <inheritdoc />
-        public DateTime CreationTimeUTC => File.GetCreationTimeUtc(Path);
+        public DateTimeOffset LastAccessTime
+        {
+            get
+            {
+                var lastAccessTime = File.GetLastAccessTimeUtc(Path);
+                if (lastAccessTime == DateTime.MinValue)
+                    EnsureExists();
+
+                return new DateTimeOffset(lastAccessTime);
+            }
+        }
+
         /// <inheritdoc />
-        public DateTime LastAccessTime => File.GetLastAccessTime(Path);
-        /// <inheritdoc />
-        public DateTime LastAccessTimeUTC => File.GetLastAccessTimeUtc(Path);
-        /// <inheritdoc />
-        public DateTime LastWriteTime => File.GetLastWriteTime(Path);
-        /// <inheritdoc />
-        public DateTime LastWriteTimeUTC => File.GetLastWriteTimeUtc(Path);
+        public DateTimeOffset LastWriteTime
+        {
+            get
+            {
+                var lastWriteTime = File.GetLastWriteTimeUtc(Path);
+                if (lastWriteTime == DateTime.MinValue)
+                    EnsureExists();
+
+                return new DateTimeOffset(lastWriteTime);
+            }
+        }
 
         /// <summary>
         /// Creates a new <see cref="IFile"/> corresponding to the specified path.
@@ -53,199 +78,147 @@ namespace PCLExt.FileStorage
 
         /// <inheritdoc />
         public Stream Open(FileAccess fileAccess)
-        {
-            EnsureExists();
-
-            switch (fileAccess)
-            {
-                case FileAccess.Read:
-                    return File.OpenRead(Path);
-                case FileAccess.ReadAndWrite:
-                    return File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite);
-                default:
-                    throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}");
-            }
-        }
+            => OpenCoreAsync(true, fileAccess, CancellationToken.None).RunSync();
         /// <inheritdoc />
-        public async Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken)
+        public Task<Stream> OpenAsync(FileAccess fileAccess, CancellationToken cancellationToken = default)
+            => OpenCoreAsync(false, fileAccess, cancellationToken);
+        private async Task<Stream> OpenCoreAsync(bool sync, FileAccess fileAccess, CancellationToken cancellationToken)
         {
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
 
             switch (fileAccess)
             {
                 case FileAccess.Read:
-                    return File.OpenRead(Path);
-                case FileAccess.ReadAndWrite:
-                    return File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite);
-                default:
-                    throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}");
+                    {
+                        if (sync)
+                            return File.OpenRead(Path);
+                        else
+                        {
+
+                        }
+                        break;
+                    }
             }
+
+            FileStream fileStream = fileAccess switch
+            {
+                FileAccess.Read => sync
+                    ? File.OpenRead(Path)
+                    : File.OpenRead(Path),
+                FileAccess.ReadAndWrite => sync
+                    ? File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite)
+                    : File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite),
+                _ => throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}", nameof(fileAccess)),
+            };
+            return fileStream;
         }
 
         /// <inheritdoc />
         public void Delete()
-        {
-            EnsureExists();
-
-            File.Delete(Path);
-        }
+            => DeleteCoreAsync(true, CancellationToken.None).RunSync();
         /// <inheritdoc />
-        public async Task DeleteAsync(CancellationToken cancellationToken)
+        public Task DeleteAsync(CancellationToken cancellationToken = default)
+            => DeleteCoreAsync(false, cancellationToken);
+        private async Task DeleteCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-
-            EnsureExists();
-
-            File.Delete(Path);
-        }
-
-        /// <inheritdoc />
-        public void WriteAllBytes(byte[] bytes)
-        {
-            EnsureExists();
-
-            File.WriteAllBytes(Path, bytes);
-        }
-        /// <inheritdoc />
-        public async Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken)
-        {
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
 
-            File.WriteAllBytes(Path, bytes);
+            if(sync)
+                File.Delete(Path);
+            else
+                await AsyncIO.DeleteAsync(Path, cancellationToken);
         }
 
         /// <inheritdoc />
-        public byte[] ReadAllBytes()
-        {
-            EnsureExists();
-
-            return File.ReadAllBytes(Path);
-        }
+        public IFile Rename(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists)
+            => RenameCoreAsync(true, newName, collisionOption, CancellationToken.None).RunSync();
         /// <inheritdoc />
-        public async Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken)
-        {
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-
-            EnsureExists();
-
-            return File.ReadAllBytes(Path);
-        }
-
-        /// <inheritdoc />
-        public IFile Rename(string newName, NameCollisionOption collisionOption)
+        public Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption = NameCollisionOption.FailIfExists, CancellationToken cancellationToken = default)
+            => RenameCoreAsync(false, newName, collisionOption, cancellationToken);
+        private async Task<IFile> RenameCoreAsync(bool sync, string newName, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newName, nameof(newName));
 
-            EnsureExists();
-
-            return Move(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName), collisionOption);
-        }
-        /// <inheritdoc />
-        public async Task<IFile> RenameAsync(string newName, NameCollisionOption collisionOption, CancellationToken cancellationToken)
-        {
-            Requires.NotNullOrEmpty(newName, nameof(newName));
-
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
 
-            return await MoveAsync(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName), collisionOption, cancellationToken);
+            var newNamePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Path), newName);
+            return sync
+                ? Move(newNamePath, collisionOption)
+                : await MoveAsync(newNamePath, collisionOption, cancellationToken);
         }
 
         /// <inheritdoc />
         public void Move(IFile newFile)
-        {
-            Requires.NotNull(newFile, nameof(newFile));
-
-            if (newFile.Exists && !string.Equals(Path, newFile.Path, StringComparison.Ordinal))
-                newFile.Delete();
-
-            File.Move(Path, newFile.Path);
-        }
+            => MoveCoreAsync(true, newFile, CancellationToken.None).RunSync();
         /// <inheritdoc />
-        public async Task MoveAsync(IFile newFile, CancellationToken cancellationToken)
+        public Task MoveAsync(IFile newFile, CancellationToken cancellationToken = default)
+            => MoveCoreAsync(false, newFile, cancellationToken);
+        private async Task MoveCoreAsync(bool sync, IFile newFile, CancellationToken cancellationToken)
         {
             Requires.NotNull(newFile, nameof(newFile));
 
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+
+            EnsureExists();
 
             if (newFile.Exists && !string.Equals(Path, newFile.Path, StringComparison.Ordinal))
-                newFile.Delete();
+            {
+                if (sync)
+                    newFile.Delete();
+                else
+                    await newFile.DeleteAsync(cancellationToken);
+            }
 
-            File.Move(Path, newFile.Path);
+            if (sync)
+                File.Move(Path, newFile.Path);
+            else
+                await AsyncIO.MoveAsync(Path, newFile.Path, cancellationToken);
         }
 
         /// <inheritdoc />
         public void Copy(IFile newFile)
-        {
-            Requires.NotNull(newFile, nameof(newFile));
-
-            if (string.Equals(Path, newFile.Path, StringComparison.Ordinal))
-                return; // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
-
-            File.Copy(Path, newFile.Path, true);
-        }
+            => CopyCoreAsync(true, newFile, CancellationToken.None).RunSync();
         /// <inheritdoc />
-        public async Task CopyAsync(IFile newFile, CancellationToken cancellationToken)
+        public Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default)
+            => CopyCoreAsync(false, newFile, cancellationToken);
+        public async Task CopyCoreAsync(bool sync, IFile newFile, CancellationToken cancellationToken)
         {
             if (string.Equals(Path, newFile.Path, StringComparison.Ordinal))
                 return; // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
 
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
-
-            File.Copy(Path, newFile.Path);
-        }
-
-        /// <inheritdoc />
-        public IFile Move(string newPath, NameCollisionOption collisionOption)
-        {
-            Requires.NotNullOrEmpty(newPath, nameof(newPath));
+            if(!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
 
-            var newDirectory = System.IO.Path.GetDirectoryName(newPath);
-            var newName = System.IO.Path.GetFileName(newPath);
-
-            for (var counter = 1; ; counter++)
-            {
-                var candidateName = newName;
-                if (counter > 1)
-                    candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
-
-                var candidatePath = System.IO.Path.Combine(newDirectory, candidateName);
-
-                if (File.Exists(candidatePath))
-                {
-                    switch (collisionOption)
-                    {
-                        case NameCollisionOption.FailIfExists:
-                            throw new FileExistException("File already exists.");
-                        case NameCollisionOption.GenerateUniqueName:
-                            continue; // try again with a new name.
-                        case NameCollisionOption.ReplaceExisting:
-                            if(!string.Equals(Path, candidatePath, StringComparison.Ordinal))
-                                File.Delete(candidatePath);
-                            break;
-                        default:
-                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}");
-                    }
-                }
-
-                File.Move(Path, candidatePath);
-
-                return new FileFromPath(candidatePath);
-            }
+            if (sync)
+                File.Copy(Path, newFile.Path);
+            else
+                AsyncIO.CopyAsync(Path, newFile.Path, cancellationToken);
         }
+
         /// <inheritdoc />
-        public async Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
+        public IFile Move(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting)
+            => MoveCoreAsync(true, newPath, collisionOption, CancellationToken.None).RunSync();
+        /// <inheritdoc />
+        public Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
+            => MoveCoreAsync(false, newPath, collisionOption, cancellationToken);
+        public async Task<IFile> MoveCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, nameof(newPath));
 
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             EnsureExists();
 
@@ -271,71 +244,41 @@ namespace PCLExt.FileStorage
                             continue; // try again with a new name.
                         case NameCollisionOption.ReplaceExisting:
                             if (!string.Equals(Path, candidatePath, StringComparison.Ordinal))
-                                File.Delete(candidatePath);
+                            {
+                                if (sync)
+                                    File.Delete(candidatePath);
+                                else
+                                    await AsyncIO.DeleteAsync(candidatePath, cancellationToken);
+                            }
                             break;
                         default:
-                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}");
+                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}", nameof(collisionOption));
                     }
                 }
 
-                File.Move(Path, candidatePath);
+                if(sync)
+                    File.Move(Path, candidatePath);
+                else
+                    AsyncIO.MoveAsync(Path, candidatePath, cancellationToken);
 
                 return new FileFromPath(candidatePath);
             }
         }
 
         /// <inheritdoc />
-        public IFile Copy(string newPath, NameCollisionOption collisionOption)
-        {
-            // Test if path is not same. If same, skip/abort
-            // When replacing, firts copy the replaceable file to the buffer, then delete. Dont just do File.Copy guess?
-            Requires.NotNullOrEmpty(newPath, nameof(newPath));
-
-            EnsureExists();
-
-            var newDirectory = System.IO.Path.GetDirectoryName(newPath);
-            var newName = System.IO.Path.GetFileName(newPath);
-
-            for (var counter = 1; ; counter++)
-            {
-                var candidateName = newName;
-                if (counter > 1)
-                    candidateName = $"{System.IO.Path.GetFileNameWithoutExtension(newName)} ({counter}){System.IO.Path.GetExtension(newName)}";
-
-                var candidatePath = System.IO.Path.Combine(newDirectory, candidateName);
-
-                if (File.Exists(candidatePath))
-                {
-                    switch (collisionOption)
-                    {
-                        case NameCollisionOption.FailIfExists:
-                            throw new FileExistException("File already exists.");
-                        case NameCollisionOption.GenerateUniqueName:
-                            continue; // try again with a new name.
-                        case NameCollisionOption.ReplaceExisting:
-                            if (string.Equals(Path, newPath, StringComparison.Ordinal))
-                                return new FileFromPath(Path); // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
-
-                            File.Delete(candidatePath);
-                            break;
-                        default:
-                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}");
-                    }
-                }
-
-                File.Copy(Path, candidatePath, true);
-
-                return new FileFromPath(candidatePath);
-            }
-        }
+        public IFile Copy(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting)
+            => CopyCoreAsync(true, newPath, collisionOption, CancellationToken.None).RunSync();
         /// <inheritdoc />
-        public async Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
+        public Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
+            => CopyCoreAsync(false, newPath, collisionOption, cancellationToken);
+        public async Task<IFile> CopyCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, nameof(newPath));
 
-            EnsureExists();
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
-            await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+            EnsureExists();
 
             var newDirectory = System.IO.Path.GetDirectoryName(newPath);
             var newName = System.IO.Path.GetFileName(newPath);
@@ -364,7 +307,7 @@ namespace PCLExt.FileStorage
                             File.Delete(candidatePath);
                             break;
                         default:
-                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}");
+                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}", nameof(collisionOption));
                     }
                 }
 
@@ -374,10 +317,42 @@ namespace PCLExt.FileStorage
             }
         }
 
+        /// <inheritdoc />
+        public void WriteAllBytes(byte[] bytes)
+            => WriteAllBytesCoreAsync(true, bytes, CancellationToken.None).RunSync();
+        /// <inheritdoc />
+        public Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default)
+            => WriteAllBytesCoreAsync(false, bytes, cancellationToken);
+        public async Task WriteAllBytesCoreAsync(bool sync, byte[] bytes, CancellationToken cancellationToken)
+        {
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+
+            EnsureExists();
+
+            File.WriteAllBytes(Path, bytes);
+        }
+
+        /// <inheritdoc />
+        public byte[] ReadAllBytes()
+            => ReadAllBytesCoreAsync(true, CancellationToken.None).RunSync();
+        /// <inheritdoc />
+        public Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default)
+            => ReadAllBytesCoreAsync(false, cancellationToken);
+        public async Task<byte[]> ReadAllBytesCoreAsync(bool sync, CancellationToken cancellationToken)
+        {
+            if (!sync)
+                await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
+
+            EnsureExists();
+
+            return File.ReadAllBytes(Path);
+        }
+
         private void EnsureExists()
         {
             if (!Exists)
-                throw new Exceptions.FileNotFoundException($"File does not exist: {Path}");
+                throw new Exceptions.FileNotFoundException($"File does not exist: {Path}", System.IO.Path.GetFileName(Path));
         }
     }
 }

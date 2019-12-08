@@ -5,7 +5,8 @@
     <RootNamespace>PCLExt.FileStorage</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>PCLExt.FileStorage</AssemblyName>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

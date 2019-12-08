@@ -19,6 +19,12 @@ namespace PCLExt.FileStorage.Extensions
     /// </summary>
     internal static class AwaitExtensions
     {
+        public static void RunSync(this Task task) => task.GetAwaiter().GetResult();
+        public static T RunSync<T>(this Task<T> task) => task.GetAwaiter().GetResult();
+#if WINDOWS_UWP
+        public static T RunSync<T>(this Windows.Foundation.IAsyncOperation<T> task) => task.GetAwaiter().GetResult();
+#endif
+
         /// <summary>
         /// Causes the caller who awaits this method to
         /// switch off the Main thread. It has no effect if
@@ -32,14 +38,16 @@ namespace PCLExt.FileStorage.Extensions
             return new TaskSchedulerAwaiter(SynchronizationContext.Current != null ? TaskScheduler.Default : null, cancellationToken);
         }
 
-        internal struct TaskSchedulerAwaiter : INotifyCompletion
+        internal readonly struct TaskSchedulerAwaiter : INotifyCompletion
         {
-            private readonly TaskScheduler _taskScheduler;
+            private readonly TaskScheduler? _taskScheduler;
             private readonly CancellationToken _cancellationToken;
 
-
-            internal TaskSchedulerAwaiter(TaskScheduler taskScheduler, CancellationToken cancellationToken) { _taskScheduler = taskScheduler; _cancellationToken = cancellationToken; }
-
+            internal TaskSchedulerAwaiter(TaskScheduler? taskScheduler, CancellationToken cancellationToken)
+            {
+                _taskScheduler = taskScheduler;
+                _cancellationToken = cancellationToken;
+            }
 
             internal TaskSchedulerAwaiter GetAwaiter() => this;
 
@@ -53,7 +61,7 @@ namespace PCLExt.FileStorage.Extensions
                 Task.Factory.StartNew(continuation, CancellationToken.None, TaskCreationOptions.None, _taskScheduler);
             }
 
-            public void GetResult() { _cancellationToken.ThrowIfCancellationRequested(); }
+            public void GetResult() => _cancellationToken.ThrowIfCancellationRequested();
         }
     }
 }
