@@ -1,5 +1,4 @@
-﻿using PCLExt.FileStorage.Extensions;
-using System.IO;
+﻿using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,15 +13,17 @@ namespace PCLExt.FileStorage
         private static FileOptions MoveFileOptions { get; } = FileOptions.Asynchronous | FileOptions.SequentialScan | FileOptions.DeleteOnClose;
         private static FileOptions DeleteFileOptions { get; } = FileOptions.Asynchronous | FileOptions.SequentialScan | FileOptions.DeleteOnClose;
 
-        //public static Stream OpenRead(string sourceFile) => File.OpenRead(sourceFile);
+        public static void Copy(string sourceFile, string destinationFile, bool overwrite = false) => File.Copy(sourceFile, destinationFile, overwrite);
+        public static Task CopyAsync(string sourceFile, string destinationFile, bool overwrite = false, CancellationToken cancellationToken = default) => Task.Run(() => File.Copy(sourceFile, destinationFile, overwrite), cancellationToken);
+        
 
-        public static void Copy(string sourceFile, string destinationFile) => File.Copy(sourceFile, destinationFile);
-        public static async Task CopyAsync(string sourceFile, string destinationFile, CancellationToken cancellationToken)
+        // this is 2x slower
+        public static async Task CopyAsync1(string sourceFile, string destinationFile, bool overwrite = false, CancellationToken cancellationToken = default)
         {
             //await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
             using var sourceStream = new FileStream(sourceFile, FileMode.Open, System.IO.FileAccess.Read, FileShare.Read, BufferSize, CopyFileOptions);
-            using var destinationStream = new FileStream(destinationFile, FileMode.CreateNew, System.IO.FileAccess.Write, FileShare.None, BufferSize, CopyFileOptions);
+            using var destinationStream = new FileStream(destinationFile, overwrite ? FileMode.OpenOrCreate : FileMode.CreateNew, System.IO.FileAccess.Write, FileShare.None, BufferSize, CopyFileOptions);
             await sourceStream.CopyToAsync(destinationStream, BufferSize, cancellationToken);
         }
 

@@ -56,7 +56,6 @@ namespace PCLExt.FileStorage
                 return new DateTimeOffset(lastAccessTime);
             }
         }
-
         /// <inheritdoc />
         public DateTimeOffset LastWriteTime
         {
@@ -130,7 +129,7 @@ namespace PCLExt.FileStorage
             EnsureExists();
 
             if(sync)
-                File.Delete(Path);
+                AsyncIO.Delete(Path);
             else
                 await AsyncIO.DeleteAsync(Path, cancellationToken);
         }
@@ -180,7 +179,7 @@ namespace PCLExt.FileStorage
             }
 
             if (sync)
-                File.Move(Path, newFile.Path);
+                AsyncIO.Move(Path, newFile.Path);
             else
                 await AsyncIO.MoveAsync(Path, newFile.Path, cancellationToken);
         }
@@ -191,7 +190,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public Task CopyAsync(IFile newFile, CancellationToken cancellationToken = default)
             => CopyCoreAsync(false, newFile, cancellationToken);
-        public async Task CopyCoreAsync(bool sync, IFile newFile, CancellationToken cancellationToken)
+        private async Task CopyCoreAsync(bool sync, IFile newFile, CancellationToken cancellationToken)
         {
             if (string.Equals(Path, newFile.Path, StringComparison.Ordinal))
                 return; // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
@@ -202,9 +201,9 @@ namespace PCLExt.FileStorage
             EnsureExists();
 
             if (sync)
-                File.Copy(Path, newFile.Path);
+                AsyncIO.Copy(Path, newFile.Path, true);
             else
-                AsyncIO.CopyAsync(Path, newFile.Path, cancellationToken);
+                await AsyncIO.CopyAsync(Path, newFile.Path, true, cancellationToken);
         }
 
         /// <inheritdoc />
@@ -213,7 +212,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public Task<IFile> MoveAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
             => MoveCoreAsync(false, newPath, collisionOption, cancellationToken);
-        public async Task<IFile> MoveCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
+        private async Task<IFile> MoveCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, nameof(newPath));
 
@@ -246,7 +245,7 @@ namespace PCLExt.FileStorage
                             if (!string.Equals(Path, candidatePath, StringComparison.Ordinal))
                             {
                                 if (sync)
-                                    File.Delete(candidatePath);
+                                    AsyncIO.Delete(candidatePath);
                                 else
                                     await AsyncIO.DeleteAsync(candidatePath, cancellationToken);
                             }
@@ -257,11 +256,11 @@ namespace PCLExt.FileStorage
                 }
 
                 if(sync)
-                    File.Move(Path, candidatePath);
+                    AsyncIO.Move(Path, candidatePath);
                 else
-                    AsyncIO.MoveAsync(Path, candidatePath, cancellationToken);
+                    await AsyncIO.MoveAsync(Path, candidatePath, cancellationToken);
 
-                return new FileFromPath(candidatePath);
+                return new DefaultFileImplementation(candidatePath);
             }
         }
 
@@ -271,7 +270,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public Task<IFile> CopyAsync(string newPath, NameCollisionOption collisionOption = NameCollisionOption.ReplaceExisting, CancellationToken cancellationToken = default)
             => CopyCoreAsync(false, newPath, collisionOption, cancellationToken);
-        public async Task<IFile> CopyCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
+        private async Task<IFile> CopyCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, nameof(newPath));
 
@@ -302,18 +301,24 @@ namespace PCLExt.FileStorage
                             continue; // try again with a new name.
                         case NameCollisionOption.ReplaceExisting:
                             if (string.Equals(Path, newPath, StringComparison.Ordinal))
-                                return new FileFromPath(Path); // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
+                                return new DefaultFileImplementation(Path); // -- Windows is refusing to do it when its the same file. Guess it kinda makes sense.
 
-                            File.Delete(candidatePath);
+                            if (sync)
+                                AsyncIO.Delete(Path);
+                            else
+                                await AsyncIO.DeleteAsync(candidatePath, cancellationToken);
                             break;
                         default:
                             throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}", nameof(collisionOption));
                     }
                 }
 
-                File.Copy(Path, candidatePath, true);
+                if (sync)
+                    AsyncIO.Copy(Path, candidatePath);
+                else
+                    await AsyncIO.CopyAsync(Path, candidatePath);
 
-                return new FileFromPath(candidatePath);
+                return new DefaultFileImplementation(candidatePath);
             }
         }
 
@@ -323,7 +328,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public Task WriteAllBytesAsync(byte[] bytes, CancellationToken cancellationToken = default)
             => WriteAllBytesCoreAsync(false, bytes, cancellationToken);
-        public async Task WriteAllBytesCoreAsync(bool sync, byte[] bytes, CancellationToken cancellationToken)
+        private async Task WriteAllBytesCoreAsync(bool sync, byte[] bytes, CancellationToken cancellationToken)
         {
             if (!sync)
                 await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -339,7 +344,7 @@ namespace PCLExt.FileStorage
         /// <inheritdoc />
         public Task<byte[]> ReadAllBytesAsync(CancellationToken cancellationToken = default)
             => ReadAllBytesCoreAsync(false, cancellationToken);
-        public async Task<byte[]> ReadAllBytesCoreAsync(bool sync, CancellationToken cancellationToken)
+        private async Task<byte[]> ReadAllBytesCoreAsync(bool sync, CancellationToken cancellationToken)
         {
             if (!sync)
                 await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
