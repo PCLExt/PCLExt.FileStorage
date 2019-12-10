@@ -17,6 +17,15 @@ namespace PCLExt.FileStorage
     /// </summary>
     internal static class Requires
     {
+        [DebuggerStepThrough]
+        public static TEnum IsDefined<TEnum>(TEnum value, string parameterName) where TEnum : Enum
+        {
+            if (!Enum.IsDefined(typeof(TEnum), value))
+                throw new ArgumentException($"Unrecognized {typeof(TEnum).Name} value: {value}", parameterName);
+
+            return value;
+        }
+
         /// <summary>
         /// Throws an exception if the specified parameter's value is null.
         /// </summary>

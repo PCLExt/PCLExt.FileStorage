@@ -1,8 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿#if WINDOWS_UWP
+using SetUpAttr = Microsoft.VisualStudio.TestTools.UnitTesting.TestInitializeAttribute;
+using TearDownAttr = Microsoft.VisualStudio.TestTools.UnitTesting.TestCleanupAttribute;
+#else
+using SetUpAttr = NUnit.Framework.SetUpAttribute;
+using TearDownAttr = NUnit.Framework.TearDownAttribute;
+#endif
 
-using NUnit.Framework;
-
-namespace PCLExt.FileStorage.Test
+namespace PCLExt.FileStorage.Test.File
 {
     public abstract class BaseFileTest
     {
@@ -11,8 +15,8 @@ namespace PCLExt.FileStorage.Test
 
         protected static IFolder TestFolder => new TestFolder();
 
-        [SetUp]
-        [TearDown]
+        [SetUpAttr]
+        [TearDownAttr]
         public void Clean()
         {
             if (TestFolder.CheckExists(FileName1) == ExistenceCheckResult.FileExists)

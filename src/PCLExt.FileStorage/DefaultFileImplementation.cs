@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 
 using PCLExt.FileStorage.Exceptions;
 using PCLExt.FileStorage.Extensions;
-using PCLExt.FileStorage.Files;
 
 namespace PCLExt.FileStorage
 {
@@ -83,6 +82,8 @@ namespace PCLExt.FileStorage
             => OpenCoreAsync(false, fileAccess, cancellationToken);
         private async Task<Stream> OpenCoreAsync(bool sync, FileAccess fileAccess, CancellationToken cancellationToken)
         {
+            Requires.IsDefined(fileAccess, nameof(fileAccess));
+
             if (!sync)
                 await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 
@@ -102,7 +103,7 @@ namespace PCLExt.FileStorage
                     }
             }
 
-            FileStream fileStream = fileAccess switch
+            return fileAccess switch
             {
                 FileAccess.Read => sync
                     ? File.OpenRead(Path)
@@ -110,9 +111,7 @@ namespace PCLExt.FileStorage
                 FileAccess.ReadAndWrite => sync
                     ? File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite)
                     : File.Open(Path, FileMode.Open, System.IO.FileAccess.ReadWrite),
-                _ => throw new ArgumentException($"Unrecognized FileAccess value: {fileAccess}", nameof(fileAccess)),
             };
-            return fileStream;
         }
 
         /// <inheritdoc />
@@ -143,6 +142,7 @@ namespace PCLExt.FileStorage
         private async Task<IFile> RenameCoreAsync(bool sync, string newName, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newName, nameof(newName));
+            Requires.IsDefined(collisionOption, nameof(collisionOption));
 
             if (!sync)
                 await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -215,6 +215,7 @@ namespace PCLExt.FileStorage
         private async Task<IFile> MoveCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, nameof(newPath));
+            Requires.IsDefined(collisionOption, nameof(collisionOption));
 
             if (!sync)
                 await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -250,8 +251,6 @@ namespace PCLExt.FileStorage
                                     await AsyncIO.DeleteAsync(candidatePath, cancellationToken);
                             }
                             break;
-                        default:
-                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}", nameof(collisionOption));
                     }
                 }
 
@@ -273,6 +272,7 @@ namespace PCLExt.FileStorage
         private async Task<IFile> CopyCoreAsync(bool sync, string newPath, NameCollisionOption collisionOption, CancellationToken cancellationToken)
         {
             Requires.NotNullOrEmpty(newPath, nameof(newPath));
+            Requires.IsDefined(collisionOption, nameof(collisionOption));
 
             if (!sync)
                 await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
@@ -308,8 +308,6 @@ namespace PCLExt.FileStorage
                             else
                                 await AsyncIO.DeleteAsync(candidatePath, cancellationToken);
                             break;
-                        default:
-                            throw new ArgumentException($"Unrecognized NameCollisionOption value: {collisionOption}", nameof(collisionOption));
                     }
                 }
 

@@ -15,7 +15,11 @@ namespace PCLExt.FileStorage
 
         public static void Copy(string sourceFile, string destinationFile, bool overwrite = false) => File.Copy(sourceFile, destinationFile, overwrite);
         public static Task CopyAsync(string sourceFile, string destinationFile, bool overwrite = false, CancellationToken cancellationToken = default) => Task.Run(() => File.Copy(sourceFile, destinationFile, overwrite), cancellationToken);
-        
+
+        public static void Move(string sourceFile, string destinationFile) => File.Move(sourceFile, destinationFile);
+        public static Task MoveAsync(string sourceFile, string destinationFile, CancellationToken cancellationToken = default) => Task.Run(() => File.Move(sourceFile, destinationFile), cancellationToken);
+
+
 
         // this is 2x slower
         public static async Task CopyAsync1(string sourceFile, string destinationFile, bool overwrite = false, CancellationToken cancellationToken = default)
@@ -43,8 +47,8 @@ namespace PCLExt.FileStorage
             }, System.Tuple.Create(sourceFile, newFileName), cancellationToken);
         }
 
-        public static void Move(string sourceFile, string destinationFile) => File.Move(sourceFile, destinationFile);
-        public static async Task MoveAsync(string sourceFile, string destinationFile, CancellationToken cancellationToken)
+        public static void Move1(string sourceFile, string destinationFile) => File.Move(sourceFile, destinationFile);
+        public static async Task MoveAsync1(string sourceFile, string destinationFile, CancellationToken cancellationToken)
         {
             //await AwaitExtensions.SwitchOffMainThreadAsync(cancellationToken);
 

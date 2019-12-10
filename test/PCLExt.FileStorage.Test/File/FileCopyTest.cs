@@ -2,21 +2,28 @@
 
 using PCLExt.FileStorage.Exceptions;
 using PCLExt.FileStorage.Extensions;
-using PCLExt.FileStorage.Test;
 
 using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace PCLExt.FileStorage.Core.Test.Files
+#if WINDOWS_UWP
+using TestFixtureAttr = Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute;
+using TestAttr = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+#else
+using TestFixtureAttr = NUnit.Framework.TestFixtureAttribute;
+using TestAttr = NUnit.Framework.TestAttribute;
+#endif
+
+namespace PCLExt.FileStorage.Test.File
 {
-    [TestFixture]
+    [TestFixtureAttr]
     public class FileCopyTest : BaseFileTest
     {
-        [Test]
-        public void Copy() => CopyCoreAsync(true, CancellationToken.None).Wait();
-        [Test]
+        [TestAttr]
+        public void Copy() => CopyCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
         public async Task CopyAsync() => await CopyCoreAsync(false, CancellationToken.None);
         private async Task CopyCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -46,9 +53,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(data.SequenceEqual(newData));
         }
 
-        [Test]
+        [TestAttr]
         public void CopySelf() => CopySelfCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopySelfAsync() => await CopySelfCoreAsync(false, CancellationToken.None);
         private async Task CopySelfCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -69,9 +76,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(data.SequenceEqual(newData));
         }
 
-        [Test]
+        [TestAttr]
         public void CopyGenerateUniqueName() => CopyGenerateUniqueNameCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopyGenerateUniqueNameAsync() => await CopyGenerateUniqueNameCoreAsync(false, CancellationToken.None);
         private async Task CopyGenerateUniqueNameCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -87,9 +94,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
         }
 
-        [Test]
+        [TestAttr]
         public void CopyReplaceExisting() => CopyReplaceExistingCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopyReplaceExistingAsync() => await CopyReplaceExistingCoreAsync(false, CancellationToken.None);
         private async Task CopyReplaceExistingCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -105,9 +112,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(!string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
         }
 
-        [Test]
+        [TestAttr]
         public void CopySelfReplaceExisting() => CopySelfReplaceExistingCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopySelfReplaceExistingAsync() => await CopySelfReplaceExistingCoreAsync(false, CancellationToken.None);
         private async Task CopySelfReplaceExistingCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -123,9 +130,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
         }
 
-        [Test]
+        [TestAttr]
         public void CopyFailIfExists() => CopyFailIfExistsCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopyFailIfExistsAsync() => await CopyFailIfExistsCoreAsync(false, CancellationToken.None);
         private async Task CopyFailIfExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -144,9 +151,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(file2.Exists);
         }
 
-        [Test]
+        [TestAttr]
         public void CopySelfFailIfExists() => CopySelfFailIfExistsCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopySelfFailIfExistsAsync() => await CopySelfFailIfExistsCoreAsync(false, CancellationToken.None);
         private async Task CopySelfFailIfExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -161,9 +168,9 @@ namespace PCLExt.FileStorage.Core.Test.Files
             Assert.IsTrue(file.Exists);
         }
 
-        [Test]
+        [TestAttr]
         public void CopyUnknown() => CopyUnknownCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CopyUnknownAsync() => await CopyUnknownCoreAsync(false, CancellationToken.None);
         private async Task CopyUnknownCoreAsync(bool sync, CancellationToken cancellationToken)
         {

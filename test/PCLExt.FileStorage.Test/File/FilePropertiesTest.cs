@@ -6,29 +6,22 @@ using NUnit.Framework;
 
 using PCLExt.FileStorage.Extensions;
 
-namespace PCLExt.FileStorage.Test
+#if WINDOWS_UWP
+using TestFixtureAttr = Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute;
+using TestAttr = Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute;
+#else
+using TestFixtureAttr = NUnit.Framework.TestFixtureAttribute;
+using TestAttr = NUnit.Framework.TestAttribute;
+#endif
+
+namespace PCLExt.FileStorage.Test.File
 {
     [TestFixture]
     public class FilePropertiesTest : BaseFileTest
     {
-        private static async Task<IFile> CreateFile(string fileName, bool sync, CancellationToken cancellationToken)
-        {
-            return sync
-                ? TestFolder.CreateFile(fileName, CreationCollisionOption.OpenIfExists)
-                : await TestFolder.CreateFileAsync(fileName, CreationCollisionOption.OpenIfExists, cancellationToken);
-        }
-
-        private static async Task DeleteFile(IFile file, bool sync, CancellationToken cancellationToken)
-        {
-            if (sync)
-                file.Delete();
-            else
-                await file.DeleteAsync(cancellationToken);
-        }
-
-        [Test]
+        [TestAttr]
         public void Exists() => ExistsCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task ExistsAsync() => await ExistsCoreAsync(false, CancellationToken.None);
         private async Task ExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -46,9 +39,9 @@ namespace PCLExt.FileStorage.Test
             Assert.IsFalse(file.Exists);
         }
 
-        [Test]
+        [TestAttr]
         public void Size() => SizeCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task SizeAsync() => await SizeCoreAsync(false, CancellationToken.None);
         private async Task SizeCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -66,9 +59,9 @@ namespace PCLExt.FileStorage.Test
             Assert.IsTrue(file.Size == (ulong) data.Length);
         }
 
-        [Test]
+        [TestAttr]
         public void CreationTime() => CreationTimeCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task CreationTimeAsync() => await CreationTimeCoreAsync(false, CancellationToken.None);
         private async Task CreationTimeCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -80,9 +73,9 @@ namespace PCLExt.FileStorage.Test
             Assert.IsTrue(timeBeforeFileCreaton <= file.CreationTime.UtcDateTime, $"{timeBeforeFileCreaton:yyyyMMddHHmmss.fff} <= {file.CreationTime.UtcDateTime:yyyyMMddHHmmss.fff}");
         }
 
-        [Test]
+        [TestAttr]
         public void LastAccessTime() => LastAccessTimeCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task LastAccessTimeAsync() => await LastAccessTimeCoreAsync(false, CancellationToken.None);
         public async Task LastAccessTimeCoreAsync(bool sync, CancellationToken cancellationToken)
         {
@@ -106,9 +99,9 @@ namespace PCLExt.FileStorage.Test
             Assert.IsTrue(file.LastAccessTime < DateTime.UtcNow);
         }
 
-        [Test]
+        [TestAttr]
         public void LastWriteTimeTime() => LastWriteTimeCoreAsync(true, CancellationToken.None).RunSync();
-        [Test]
+        [TestAttr]
         public async Task LastWriteTimeTimeAsync() => await LastWriteTimeCoreAsync(false, CancellationToken.None);
         public async Task LastWriteTimeCoreAsync(bool sync, CancellationToken cancellationToken)
         {
