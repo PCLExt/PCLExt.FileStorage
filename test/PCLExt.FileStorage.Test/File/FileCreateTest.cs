@@ -105,7 +105,7 @@ namespace PCLExt.FileStorage.Test.File
             if(sync)
                 Assert.That(() => TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
             else
-                Assert.That(() => TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
+                Assert.That(() => TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken), Throws.TypeOf<FileExistException>());
         }
     }
 }

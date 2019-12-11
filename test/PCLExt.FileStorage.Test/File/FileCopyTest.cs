@@ -91,7 +91,7 @@ namespace PCLExt.FileStorage.Test.File
                 : await file.CopyAsync(file.Path, NameCollisionOption.GenerateUniqueName, cancellationToken);
             Assert.IsTrue(file.Exists);
             Assert.IsTrue(newFile.Exists);
-            Assert.IsTrue(!string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
+            Assert.IsFalse(string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
         }
 
         [TestAttr]
@@ -109,7 +109,7 @@ namespace PCLExt.FileStorage.Test.File
                 : await file.CopyAsync($"{file.Path} (1)", NameCollisionOption.ReplaceExisting, cancellationToken);
             Assert.IsTrue(file.Exists);
             Assert.IsTrue(newFile.Exists);
-            Assert.IsTrue(!string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
+            Assert.IsFalse(string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
         }
 
         [TestAttr]
@@ -124,7 +124,7 @@ namespace PCLExt.FileStorage.Test.File
 
             var newFile = sync
                  ? file.Copy(file.Path, NameCollisionOption.ReplaceExisting)
-                 : await file.CopyAsync(file.Path, NameCollisionOption.ReplaceExisting);
+                 : await file.CopyAsync(file.Path, NameCollisionOption.ReplaceExisting, cancellationToken);
             Assert.IsTrue(file.Exists);
             Assert.IsTrue(newFile.Exists);
             Assert.IsTrue(string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
@@ -146,7 +146,7 @@ namespace PCLExt.FileStorage.Test.File
             if(sync)
                 Assert.That(() => file1.Copy(file2.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
             else
-                Assert.That(() => file1.CopyAsync(file2.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
+                Assert.That(() => file1.CopyAsync(file2.Path, NameCollisionOption.FailIfExists, cancellationToken), Throws.TypeOf<FileExistException>());
             Assert.IsTrue(file1.Exists);
             Assert.IsTrue(file2.Exists);
         }
@@ -164,7 +164,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Assert.That(() => file.Copy(file.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
             else
-                Assert.That(() => file.CopyAsync(file.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
+                Assert.That(() => file.CopyAsync(file.Path, NameCollisionOption.FailIfExists, cancellationToken), Throws.TypeOf<FileExistException>());
             Assert.IsTrue(file.Exists);
         }
 
@@ -181,7 +181,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Assert.That(() => file.Copy(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
             else
-                Assert.That(() => file.CopyAsync(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
+                Assert.That(() => file.CopyAsync(file.Path, (NameCollisionOption) 3, cancellationToken), Throws.ArgumentException);
         }
     }
 }

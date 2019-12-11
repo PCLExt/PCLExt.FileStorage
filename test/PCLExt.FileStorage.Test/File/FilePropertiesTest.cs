@@ -91,9 +91,11 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Thread.Sleep(100);
             else
-                await Task.Delay(100);
+                await Task.Delay(100, cancellationToken);
 
-            var content = file.ReadAllBytes();
+            var content = sync
+                ? file.ReadAllBytes()
+                : await file.ReadAllBytesAsync(cancellationToken);
 
             Assert.IsTrue(lastAccessTime < file.LastAccessTime);
             Assert.IsTrue(file.LastAccessTime < DateTime.UtcNow);
@@ -115,7 +117,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Thread.Sleep(100);
             else
-                await Task.Delay(100);
+                await Task.Delay(100, cancellationToken);
 
             var data = new byte[4 * 1024 * 1024];
             new Random().NextBytes(data);

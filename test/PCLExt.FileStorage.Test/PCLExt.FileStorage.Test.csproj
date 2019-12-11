@@ -10,9 +10,8 @@
   <ItemGroup>
     <Compile Include="..\..\common\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
     <Compile Include="..\..\src\PCLExt.FileStorage\Extensions\AwaitExtensions.cs" Link="Extensions\AwaitExtensions.cs" />
-    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\FoldersTest.cs" Link="FoldersTest.cs" />
-    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\StandardFoldersTest.cs" Link="StandardFoldersTest.cs" />
-    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\TestFolder.cs" Link="TestFolder.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\StandardFoldersTest.cs" Link="Folder\StandardFoldersTest.cs" />
+    <Compile Include="..\PCLExt.FileStorage.NetFX.Test\TestFolder.cs" Link="Folder\TestFolder.cs" />
   </ItemGroup>
 
   <ItemGroup>

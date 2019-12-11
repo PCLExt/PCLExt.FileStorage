@@ -15,8 +15,26 @@ namespace PCLExt.FileStorage.Test.Folder
         protected const string FileName1 = "TestFile1";
         protected const string FileName2 = "TestFile2";
 
+        protected static IFolder TestFolder => new TestFolder();
+
         [SetUpAttr]
         [TearDownAttr]
-        public void Clean() => new TestFolder().Delete();
+        public void Clean()
+        {
+            if (TestFolder.CheckExists(FolderName1) == ExistenceCheckResult.FolderExists)
+                TestFolder.GetFolder(FolderName1).Delete();
+
+            if (TestFolder.CheckExists(FolderName2) == ExistenceCheckResult.FolderExists)
+                TestFolder.GetFolder(FolderName2).Delete();
+
+
+            if (TestFolder.CheckExists(FileName1) == ExistenceCheckResult.FileExists)
+                TestFolder.GetFile(FileName1).Delete();
+
+            if (TestFolder.CheckExists(FileName2) == ExistenceCheckResult.FileExists)
+                TestFolder.GetFile(FileName2).Delete();
+
+            TestFolder.Delete();
+        }
     }
 }

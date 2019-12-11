@@ -22,147 +22,202 @@ namespace PCLExt.FileStorage.Test.Folder
     public class FolderCreateTest : BaseFolderTest
     {
         [TestAttr]
-        public void CreateFolder()
+        public void CreateFolder() => CreateFolderCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFolderAsync() => await CreateFolderCoreAsync(false, CancellationToken.None);
+        private async Task CreateFolderCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var folder = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists);
+            var folder = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken);
             Assert.IsTrue(folder.Exists);
-
-            folder.Delete();
         }
 
         [TestAttr]
-        public void CreateFolderTwiceOpenIfExists()
+        public void CreateFolderTwiceOpenIfExists() => CreateFolderTwiceOpenIfExistsCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFolderTwiceOpenIfExistsAsync() => await CreateFolderTwiceOpenIfExistsCoreAsync(false, CancellationToken.None);
+        private async Task CreateFolderTwiceOpenIfExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var folder = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists);
-            new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.OpenIfExists);
+            var folder = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken);
+            _ = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.OpenIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.OpenIfExists, cancellationToken);
             Assert.IsTrue(folder.Exists);
-
-            folder.Delete();
         }
 
         [TestAttr]
-        public void CreateFolderTwiceGenerateUniqueName()
+        public void CreateFolderTwiceGenerateUniqueName() => CreateFolderTwiceGenerateUniqueNameCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFolderTwiceGenerateUniqueNameAsync() => await CreateFolderTwiceGenerateUniqueNameCoreAsync(false, CancellationToken.None);
+        private async Task CreateFolderTwiceGenerateUniqueNameCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var folder = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists);
-            var folder1 = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.GenerateUniqueName);
+            var folder = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken);
+
+            IFolder? folder1 = null;
+            try
+            {
+                folder1 = sync
+                    ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.GenerateUniqueName)
+                    : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.GenerateUniqueName, cancellationToken);
+                Assert.IsTrue(folder.Exists);
+                Assert.IsTrue(folder1.Exists);
+                Assert.IsFalse(string.Equals(folder.Path, folder1.Path, StringComparison.Ordinal));
+            }
+            finally
+            {
+                folder1?.Delete();
+            }
+        }
+
+        [TestAttr]
+        public void CreateFolderTwiceReplaceExisting() => CreateFolderTwiceReplaceExistingCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFolderTwiceReplaceExistingAsync() => await CreateFolderTwiceReplaceExistingCoreAsync(false, CancellationToken.None);
+        private async Task CreateFolderTwiceReplaceExistingCoreAsync(bool sync, CancellationToken cancellationToken)
+        {
+            var folder = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken);
+            var folder1 = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.ReplaceExisting)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.ReplaceExisting, cancellationToken);
             Assert.IsTrue(folder.Exists);
             Assert.IsTrue(folder1.Exists);
-            Assert.IsTrue(!string.Equals(folder.Path, folder1.Path, System.StringComparison.Ordinal));
-
-            folder.Delete();
-            folder1.Delete();
+            Assert.IsTrue(string.Equals(folder.Path, folder1.Path, StringComparison.Ordinal));
         }
 
         [TestAttr]
-        public void CreateFolderTwiceReplaceExisting()
-        {
-            var folder = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists);
-            var folder1 = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.ReplaceExisting);
-            Assert.IsTrue(folder.Exists);
-            Assert.IsTrue(folder1.Exists);
-            Assert.IsTrue(string.Equals(folder.Path, folder1.Path, System.StringComparison.Ordinal));
-
-            folder.Delete();
-        }
-
+        public void CreateFolderTwiceFailIfExists() => CreateFolderTwiceFailIfExistsCoreAsync(true, CancellationToken.None).RunSync();
         [TestAttr]
-        public void CreateFolderTwiceFailIfExists()
+        public async Task CreateFolderTwiceFailIfExistsAsync() => await CreateFolderTwiceFailIfExistsCoreAsync(false, CancellationToken.None);
+        private async Task CreateFolderTwiceFailIfExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var folder = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists);
+            var folder = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken);
 
-#if WINDOWS_UWP
-            Assert.ThrowsException<FolderExistException>(() => new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists));
-#else
-            Assert.That(() => new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FolderExistException>());
-#endif
+            if (sync)
+                Assert.That(() => TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FolderExistException>());
+            else
+                Assert.That(() => TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken), Throws.TypeOf<FolderExistException>());
 
             Assert.IsTrue(folder.Exists);
-            folder.Delete();
         }
 
         [TestAttr]
-        public void CreateFolderTwiceUnknown()
+        public void CreateFolderTwiceUnknown() => CreateFolderTwiceUnknownCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFolderTwiceUnknownAsync() => await CreateFolderTwiceUnknownCoreAsync(false, CancellationToken.None);
+        private async Task CreateFolderTwiceUnknownCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var folder = new TestFolder().CreateFolder(FolderName1, CreationCollisionOption.FailIfExists);
+            var folder = sync
+                ? TestFolder.CreateFolder(FolderName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFolderAsync(FolderName1, CreationCollisionOption.FailIfExists, cancellationToken);
 
-#if WINDOWS_UWP
-            Assert.ThrowsException<System.ArgumentException>(() => new TestFolder().CreateFolder(FolderName1, (CreationCollisionOption) 4));
-#else
-            Assert.That(() => new TestFolder().CreateFolder(FolderName1, (CreationCollisionOption)4), Throws.ArgumentException);
-#endif
+            if(sync)
+                Assert.That(() => TestFolder.CreateFolder(FolderName1, (CreationCollisionOption) 4), Throws.ArgumentException);
+            else
+                Assert.That(() => TestFolder.CreateFolderAsync(FolderName1, (CreationCollisionOption) 4, cancellationToken), Throws.ArgumentException);
 
             Assert.IsTrue(folder.Exists);
-            folder.Delete();
         }
 
         [TestAttr]
-        public void CreateFile()
+        public void CreateFile() => CreateFileCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFileAsync() => await CreateFileCoreAsync(false, CancellationToken.None);
+        private async Task CreateFileCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists);
+            var file = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken);
             Assert.IsTrue(file.Exists);
-
-            file.Delete();
         }
 
         [TestAttr]
-        public void CreateFileTwiceOpenIfExists()
+        public void CreateFileTwiceOpenIfExists() => CreateFileTwiceOpenIfExistsCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFileTwiceOpenIfExistsAsync() => await CreateFileTwiceOpenIfExistsCoreAsync(false, CancellationToken.None);
+        private async Task CreateFileTwiceOpenIfExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists);
-            new TestFolder().CreateFile(FileName1, CreationCollisionOption.OpenIfExists);
+            var file = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken);
+            _ = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.OpenIfExists, cancellationToken);
             Assert.IsTrue(file.Exists);
-
-            file.Delete();
         }
 
         [TestAttr]
-        public void CreateFileTwiceReplaceExisting()
+        public void CreateFileTwiceReplaceExisting() => CreateFileTwiceReplaceExistingCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFileTwiceReplaceExistingAsync() => await CreateFileTwiceReplaceExistingCoreAsync(false, CancellationToken.None);
+        private async Task CreateFileTwiceReplaceExistingCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists);
-            new TestFolder().CreateFile(FileName1, CreationCollisionOption.ReplaceExisting);
+            var file = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken);
+            _ = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.OpenIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.OpenIfExists, cancellationToken);
             Assert.IsTrue(file.Exists);
-
-            file.Delete();
         }
 
         [TestAttr]
-        public void CreateFileTwiceGenerateUniqueName()
+        public void CreateFileTwiceGenerateUniqueName() => CreateFileTwiceGenerateUniqueNameCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFileTwiceGenerateUniqueNameAsync() => await CreateFileTwiceGenerateUniqueNameCoreAsync(false, CancellationToken.None);
+        private async Task CreateFileTwiceGenerateUniqueNameCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists);
-            var newFile = new TestFolder().CreateFile(FileName1, CreationCollisionOption.GenerateUniqueName);
+            var file = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken);
+            var newFile = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.GenerateUniqueName)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.GenerateUniqueName, cancellationToken);
             Assert.IsTrue(file.Exists);
             Assert.IsTrue(newFile.Exists);
-            Assert.IsTrue(!string.Equals(file.Path, newFile.Path, System.StringComparison.Ordinal));
-
-            file.Delete();
+            Assert.IsFalse(string.Equals(file.Path, newFile.Path, StringComparison.Ordinal));
         }
 
         [TestAttr]
-        public void CreateFileTwiceFailIfExists()
+        public void CreateFileTwiceFailIfExists() => CreateFileTwiceFailIfExistsCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFileTwiceFailIfExistsAsync() => await CreateFileTwiceFailIfExistsCoreAsync(false, CancellationToken.None);
+        private async Task CreateFileTwiceFailIfExistsCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists);
+            var file = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken);
 
-#if WINDOWS_UWP
-            Assert.ThrowsException<FileExistException>(() => new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists));
-#else
-            Assert.That(() => new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
-#endif
+            if (sync)
+                Assert.That(() => TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
+            else
+                Assert.That(() => TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken), Throws.TypeOf<FileExistException>());
 
             Assert.IsTrue(file.Exists);
-            file.Delete();
         }
 
         [TestAttr]
-        public void CreateFileTwiceUnknown()
+        public void CreateFileTwiceUnknown() => CreateFileTwiceUnknownCoreAsync(true, CancellationToken.None).RunSync();
+        [TestAttr]
+        public async Task CreateFileTwiceUnknownAsync() => await CreateFileTwiceUnknownCoreAsync(false, CancellationToken.None);
+        private async Task CreateFileTwiceUnknownCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().CreateFile(FileName1, CreationCollisionOption.FailIfExists);
+            var file = sync
+                ? TestFolder.CreateFile(FileName1, CreationCollisionOption.FailIfExists)
+                : await TestFolder.CreateFileAsync(FileName1, CreationCollisionOption.FailIfExists, cancellationToken);
 
-#if WINDOWS_UWP
-            Assert.ThrowsException<System.ArgumentException>(() => new TestFolder().CreateFile(FileName1, (CreationCollisionOption) 4));
-#else
-            Assert.That(() => new TestFolder().CreateFile(FileName1, (CreationCollisionOption)4), Throws.ArgumentException);
-#endif
-
-            file.Delete();
+            if (sync)
+                Assert.That(() => TestFolder.CreateFile(FileName1, (CreationCollisionOption) 4), Throws.ArgumentException);
+            else
+                Assert.That(() => TestFolder.CreateFileAsync(FileName1, (CreationCollisionOption) 4), Throws.ArgumentException);
         }
     }
 }

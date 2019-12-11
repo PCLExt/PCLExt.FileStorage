@@ -39,7 +39,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 file.WriteAllBytes(data);
             else
-                await file.WriteAllBytesAsync(data);
+                await file.WriteAllBytesAsync(data, cancellationToken);
 
             if (sync)
                 file.Move(newFile);
@@ -67,12 +67,12 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 file.WriteAllBytes(data);
             else
-                await file.WriteAllBytesAsync(data);
+                await file.WriteAllBytesAsync(data, cancellationToken);
 
             if (sync)
                 file.Move(file);
             else
-                await file.MoveAsync(file);
+                await file.MoveAsync(file, cancellationToken);
             Assert.IsTrue(file.Exists);
             var newData = sync ? file.ReadAllBytes() : await file.ReadAllBytesAsync(cancellationToken);
             Assert.IsTrue(data.SequenceEqual(newData));
@@ -93,7 +93,7 @@ namespace PCLExt.FileStorage.Test.File
             {
                 newFile = sync
                     ? file.Move(file.Path, NameCollisionOption.GenerateUniqueName)
-                    : await file.MoveAsync(file.Path, NameCollisionOption.GenerateUniqueName);
+                    : await file.MoveAsync(file.Path, NameCollisionOption.GenerateUniqueName, cancellationToken);
                 Assert.IsTrue(newFile.Exists);
                 Assert.IsFalse(string.Equals(file.Name, newFile.Name, StringComparison.Ordinal));
             }
@@ -106,7 +106,7 @@ namespace PCLExt.FileStorage.Test.File
                 if (sync)
                     newFile?.Delete();
                 else if(newFile != null)
-                    await newFile.DeleteAsync();
+                    await newFile.DeleteAsync(cancellationToken);
             }
         }
 
@@ -125,7 +125,7 @@ namespace PCLExt.FileStorage.Test.File
             {
                 newFile = sync
                     ? file.Move($"{file.Path}_1", NameCollisionOption.ReplaceExisting)
-                    : await file.MoveAsync($"{file.Path}_1", NameCollisionOption.ReplaceExisting);
+                    : await file.MoveAsync($"{file.Path}_1", NameCollisionOption.ReplaceExisting, cancellationToken);
                 Assert.IsFalse(file.Exists);
                 Assert.IsTrue(newFile.Exists);
                 
@@ -139,7 +139,7 @@ namespace PCLExt.FileStorage.Test.File
                 if (sync)
                     newFile?.Delete();
                 else if (newFile != null)
-                    await newFile.DeleteAsync();
+                    await newFile.DeleteAsync(cancellationToken);
             }
         }
 
@@ -158,7 +158,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 file.WriteAllBytes(data);
             else
-                await file.WriteAllBytesAsync(data);
+                await file.WriteAllBytesAsync(data, cancellationToken);
 
             var newFile = sync
                 ? file.Move(file.Path, NameCollisionOption.ReplaceExisting)
@@ -187,7 +187,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Assert.That(() => file.Move(newFile.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
             else
-                Assert.That(() => file.MoveAsync(newFile.Path, NameCollisionOption.FailIfExists), Throws.TypeOf<FileExistException>());
+                Assert.That(() => file.MoveAsync(newFile.Path, NameCollisionOption.FailIfExists, cancellationToken), Throws.TypeOf<FileExistException>());
         }
 
         [TestAttr]
@@ -203,7 +203,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Assert.That(() => file.Move(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
             else
-                Assert.That(() => file.MoveAsync(file.Path, (NameCollisionOption) 3), Throws.ArgumentException);
+                Assert.That(() => file.MoveAsync(file.Path, (NameCollisionOption) 3, cancellationToken), Throws.ArgumentException);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace PCLExt.FileStorage.Test.File
         public async Task FileFromPathAsync() => await FileFromPathCoreAsync(false, CancellationToken.None);
         private async Task FileFromPathCoreAsync(bool sync, CancellationToken cancellationToken)
         {
-            var file = new TestFolder().GetFolderFromPath(Path.Combine("Folder1", FileName2));
+            var file = TestFolder.GetFolderFromPath(Path.Combine("Folder1", FileName2));
             Assert.IsTrue(file.Exists);
             Assert.IsTrue(string.Equals(file.Path, Path.Combine(new TestFolder().Path, "Folder1", FileName2), StringComparison.Ordinal));
         }

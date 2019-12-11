@@ -55,7 +55,7 @@ namespace PCLExt.FileStorage.Test.File
             if (sync)
                 Assert.That(() => file.Delete(), Throws.TypeOf<FileNotFoundException>());
             else
-                Assert.That(() => file.DeleteAsync(), Throws.TypeOf<FileNotFoundException>());
+                Assert.That(() => file.DeleteAsync(cancellationToken), Throws.TypeOf<FileNotFoundException>());
         }
     }
 }
