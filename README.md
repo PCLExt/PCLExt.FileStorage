@@ -14,5 +14,50 @@ It was formely a basic fork of [PCL Storage](https://github.com/dsplaisted/PCLSt
 PCLExt.FileStorage supports .NET Framework (4.5), .NET Standard (2.0), Xamarin.iOS, Xamarin.Android, Xamarin.Mac and UWP.
 This makes it easier to create cross-platform .NET libraries and apps.
 
+
+### Supported by JetBrains Open Source Development Program
+7
+​
+8
+[<img align="right" loading="eager" decoding="async" referrerpolicy="no-referrer" width="200" alt="JetBrains" src="https://github.com/Tyler-IN/MnB2-Bannerlord-CommunityPatch/raw/dev/tools/jetbrains.svg?sanitize=true" />][1]
+9
+​
+10
+We love [JetBrains][1]!
+11
+​
+12
+We receive free licenses to JetBrains products via their [open source development program][2].
+13
+JetBrains Toolbox manages all of their products and keeps them up to date, and updating is seamless.
+14
+​
+15
+### JetBrains Rider for C# / .NET
+16
+​
+17
+[<img align="right" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="100" alt="JetBrains Rider" title="JetBrains Rider" src="https://github.com/Tyler-IN/MnB2-Bannerlord-CommunityPatch/raw/dev/tools/rider.svg?sanitize=true" />][3]
+18
+​
+19
+Our C# projects are designed to work best in JetBrains Rider.
+20
+We also use ReSharper with Visual Studio, dotPeek, dotCover, dotMemory and dotTrace.
+21
+​
+22
+#### JetBrains CLion for C / C++
+23
+​
+24
+[<img align="right" loading="lazy" decoding="async" referrerpolicy="no-referrer" width="100" alt="JetBrains CLion" title="JetBrains CLion" src="https://github.com/Tyler-IN/MnB2-Bannerlord-CommunityPatch/raw/dev/tools/clion.svg?sanitize=true" />][4]
+25
+​
+26
+Our C++ projects are designed to work best in JetBrains CLion.
+27
+We also use ReSharper C++ with Visual Studio.
+
 # Documentation
 Examples and API documentation can be found [here](http://pclext.github.io/PCLExt.FileStorage/).
