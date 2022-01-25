@@ -1,200 +1,203 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D09BEB59-933D-4446-90FA-C8760705E8E4}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCLExt.FileStorage.UWP</RootNamespace>
-    <AssemblyName>PCLExt.FileStorage</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.20348.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.20348.0</TargetPlatformMinVersion>
-    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\PCLExt.FileStorage.XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <PlatformTarget>x86</PlatformTarget>
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
-    <PlatformTarget>ARM</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\ARM\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
-    <PlatformTarget>ARM</PlatformTarget>
-    <OutputPath>bin\ARM\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>ARM</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.1.5</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
-      <Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
-      <Name>PCLExt.FileStorage.Abstractions</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\..\common\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\ExceptionsHelper.cs">
-      <Link>Exceptions\ExceptionsHelper.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FileExistException.cs">
-      <Link>Exceptions\FileExistException.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FileNotFoundException.cs">
-      <Link>Exceptions\FileNotFoundException.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FolderExistException.cs">
-      <Link>Exceptions\FolderExistException.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FolderNotFoundException.cs">
-      <Link>Exceptions\FolderNotFoundException.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\RootFolderDeletionException.cs">
-      <Link>Exceptions\RootFolderDeletionException.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Extensions\AwaitExtensions.cs">
-      <Link>Extensions\AwaitExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Extensions\FileExtensions.cs">
-      <Link>Extensions\FileExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Extensions\FolderExtensions.cs">
-      <Link>Extensions\FolderExtensions.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Files\FileFromPath.cs">
-      <Link>Files\FileFromPath.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\ApplicationRootFolder.cs">
-      <Link>Folders\ApplicationRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\CacheRootFolder.cs">
-      <Link>Folders\CacheRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\DocumentsRootFolder.cs">
-      <Link>Folders\DocumentsRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\FolderFromPath.cs">
-      <Link>Folders\FolderFromPath.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\LocalRootFolder.cs">
-      <Link>Folders\LocalRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\MusicRootFolder.cs">
-      <Link>Folders\MusicRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\PicturesRootFolder.cs">
-      <Link>Folders\PicturesRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\RoamingRootFolder.cs">
-      <Link>Folders\RoamingRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\TempRootFolder.cs">
-      <Link>Folders\TempRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Folders\VideosRootFolder.cs">
-      <Link>Folders\VideosRootFolder.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\PortablePath.cs">
-      <Link>PortablePath.cs</Link>
-    </Compile>
-    <Compile Include="..\PCLExt.FileStorage.Standard\Requires.cs">
-      <Link>Requires.cs</Link>
-    </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Extensions\StorageExtensions.cs" />
-    <Compile Include="StorageFileImplementation.cs" />
-    <Compile Include="StorageFolderImplementation.cs" />
-    <EmbeddedResource Include="Properties\PCLExt.FileStorage.UWP.rd.xml" />
-  </ItemGroup>
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
-    <VisualStudioVersion>14.0</VisualStudioVersion>
-  </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{D09BEB59-933D-4446-90FA-C8760705E8E4}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<AppDesignerFolder>Properties</AppDesignerFolder>
+		<RootNamespace>PCLExt.FileStorage.UWP</RootNamespace>
+		<AssemblyName>PCLExt.FileStorage</AssemblyName>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+		<TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.20348.0</TargetPlatformVersion>
+		<TargetPlatformMinVersion>10.0.20348.0</TargetPlatformMinVersion>
+		<MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+		<FileAlignment>512</FileAlignment>
+		<ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+		<RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<DocumentationFile>bin\Release\PCLExt.FileStorage.XML</DocumentationFile>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+		<PlatformTarget>x86</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x86\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+		<PlatformTarget>x86</PlatformTarget>
+		<OutputPath>bin\x86\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x86</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+		<PlatformTarget>ARM</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\ARM\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<PlatformTarget>ARM</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+		<PlatformTarget>ARM</PlatformTarget>
+		<OutputPath>bin\ARM\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>ARM</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+		<PlatformTarget>x64</PlatformTarget>
+		<DebugSymbols>true</DebugSymbols>
+		<OutputPath>bin\x64\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>full</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+		<PlatformTarget>x64</PlatformTarget>
+		<OutputPath>bin\x64\Release\</OutputPath>
+		<DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+		<Optimize>true</Optimize>
+		<NoWarn>;2008</NoWarn>
+		<DebugType>pdbonly</DebugType>
+		<PlatformTarget>x64</PlatformTarget>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<ErrorReport>prompt</ErrorReport>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+			<Version>6.1.5</Version>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\PCLExt.FileStorage.Abstractions\PCLExt.FileStorage.Abstractions.csproj">
+			<Project>{5d529a12-f49c-40fe-b3c3-17747d73879e}</Project>
+			<Name>PCLExt.FileStorage.Abstractions</Name>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\..\common\CommonAssemblyInfo.cs">
+			<Link>Properties\CommonAssemblyInfo.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\ExceptionsHelper.cs">
+			<Link>Exceptions\ExceptionsHelper.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FileExistException.cs">
+			<Link>Exceptions\FileExistException.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FileNotFoundException.cs">
+			<Link>Exceptions\FileNotFoundException.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FolderExistException.cs">
+			<Link>Exceptions\FolderExistException.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\FolderNotFoundException.cs">
+			<Link>Exceptions\FolderNotFoundException.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Exceptions\RootFolderDeletionException.cs">
+			<Link>Exceptions\RootFolderDeletionException.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Extensions\AwaitExtensions.cs">
+			<Link>Extensions\AwaitExtensions.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Extensions\FileExtensions.cs">
+			<Link>Extensions\FileExtensions.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Extensions\FolderExtensions.cs">
+			<Link>Extensions\FolderExtensions.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Files\FileFromPath.cs">
+			<Link>Files\FileFromPath.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\ApplicationRootFolder.cs">
+			<Link>Folders\ApplicationRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\CacheRootFolder.cs">
+			<Link>Folders\CacheRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\DocumentsRootFolder.cs">
+			<Link>Folders\DocumentsRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\FolderFromPath.cs">
+			<Link>Folders\FolderFromPath.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\LocalRootFolder.cs">
+			<Link>Folders\LocalRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\MusicRootFolder.cs">
+			<Link>Folders\MusicRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\PicturesRootFolder.cs">
+			<Link>Folders\PicturesRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\RoamingRootFolder.cs">
+			<Link>Folders\RoamingRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\TempRootFolder.cs">
+			<Link>Folders\TempRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Folders\VideosRootFolder.cs">
+			<Link>Folders\VideosRootFolder.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\PortablePath.cs">
+			<Link>PortablePath.cs</Link>
+		</Compile>
+		<Compile Include="..\PCLExt.FileStorage.Standard\Requires.cs">
+			<Link>Requires.cs</Link>
+		</Compile>
+		<Compile Include="Properties\AssemblyInfo.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="Extensions\StorageExtensions.cs" />
+		<Compile Include="StorageFileImplementation.cs" />
+		<Compile Include="StorageFolderImplementation.cs" />
+		<EmbeddedResource Include="Properties\PCLExt.FileStorage.UWP.rd.xml" />
+	</ItemGroup>
+	<PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+		<VisualStudioVersion>14.0</VisualStudioVersion>
+	</PropertyGroup>
+	<Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
 </Project>
