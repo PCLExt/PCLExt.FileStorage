@@ -77,7 +77,7 @@ namespace PCLExt.FileStorage.Extensions
 
 
 
-#if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
+#if NETSTANDARD2_0 || NET5_0 || NETFX45 || __MACOS__
         // https://github.com/mono/mono/blob/master/mcs/class/System.Windows.Forms/System.Windows.Forms/Application.cs
         private static string CompanyName
         {

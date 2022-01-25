@@ -19,7 +19,7 @@ namespace PCLExt.FileStorage.Folders
             return new DefaultFolderImplementation(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMusic).AbsolutePath);
 #elif __IOS__
             return new DefaultFolderImplementation(Foundation.NSSearchPath.GetDirectories(Foundation.NSSearchPathDirectory.MusicDirectory, Foundation.NSSearchPathDomain.User).FirstOrDefault());
-#elif NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
+#elif NETSTANDARD2_0 || NET5_0 || NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyMusic));
 #elif WINDOWS_UWP
             return new NonExistingFolder("");

@@ -42,7 +42,7 @@ namespace PCLExt.FileStorage.Folders
                     System.IO.Directory.CreateDirectory(storage);
             }
             return new DefaultFolderImplementation(storage);
-#elif NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45
+#elif NETSTANDARD2_0 || NET5_0 || NETFX45
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData)).GetDataFolder();
 #elif WINDOWS_UWP
             return new UWP.StorageFolderImplementation(
