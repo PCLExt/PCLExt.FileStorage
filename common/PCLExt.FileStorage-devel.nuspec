@@ -8,6 +8,7 @@
         <owners>Aragas</owners>
         <licenseUrl>https://github.com/PCLExt/PCLExt.FileStorage/blob/master/LICENSE</licenseUrl>
         <projectUrl>https://github.com/PCLExt/PCLExt.FileStorage</projectUrl>
+        <repository type="git" url="https://github.com/PCLExt/PCLExt.FileStorage" />
         <iconUrl>https://raw.githubusercontent.com/PCLExt/PCLExt.FileStorage/master/common/sushi_64.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>PCL Extension provides file system implementations for PCL, .NET Framework, .NET Core, Xamarin.iOS, Xamarin.Android and Xamarin.Mac. This makes it easier to create cross-platform .NET libraries and apps. Supports .NET Standard now. UWP support is temporarily removed.</description>
@@ -40,15 +41,15 @@
         <file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81\PCLExt.FileStorage.dll" target="lib\portable-net45+win8+wpa81\PCLExt.FileStorage.dll" />
         <file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81\PCLExt.FileStorage.xml" target="lib\portable-net45+win8+wpa81\PCLExt.FileStorage.xml" />
 		
-		<file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.Abstractions.dll" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.Abstractions.dll" />
+        <file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.Abstractions.dll" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.Abstractions.dll" />
         <file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.Abstractions.xml" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.Abstractions.xml" />
         <file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.dll" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.dll" />
         <file src="..\src\PCLExt.FileStorage\bin\Release\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.xml" target="lib\portable-net45+win8+wpa81+wp8\PCLExt.FileStorage.xml" />
 		
         <file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.Abstractions.dll" target="lib\uap10.0\PCLExt.FileStorage.Abstractions.dll" />
-		<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\uap10.0\PCLExt.FileStorage.Abstractions.xml" />
-		<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.dll" target="lib\uap10.0\PCLExt.FileStorage.dll" />
-		<file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.xml" target="lib\uap10.0\PCLExt.FileStorage.xml" />
+        <file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\uap10.0\PCLExt.FileStorage.Abstractions.xml" />
+        <file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.dll" target="lib\uap10.0\PCLExt.FileStorage.dll" />
+        <file src="..\src\PCLExt.FileStorage.UWP\bin\Release\PCLExt.FileStorage.xml" target="lib\uap10.0\PCLExt.FileStorage.xml" />
 		
         <file src="..\src\PCLExt.FileStorage.iOS\bin\Release\PCLExt.FileStorage.Abstractions.dll" target="lib\Xamarin.iOS\PCLExt.FileStorage.Abstractions.dll" />
         <file src="..\src\PCLExt.FileStorage.iOS\bin\Release\PCLExt.FileStorage.Abstractions.xml" target="lib\Xamarin.iOS\PCLExt.FileStorage.Abstractions.xml" />
