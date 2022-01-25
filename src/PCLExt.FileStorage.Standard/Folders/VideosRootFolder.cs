@@ -19,7 +19,7 @@ namespace PCLExt.FileStorage.Folders
             return new DefaultFolderImplementation(Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryMovies).AbsolutePath);
 #elif __IOS__
             return new DefaultFolderImplementation(Foundation.NSSearchPath.GetDirectories(Foundation.NSSearchPathDirectory.MoviesDirectory, Foundation.NSSearchPathDomain.User).FirstOrDefault());
-#elif DESKTOP || __MACOS__ || NETSTANDARD2_0
+#elif NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyVideos));
 #elif WINDOWS_UWP
             return null;

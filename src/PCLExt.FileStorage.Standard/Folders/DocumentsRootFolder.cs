@@ -16,7 +16,7 @@ namespace PCLExt.FileStorage.Folders
         {
 #if ANDROID || __IOS__
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments));
-#elif DESKTOP || __MACOS__ || NETSTANDARD2_0
+#elif NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments)).GetDataFolder();
 #elif WINDOWS_UWP            
             return new UWP.StorageFolderImplementation(Windows.Storage.KnownFolders.DocumentsLibrary);

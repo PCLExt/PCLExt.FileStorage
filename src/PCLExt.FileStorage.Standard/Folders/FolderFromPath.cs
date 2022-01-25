@@ -20,7 +20,7 @@
         {
             Requires.NotNullOrEmpty(path, "path");
 
-#if DESKTOP || ANDROID || __IOS__ || __MACOS__ || NETSTANDARD2_0
+#if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
             return System.IO.Directory.Exists(path) ? new DefaultFolderImplementation(path, true) : null;
 #elif WINDOWS_UWP
             return new UWP.StorageFolderImplementation(path);

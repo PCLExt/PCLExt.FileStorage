@@ -1,4 +1,5 @@
 ﻿using PCLExt.FileStorage.Folders;
+using System.Threading.Tasks;
 
 #if WINDOWS_UWP
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -163,6 +164,63 @@ namespace PCLExt.FileStorage.Test
             var t7 = new PicturesRootFolder();
             var t8 = new MusicRootFolder();
             var t9 = new VideosRootFolder();
+        }
+
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public async Task LocalRootFolder_UnexistingFileAsync_ReturnsNotFound()
+        {
+            var folder = new LocalRootFolder();        
+            var exists = await folder.CheckExistsAsync("test.zip");
+            Assert.IsTrue(ExistenceCheckResult.NotFound == exists);
+        }
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public void LocalRootFolder_UnexistingFile_ReturnsNotFound()
+        {
+            var folder = new LocalRootFolder();
+            var exists = folder.CheckExists("test.zip");
+            Assert.IsTrue(ExistenceCheckResult.NotFound == exists);
+        }
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public async Task LocalRootFolder_ExistingFileAsync_ReturnsFileExists()
+        {
+            var folder = new LocalRootFolder();
+            var filename = "test.zip";
+            var createdFile = await folder.CreateFileAsync(filename,
+                CreationCollisionOption.FailIfExists);
+            var exists = await folder.CheckExistsAsync(filename);
+            Assert.IsTrue(ExistenceCheckResult.FileExists == exists);
+            await createdFile.DeleteAsync();
+        }
+
+#if WINDOWS_UWP
+        [TestMethod]
+#else
+        [Test]
+#endif
+        public void LocalRootFolder_ExistingFile_ReturnsFileExists()
+        {
+            var folder = new LocalRootFolder();
+            var filename = "test.zip";
+            var createdFile = folder.CreateFile(filename,
+                CreationCollisionOption.FailIfExists);
+            var exists = folder.CheckExists(filename);
+            Assert.IsTrue(ExistenceCheckResult.FileExists == exists);
+            createdFile.Delete();
         }
     }
 }
