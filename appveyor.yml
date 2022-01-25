@@ -7,7 +7,7 @@
       - master
 
   image: 
-    - Visual Studio 2019
+    - Visual Studio 2017
     - Ubuntu
   configuration:
     - Debug
@@ -103,7 +103,7 @@
       - devel
        
   image:
-    - Visual Studio 2019
+    - Visual Studio 2017
     - Ubuntu
   configuration: 
   - Debug

@@ -20,7 +20,7 @@
         {
             Requires.NotNullOrEmpty(path, nameof(path));
 
-#if NETSTANDARD2_0 || NET5_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
+#if NETSTANDARD2_0 || NETCOREAPP2_0 || NETFX45 || ANDROID || __IOS__ || __MACOS__
             var folder = new DefaultFolderImplementation(path, true);
 
             if (!folder.Exists && createIfNotExisting)

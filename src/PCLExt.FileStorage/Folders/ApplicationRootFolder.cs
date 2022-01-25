@@ -19,7 +19,7 @@
             return new DefaultFolderImplementation(Foundation.NSBundle.MainBundle.BundlePath);
 #elif NETFX45 || __MACOS__
             return new DefaultFolderImplementation(System.AppDomain.CurrentDomain.BaseDirectory);
-#elif NETSTANDARD2_0 || NET5_0
+#elif NETSTANDARD2_0 || NETCOREAPP2_0
             // As of today, when using -p:PublishSingleFile=True, System.AppContext.BaseDirectory will point to %TEMP%/.net where the unpacked
             // application is stored. We should get the path to the actual packed .exe instead
             var moduleFilePath = System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName;
