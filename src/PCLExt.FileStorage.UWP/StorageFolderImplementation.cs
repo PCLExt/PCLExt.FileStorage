@@ -63,8 +63,9 @@ namespace PCLExt.FileStorage.UWP
 
         public StorageFolderImplementation(string path)
         {
-            _storageFolder = StorageFolder.GetFolderFromPathAsync(path).
-                AsTask().GetAwaiter().GetResult();
+            _storageFolder = StorageFolder
+                .GetFolderFromPathAsync(path)
+                .GetResults();
         }
 
         private BasicProperties GetStorageFolderProperties()
@@ -80,17 +81,20 @@ namespace PCLExt.FileStorage.UWP
 
         public async Task<ExistenceCheckResult> CheckExistsAsync(
             string name,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             try
             {
-                var finded = await _storageFolder.GetItemAsync(name).AsTask(cancellationToken);
+                var finded = await _storageFolder
+                    .GetItemAsync(name)
+                    .AsTask(cancellationToken)
+                    .ConfigureAwait(false);
                 if (finded == null)
                 {
                     return ExistenceCheckResult.NotFound;
                 }
 
-                if (finded.Attributes == Windows.Storage.FileAttributes.Directory)
+                if (finded.Attributes == FileAttributes.Directory)
                 {
                     return ExistenceCheckResult.FolderExists;
                 }
@@ -269,7 +273,7 @@ namespace PCLExt.FileStorage.UWP
         public async Task<IFolder> CreateFolderAsync(
             string desiredName,
             CreationCollisionOption option,
-            CancellationToken cancellationToken = default(CancellationToken))
+            CancellationToken cancellationToken = default)
         {
             var windowsOption = StorageExtensions.
                 ConvertToWindowsCreationCollisionOption(option);
