@@ -15,6 +15,7 @@
         /// Creates a new <see cref="BaseFolder"/> corresponding to the specified path.
         /// </summary>
         /// <param name="path">The file path</param>
+        /// <param name="createIfNotExisting">Create folder automatically</param>
         public FolderFromPath(string path, bool createIfNotExisting = false) : base(GetFolderFromPath(path, createIfNotExisting)) { }
         private static IFolder GetFolderFromPath(string path, bool createIfNotExisting = false)
         {

@@ -10,6 +10,7 @@ using Windows.Storage.Search;
 
 using PCLExt.FileStorage.Exceptions;
 using PCLExt.FileStorage.UWP.Extensions;
+using PCLExt.FileStorage.Extensions;
 
 namespace PCLExt.FileStorage.UWP
 {
@@ -25,8 +26,11 @@ namespace PCLExt.FileStorage.UWP
             {
                 try
                 {
-                    var storageFolder = StorageFolder.GetFolderFromPathAsync(
-                        _storageFolder.Path).AsTask().GetAwaiter().GetResult();
+                    var storageFolder = StorageFolder
+                        .GetFolderFromPathAsync(_storageFolder.Path)
+                        .AsTask()
+                        .GetAwaiter()
+                        .GetResult();
                 }
                 catch (System.IO.FileNotFoundException)
                 {
@@ -62,16 +66,21 @@ namespace PCLExt.FileStorage.UWP
         }
 
         public StorageFolderImplementation(string path)
-        {
+        {            
             _storageFolder = StorageFolder
                 .GetFolderFromPathAsync(path)
-                .GetResults();
+                .AsTask()
+                .GetAwaiter()
+                .GetResult();
         }
 
         private BasicProperties GetStorageFolderProperties()
         {
-            return _storageFolder.GetBasicPropertiesAsync().
-                AsTask().GetAwaiter().GetResult();
+            return _storageFolder
+                .GetBasicPropertiesAsync()
+                .AsTask()
+                .GetAwaiter()
+                .GetResult();
         }
 
         public ExistenceCheckResult CheckExists(string name)
