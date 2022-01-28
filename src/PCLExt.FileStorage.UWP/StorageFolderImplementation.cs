@@ -29,7 +29,8 @@ namespace PCLExt.FileStorage.UWP
                     var storageFolder = StorageFolder
                         .GetFolderFromPathAsync(_storageFolder.Path)
                         .AsTask()
-                        .Result;
+                        .GetAwaiter()
+                        .GetResult();
                 }
                 catch (System.IO.FileNotFoundException)
                 {
